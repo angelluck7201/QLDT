@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8659b03e8ac24acbac291a517d675df6" Name="Diagram1">
+        <EntityTypeShape EntityType="QLDT.ChiTietDonHang" Width="1.5" PointX="7.5" PointY="11" />
+        <EntityTypeShape EntityType="QLDT.DanhMuc" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="QLDT.DonHang" Width="1.5" PointX="5.25" PointY="19" />
+        <EntityTypeShape EntityType="QLDT.ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QLDT.KhachHang" Width="1.5" PointX="3" PointY="26.75" />
+        <EntityTypeShape EntityType="QLDT.KhoHang" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="QLDT.UserAccount" Width="1.5" PointX="0.75" PointY="11.625" />
+        <AssociationConnector Association="QLDT.FK__ChiTietDo__Autho__52593CB8" />
+        <AssociationConnector Association="QLDT.FK__ChiTietDo__DonHa__5629CD9C" />
+        <AssociationConnector Association="QLDT.FK__ChiTietDo__HangH__571DF1D5" />
+        <AssociationConnector Association="QLDT.FK__DanhMuc__AuthorI__1CF15040" />
+        <AssociationConnector Association="QLDT.FK__KhoHang__LoaiHan__398D8EEE" />
+        <AssociationConnector Association="QLDT.FK__DonHang__AuthorI__4222D4EF" />
+        <AssociationConnector Association="QLDT.FK__DonHang__KhachHa__46E78A0C" />
+        <AssociationConnector Association="QLDT.FK__KhachHang__Autho__25869641" />
+        <AssociationConnector Association="QLDT.FK__KhoHang__AuthorI__35BCFE0A" />
+        <EntityTypeShape EntityType="QLDT.ThanhToanCongNo" Width="1.5" PointX="8.25" PointY="15.875" />
+        <AssociationConnector Association="QLDT.FK__ThanhToan__Autho__6754599E" />
+        <EntityTypeShape EntityType="QLDT.ChiTietHangHoa" Width="1.5" PointX="9.75" PointY="12" />
+        <EntityTypeShape EntityType="QLDT.ThuChi" Width="1.5" PointX="3" PointY="18.125" />
+        <AssociationConnector Association="QLDT.FK__ChiTietHa__ChiTi__06CD04F7" />
+        <AssociationConnector Association="QLDT.FK__ChiTietHa__Autho__02FC7413" />
+        <AssociationConnector Association="QLDT.FK__ThuChi__AuthorId__0A9D95DB" />
+        <AssociationConnector Association="QLDT.FK__ThuChi__NoiDungI__14270015" />
+        <EntityTypeShape EntityType="QLDT.PhanQuyenNguoiDung" Width="1.5" PointX="3" PointY="6" />
+        <AssociationConnector Association="QLDT.FK__PhanQuyen__UserA__2BFE89A6" />
+        <EntityTypeShape EntityType="QLDT.CongNo" Width="1.5" PointX="7.5" PointY="19.75" />
+        <AssociationConnector Association="QLDT.FK__CongNo__AuthorId__5CD6CB2B" />
+        <AssociationConnector Association="QLDT.FK__CongNo__DonHangI__3B40CD36" />
+        <AssociationConnector Association="QLDT.FK__CongNo__KhachHan__3A4CA8FD" />
+        <AssociationConnector Association="QLDT.FK__ThanhToan__CongN__6B24EA82" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
