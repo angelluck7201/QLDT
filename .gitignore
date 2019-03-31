@@ -4,3 +4,5 @@
 
 /.vs/QLDT/v14
 bin/
+obj/
+packages/
