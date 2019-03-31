@@ -63,11 +63,11 @@
             this.gridViewUser.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewUser.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewUser.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewUser.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridViewUser.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewUser.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewUser.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewUser.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewUser.Appearance.Row.Options.UseFont = true;
-            this.gridViewUser.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewUser.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewUser.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewUser.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewUser.ColumnPanelRowHeight = 30;
@@ -103,9 +103,9 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Tên Nhân Viên";
             this.gridColumn2.FieldName = "TenNhanVien";
@@ -168,7 +168,7 @@
             // btnAdd
             // 
             this.btnAdd.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAdd.Appearance.Options.UseBackColor = true;
             this.btnAdd.Appearance.Options.UseFont = true;

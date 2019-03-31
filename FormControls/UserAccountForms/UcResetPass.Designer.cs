@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.lblTenNhanVien);
             this.groupBox1.Controls.Add(this.UserAccount_TenNhanVien);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(648, 373);
@@ -71,7 +71,7 @@
             // lblTenNguoiDung
             // 
             this.lblTenNguoiDung.AutoSize = true;
-            this.lblTenNguoiDung.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNguoiDung.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNguoiDung.Location = new System.Drawing.Point(46, 98);
             this.lblTenNguoiDung.Name = "lblTenNguoiDung";
             this.lblTenNguoiDung.Size = new System.Drawing.Size(122, 19);
@@ -81,7 +81,7 @@
             // UserAccount_TenNguoiDung
             // 
             this.UserAccount_TenNguoiDung.Enabled = false;
-            this.UserAccount_TenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAccount_TenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAccount_TenNguoiDung.Location = new System.Drawing.Point(224, 91);
             this.UserAccount_TenNguoiDung.Name = "UserAccount_TenNguoiDung";
             this.UserAccount_TenNguoiDung.Size = new System.Drawing.Size(380, 26);
@@ -90,7 +90,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaChi.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.Location = new System.Drawing.Point(46, 176);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(65, 19);
@@ -100,7 +100,7 @@
             // UserAccount_DiaChi
             // 
             this.UserAccount_DiaChi.Enabled = false;
-            this.UserAccount_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAccount_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAccount_DiaChi.Location = new System.Drawing.Point(224, 182);
             this.UserAccount_DiaChi.Name = "UserAccount_DiaChi";
             this.UserAccount_DiaChi.Size = new System.Drawing.Size(380, 96);
@@ -110,7 +110,7 @@
             // lblCMND
             // 
             this.lblCMND.AutoSize = true;
-            this.lblCMND.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMND.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCMND.Location = new System.Drawing.Point(46, 295);
             this.lblCMND.Name = "lblCMND";
             this.lblCMND.Size = new System.Drawing.Size(58, 19);
@@ -120,7 +120,7 @@
             // UserAccount_CMND
             // 
             this.UserAccount_CMND.Enabled = false;
-            this.UserAccount_CMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAccount_CMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAccount_CMND.Location = new System.Drawing.Point(224, 295);
             this.UserAccount_CMND.Name = "UserAccount_CMND";
             this.UserAccount_CMND.Size = new System.Drawing.Size(380, 26);
@@ -129,7 +129,7 @@
             // lblDienthoai
             // 
             this.lblDienthoai.AutoSize = true;
-            this.lblDienthoai.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDienthoai.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDienthoai.Location = new System.Drawing.Point(46, 137);
             this.lblDienthoai.Name = "lblDienthoai";
             this.lblDienthoai.Size = new System.Drawing.Size(92, 19);
@@ -139,7 +139,7 @@
             // UserAccount_Dienthoai
             // 
             this.UserAccount_Dienthoai.Enabled = false;
-            this.UserAccount_Dienthoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAccount_Dienthoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAccount_Dienthoai.Location = new System.Drawing.Point(224, 132);
             this.UserAccount_Dienthoai.Name = "UserAccount_Dienthoai";
             this.UserAccount_Dienthoai.Size = new System.Drawing.Size(380, 26);
@@ -148,7 +148,7 @@
             // lblTenNhanVien
             // 
             this.lblTenNhanVien.AutoSize = true;
-            this.lblTenNhanVien.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNhanVien.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNhanVien.Location = new System.Drawing.Point(46, 58);
             this.lblTenNhanVien.Name = "lblTenNhanVien";
             this.lblTenNhanVien.Size = new System.Drawing.Size(123, 19);
@@ -158,7 +158,7 @@
             // UserAccount_TenNhanVien
             // 
             this.UserAccount_TenNhanVien.Enabled = false;
-            this.UserAccount_TenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAccount_TenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserAccount_TenNhanVien.Location = new System.Drawing.Point(224, 51);
             this.UserAccount_TenNhanVien.Name = "UserAccount_TenNhanVien";
             this.UserAccount_TenNhanVien.Size = new System.Drawing.Size(380, 26);
@@ -167,7 +167,7 @@
             // lblOldPass
             // 
             this.lblOldPass.AutoSize = true;
-            this.lblOldPass.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOldPass.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOldPass.Location = new System.Drawing.Point(46, 420);
             this.lblOldPass.Name = "lblOldPass";
             this.lblOldPass.Size = new System.Drawing.Size(151, 19);
@@ -176,7 +176,7 @@
             // 
             // txtOldPass
             // 
-            this.txtOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOldPass.Location = new System.Drawing.Point(224, 413);
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.Size = new System.Drawing.Size(380, 26);
@@ -186,7 +186,7 @@
             // lblNewPass
             // 
             this.lblNewPass.AutoSize = true;
-            this.lblNewPass.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPass.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPass.Location = new System.Drawing.Point(46, 471);
             this.lblNewPass.Name = "lblNewPass";
             this.lblNewPass.Size = new System.Drawing.Size(117, 19);
@@ -195,7 +195,7 @@
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPass.Location = new System.Drawing.Point(224, 464);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(380, 26);
@@ -205,7 +205,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;

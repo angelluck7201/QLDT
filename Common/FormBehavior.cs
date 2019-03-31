@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraSplashScreen;
 using QLDT.FormControls;
 
 namespace QLDT
@@ -58,7 +59,7 @@ namespace QLDT
         public static void GenerateForm(UserControl userControl, string title, Form parentForm)
         {
             var defaultForm = new DefaultForm();
-            defaultForm.Height = userControl.Height + 50;
+            defaultForm.Height = userControl.Height + 70;
             defaultForm.Width = userControl.Width + 15;
 
             defaultForm.Controls.Add(userControl);

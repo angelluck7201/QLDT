@@ -20,7 +20,8 @@ namespace QLDT.FormControls
         {
             InitializeComponent();
 
-            AutoScaleDimensions = new SizeF(6f, 13f);
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         }
 
         private void MainForm_Load(object sender, System.EventArgs e)

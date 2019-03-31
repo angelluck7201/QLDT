@@ -70,9 +70,9 @@
             // 
             // colSoLuong
             // 
-            this.colSoLuong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colSoLuong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colSoLuong.AppearanceCell.Options.UseFont = true;
-            this.colSoLuong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colSoLuong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colSoLuong.AppearanceHeader.Options.UseFont = true;
             this.colSoLuong.Caption = "Tồn Kho";
             this.colSoLuong.FieldName = "SoLuong";
@@ -124,7 +124,7 @@
             this.gridViewLoaiHang.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewLoaiHang.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewLoaiHang.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewLoaiHang.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewLoaiHang.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewLoaiHang.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewLoaiHang.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewLoaiHang.ColumnPanelRowHeight = 30;
@@ -144,9 +144,9 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Hãng Sản Xuất";
             this.gridColumn1.FieldName = "Ten";
@@ -177,7 +177,7 @@
             this.gridViewHangHoa.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewHangHoa.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewHangHoa.ColumnPanelRowHeight = 30;
@@ -220,9 +220,9 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Tên Hàng";
             this.gridColumn2.FieldName = "TenHang";
@@ -233,9 +233,9 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "ĐVT";
             this.gridColumn3.FieldName = "DVT";
@@ -246,9 +246,9 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Giá Bán";
             this.gridColumn5.DisplayFormat.FormatString = "n0";
@@ -261,9 +261,9 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn6.AppearanceCell.Options.UseFont = true;
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "Ghi Chú";
             this.gridColumn6.FieldName = "GhiChu";
@@ -308,7 +308,7 @@
             // 
             this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnRefresh.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRefresh.Appearance.Options.UseBackColor = true;
             this.btnRefresh.Appearance.Options.UseFont = true;
@@ -325,7 +325,7 @@
             // btnAddHangHoa
             // 
             this.btnAddHangHoa.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAddHangHoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddHangHoa.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAddHangHoa.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddHangHoa.Appearance.Options.UseBackColor = true;
             this.btnAddHangHoa.Appearance.Options.UseFont = true;
@@ -342,7 +342,7 @@
             // btnAddNhomHang
             // 
             this.btnAddNhomHang.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAddNhomHang.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddNhomHang.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAddNhomHang.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddNhomHang.Appearance.Options.UseBackColor = true;
             this.btnAddNhomHang.Appearance.Options.UseFont = true;

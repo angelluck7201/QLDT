@@ -97,7 +97,7 @@
             // btnAll
             // 
             this.btnAll.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAll.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAll.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAll.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAll.Appearance.Options.UseBackColor = true;
             this.btnAll.Appearance.Options.UseFont = true;
@@ -113,7 +113,7 @@
             // btnTim
             // 
             this.btnTim.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnTim.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTim.Appearance.Options.UseBackColor = true;
             this.btnTim.Appearance.Options.UseFont = true;
@@ -128,8 +128,8 @@
             // 
             // EndDate
             // 
-            this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.EndDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.EndDate.Location = new System.Drawing.Point(348, 23);
             this.EndDate.Name = "EndDate";
             this.EndDate.Size = new System.Drawing.Size(311, 28);
@@ -137,8 +137,8 @@
             // 
             // StartDate
             // 
-            this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.StartDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.StartDate.Location = new System.Drawing.Point(15, 23);
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(311, 28);
@@ -166,11 +166,11 @@
             this.gridViewHangHoa.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewHangHoa.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewHangHoa.Appearance.FooterPanel.Options.UseFont = true;
             this.gridViewHangHoa.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.gridViewHangHoa.Appearance.GroupFooter.Options.UseFont = true;
-            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewHangHoa.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewHangHoa.ColumnPanelRowHeight = 30;
@@ -216,9 +216,9 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Ngày";
             this.gridColumn1.FieldName = "Ngay";
@@ -227,9 +227,9 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn7.AppearanceCell.Options.UseFont = true;
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.Caption = "Tháng";
             this.gridColumn7.FieldName = "Thang";
@@ -238,9 +238,9 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn8.AppearanceCell.Options.UseFont = true;
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "Quý";
             this.gridColumn8.FieldName = "Quy";
@@ -249,9 +249,9 @@
             // 
             // gridColumn9
             // 
-            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn9.AppearanceCell.Options.UseFont = true;
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "Năm";
             this.gridColumn9.FieldName = "Nam";
@@ -260,9 +260,9 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Nội Dung";
             this.gridColumn2.FieldName = "NoiDung";
@@ -273,9 +273,9 @@
             // 
             // colSoLuongNhap
             // 
-            this.colSoLuongNhap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colSoLuongNhap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colSoLuongNhap.AppearanceCell.Options.UseFont = true;
-            this.colSoLuongNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colSoLuongNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colSoLuongNhap.AppearanceHeader.Options.UseFont = true;
             this.colSoLuongNhap.Caption = "Số Lượng Nhập";
             this.colSoLuongNhap.FieldName = "SoLuongNhap";
@@ -288,9 +288,9 @@
             // 
             // colSoLuongXuat
             // 
-            this.colSoLuongXuat.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colSoLuongXuat.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colSoLuongXuat.AppearanceCell.Options.UseFont = true;
-            this.colSoLuongXuat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colSoLuongXuat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colSoLuongXuat.AppearanceHeader.Options.UseFont = true;
             this.colSoLuongXuat.Caption = "Số Lượng Xuất";
             this.colSoLuongXuat.FieldName = "SoLuongXuat";
@@ -303,9 +303,9 @@
             // 
             // colDoanhThuBan
             // 
-            this.colDoanhThuBan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colDoanhThuBan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colDoanhThuBan.AppearanceCell.Options.UseFont = true;
-            this.colDoanhThuBan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colDoanhThuBan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colDoanhThuBan.AppearanceHeader.Options.UseFont = true;
             this.colDoanhThuBan.Caption = "Thu";
             this.colDoanhThuBan.DisplayFormat.FormatString = "n0";
@@ -320,9 +320,9 @@
             // 
             // colDoanhThuNhap
             // 
-            this.colDoanhThuNhap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colDoanhThuNhap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colDoanhThuNhap.AppearanceCell.Options.UseFont = true;
-            this.colDoanhThuNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colDoanhThuNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colDoanhThuNhap.AppearanceHeader.Options.UseFont = true;
             this.colDoanhThuNhap.Caption = "Chi";
             this.colDoanhThuNhap.DisplayFormat.FormatString = "n0";
@@ -337,9 +337,9 @@
             // 
             // colLoiNhuan
             // 
-            this.colLoiNhuan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colLoiNhuan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colLoiNhuan.AppearanceCell.Options.UseFont = true;
-            this.colLoiNhuan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colLoiNhuan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colLoiNhuan.AppearanceHeader.Options.UseFont = true;
             this.colLoiNhuan.Caption = "Lợi Nhuận";
             this.colLoiNhuan.DisplayFormat.FormatString = "n0";
@@ -388,24 +388,24 @@
             this.tileControl.AllowGlyphSkinning = true;
             this.tileControl.AllowSelectedItem = true;
             this.tileControl.AppearanceItem.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(191)))));
-            this.tileControl.AppearanceItem.Hovered.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tileControl.AppearanceItem.Hovered.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Hovered.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Hovered.Options.UseFont = true;
             this.tileControl.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
             this.tileControl.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.tileControl.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tileControl.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.tileControl.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Normal.Options.UseBorderColor = true;
             this.tileControl.AppearanceItem.Normal.Options.UseFont = true;
             this.tileControl.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileControl.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(148)))));
-            this.tileControl.AppearanceItem.Pressed.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tileControl.AppearanceItem.Pressed.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Pressed.Options.UseFont = true;
             this.tileControl.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(81)))), ((int)(((byte)(165)))));
             this.tileControl.AppearanceItem.Selected.BorderColor = System.Drawing.Color.Transparent;
-            this.tileControl.AppearanceItem.Selected.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tileControl.AppearanceItem.Selected.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
             this.tileControl.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Selected.Options.UseBorderColor = true;

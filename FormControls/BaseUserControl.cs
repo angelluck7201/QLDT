@@ -70,11 +70,23 @@ namespace QLDT.FormControls
                     var fieldName = CRUD.GetUIModelName(control.Name);
                     if (string.IsNullOrEmpty(fieldName)) continue;
 
-                    var modelData = CRUD.ReflectionGet(data, fieldName);
-                    if (modelData != null)
+                    var propertyName = "Text";
+                    if (control is ComboBox)
                     {
-                        CRUD.SetControlValue(control, modelData);
+                        propertyName = "SelectedValue";
                     }
+
+                    var type = data.GetType();
+                    var prop = type.GetProperty(fieldName);
+                    if (prop != null) 
+                    {
+                        control.DataBindings.Add(new Binding(propertyName, data, fieldName));
+                    }
+                    //var modelData = CRUD.ReflectionGet(data, fieldName);
+                    //if (modelData != null)
+                    //{
+                    //    CRUD.SetControlValue(control, modelData);
+                    //}
                 }
             }
         }

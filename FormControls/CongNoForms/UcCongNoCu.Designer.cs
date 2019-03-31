@@ -45,7 +45,7 @@
             // 
             this.CongNo_No.Location = new System.Drawing.Point(205, 165);
             this.CongNo_No.Name = "CongNo_No";
-            this.CongNo_No.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.CongNo_No.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_No.Properties.Appearance.Options.UseFont = true;
             this.CongNo_No.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.CongNo_No.Properties.Mask.EditMask = "n0";
@@ -57,7 +57,7 @@
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(49, 235);
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(73, 19);
@@ -67,7 +67,7 @@
             // lblNo
             // 
             this.lblNo.AutoSize = true;
-            this.lblNo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNo.Location = new System.Drawing.Point(49, 170);
             this.lblNo.Name = "lblNo";
             this.lblNo.Size = new System.Drawing.Size(71, 19);
@@ -76,7 +76,7 @@
             // 
             // CongNo_KhachHangId
             // 
-            this.CongNo_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CongNo_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CongNo_KhachHangId.FormattingEnabled = true;
             this.CongNo_KhachHangId.Location = new System.Drawing.Point(205, 33);
             this.CongNo_KhachHangId.Name = "CongNo_KhachHangId";
@@ -86,7 +86,7 @@
             // lblNgayLap
             // 
             this.lblNgayLap.AutoSize = true;
-            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgayLap.Location = new System.Drawing.Point(49, 105);
             this.lblNgayLap.Name = "lblNgayLap";
             this.lblNgayLap.Size = new System.Drawing.Size(78, 19);
@@ -95,7 +95,7 @@
             // 
             // CongNo_GhiChu
             // 
-            this.CongNo_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CongNo_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CongNo_GhiChu.Location = new System.Drawing.Point(205, 231);
             this.CongNo_GhiChu.Name = "CongNo_GhiChu";
             this.CongNo_GhiChu.Size = new System.Drawing.Size(477, 96);
@@ -105,7 +105,7 @@
             // btnCancel
             // 
             this.btnCancel.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -120,7 +120,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -135,7 +135,7 @@
             // lblKhachHangId
             // 
             this.lblKhachHangId.AutoSize = true;
-            this.lblKhachHangId.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKhachHangId.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHangId.Location = new System.Drawing.Point(49, 40);
             this.lblKhachHangId.Name = "lblKhachHangId";
             this.lblKhachHangId.Size = new System.Drawing.Size(105, 19);
@@ -144,8 +144,8 @@
             // 
             // CongNo_NgayLap
             // 
-            this.CongNo_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.CongNo_NgayLap.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.CongNo_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.CongNo_NgayLap.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_NgayLap.Location = new System.Drawing.Point(205, 99);
             this.CongNo_NgayLap.Name = "CongNo_NgayLap";
             this.CongNo_NgayLap.Size = new System.Drawing.Size(477, 28);

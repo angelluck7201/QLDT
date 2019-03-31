@@ -73,7 +73,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -88,7 +88,7 @@
             // txtTenHang
             // 
             this.txtTenHang.Enabled = false;
-            this.txtTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenHang.Location = new System.Drawing.Point(141, 24);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(339, 26);
@@ -96,7 +96,7 @@
             // 
             // lblTenHang
             // 
-            this.lblTenHang.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHang.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenHang.Location = new System.Drawing.Point(9, 29);
             this.lblTenHang.Name = "lblTenHang";
             this.lblTenHang.Size = new System.Drawing.Size(92, 19);
@@ -120,11 +120,11 @@
             // 
             // gridViewChiTiet
             // 
-            this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewChiTiet.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewChiTiet.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewChiTiet.Appearance.Row.Options.UseFont = true;
-            this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewChiTiet.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewChiTiet.ColumnPanelRowHeight = 30;
@@ -151,9 +151,9 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "IMEI";
             this.gridColumn2.FieldName = "IMEI";

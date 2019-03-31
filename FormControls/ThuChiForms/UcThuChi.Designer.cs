@@ -45,7 +45,7 @@
             // 
             // lblNgayLap
             // 
-            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgayLap.Location = new System.Drawing.Point(30, 33);
             this.lblNgayLap.Name = "lblNgayLap";
             this.lblNgayLap.Size = new System.Drawing.Size(83, 19);
@@ -54,8 +54,8 @@
             // 
             // ThuChi_NgayLap
             // 
-            this.ThuChi_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.ThuChi_NgayLap.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ThuChi_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.ThuChi_NgayLap.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.ThuChi_NgayLap.Location = new System.Drawing.Point(197, 29);
             this.ThuChi_NgayLap.Name = "ThuChi_NgayLap";
             this.ThuChi_NgayLap.Size = new System.Drawing.Size(420, 28);
@@ -64,7 +64,7 @@
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(30, 252);
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(73, 19);
@@ -73,7 +73,7 @@
             // 
             // ThuChi_GhiChu
             // 
-            this.ThuChi_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThuChi_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThuChi_GhiChu.Location = new System.Drawing.Point(197, 248);
             this.ThuChi_GhiChu.Name = "ThuChi_GhiChu";
             this.ThuChi_GhiChu.Size = new System.Drawing.Size(420, 76);
@@ -84,7 +84,7 @@
             // 
             this.ThuChi_Loai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ThuChi_Loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ThuChi_Loai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThuChi_Loai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThuChi_Loai.FormattingEnabled = true;
             this.ThuChi_Loai.Location = new System.Drawing.Point(197, 82);
             this.ThuChi_Loai.Name = "ThuChi_Loai";
@@ -94,7 +94,7 @@
             // lblLoai
             // 
             this.lblLoai.AutoSize = true;
-            this.lblLoai.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoai.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoai.Location = new System.Drawing.Point(30, 87);
             this.lblLoai.Name = "lblLoai";
             this.lblLoai.Size = new System.Drawing.Size(108, 19);
@@ -105,7 +105,7 @@
             // 
             this.ThuChi_SoTien.Location = new System.Drawing.Point(197, 188);
             this.ThuChi_SoTien.Name = "ThuChi_SoTien";
-            this.ThuChi_SoTien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.ThuChi_SoTien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.ThuChi_SoTien.Properties.Appearance.Options.UseFont = true;
             this.ThuChi_SoTien.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.ThuChi_SoTien.Properties.Mask.EditMask = "n0";
@@ -117,7 +117,7 @@
             // lblThanhToan
             // 
             this.lblThanhToan.AutoSize = true;
-            this.lblThanhToan.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThanhToan.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThanhToan.Location = new System.Drawing.Point(30, 195);
             this.lblThanhToan.Name = "lblThanhToan";
             this.lblThanhToan.Size = new System.Drawing.Size(101, 19);
@@ -128,7 +128,7 @@
             // 
             this.ThuChi_NoiDungId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ThuChi_NoiDungId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ThuChi_NoiDungId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThuChi_NoiDungId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThuChi_NoiDungId.FormattingEnabled = true;
             this.ThuChi_NoiDungId.Location = new System.Drawing.Point(197, 135);
             this.ThuChi_NoiDungId.Name = "ThuChi_NoiDungId";
@@ -138,7 +138,7 @@
             // btnCancel
             // 
             this.btnCancel.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -153,7 +153,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -168,7 +168,7 @@
             // lblNoiDung
             // 
             this.lblNoiDung.AutoSize = true;
-            this.lblNoiDung.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoiDung.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoiDung.Location = new System.Drawing.Point(30, 141);
             this.lblNoiDung.Name = "lblNoiDung";
             this.lblNoiDung.Size = new System.Drawing.Size(82, 19);

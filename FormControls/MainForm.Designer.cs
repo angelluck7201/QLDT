@@ -85,7 +85,7 @@
             this.tileNavPane1.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
             this.tileNavPane1.Appearance.Options.UseBackColor = true;
             this.tileNavPane1.AppearanceHovered.BackColor = System.Drawing.Color.Lavender;
-            this.tileNavPane1.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tileNavPane1.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.tileNavPane1.AppearanceHovered.ForeColor = System.Drawing.Color.Black;
             this.tileNavPane1.AppearanceHovered.Options.UseBackColor = true;
             this.tileNavPane1.AppearanceHovered.Options.UseFont = true;

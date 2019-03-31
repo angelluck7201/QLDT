@@ -47,7 +47,7 @@
             // lblTenHang
             // 
             this.lblTenHang.AutoSize = true;
-            this.lblTenHang.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHang.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenHang.Location = new System.Drawing.Point(36, 90);
             this.lblTenHang.Name = "lblTenHang";
             this.lblTenHang.Size = new System.Drawing.Size(84, 19);
@@ -56,7 +56,7 @@
             // 
             // KhoHang_GhiChu
             // 
-            this.KhoHang_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhoHang_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KhoHang_GhiChu.Location = new System.Drawing.Point(192, 232);
             this.KhoHang_GhiChu.Name = "KhoHang_GhiChu";
             this.KhoHang_GhiChu.Size = new System.Drawing.Size(477, 96);
@@ -66,7 +66,7 @@
             // btnCancel
             // 
             this.btnCancel.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -81,7 +81,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -95,7 +95,7 @@
             // 
             // KhoHang_TenHang
             // 
-            this.KhoHang_TenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhoHang_TenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KhoHang_TenHang.Location = new System.Drawing.Point(192, 85);
             this.KhoHang_TenHang.Name = "KhoHang_TenHang";
             this.KhoHang_TenHang.Size = new System.Drawing.Size(477, 26);
@@ -104,7 +104,7 @@
             // lblLoaiHangId
             // 
             this.lblLoaiHangId.AutoSize = true;
-            this.lblLoaiHangId.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiHangId.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaiHangId.Location = new System.Drawing.Point(35, 41);
             this.lblLoaiHangId.Name = "lblLoaiHangId";
             this.lblLoaiHangId.Size = new System.Drawing.Size(88, 19);
@@ -113,7 +113,7 @@
             // 
             // KhoHang_LoaiHangId
             // 
-            this.KhoHang_LoaiHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhoHang_LoaiHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KhoHang_LoaiHangId.FormattingEnabled = true;
             this.KhoHang_LoaiHangId.Location = new System.Drawing.Point(192, 34);
             this.KhoHang_LoaiHangId.Name = "KhoHang_LoaiHangId";
@@ -123,7 +123,7 @@
             // lblGiaBan
             // 
             this.lblGiaBan.AutoSize = true;
-            this.lblGiaBan.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiaBan.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiaBan.Location = new System.Drawing.Point(36, 139);
             this.lblGiaBan.Name = "lblGiaBan";
             this.lblGiaBan.Size = new System.Drawing.Size(71, 19);
@@ -133,7 +133,7 @@
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(36, 237);
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(73, 19);
@@ -143,7 +143,7 @@
             // lblTonLyTuong
             // 
             this.lblTonLyTuong.AutoSize = true;
-            this.lblTonLyTuong.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTonLyTuong.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTonLyTuong.Location = new System.Drawing.Point(36, 188);
             this.lblTonLyTuong.Name = "lblTonLyTuong";
             this.lblTonLyTuong.Size = new System.Drawing.Size(122, 19);
@@ -154,7 +154,7 @@
             // 
             this.KhoHang_GiaBan.Location = new System.Drawing.Point(192, 135);
             this.KhoHang_GiaBan.Name = "KhoHang_GiaBan";
-            this.KhoHang_GiaBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.KhoHang_GiaBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.KhoHang_GiaBan.Properties.Appearance.Options.UseFont = true;
             this.KhoHang_GiaBan.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.KhoHang_GiaBan.Properties.Mask.EditMask = "n0";
@@ -167,7 +167,7 @@
             // 
             this.KhoHang_TonLyTuong.Location = new System.Drawing.Point(192, 184);
             this.KhoHang_TonLyTuong.Name = "KhoHang_TonLyTuong";
-            this.KhoHang_TonLyTuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.KhoHang_TonLyTuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.KhoHang_TonLyTuong.Properties.Appearance.Options.UseFont = true;
             this.KhoHang_TonLyTuong.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.KhoHang_TonLyTuong.Properties.Mask.EditMask = "n0";

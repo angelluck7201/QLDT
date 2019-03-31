@@ -132,14 +132,14 @@
             this.tabControl.Appearance.BackColor = System.Drawing.Color.White;
             this.tabControl.Appearance.Options.UseBackColor = true;
             this.tabControl.AppearancePage.Header.BackColor = System.Drawing.SystemColors.Highlight;
-            this.tabControl.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tabControl.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tabControl.AppearancePage.Header.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tabControl.AppearancePage.Header.Options.UseBackColor = true;
             this.tabControl.AppearancePage.Header.Options.UseFont = true;
             this.tabControl.AppearancePage.Header.Options.UseForeColor = true;
             this.tabControl.AppearancePage.HeaderActive.BackColor = System.Drawing.SystemColors.Highlight;
             this.tabControl.AppearancePage.HeaderActive.BackColor2 = System.Drawing.SystemColors.Highlight;
-            this.tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.tabControl.AppearancePage.HeaderActive.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.tabControl.AppearancePage.HeaderActive.Options.UseBackColor = true;
             this.tabControl.AppearancePage.HeaderActive.Options.UseFont = true;
@@ -162,9 +162,9 @@
             // 
             // tabNhaCungCap
             // 
-            this.tabNhaCungCap.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tabNhaCungCap.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tabNhaCungCap.Appearance.Header.Options.UseFont = true;
-            this.tabNhaCungCap.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tabNhaCungCap.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.tabNhaCungCap.Appearance.HeaderActive.Options.UseFont = true;
             this.tabNhaCungCap.Controls.Add(this.splitContainerControl2);
             this.tabNhaCungCap.Name = "tabNhaCungCap";
@@ -192,7 +192,7 @@
             // btnAddNhaCungCap
             // 
             this.btnAddNhaCungCap.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAddNhaCungCap.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddNhaCungCap.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAddNhaCungCap.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddNhaCungCap.Appearance.Options.UseBackColor = true;
             this.btnAddNhaCungCap.Appearance.Options.UseFont = true;
@@ -227,7 +227,7 @@
             this.gridViewKhachHang.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewKhachHang.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewKhachHang.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewKhachHang.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewKhachHang.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewKhachHang.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewKhachHang.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewKhachHang.ColumnPanelRowHeight = 30;
@@ -258,9 +258,9 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Nhà Cung Cấp";
             this.gridColumn2.FieldName = "Ten";
@@ -271,9 +271,9 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Điện Thoại";
             this.gridColumn3.FieldName = "Dienthoai";
@@ -284,9 +284,9 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn4.AppearanceCell.Options.UseFont = true;
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "Địa Chỉ";
             this.gridColumn4.FieldName = "DiaChi";
@@ -297,9 +297,9 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Email";
             this.gridColumn5.FieldName = "Email";
@@ -310,9 +310,9 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn6.AppearanceCell.Options.UseFont = true;
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "Ghi Chú";
             this.gridColumn6.FieldName = "GhiChu";
@@ -369,7 +369,7 @@
             // 
             this.btnNhapKhoBoLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNhapKhoBoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnNhapKhoBoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNhapKhoBoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnNhapKhoBoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNhapKhoBoLoc.Appearance.Options.UseBackColor = true;
             this.btnNhapKhoBoLoc.Appearance.Options.UseFont = true;
@@ -386,7 +386,7 @@
             // 
             this.btnNhapKhoLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNhapKhoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnNhapKhoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNhapKhoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnNhapKhoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNhapKhoLoc.Appearance.Options.UseBackColor = true;
             this.btnNhapKhoLoc.Appearance.Options.UseFont = true;
@@ -402,8 +402,8 @@
             // NhapKho_EndDate
             // 
             this.NhapKho_EndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NhapKho_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.NhapKho_EndDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.NhapKho_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.NhapKho_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.NhapKho_EndDate.Location = new System.Drawing.Point(374, 22);
             this.NhapKho_EndDate.Name = "NhapKho_EndDate";
             this.NhapKho_EndDate.Size = new System.Drawing.Size(311, 28);
@@ -412,8 +412,8 @@
             // NhapKho_StartDate
             // 
             this.NhapKho_StartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NhapKho_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.NhapKho_StartDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.NhapKho_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.NhapKho_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.NhapKho_StartDate.Location = new System.Drawing.Point(41, 22);
             this.NhapKho_StartDate.Name = "NhapKho_StartDate";
             this.NhapKho_StartDate.Size = new System.Drawing.Size(311, 28);
@@ -422,7 +422,7 @@
             // btnAddPNK
             // 
             this.btnAddPNK.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAddPNK.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddPNK.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAddPNK.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddPNK.Appearance.Options.UseBackColor = true;
             this.btnAddPNK.Appearance.Options.UseFont = true;
@@ -457,9 +457,9 @@
             this.gridViewNhapKho.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewNhapKho.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewNhapKho.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewNhapKho.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridViewNhapKho.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewNhapKho.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewNhapKho.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewNhapKho.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewNhapKho.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewNhapKho.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewNhapKho.ColumnPanelRowHeight = 30;
@@ -497,9 +497,9 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Nhà Cung Cấp";
             this.gridColumn1.FieldName = "TenKhachHang";
@@ -510,9 +510,9 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn8.AppearanceCell.Options.UseFont = true;
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "Điện Thoại";
             this.gridColumn8.FieldName = "Dienthoai";
@@ -523,9 +523,9 @@
             // 
             // gridColumn9
             // 
-            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn9.AppearanceCell.Options.UseFont = true;
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "Ngày Lập";
             this.gridColumn9.FieldName = "NgayLapFormat";
@@ -536,9 +536,9 @@
             // 
             // gridColumn11
             // 
-            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn11.AppearanceCell.Options.UseFont = true;
-            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn11.AppearanceHeader.Options.UseFont = true;
             this.gridColumn11.Caption = "Ghi Chú";
             this.gridColumn11.FieldName = "GhiChu";
@@ -563,9 +563,9 @@
             // 
             // gridColumn22
             // 
-            this.gridColumn22.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn22.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn22.AppearanceCell.Options.UseFont = true;
-            this.gridColumn22.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn22.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn22.AppearanceHeader.Options.UseFont = true;
             this.gridColumn22.Caption = "Thành Tiền";
             this.gridColumn22.DisplayFormat.FormatString = "n0";
@@ -607,7 +607,7 @@
             // btnAddCongNo
             // 
             this.btnAddCongNo.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAddCongNo.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddCongNo.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnAddCongNo.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddCongNo.Appearance.Options.UseBackColor = true;
             this.btnAddCongNo.Appearance.Options.UseFont = true;
@@ -636,7 +636,7 @@
             // btnCongNoHuyLoc
             // 
             this.btnCongNoHuyLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCongNoHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCongNoHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnCongNoHuyLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCongNoHuyLoc.Appearance.Options.UseBackColor = true;
             this.btnCongNoHuyLoc.Appearance.Options.UseFont = true;
@@ -652,7 +652,7 @@
             // btnCongNoLoc
             // 
             this.btnCongNoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCongNoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCongNoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnCongNoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCongNoLoc.Appearance.Options.UseBackColor = true;
             this.btnCongNoLoc.Appearance.Options.UseFont = true;
@@ -667,8 +667,8 @@
             // 
             // CongNo_EndDate
             // 
-            this.CongNo_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.CongNo_EndDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.CongNo_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.CongNo_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_EndDate.Location = new System.Drawing.Point(379, 24);
             this.CongNo_EndDate.Name = "CongNo_EndDate";
             this.CongNo_EndDate.Size = new System.Drawing.Size(311, 28);
@@ -676,8 +676,8 @@
             // 
             // CongNo_StartDate
             // 
-            this.CongNo_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.CongNo_StartDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.CongNo_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.CongNo_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_StartDate.Location = new System.Drawing.Point(46, 24);
             this.CongNo_StartDate.Name = "CongNo_StartDate";
             this.CongNo_StartDate.Size = new System.Drawing.Size(311, 28);
@@ -704,9 +704,9 @@
             this.gridViewCongNo.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewCongNo.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewCongNo.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewCongNo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridViewCongNo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewCongNo.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewCongNo.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewCongNo.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewCongNo.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewCongNo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewCongNo.ColumnPanelRowHeight = 30;
@@ -745,9 +745,9 @@
             // 
             // gridColumn13
             // 
-            this.gridColumn13.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn13.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn13.AppearanceCell.Options.UseFont = true;
-            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn13.AppearanceHeader.Options.UseFont = true;
             this.gridColumn13.Caption = "Nhà Cung Cấp";
             this.gridColumn13.FieldName = "TenKhachHang";
@@ -758,9 +758,9 @@
             // 
             // gridColumn14
             // 
-            this.gridColumn14.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn14.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn14.AppearanceCell.Options.UseFont = true;
-            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn14.AppearanceHeader.Options.UseFont = true;
             this.gridColumn14.Caption = "Điện Thoại";
             this.gridColumn14.FieldName = "Dienthoai";
@@ -771,9 +771,9 @@
             // 
             // gridColumn15
             // 
-            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn15.AppearanceCell.Options.UseFont = true;
-            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn15.AppearanceHeader.Options.UseFont = true;
             this.gridColumn15.Caption = "Ngày Lập";
             this.gridColumn15.FieldName = "NgayLapFormat";
@@ -784,9 +784,9 @@
             // 
             // gridColumn16
             // 
-            this.gridColumn16.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn16.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn16.AppearanceCell.Options.UseFont = true;
-            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn16.AppearanceHeader.Options.UseFont = true;
             this.gridColumn16.Caption = "Ghi Chú";
             this.gridColumn16.FieldName = "GhiChu";
@@ -810,9 +810,9 @@
             // 
             // gridColumn19
             // 
-            this.gridColumn19.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn19.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn19.AppearanceCell.Options.UseFont = true;
-            this.gridColumn19.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn19.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn19.AppearanceHeader.Options.UseFont = true;
             this.gridColumn19.Caption = "Nợ";
             this.gridColumn19.DisplayFormat.FormatString = "n0";
@@ -827,9 +827,9 @@
             // 
             // gridColumn20
             // 
-            this.gridColumn20.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn20.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn20.AppearanceCell.Options.UseFont = true;
-            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn20.AppearanceHeader.Options.UseFont = true;
             this.gridColumn20.Caption = "Đã Thanh Toán";
             this.gridColumn20.DisplayFormat.FormatString = "n0";
@@ -844,9 +844,9 @@
             // 
             // gridColumn21
             // 
-            this.gridColumn21.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn21.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn21.AppearanceCell.Options.UseFont = true;
-            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn21.AppearanceHeader.Options.UseFont = true;
             this.gridColumn21.Caption = "Còn Lại";
             this.gridColumn21.DisplayFormat.FormatString = "n0";
@@ -899,7 +899,7 @@
             // btnThanhToanHuyLoc
             // 
             this.btnThanhToanHuyLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnThanhToanHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThanhToanHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnThanhToanHuyLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThanhToanHuyLoc.Appearance.Options.UseBackColor = true;
             this.btnThanhToanHuyLoc.Appearance.Options.UseFont = true;
@@ -915,7 +915,7 @@
             // btnThanhToanLoc
             // 
             this.btnThanhToanLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnThanhToanLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThanhToanLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.btnThanhToanLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThanhToanLoc.Appearance.Options.UseBackColor = true;
             this.btnThanhToanLoc.Appearance.Options.UseFont = true;
@@ -930,8 +930,8 @@
             // 
             // ThanhToan_EndDate
             // 
-            this.ThanhToan_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.ThanhToan_EndDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ThanhToan_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.ThanhToan_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.ThanhToan_EndDate.Location = new System.Drawing.Point(379, 24);
             this.ThanhToan_EndDate.Name = "ThanhToan_EndDate";
             this.ThanhToan_EndDate.Size = new System.Drawing.Size(311, 28);
@@ -939,8 +939,8 @@
             // 
             // ThanhToan_StartDate
             // 
-            this.ThanhToan_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F);
-            this.ThanhToan_StartDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.ThanhToan_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.ThanhToan_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.ThanhToan_StartDate.Location = new System.Drawing.Point(46, 24);
             this.ThanhToan_StartDate.Name = "ThanhToan_StartDate";
             this.ThanhToan_StartDate.Size = new System.Drawing.Size(311, 28);
@@ -967,9 +967,9 @@
             this.gridViewThanhToan.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewThanhToan.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewThanhToan.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewThanhToan.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridViewThanhToan.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewThanhToan.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewThanhToan.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridViewThanhToan.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewThanhToan.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewThanhToan.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewThanhToan.ColumnPanelRowHeight = 30;
@@ -1006,9 +1006,9 @@
             // 
             // gridColumn23
             // 
-            this.gridColumn23.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn23.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn23.AppearanceCell.Options.UseFont = true;
-            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn23.AppearanceHeader.Options.UseFont = true;
             this.gridColumn23.Caption = "Nhà Cung Cấp";
             this.gridColumn23.FieldName = "TenKhachHang";
@@ -1019,9 +1019,9 @@
             // 
             // gridColumn25
             // 
-            this.gridColumn25.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn25.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn25.AppearanceCell.Options.UseFont = true;
-            this.gridColumn25.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn25.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn25.AppearanceHeader.Options.UseFont = true;
             this.gridColumn25.Caption = "Ngày Thanh Toán";
             this.gridColumn25.FieldName = "NgayThanhToanFormat";
@@ -1032,9 +1032,9 @@
             // 
             // gridColumn26
             // 
-            this.gridColumn26.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn26.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn26.AppearanceCell.Options.UseFont = true;
-            this.gridColumn26.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn26.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn26.AppearanceHeader.Options.UseFont = true;
             this.gridColumn26.Caption = "Ghi Chú";
             this.gridColumn26.FieldName = "GhiChu";
@@ -1058,9 +1058,9 @@
             // 
             // gridColumn30
             // 
-            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn30.AppearanceCell.Options.UseFont = true;
-            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn30.AppearanceHeader.Options.UseFont = true;
             this.gridColumn30.Caption = "Đã Thanh Toán";
             this.gridColumn30.DisplayFormat.FormatString = "n0";
