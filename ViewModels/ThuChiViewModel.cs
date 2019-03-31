@@ -14,12 +14,7 @@ namespace QLDT
     {
         public string TenNoiDung
         {
-            get { return NoiDung.Ten; }
-        }
-
-        public DateTime NgayLapFormat
-        {
-            get { return TimeHelper.TimeStampToDateTime(NgayLap, "d"); }
+            get { return DanhMuc.Ten; }
         }
     }
 }

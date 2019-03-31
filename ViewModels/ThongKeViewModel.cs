@@ -36,7 +36,7 @@ namespace QLDT
                 SoLuongXuat = (long)donHang.SoLuong;
                 Thu = donHang.ThanhTien;
             }
-            SetThoiGian((long)donHang.DonHang.NgayLap);
+            SetThoiGian(donHang.DonHang.NgayLap);
         }
 
         public ThongKeViewModel(ThuChi thuChi)
@@ -52,16 +52,15 @@ namespace QLDT
                 Chi = (long)thuChi.SoTien;
 
             }
-            SetThoiGian((long)thuChi.NgayLap);
+            SetThoiGian(thuChi.NgayLap);
         }
 
-        private void SetThoiGian(long timeStamp)
+        private void SetThoiGian(DateTime dateTime)
         {
-            var dateTime = TimeHelper.TimeStampToDateTime(timeStamp, "d");
             Ngay = dateTime.ToShortDateString();
             Thang = string.Format("{0}/{1}", dateTime.Month, dateTime.Year);
             Nam = dateTime.Year.ToString();
-            Quy = TimeHelper.TimeStampToQuarter(timeStamp);
+            Quy = TimeHelper.TimeStampToQuarter(dateTime);
         }
 
         public ThongKeViewModel Clone()

@@ -12,11 +12,7 @@ namespace QLDT
 
     public partial class ThanhToanCongNo
     {
-        public DateTime NgayThanhToanFormat
-        {
-            get { return TimeHelper.TimeStampToDateTime(NgayThanhToan, "d"); }
-        }
-
+    
         public string TenKhachHang
         {
             get { return CongNo.TenKhachHang; }
@@ -41,18 +37,6 @@ namespace QLDT
             }
         }
 
-        public DateTime NgayLapFormat
-        {
-            get
-            {
-                if (NgayLap != null)
-                {
-                    return TimeHelper.TimeStampToDateTime(NgayLap, "d");
-                }
-                return new DateTime();
-            }
-        }
-
         public long DaThanhToan
         {
             get
@@ -60,12 +44,12 @@ namespace QLDT
                 var thanhToanDonHang = 0L;
                 if (DonHang != null)
                 {
-                    thanhToanDonHang = (long)DonHang.ThanhToan;
+                    thanhToanDonHang = DonHang.ThanhToan.GetValueOrDefault();
                 }
                 var thanhToanCongNo = 0L;
                 if (ThanhToanCongNoes != null)
                 {
-                    thanhToanCongNo = (long)ThanhToanCongNoes.Sum(s => s.ThanhToan) - thanhToanDonHang;
+                    thanhToanCongNo = ThanhToanCongNoes.Sum(s => s.ThanhToan.GetValueOrDefault()) - thanhToanDonHang;
                 }
                 return (long)(thanhToanCongNo);
             }

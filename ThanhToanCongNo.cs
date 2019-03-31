@@ -21,9 +21,11 @@ namespace QLDT
         public Nullable<bool> IsActived { get; set; }
         public long CongNoId { get; set; }
         public Nullable<long> ThanhToan { get; set; }
-        public Nullable<long> NgayThanhToan { get; set; }
+        public System.DateTime NgayThanhToan { get; set; }
         public string GhiChu { get; set; }
+        public Nullable<long> KhachHangId { get; set; }
     
+        public virtual KhachHang KhachHang { get; set; }
         public virtual UserAccount UserAccount { get; set; }
         public virtual CongNo CongNo { get; set; }
     }

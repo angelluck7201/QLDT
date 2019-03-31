@@ -27,15 +27,15 @@ namespace QLDT
     
         public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DbSet<DanhMuc> DanhMucs { get; set; }
-        public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
         public virtual DbSet<UserAccount> UserAccounts { get; set; }
-        public virtual DbSet<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
         public virtual DbSet<ChiTietHangHoa> ChiTietHangHoas { get; set; }
-        public virtual DbSet<ThuChi> ThuChis { get; set; }
         public virtual DbSet<PhanQuyenNguoiDung> PhanQuyenNguoiDungs { get; set; }
+        public virtual DbSet<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
         public virtual DbSet<CongNo> CongNoes { get; set; }
+        public virtual DbSet<DonHang> DonHangs { get; set; }
+        public virtual DbSet<ThuChi> ThuChis { get; set; }
     }
 }

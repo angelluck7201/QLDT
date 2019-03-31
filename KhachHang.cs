@@ -17,8 +17,9 @@ namespace QLDT
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
-            this.DonHangs = new HashSet<DonHang>();
+            this.ThanhToanCongNoes = new HashSet<ThanhToanCongNo>();
             this.CongNoes = new HashSet<CongNo>();
+            this.DonHangs = new HashSet<DonHang>();
         }
     
         public long Id { get; set; }
@@ -39,10 +40,12 @@ namespace QLDT
         public string GhiChu { get; set; }
         public string MaKH { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
         public virtual UserAccount UserAccount { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CongNo> CongNoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DonHang> DonHangs { get; set; }
     }
 }

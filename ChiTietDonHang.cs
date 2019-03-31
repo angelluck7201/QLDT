@@ -29,12 +29,12 @@ namespace QLDT
         public long HangHoaId { get; set; }
         public string LoaiDonHang { get; set; }
         public Nullable<long> DonGia { get; set; }
-        public Nullable<long> SoLuong { get; set; }
+        public long SoLuong { get; set; }
     
         public virtual UserAccount UserAccount { get; set; }
-        public virtual DonHang DonHang { get; set; }
         public virtual KhoHang KhoHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHangHoa> ChiTietHangHoas { get; set; }
+        public virtual DonHang DonHang { get; set; }
     }
 }

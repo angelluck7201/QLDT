@@ -26,7 +26,9 @@ namespace QLDT
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
         public Nullable<bool> IsActived { get; set; }
+        public string MaDH { get; set; }
         public string LoaiDonHang { get; set; }
+        public System.DateTime NgayLap { get; set; }
         public long KhachHangId { get; set; }
         public string Ten { get; set; }
         public string Dienthoai { get; set; }
@@ -37,14 +39,13 @@ namespace QLDT
         public Nullable<long> TongCong { get; set; }
         public Nullable<long> ThanhToan { get; set; }
         public string GhiChu { get; set; }
-        public Nullable<long> NgayLap { get; set; }
-        public string MaDH { get; set; }
+        public string TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
-        public virtual UserAccount UserAccount { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CongNo> CongNoes { get; set; }
+        public virtual UserAccount UserAccount { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
     }
 }

@@ -31,12 +31,12 @@ namespace QLDT
         public Nullable<long> KhachHangId { get; set; }
         public Nullable<long> DonHangId { get; set; }
         public string LoaiDonHang { get; set; }
-        public Nullable<long> NgayLap { get; set; }
+        public System.DateTime NgayLap { get; set; }
     
         public virtual UserAccount UserAccount { get; set; }
-        public virtual DonHang DonHang { get; set; }
         public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
+        public virtual DonHang DonHang { get; set; }
     }
 }

@@ -18,9 +18,9 @@ namespace QLDT
                 form = FormBehavior.MainForm;
             }
 
-            SplashScreenManager.ShowDefaultWaitForm(form, true, true, true, 250, "Đợi xíu nhé");
             try
             {
+                SplashScreenManager.ShowDefaultWaitForm(form, true, true, true, 250, "Đợi xíu nhé");
                 action();
             }
             catch (Exception e)

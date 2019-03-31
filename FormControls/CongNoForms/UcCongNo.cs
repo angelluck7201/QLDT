@@ -38,7 +38,7 @@ namespace QLDT.FormControls.CongNoForms
 
             // Khoi tao thong tin khach hang
             KhachHang.Text = data.KhachHang.Ten;
-            NgayLap.Text = TimeHelper.TimestampToString(data.NgayLap);
+            NgayLap.Text = data.NgayLap.ToShortDateString();
 
             if (data.DonHang != null)
             {

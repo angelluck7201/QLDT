@@ -17,19 +17,14 @@ namespace QLDT
             get { return ChiTietDonHang.TenHangHoa; }
         }
 
-        public DateTime NgayLapFormat
+        public DateTime NgayLap
         {
-            get { return ChiTietDonHang.DonHang.NgayLapFormat; }
-        }
-
-        public long NgayLap
-        {
-            get { return (long)ChiTietDonHang.DonHang.NgayLap; }
+            get { return ChiTietDonHang.DonHang.NgayLap; }
         }
 
         public long DonGia
         {
-            get { return (long)ChiTietDonHang.DonGia; }
+            get { return ChiTietDonHang.DonGia.GetValueOrDefault(); }
         }
 
         public long ThanhTien
@@ -121,17 +116,17 @@ namespace QLDT
 
         public DateTime Ngay
         {
-            get { return DonHang.NgayLapFormat; }
+            get { return DonHang.NgayLap; }
         }
 
         public string Thang
         {
-            get { return TimeHelper.TimeStampToDateTime(DonHang.NgayLap).Month.ToString(); }
+            get { return DonHang.NgayLap.Month.ToString(); }
         }
 
         public string Nam
         {
-            get { return TimeHelper.TimeStampToDateTime(DonHang.NgayLap).Year.ToString(); }
+            get { return DonHang.NgayLap.Year.ToString(); }
         }
 
         public string Quy
@@ -144,18 +139,6 @@ namespace QLDT
 
     public partial class DonHang
     {
-        public DateTime NgayLapFormat
-        {
-            get
-            {
-                if (NgayLap != null)
-                {
-                    return TimeHelper.TimeStampToDateTime(NgayLap, "d");
-                }
-                return new DateTime();
-            }
-        }
-
         public string TenKhachHang
         {
             get
@@ -177,7 +160,7 @@ namespace QLDT
 
         public string NgayLapReport
         {
-            get { return string.Format("Ngày {0} Tháng {1} Năm {2}  {3}", NgayLapFormat.Day, NgayLapFormat.Month, NgayLapFormat.Year, NgayLapFormat.TimeOfDay); }
+            get { return string.Format("Ngày {0} Tháng {1} Năm {2}  {3}", NgayLap.Day, NgayLap.Month, NgayLap.Year, NgayLap.TimeOfDay); }
         }
     }
 }

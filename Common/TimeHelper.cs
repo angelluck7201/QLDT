@@ -38,6 +38,11 @@ namespace QLDT
         public static string TimeStampToQuarter(long? time)
         {
             var dt = TimeStampToDateTime(time);
+            return TimeStampToQuarter(dt);
+        }
+
+        public static string TimeStampToQuarter(DateTime dt)
+        {
             var quarter = 1;
             if (dt.Month >= 4 && dt.Month <= 6)
                 quarter = 1;
@@ -49,7 +54,6 @@ namespace QLDT
                 quarter = 4;
 
             return string.Format("{0}/{1}", quarter, dt.Year);
-
         }
 
         public static string TimestampToString(long? time, string format = "G")
