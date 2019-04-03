@@ -258,6 +258,21 @@ namespace QLDT
 
             ReflectionSet(data, "ModifiedDate", currentTime);
         }
+
+        public static void DecorateSaveData(object data)
+        {
+            var currentTime = TimeHelper.CurrentTimeStamp();
+            ReflectionSet(data, "AuthorId", Authorization.LoginUser.Id);
+            var creationDate = ReflectionGet(data, "CreatedDate");
+            if (creationDate == null)
+            {
+                ReflectionSet(data, "CreatedDate", currentTime);
+            }
+
+            ReflectionSet(data, "ModifiedDate", currentTime);
+        }
+
+
     }
 
 }

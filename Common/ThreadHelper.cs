@@ -29,7 +29,7 @@ namespace QLDT
             catch (Exception e)
             {
                 CloseWaitingForm();
-                XtraMessageBox.Show("Đã xảy ra lỗi trong hệ thống. Làm ơn thử lại!", "Thông báo lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Đã xảy ra lỗi trong hệ thống. Làm ơn thử lại!", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw;
             }
             finally

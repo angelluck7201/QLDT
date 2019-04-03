@@ -292,6 +292,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\Setup.sql" />
     <Compile Include="ThanhToanCongNo.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

@@ -11,7 +11,12 @@ namespace QLDT
         public static long MILISECOND_PER_DAY = 86400000;
         public static long CurrentTimeStamp()
         {
-            return DateTimeToTimeStamp(DateTime.UtcNow.AddHours(7));
+            return DateTimeToTimeStamp(CurentDateTime());
+        }
+
+        public static DateTime CurentDateTime()
+        {
+            return DateTime.UtcNow.AddHours(7);
         }
 
         public static long DateTimeToTimeStamp(DateTime datetime)

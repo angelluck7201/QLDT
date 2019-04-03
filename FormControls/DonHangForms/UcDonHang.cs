@@ -36,18 +36,23 @@ namespace QLDT.FormControls.DonHangForms
                 lstKhachHang = CRUD.DbContext.KhachHangs.Where(s => s.LoaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap.ToString()).ToList();
             }
             DonHang_KhachHangId.DataSource = new BindingSource((lstKhachHang), null);
-            _domainData = data;
             _loaiDonHang = loaiDonHang;
-            Init(data);
-            if (data != null)
+            _domainData = data;
+            if (_domainData == null)
             {
-                _chiTietDonhang = new BindingList<ChiTietDonHang>(data.ChiTietDonHangs.ToList());
-                if (data.KhachHangId == Define.KhachLeId)
+                _domainData = new DonHang();
+            }
+
+            Init(_domainData);
+            if (_domainData.Id > 0)
+            {
+                _chiTietDonhang = new BindingList<ChiTietDonHang>(_domainData.ChiTietDonHangs.ToList());
+                if (_domainData.KhachHangId == Define.KhachLeId)
                 {
                     var khachLe = lstKhachHang.FirstOrDefault(s => s.Id == Define.KhachLeId);
                     if (khachLe != null)
                     {
-                        khachLe.Ten = data.Ten;
+                        khachLe.Ten = _domainData.Ten;
                     }
                 }
                 btnDelete.Visible = true;
@@ -57,11 +62,16 @@ namespace QLDT.FormControls.DonHangForms
             else
             {
                 btnDelete.Visible = false;
-                DonHang_NgayLap.Text = TimeHelper.TimestampToString(TimeHelper.CurrentTimeStamp());
+                _domainData.NgayLap = TimeHelper.CurentDateTime();
             }
 
-
-            var dataSource = CRUD.DbContext.KhoHangs.Select(s => new { s.TenHang, s.Id }).ToList();
+            // Get list hang hoa
+            var dataSource = CRUD.DbContext.KhoHangs
+                .Where(s => s.IsActived == null || s.IsActived == true)
+                .Select(s => new { s.TenHang, s.Id })
+                .Union(CRUD.DbContext.ChiTietDonHangs.Join(CRUD.DbContext.KhoHangs, ctdh => ctdh.HangHoaId, kh => kh.Id, 
+                (ctdh, kh)=> new {kh.TenHang, kh.Id})).ToList();
+            
             FormBehavior.DecoreateLookEdit(listHangHoa, dataSource, "TenHang");
             listHangHoa.EditValueChanged += listHangHoa_EditValueChanged;
 
@@ -81,43 +91,25 @@ namespace QLDT.FormControls.DonHangForms
                 return false;
             }
 
-
             // Save Don Hang
-            var saveData = CRUD.GetFormObject<DonHang>(FormControls);
-            CRUD.DecorateSaveData(saveData, _domainData);
-            saveData.LoaiDonHang = _loaiDonHang.ToString();
-            saveData.ThanhToan = Math.Min(PrimitiveConvert.StringToInt(DonHang_ThanhToan.Text), PrimitiveConvert.StringToInt(DonHang_TongCong.Text));
-
-            // Ten cho khach mua le
-            if (DonHang_KhachHangId.SelectedValue == null || (long)DonHang_KhachHangId.SelectedValue == Define.KhachLeId)
-            {
-                saveData.KhachHangId = Define.KhachLeId;
-                saveData.Ten = DonHang_KhachHangId.Text;
-            }
+            CRUD.DecorateSaveData(_domainData);
 
             using (var transaction = new TransactionScope())
             {
-
-                if (_domainData != null)
+                if (_domainData.Id > 0)
                 {
                     // Remove chi tiet don hang cu
                     DeleteChiTietDonHang(_domainData);
-
-                    saveData.Id = _domainData.Id;
-                    CRUD.DbContext.DonHangs.AddOrUpdate(saveData);
-                }
-                else
-                {
-                    CRUD.DbContext.DonHangs.AddOrUpdate(saveData);
-                    CRUD.DbContext.SaveChanges();
+                    CRUD.DbContext.DonHangs.AddOrUpdate(_domainData);
                 }
 
+                CRUD.DbContext.SaveChanges();
 
                 // Save chi tiet Don Hang
                 foreach (var chiTietDonHang in _chiTietDonhang)
                 {
                     CRUD.DecorateSaveData(chiTietDonHang);
-                    chiTietDonHang.DonHangId = saveData.Id;
+                    chiTietDonHang.DonHangId = _domainData.Id;
                     CRUD.DbContext.ChiTietDonHangs.AddOrUpdate(chiTietDonHang);
                     CRUD.DbContext.SaveChanges();
 
@@ -161,22 +153,22 @@ namespace QLDT.FormControls.DonHangForms
                         congNoHienTai.No = Math.Abs(congNo);
                     }
                     CRUD.DecorateSaveData(congNoHienTai);
-                    congNoHienTai.DonHangId = saveData.Id;
-                    congNoHienTai.KhachHangId = saveData.KhachHangId;
-                    congNoHienTai.NgayLap = saveData.NgayLap;
-                    congNoHienTai.LoaiDonHang = saveData.LoaiDonHang;
-                    congNoHienTai.GhiChu = saveData.GhiChu;
+                    congNoHienTai.DonHangId = _domainData.Id;
+                    congNoHienTai.KhachHangId = _domainData.KhachHangId;
+                    congNoHienTai.NgayLap = _domainData.NgayLap;
+                    congNoHienTai.LoaiDonHang = _domainData.LoaiDonHang;
+                    congNoHienTai.GhiChu = _domainData.GhiChu;
                     CRUD.DbContext.CongNoes.AddOrUpdate(congNoHienTai);
                     CRUD.DbContext.SaveChanges();
 
                     // Add chi tiet thanh toanh
-                    if (saveData.ThanhToan > 0)
+                    if (_domainData.ThanhToan > 0)
                     {
                         var thanhToan = new ThanhToanCongNo();
                         CRUD.DecorateSaveData(thanhToan);
                         thanhToan.CongNoId = congNoHienTai.Id;
-                        thanhToan.ThanhToan = saveData.ThanhToan;
-                        thanhToan.NgayThanhToan = saveData.NgayLap;
+                        thanhToan.ThanhToan = _domainData.ThanhToan;
+                        thanhToan.NgayThanhToan = _domainData.NgayLap;
                         CRUD.DbContext.ThanhToanCongNoes.AddOrUpdate(thanhToan);
                     }
                 }
@@ -187,7 +179,7 @@ namespace QLDT.FormControls.DonHangForms
             var confirmDialog = MessageBox.Show(Define.MESSAGE_IN_HOA_DON, Define.MESSAGE_IN_HOA_DON_TITLE, MessageBoxButtons.YesNo);
             if (confirmDialog == DialogResult.Yes)
             {
-                InHoaDon(saveData.Id);
+                InHoaDon();
             }
 
             return true;
@@ -195,6 +187,8 @@ namespace QLDT.FormControls.DonHangForms
 
         public string ValidateInput()
         {
+            if (_domainData == null) return "Chưa có dữ liệu";
+
             if (string.IsNullOrEmpty(DonHang_KhachHangId.Text))
             {
                 return string.Format("Không được phép để trống {0}!", DonHang_KhachHangId.Text);
@@ -203,35 +197,31 @@ namespace QLDT.FormControls.DonHangForms
             {
                 return "Chưa nhập hàng hóa cho đơn hàng";
             }
-            else
+
+            foreach (var chiTietDonHang in _chiTietDonhang)
             {
-                foreach (var chiTietDonHang in _chiTietDonhang)
+                if (chiTietDonHang.HangHoaId == 0)
                 {
-                    if (chiTietDonHang.HangHoaId == 0)
+                    return "Không được để trống hàng hóa";
+                }
+                if (chiTietDonHang.DonGia <= 0)
+                {
+                    return "Đơn giá phải > 0";
+                }
+                if (chiTietDonHang.SoLuong <= 0)
+                {
+                    return "Số lượng phải > 0";
+                }
+                if (_loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
+                {
+                    if (chiTietDonHang.SoLuongTon < chiTietDonHang.SoLuong)
                     {
-                        return "Không được để trống hàng hóa";
-                    }
-                    if (chiTietDonHang.DonGia <= 0)
-                    {
-                        return "Đơn giá phải > 0";
-                    }
-                    if (chiTietDonHang.SoLuong <= 0)
-                    {
-                        return "Số lượng phải > 0";
-                    }
-                    if (_loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
-                    {
-                        var khoHang = CRUD.DbContext.KhoHangs.Find(chiTietDonHang.HangHoaId);
-                        if (khoHang.SoLuong < chiTietDonHang.SoLuong)
-                        {
-                            return string.Format("Không đủ hàng. Chỉ còn {0} {1} trong kho", khoHang.SoLuong, khoHang.TenHang);
-                        }
+                        return string.Format("Không đủ hàng. Chỉ còn {0} {1} trong kho", chiTietDonHang.SoLuongTon, chiTietDonHang.TenHangHoa);
                     }
                 }
             }
 
-            var thanhToan = PrimitiveConvert.StringToInt(DonHang_ThanhToan.Text);
-            if (_domainData != null && thanhToan > 0)
+            if (_domainData.ThanhToan > 0)
             {
                 var congNoDangThanhToan = _domainData.CongNoes.Any(s => s.ThanhToanCongNoes.Any());
                 if (congNoDangThanhToan)
@@ -240,13 +230,10 @@ namespace QLDT.FormControls.DonHangForms
                 }
             }
 
-            if (DonHang_KhachHangId.SelectedValue == null)
+            if (_domainData.KhachHangId == Define.KhachLeId
+                && _domainData.ThanhToan < _domainData.TongCong)
             {
-                var no = PrimitiveConvert.StringToInt(DonHang_No.EditValue);
-                if (no != 0)
-                {
-                    return "Khách lẻ không được nợ tiền";
-                }
+                return "Khách lẻ không được nợ tiền";
             }
 
             return string.Empty;
@@ -267,8 +254,7 @@ namespace QLDT.FormControls.DonHangForms
                 thue = PrimitiveConvert.StringToInt(DonHang_Thue.Text);
             }
 
-            var tongTien = thanhTien + thanhTien * thue / 100f - thanhTien * chietKhau / 100f;
-            DonHang_TongCong.EditValue = tongTien;
+            _domainData.TongCong = (long)(thanhTien + thanhTien * thue / 100f - thanhTien * chietKhau / 100f);
             UpdateNo();
         }
 
@@ -318,12 +304,16 @@ namespace QLDT.FormControls.DonHangForms
         private void listHangHoa_EditValueChanged(object sender, EventArgs e)
         {
             var lookupEdit = sender as LookUpEdit;
-            var hangHoaId = lookupEdit.Properties.KeyValue;
-            var hangHoa = CRUD.DbContext.KhoHangs.Find(hangHoaId);
-            if (hangHoa != null)
+            if (lookupEdit != null)
             {
+                var hangHoaId = lookupEdit.Properties.KeyValue;
                 var row = gridViewChiTiet.GetFocusedRow() as ChiTietDonHang;
+                if (row == null) return;
+                var hangHoa = CRUD.DbContext.KhoHangs.Find(hangHoaId);
+
+                if (hangHoa == null) return;
                 row.DonGia = hangHoa.GiaBan;
+                row.SoLuongTon = hangHoa.SoLuong.GetValueOrDefault();
             }
         }
 
@@ -359,16 +349,13 @@ namespace QLDT.FormControls.DonHangForms
             }
         }
 
-        public void InHoaDon(long donHangId)
+        public void InHoaDon()
         {
+            if (_domainData == null) return;
             var report = new ReportDonHang();
-            var donHang = CRUD.DbContext.DonHangs.Find(donHangId);
-            if (donHang != null)
-            {
-                var dataSource = donHang.ChiTietDonHangs.SelectMany(s => s.ChiTietHangHoas).ToList();
-                report.DataSource = dataSource;
-                report.ShowPreviewDialog();
-            }
+            var dataSource = _domainData.ChiTietDonHangs.SelectMany(s => s.ChiTietHangHoas).ToList();
+            report.DataSource = dataSource;
+            report.ShowPreviewDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -461,5 +448,12 @@ namespace QLDT.FormControls.DonHangForms
 
         }
 
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            if (_domainData != null)
+            {
+                InHoaDon();
+            }
+        }
     }
 }

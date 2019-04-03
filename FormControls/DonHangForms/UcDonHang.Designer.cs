@@ -63,11 +63,12 @@
             this.DonHang_ChietKhau = new DevExpress.XtraEditors.TextEdit();
             this.lblCongNo = new System.Windows.Forms.Label();
             this.lblThanhToan = new System.Windows.Forms.Label();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lblTongThanhTien = new System.Windows.Forms.Label();
             this.lblThue = new System.Windows.Forms.Label();
             this.lblChietKhau = new System.Windows.Forms.Label();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -216,7 +217,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.DonHang_ChietKhau);
             this.splitContainerControl2.Panel2.Controls.Add(this.lblCongNo);
             this.splitContainerControl2.Panel2.Controls.Add(this.lblThanhToan);
-            this.splitContainerControl2.Panel2.Controls.Add(this.btnCancel);
+            this.splitContainerControl2.Panel2.Controls.Add(this.btnIn);
             this.splitContainerControl2.Panel2.Controls.Add(this.btnSave);
             this.splitContainerControl2.Panel2.Controls.Add(this.lblTongThanhTien);
             this.splitContainerControl2.Panel2.Controls.Add(this.lblThue);
@@ -246,6 +247,8 @@
             // 
             this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridViewChiTiet.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewChiTiet.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridViewChiTiet.Appearance.Row.Options.UseFont = true;
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Options.UseFont = true;
@@ -254,6 +257,7 @@
             this.gridViewChiTiet.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2,
             this.gridColumn3,
+            this.gridColumn6,
             this.gridColumn4,
             this.gridColumn7,
             this.gridColumn1,
@@ -288,7 +292,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 396;
+            this.gridColumn2.Width = 493;
             // 
             // listHangHoa
             // 
@@ -310,7 +314,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 182;
+            this.gridColumn3.Width = 226;
             // 
             // repositoryItemTextEdit1
             // 
@@ -330,8 +334,8 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 122;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 140;
             // 
             // gridColumn7
             // 
@@ -353,16 +357,16 @@
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "THÀNH TIỀN: {0:n0}")});
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 307;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 352;
             // 
             // gridColumn5
             // 
             this.gridColumn5.ColumnEdit = this.btnDeleteRow;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 69;
+            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.Width = 84;
             // 
             // btnDeleteRow
             // 
@@ -485,20 +489,21 @@
             this.lblThanhToan.TabIndex = 33;
             this.lblThanhToan.Text = "Thanh Toán:";
             // 
-            // btnCancel
+            // btnIn
             // 
-            this.btnCancel.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Appearance.Options.UseBackColor = true;
-            this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.Appearance.Options.UseForeColor = true;
-            this.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCancel.Location = new System.Drawing.Point(38, 158);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(164, 43);
-            this.btnCancel.TabIndex = 32;
-            this.btnCancel.Text = "Hủy";
+            this.btnIn.Appearance.BackColor = System.Drawing.Color.Silver;
+            this.btnIn.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.btnIn.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIn.Appearance.Options.UseBackColor = true;
+            this.btnIn.Appearance.Options.UseFont = true;
+            this.btnIn.Appearance.Options.UseForeColor = true;
+            this.btnIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnIn.Location = new System.Drawing.Point(38, 158);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(164, 43);
+            this.btnIn.TabIndex = 32;
+            this.btnIn.Text = "In";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnSave
             // 
@@ -544,6 +549,16 @@
             this.lblChietKhau.Size = new System.Drawing.Size(128, 25);
             this.lblChietKhau.TabIndex = 26;
             this.lblChietKhau.Text = "Chiết Khấu";
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Tồn Kho";
+            this.gridColumn6.FieldName = "SoLuongTon";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 140;
             // 
             // UcDonHang
             // 
@@ -596,7 +611,7 @@
         private System.Windows.Forms.Label lblThue;
         private System.Windows.Forms.Label lblChietKhau;
         private System.Windows.Forms.Label lblTongThanhTien;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnIn;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private System.Windows.Forms.Label lblCongNo;
         private System.Windows.Forms.Label lblThanhToan;
@@ -609,5 +624,6 @@
         private System.Windows.Forms.DateTimePicker DonHang_NgayLap;
         private System.Windows.Forms.Label lblNgayLap;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }
