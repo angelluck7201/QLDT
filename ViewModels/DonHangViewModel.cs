@@ -24,7 +24,7 @@ namespace QLDT
 
         public long DonGia
         {
-            get { return ChiTietDonHang.DonGia.GetValueOrDefault(); }
+            get { return ChiTietDonHang.DonGia; }
         }
 
         public long ThanhTien
@@ -66,7 +66,7 @@ namespace QLDT
 
         public string LoaiDonHang
         {
-            get { return ChiTietDonHang.LoaiDonHang; }
+            get { return ChiTietDonHang.DonHang.LoaiDonHang; }
         }
 
         public long DonHangId

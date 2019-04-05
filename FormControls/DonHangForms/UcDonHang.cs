@@ -313,7 +313,7 @@ namespace QLDT.FormControls.DonHangForms
 
                 if (hangHoa == null) return;
                 row.DonGia = hangHoa.GiaBan;
-                row.SoLuongTon = hangHoa.SoLuong.GetValueOrDefault();
+                row.SoLuongTon = hangHoa.SoLuong;
             }
         }
 

@@ -44,12 +44,12 @@ namespace QLDT
                 var thanhToanDonHang = 0L;
                 if (DonHang != null)
                 {
-                    thanhToanDonHang = DonHang.ThanhToan.GetValueOrDefault();
+                    thanhToanDonHang = DonHang.ThanhToan;
                 }
                 var thanhToanCongNo = 0L;
                 if (ThanhToanCongNoes != null)
                 {
-                    thanhToanCongNo = ThanhToanCongNoes.Sum(s => s.ThanhToan.GetValueOrDefault()) - thanhToanDonHang;
+                    thanhToanCongNo = ThanhToanCongNoes.Sum(s => s.ThanhToan) - thanhToanDonHang;
                 }
                 return (long)(thanhToanCongNo);
             }

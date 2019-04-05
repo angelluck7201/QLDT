@@ -18,11 +18,11 @@ namespace QLDT
         public long AuthorId { get; set; }
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
-        public Nullable<bool> IsActived { get; set; }
+        public bool IsActived { get; set; }
         public long ChiTietDonHangId { get; set; }
         public string IMEI { get; set; }
     
-        public virtual ChiTietDonHang ChiTietDonHang { get; set; }
         public virtual UserAccount UserAccount { get; set; }
+        public virtual ChiTietDonHang ChiTietDonHang { get; set; }
     }
 }

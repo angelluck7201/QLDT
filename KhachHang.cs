@@ -17,16 +17,17 @@ namespace QLDT
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
-            this.ThanhToanCongNoes = new HashSet<ThanhToanCongNo>();
             this.CongNoes = new HashSet<CongNo>();
             this.DonHangs = new HashSet<DonHang>();
+            this.ThanhToanCongNoes = new HashSet<ThanhToanCongNo>();
         }
     
         public long Id { get; set; }
         public long AuthorId { get; set; }
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
-        public Nullable<bool> IsActived { get; set; }
+        public bool IsActived { get; set; }
+        public string MaKH { get; set; }
         public string Ten { get; set; }
         public string LoaiKhachHang { get; set; }
         public string DiaChi { get; set; }
@@ -38,14 +39,13 @@ namespace QLDT
         public string STK { get; set; }
         public string NganHang { get; set; }
         public string GhiChu { get; set; }
-        public string MaKH { get; set; }
     
-        public virtual UserAccount UserAccount { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CongNo> CongNoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual UserAccount UserAccount { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
     }
 }

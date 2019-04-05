@@ -12,6 +12,8 @@ namespace QLDT
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QLDTEntities : DbContext
     {
@@ -25,17 +27,64 @@ namespace QLDT
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DbSet<DanhMuc> DanhMucs { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
-        public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
         public virtual DbSet<UserAccount> UserAccounts { get; set; }
         public virtual DbSet<ChiTietHangHoa> ChiTietHangHoas { get; set; }
         public virtual DbSet<PhanQuyenNguoiDung> PhanQuyenNguoiDungs { get; set; }
-        public virtual DbSet<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
         public virtual DbSet<CongNo> CongNoes { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<ThuChi> ThuChis { get; set; }
+        public virtual DbSet<KhachHang> KhachHangs { get; set; }
+        public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
+        public virtual DbSet<ThanhToanCongNo> ThanhToanCongNoes { get; set; }
+    
+        public virtual int ADD_DEFAULT_CONSTRAINT(string table_name, string col_name, string default_value, string data_type)
+        {
+            var table_nameParameter = table_name != null ?
+                new ObjectParameter("table_name", table_name) :
+                new ObjectParameter("table_name", typeof(string));
+    
+            var col_nameParameter = col_name != null ?
+                new ObjectParameter("col_name", col_name) :
+                new ObjectParameter("col_name", typeof(string));
+    
+            var default_valueParameter = default_value != null ?
+                new ObjectParameter("default_value", default_value) :
+                new ObjectParameter("default_value", typeof(string));
+    
+            var data_typeParameter = data_type != null ?
+                new ObjectParameter("data_type", data_type) :
+                new ObjectParameter("data_type", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ADD_DEFAULT_CONSTRAINT", table_nameParameter, col_nameParameter, default_valueParameter, data_typeParameter);
+        }
+    
+        public virtual int DROP_COLUMN(string table_name, string col_name)
+        {
+            var table_nameParameter = table_name != null ?
+                new ObjectParameter("table_name", table_name) :
+                new ObjectParameter("table_name", typeof(string));
+    
+            var col_nameParameter = col_name != null ?
+                new ObjectParameter("col_name", col_name) :
+                new ObjectParameter("col_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DROP_COLUMN", table_nameParameter, col_nameParameter);
+        }
+    
+        public virtual int DROP_DEFAULT_CONSTRAINT(string table_name, string col_name)
+        {
+            var table_nameParameter = table_name != null ?
+                new ObjectParameter("table_name", table_name) :
+                new ObjectParameter("table_name", typeof(string));
+    
+            var col_nameParameter = col_name != null ?
+                new ObjectParameter("col_name", col_name) :
+                new ObjectParameter("col_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DROP_DEFAULT_CONSTRAINT", table_nameParameter, col_nameParameter);
+        }
     }
 }

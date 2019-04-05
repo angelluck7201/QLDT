@@ -18,10 +18,10 @@ namespace QLDT
         public long AuthorId { get; set; }
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
-        public Nullable<bool> IsActived { get; set; }
+        public bool IsActived { get; set; }
         public System.DateTime NgayLap { get; set; }
         public string Loai { get; set; }
-        public Nullable<long> SoTien { get; set; }
+        public long SoTien { get; set; }
         public long NoiDungId { get; set; }
         public string GhiChu { get; set; }
     

@@ -24,18 +24,18 @@ namespace QLDT
         public long AuthorId { get; set; }
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
-        public Nullable<bool> IsActived { get; set; }
+        public bool IsActived { get; set; }
         public long LoaiHangId { get; set; }
         public string TenHang { get; set; }
         public string DonViTinh { get; set; }
-        public Nullable<long> SoLuong { get; set; }
-        public Nullable<long> GiaBan { get; set; }
-        public Nullable<long> TonLyTuong { get; set; }
+        public long SoLuong { get; set; }
+        public long GiaBan { get; set; }
+        public long TonLyTuong { get; set; }
         public string GhiChu { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DanhMuc DanhMuc { get; set; }
         public virtual UserAccount UserAccount { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
     }
 }

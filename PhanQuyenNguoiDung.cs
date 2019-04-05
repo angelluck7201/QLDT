@@ -17,7 +17,7 @@ namespace QLDT
         public long Id { get; set; }
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
-        public Nullable<bool> IsActived { get; set; }
+        public bool IsActived { get; set; }
         public long UserAccountId { get; set; }
         public string Feature { get; set; }
         public string Permission { get; set; }

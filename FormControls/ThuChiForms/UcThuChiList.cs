@@ -52,7 +52,7 @@ namespace QLDT.FormControls.ThuChiForms
         {
             dynamic data = gridViewLoaiThuChi.GetRow(gridViewLoaiThuChi.FocusedRowHandle);
             if (data != null && data.Id != null)
-            {
+            { 
                 if (data.Ten == "Tất cả")
                 {
                     gridViewThuChi.ActiveFilterString = "";

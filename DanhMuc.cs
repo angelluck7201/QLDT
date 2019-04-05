@@ -25,7 +25,7 @@ namespace QLDT
         public long AuthorId { get; set; }
         public Nullable<long> CreatedDate { get; set; }
         public Nullable<long> ModifiedDate { get; set; }
-        public Nullable<bool> IsActived { get; set; }
+        public bool IsActived { get; set; }
         public string Ten { get; set; }
         public string Loai { get; set; }
         public string GhiChu { get; set; }

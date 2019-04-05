@@ -13,11 +13,10 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="DonHangId" Type="bigint" Nullable="false" />
           <Property Name="HangHoaId" Type="bigint" Nullable="false" />
-          <Property Name="LoaiDonHang" Type="nvarchar" MaxLength="50" />
-          <Property Name="DonGia" Type="bigint" />
+          <Property Name="DonGia" Type="bigint" Nullable="false" />
           <Property Name="SoLuong" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="ChiTietHangHoa">
@@ -28,9 +27,9 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="ChiTietDonHangId" Type="bigint" Nullable="false" />
-          <Property Name="IMEI" Type="nvarchar" MaxLength="50" />
+          <Property Name="IMEI" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CongNo">
           <Key>
@@ -40,11 +39,11 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
-          <Property Name="No" Type="bigint" />
-          <Property Name="ThanhToan" Type="bigint" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
+          <Property Name="No" Type="bigint" Nullable="false" />
+          <Property Name="ThanhToan" Type="bigint" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
-          <Property Name="KhachHangId" Type="bigint" />
+          <Property Name="KhachHangId" Type="bigint" Nullable="false" />
           <Property Name="DonHangId" Type="bigint" />
           <Property Name="LoaiDonHang" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayLap" Type="datetime2" Precision="7" Nullable="false" />
@@ -57,9 +56,9 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
-          <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-          <Property Name="Loai" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Loai" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="DonHang">
@@ -70,21 +69,21 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="MaDH" Type="nvarchar" MaxLength="50" />
-          <Property Name="LoaiDonHang" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoaiDonHang" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NgayLap" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="KhachHangId" Type="bigint" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
           <Property Name="Dienthoai" Type="varchar" MaxLength="20" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="ThanhTien" Type="bigint" />
-          <Property Name="Thue" Type="bigint" />
-          <Property Name="ChietKhau" Type="bigint" />
-          <Property Name="TongCong" Type="bigint" />
-          <Property Name="ThanhToan" Type="bigint" />
+          <Property Name="ThanhTien" Type="bigint" Nullable="false" />
+          <Property Name="Thue" Type="bigint" Nullable="false" />
+          <Property Name="ChietKhau" Type="bigint" Nullable="false" />
+          <Property Name="TongCong" Type="bigint" Nullable="false" />
+          <Property Name="ThanhToan" Type="bigint" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
-          <Property Name="TrangThai" Type="nvarchar" MaxLength="10" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorLog">
           <Key>
@@ -103,10 +102,10 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="MaKH" Type="nvarchar" MaxLength="50" />
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
-          <Property Name="LoaiKhachHang" Type="nvarchar" MaxLength="20" />
+          <Property Name="LoaiKhachHang" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="CMND" Type="varchar" MaxLength="20" />
           <Property Name="Dienthoai" Type="varchar" MaxLength="20" />
@@ -125,13 +124,13 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="LoaiHangId" Type="bigint" Nullable="false" />
-          <Property Name="TenHang" Type="nvarchar" MaxLength="50" />
-          <Property Name="DonViTinh" Type="nvarchar" MaxLength="20" />
-          <Property Name="SoLuong" Type="bigint" />
-          <Property Name="GiaBan" Type="bigint" />
-          <Property Name="TonLyTuong" Type="bigint" />
+          <Property Name="TenHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DonViTinh" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SoLuong" Type="bigint" Nullable="false" />
+          <Property Name="GiaBan" Type="bigint" Nullable="false" />
+          <Property Name="TonLyTuong" Type="bigint" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="PhanQuyenNguoiDung">
@@ -141,7 +140,7 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="UserAccountId" Type="bigint" Nullable="false" />
           <Property Name="Feature" Type="nvarchar" MaxLength="50" />
           <Property Name="Permission" Type="nvarchar" MaxLength="50" />
@@ -154,9 +153,9 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="CongNoId" Type="bigint" Nullable="false" />
-          <Property Name="ThanhToan" Type="bigint" />
+          <Property Name="ThanhToan" Type="bigint" Nullable="false" />
           <Property Name="NgayThanhToan" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
           <Property Name="KhachHangId" Type="bigint" />
@@ -169,10 +168,10 @@
           <Property Name="AuthorId" Type="bigint" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="NgayLap" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="Loai" Type="nvarchar" MaxLength="50" />
-          <Property Name="SoTien" Type="bigint" />
+          <Property Name="Loai" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SoTien" Type="bigint" Nullable="false" />
           <Property Name="NoiDungId" Type="bigint" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
         </EntityType>
@@ -183,7 +182,7 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreatedDate" Type="bigint" />
           <Property Name="ModifiedDate" Type="bigint" />
-          <Property Name="IsActived" Type="bit" />
+          <Property Name="IsActived" Type="bit" Nullable="false" />
           <Property Name="TenNguoiDung" Type="nvarchar" MaxLength="50" />
           <Property Name="MatKhau" Type="text" />
           <Property Name="LoaiNguoiDung" Type="text" />
@@ -278,7 +277,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CongNo__KhachHan__14270015">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="CongNo" Type="Self.CongNo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KhachHang">
@@ -435,6 +434,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="ADD_DEFAULT_CONSTRAINT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="col_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="default_value" Type="nvarchar" Mode="In" />
+          <Parameter Name="data_type" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="DROP_COLUMN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="col_name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="DROP_DEFAULT_CONSTRAINT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="col_name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="fn_ConvertToDateTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="datetime">
+          <Parameter Name="Datetime" Type="bigint" Mode="In" />
+        </Function>
         <EntityContainer Name="QLDTStoreContainer">
           <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietHangHoa" EntityType="Self.ChiTietHangHoa" Schema="dbo" store:Type="Tables" />
@@ -534,20 +550,10 @@
     <edmx:ConceptualModels>
       <Schema Namespace="QLDT" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="QLDTEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChiTietDonHangs" EntityType="QLDT.ChiTietDonHang" />
           <EntitySet Name="DanhMucs" EntityType="QLDT.DanhMuc" />
           <EntitySet Name="ErrorLogs" EntityType="QLDT.ErrorLog" />
-          <EntitySet Name="KhachHangs" EntityType="QLDT.KhachHang" />
           <EntitySet Name="KhoHangs" EntityType="QLDT.KhoHang" />
           <EntitySet Name="UserAccounts" EntityType="QLDT.UserAccount" />
-          <AssociationSet Name="FK__ChiTietDo__Autho__52593CB8" Association="QLDT.FK__ChiTietDo__Autho__52593CB8">
-            <End Role="UserAccount" EntitySet="UserAccounts" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ChiTietDo__HangH__571DF1D5" Association="QLDT.FK__ChiTietDo__HangH__571DF1D5">
-            <End Role="KhoHang" EntitySet="KhoHangs" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
-          </AssociationSet>
           <AssociationSet Name="FK__DanhMuc__AuthorI__1CF15040" Association="QLDT.FK__DanhMuc__AuthorI__1CF15040">
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="DanhMuc" EntitySet="DanhMucs" />
@@ -556,19 +562,11 @@
             <End Role="DanhMuc" EntitySet="DanhMucs" />
             <End Role="KhoHang" EntitySet="KhoHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__KhachHang__Autho__25869641" Association="QLDT.FK__KhachHang__Autho__25869641">
-            <End Role="UserAccount" EntitySet="UserAccounts" />
-            <End Role="KhachHang" EntitySet="KhachHangs" />
-          </AssociationSet>
           <AssociationSet Name="FK__KhoHang__AuthorI__35BCFE0A" Association="QLDT.FK__KhoHang__AuthorI__35BCFE0A">
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="KhoHang" EntitySet="KhoHangs" />
           </AssociationSet>
           <EntitySet Name="ChiTietHangHoas" EntityType="QLDT.ChiTietHangHoa" />
-          <AssociationSet Name="FK__ChiTietHa__ChiTi__06CD04F7" Association="QLDT.FK__ChiTietHa__ChiTi__06CD04F7">
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
-            <End Role="ChiTietHangHoa" EntitySet="ChiTietHangHoas" />
-          </AssociationSet>
           <AssociationSet Name="FK__ChiTietHa__Autho__02FC7413" Association="QLDT.FK__ChiTietHa__Autho__02FC7413">
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="ChiTietHangHoa" EntitySet="ChiTietHangHoas" />
@@ -578,43 +576,18 @@
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="PhanQuyenNguoiDung" EntitySet="PhanQuyenNguoiDungs" />
           </AssociationSet>
-          <EntitySet Name="ThanhToanCongNoes" EntityType="QLDT.ThanhToanCongNo" />
-          <AssociationSet Name="FK__ThanhToan__Khach__3B40CD36" Association="QLDT.FK__ThanhToan__Khach__3B40CD36">
-            <End Role="KhachHang" EntitySet="KhachHangs" />
-            <End Role="ThanhToanCongNo" EntitySet="ThanhToanCongNoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ThanhToan__Autho__05D8E0BE" Association="QLDT.FK__ThanhToan__Autho__05D8E0BE">
-            <End Role="UserAccount" EntitySet="UserAccounts" />
-            <End Role="ThanhToanCongNo" EntitySet="ThanhToanCongNoes" />
-          </AssociationSet>
           <EntitySet Name="CongNoes" EntityType="QLDT.CongNo" />
           <AssociationSet Name="FK__CongNo__AuthorId__7C4F7684" Association="QLDT.FK__CongNo__AuthorId__7C4F7684">
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="CongNo" EntitySet="CongNoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__CongNo__KhachHan__14270015" Association="QLDT.FK__CongNo__KhachHan__14270015">
-            <End Role="KhachHang" EntitySet="KhachHangs" />
-            <End Role="CongNo" EntitySet="CongNoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ThanhToan__CongN__09A971A2" Association="QLDT.FK__ThanhToan__CongN__09A971A2">
-            <End Role="CongNo" EntitySet="CongNoes" />
-            <End Role="ThanhToanCongNo" EntitySet="ThanhToanCongNoes" />
-          </AssociationSet>
           <EntitySet Name="DonHangs" EntityType="QLDT.DonHang" />
-          <AssociationSet Name="FK__ChiTietDo__DonHa__6383C8BA" Association="QLDT.FK__ChiTietDo__DonHa__6383C8BA">
-            <End Role="DonHang" EntitySet="DonHangs" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
-          </AssociationSet>
           <AssociationSet Name="FK__CongNo__DonHangI__151B244E" Association="QLDT.FK__CongNo__DonHangI__151B244E">
             <End Role="DonHang" EntitySet="DonHangs" />
             <End Role="CongNo" EntitySet="CongNoes" />
           </AssociationSet>
           <AssociationSet Name="FK__DonHang__AuthorI__4E88ABD4" Association="QLDT.FK__DonHang__AuthorI__4E88ABD4">
             <End Role="UserAccount" EntitySet="UserAccounts" />
-            <End Role="DonHang" EntitySet="DonHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DonHang__KhachHa__5441852A" Association="QLDT.FK__DonHang__KhachHa__5441852A">
-            <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="DonHang" EntitySet="DonHangs" />
           </AssociationSet>
           <EntitySet Name="ThuChis" EntityType="QLDT.ThuChi" />
@@ -626,26 +599,64 @@
             <End Role="UserAccount" EntitySet="UserAccounts" />
             <End Role="ThuChi" EntitySet="ThuChis" />
           </AssociationSet>
+          <FunctionImport Name="ADD_DEFAULT_CONSTRAINT">
+            <Parameter Name="table_name" Mode="In" Type="String" />
+            <Parameter Name="col_name" Mode="In" Type="String" />
+            <Parameter Name="default_value" Mode="In" Type="String" />
+            <Parameter Name="data_type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DROP_COLUMN">
+            <Parameter Name="table_name" Mode="In" Type="String" />
+            <Parameter Name="col_name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DROP_DEFAULT_CONSTRAINT">
+            <Parameter Name="table_name" Mode="In" Type="String" />
+            <Parameter Name="col_name" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="KhachHangs" EntityType="QLDT.KhachHang" />
+          <AssociationSet Name="FK__CongNo__KhachHan__14270015" Association="QLDT.FK__CongNo__KhachHan__14270015">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="CongNo" EntitySet="CongNoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DonHang__KhachHa__5441852A" Association="QLDT.FK__DonHang__KhachHa__5441852A">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="DonHang" EntitySet="DonHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KhachHang__Autho__31EC6D26" Association="QLDT.FK__KhachHang__Autho__31EC6D26">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+          <EntitySet Name="ChiTietDonHangs" EntityType="QLDT.ChiTietDonHang" />
+          <AssociationSet Name="FK__ChiTietDo__Autho__5FB337D6" Association="QLDT.FK__ChiTietDo__Autho__5FB337D6">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDo__DonHa__6383C8BA" Association="QLDT.FK__ChiTietDo__DonHa__6383C8BA">
+            <End Role="DonHang" EntitySet="DonHangs" />
+            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDo__HangH__6477ECF3" Association="QLDT.FK__ChiTietDo__HangH__6477ECF3">
+            <End Role="KhoHang" EntitySet="KhoHangs" />
+            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietHa__ChiTi__6E01572D" Association="QLDT.FK__ChiTietHa__ChiTi__6E01572D">
+            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
+            <End Role="ChiTietHangHoa" EntitySet="ChiTietHangHoas" />
+          </AssociationSet>
+          <EntitySet Name="ThanhToanCongNoes" EntityType="QLDT.ThanhToanCongNo" />
+          <AssociationSet Name="FK__ThanhToan__CongN__09A971A2" Association="QLDT.FK__ThanhToan__CongN__09A971A2">
+            <End Role="CongNo" EntitySet="CongNoes" />
+            <End Role="ThanhToanCongNo" EntitySet="ThanhToanCongNoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ThanhToan__Khach__3B40CD36" Association="QLDT.FK__ThanhToan__Khach__3B40CD36">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="ThanhToanCongNo" EntitySet="ThanhToanCongNoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ThanhToan__Autho__05D8E0BE" Association="QLDT.FK__ThanhToan__Autho__05D8E0BE">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="ThanhToanCongNo" EntitySet="ThanhToanCongNoes" />
+          </AssociationSet>
           </EntityContainer>
-        <EntityType Name="ChiTietDonHang">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AuthorId" Type="Int64" Nullable="false" />
-          <Property Name="CreatedDate" Type="Int64" />
-          <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
-          <Property Name="DonHangId" Type="Int64" Nullable="false" />
-          <Property Name="HangHoaId" Type="Int64" Nullable="false" />
-          <Property Name="LoaiDonHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DonGia" Type="Int64" />
-          <Property Name="SoLuong" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__ChiTietDo__Autho__52593CB8" FromRole="ChiTietDonHang" ToRole="UserAccount" />
-          <NavigationProperty Name="KhoHang" Relationship="QLDT.FK__ChiTietDo__HangH__571DF1D5" FromRole="ChiTietDonHang" ToRole="KhoHang" />
-          <NavigationProperty Name="ChiTietHangHoas" Relationship="QLDT.FK__ChiTietHa__ChiTi__06CD04F7" FromRole="ChiTietDonHang" ToRole="ChiTietHangHoa" />
-          <NavigationProperty Name="DonHang" Relationship="QLDT.FK__ChiTietDo__DonHa__6383C8BA" FromRole="ChiTietDonHang" ToRole="DonHang" />
-        </EntityType>
         <EntityType Name="DanhMuc">
           <Key>
             <PropertyRef Name="Id" />
@@ -654,9 +665,9 @@
           <Property Name="AuthorId" Type="Int64" Nullable="false" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
-          <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Loai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Loai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__DanhMuc__AuthorI__1CF15040" FromRole="DanhMuc" ToRole="UserAccount" />
           <NavigationProperty Name="KhoHangs" Relationship="QLDT.FK__KhoHang__LoaiHan__398D8EEE" FromRole="DanhMuc" ToRole="KhoHang" />
@@ -671,32 +682,6 @@
           <Property Name="AppVersion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Messagelog" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="KhachHang">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AuthorId" Type="Int64" Nullable="false" />
-          <Property Name="CreatedDate" Type="Int64" />
-          <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
-          <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="LoaiKhachHang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Dienthoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaSoThue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="STK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NganHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__KhachHang__Autho__25869641" FromRole="KhachHang" ToRole="UserAccount" />
-          <Property Name="MaKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ThanhToanCongNoes" Relationship="QLDT.FK__ThanhToan__Khach__3B40CD36" FromRole="KhachHang" ToRole="ThanhToanCongNo" />
-          <NavigationProperty Name="CongNoes" Relationship="QLDT.FK__CongNo__KhachHan__14270015" FromRole="KhachHang" ToRole="CongNo" />
-          <NavigationProperty Name="DonHangs" Relationship="QLDT.FK__DonHang__KhachHa__5441852A" FromRole="KhachHang" ToRole="DonHang" />
-        </EntityType>
         <EntityType Name="KhoHang">
           <Key>
             <PropertyRef Name="Id" />
@@ -705,17 +690,17 @@
           <Property Name="AuthorId" Type="Int64" Nullable="false" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
           <Property Name="LoaiHangId" Type="Int64" Nullable="false" />
-          <Property Name="TenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DonViTinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="SoLuong" Type="Int64" />
-          <Property Name="GiaBan" Type="Int64" />
-          <Property Name="TonLyTuong" Type="Int64" />
+          <Property Name="TenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DonViTinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoLuong" Type="Int64" Nullable="false" />
+          <Property Name="GiaBan" Type="Int64" Nullable="false" />
+          <Property Name="TonLyTuong" Type="Int64" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__HangH__571DF1D5" FromRole="KhoHang" ToRole="ChiTietDonHang" />
           <NavigationProperty Name="DanhMuc" Relationship="QLDT.FK__KhoHang__LoaiHan__398D8EEE" FromRole="KhoHang" ToRole="DanhMuc" />
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__KhoHang__AuthorI__35BCFE0A" FromRole="KhoHang" ToRole="UserAccount" />
+          <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__HangH__6477ECF3" FromRole="KhoHang" ToRole="ChiTietDonHang" />
         </EntityType>
         <EntityType Name="UserAccount">
           <Key>
@@ -724,13 +709,11 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
           <Property Name="TenNguoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="LoaiNguoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__Autho__52593CB8" FromRole="UserAccount" ToRole="ChiTietDonHang" />
           <NavigationProperty Name="DanhMucs" Relationship="QLDT.FK__DanhMuc__AuthorI__1CF15040" FromRole="UserAccount" ToRole="DanhMuc" />
-          <NavigationProperty Name="KhachHangs" Relationship="QLDT.FK__KhachHang__Autho__25869641" FromRole="UserAccount" ToRole="KhachHang" />
           <NavigationProperty Name="KhoHangs" Relationship="QLDT.FK__KhoHang__AuthorI__35BCFE0A" FromRole="UserAccount" ToRole="KhoHang" />
           <NavigationProperty Name="ChiTietHangHoas" Relationship="QLDT.FK__ChiTietHa__Autho__02FC7413" FromRole="UserAccount" ToRole="ChiTietHangHoa" />
           <Property Name="TenNhanVien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -739,35 +722,13 @@
           <Property Name="Dienthoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PhanQuyenNguoiDungs" Relationship="QLDT.FK__PhanQuyen__UserA__2BFE89A6" FromRole="UserAccount" ToRole="PhanQuyenNguoiDung" />
-          <NavigationProperty Name="ThanhToanCongNoes" Relationship="QLDT.FK__ThanhToan__Autho__05D8E0BE" FromRole="UserAccount" ToRole="ThanhToanCongNo" />
           <NavigationProperty Name="CongNoes" Relationship="QLDT.FK__CongNo__AuthorId__7C4F7684" FromRole="UserAccount" ToRole="CongNo" />
           <NavigationProperty Name="DonHangs" Relationship="QLDT.FK__DonHang__AuthorI__4E88ABD4" FromRole="UserAccount" ToRole="DonHang" />
           <NavigationProperty Name="ThuChis" Relationship="QLDT.FK__ThuChi__AuthorId__71D1E811" FromRole="UserAccount" ToRole="ThuChi" />
+          <NavigationProperty Name="KhachHangs" Relationship="QLDT.FK__KhachHang__Autho__31EC6D26" FromRole="UserAccount" ToRole="KhachHang" />
+          <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__Autho__5FB337D6" FromRole="UserAccount" ToRole="ChiTietDonHang" />
+          <NavigationProperty Name="ThanhToanCongNoes" Relationship="QLDT.FK__ThanhToan__Autho__05D8E0BE" FromRole="UserAccount" ToRole="ThanhToanCongNo" />
         </EntityType>
-        <Association Name="FK__ChiTietDo__Autho__52593CB8">
-          <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ChiTietDonHang">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ChiTietDo__HangH__571DF1D5">
-          <End Type="QLDT.KhoHang" Role="KhoHang" Multiplicity="1" />
-          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhoHang">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ChiTietDonHang">
-              <PropertyRef Name="HangHoaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__DanhMuc__AuthorI__1CF15040">
           <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
           <End Type="QLDT.DanhMuc" Role="DanhMuc" Multiplicity="*" />
@@ -792,18 +753,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__KhachHang__Autho__25869641">
-          <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="KhachHang">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__KhoHang__AuthorI__35BCFE0A">
           <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
           <End Type="QLDT.KhoHang" Role="KhoHang" Multiplicity="*" />
@@ -824,24 +773,12 @@
           <Property Name="AuthorId" Type="Int64" Nullable="false" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
           <Property Name="ChiTietDonHangId" Type="Int64" Nullable="false" />
-          <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChiTietDonHang" Relationship="QLDT.FK__ChiTietHa__ChiTi__06CD04F7" FromRole="ChiTietHangHoa" ToRole="ChiTietDonHang" />
+          <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__ChiTietHa__Autho__02FC7413" FromRole="ChiTietHangHoa" ToRole="UserAccount" />
+          <NavigationProperty Name="ChiTietDonHang" Relationship="QLDT.FK__ChiTietHa__ChiTi__6E01572D" FromRole="ChiTietHangHoa" ToRole="ChiTietDonHang" />
         </EntityType>
-        <Association Name="FK__ChiTietHa__ChiTi__06CD04F7">
-          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="1" />
-          <End Type="QLDT.ChiTietHangHoa" Role="ChiTietHangHoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChiTietDonHang">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ChiTietHangHoa">
-              <PropertyRef Name="ChiTietDonHangId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__ChiTietHa__Autho__02FC7413">
           <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
           <End Type="QLDT.ChiTietHangHoa" Role="ChiTietHangHoa" Multiplicity="*" />
@@ -861,7 +798,7 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
           <Property Name="UserAccountId" Type="Int64" Nullable="false" />
           <Property Name="Feature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Permission" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -879,48 +816,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="ThanhToanCongNo">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AuthorId" Type="Int64" Nullable="false" />
-          <Property Name="CreatedDate" Type="Int64" />
-          <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
-          <Property Name="CongNoId" Type="Int64" Nullable="false" />
-          <Property Name="ThanhToan" Type="Int64" />
-          <Property Name="NgayThanhToan" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="KhachHangId" Type="Int64" />
-          <NavigationProperty Name="KhachHang" Relationship="QLDT.FK__ThanhToan__Khach__3B40CD36" FromRole="ThanhToanCongNo" ToRole="KhachHang" />
-          <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__ThanhToan__Autho__05D8E0BE" FromRole="ThanhToanCongNo" ToRole="UserAccount" />
-          <NavigationProperty Name="CongNo" Relationship="QLDT.FK__ThanhToan__CongN__09A971A2" FromRole="ThanhToanCongNo" ToRole="CongNo" />
-        </EntityType>
-        <Association Name="FK__ThanhToan__Khach__3B40CD36">
-          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="0..1" />
-          <End Type="QLDT.ThanhToanCongNo" Role="ThanhToanCongNo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhachHang">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ThanhToanCongNo">
-              <PropertyRef Name="KhachHangId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ThanhToan__Autho__05D8E0BE">
-          <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="QLDT.ThanhToanCongNo" Role="ThanhToanCongNo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ThanhToanCongNo">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="CongNo">
           <Key>
             <PropertyRef Name="Id" />
@@ -929,18 +824,18 @@
           <Property Name="AuthorId" Type="Int64" Nullable="false" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
-          <Property Name="No" Type="Int64" />
-          <Property Name="ThanhToan" Type="Int64" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
+          <Property Name="No" Type="Int64" Nullable="false" />
+          <Property Name="ThanhToan" Type="Int64" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="KhachHangId" Type="Int64" />
+          <Property Name="KhachHangId" Type="Int64" Nullable="false" />
           <Property Name="DonHangId" Type="Int64" />
           <Property Name="LoaiDonHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__CongNo__AuthorId__7C4F7684" FromRole="CongNo" ToRole="UserAccount" />
+          <NavigationProperty Name="DonHang" Relationship="QLDT.FK__CongNo__DonHangI__151B244E" FromRole="CongNo" ToRole="DonHang" />
           <NavigationProperty Name="KhachHang" Relationship="QLDT.FK__CongNo__KhachHan__14270015" FromRole="CongNo" ToRole="KhachHang" />
           <NavigationProperty Name="ThanhToanCongNoes" Relationship="QLDT.FK__ThanhToan__CongN__09A971A2" FromRole="CongNo" ToRole="ThanhToanCongNo" />
-          <NavigationProperty Name="DonHang" Relationship="QLDT.FK__CongNo__DonHangI__151B244E" FromRole="CongNo" ToRole="DonHang" />
         </EntityType>
         <Association Name="FK__CongNo__AuthorId__7C4F7684">
           <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
@@ -954,32 +849,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CongNo__KhachHan__14270015">
-          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="0..1" />
-          <End Type="QLDT.CongNo" Role="CongNo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhachHang">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CongNo">
-              <PropertyRef Name="KhachHangId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ThanhToan__CongN__09A971A2">
-          <End Type="QLDT.CongNo" Role="CongNo" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="QLDT.ThanhToanCongNo" Role="ThanhToanCongNo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CongNo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ThanhToanCongNo">
-              <PropertyRef Name="CongNoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="DonHang">
           <Key>
             <PropertyRef Name="Id" />
@@ -988,38 +857,26 @@
           <Property Name="AuthorId" Type="Int64" Nullable="false" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
           <Property Name="MaDH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LoaiDonHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiDonHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="KhachHangId" Type="Int64" Nullable="false" />
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Dienthoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ThanhTien" Type="Int64" />
-          <Property Name="Thue" Type="Int64" />
-          <Property Name="ChietKhau" Type="Int64" />
-          <Property Name="TongCong" Type="Int64" />
-          <Property Name="ThanhToan" Type="Int64" />
+          <Property Name="ThanhTien" Type="Int64" Nullable="false" />
+          <Property Name="Thue" Type="Int64" Nullable="false" />
+          <Property Name="ChietKhau" Type="Int64" Nullable="false" />
+          <Property Name="TongCong" Type="Int64" Nullable="false" />
+          <Property Name="ThanhToan" Type="Int64" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__DonHa__6383C8BA" FromRole="DonHang" ToRole="ChiTietDonHang" />
+          <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CongNoes" Relationship="QLDT.FK__CongNo__DonHangI__151B244E" FromRole="DonHang" ToRole="CongNo" />
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__DonHang__AuthorI__4E88ABD4" FromRole="DonHang" ToRole="UserAccount" />
           <NavigationProperty Name="KhachHang" Relationship="QLDT.FK__DonHang__KhachHa__5441852A" FromRole="DonHang" ToRole="KhachHang" />
+          <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__DonHa__6383C8BA" FromRole="DonHang" ToRole="ChiTietDonHang" />
         </EntityType>
-        <Association Name="FK__ChiTietDo__DonHa__6383C8BA">
-          <End Type="QLDT.DonHang" Role="DonHang" Multiplicity="1" />
-          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DonHang">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ChiTietDonHang">
-              <PropertyRef Name="DonHangId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__CongNo__DonHangI__151B244E">
           <End Type="QLDT.DonHang" Role="DonHang" Multiplicity="0..1" />
           <End Type="QLDT.CongNo" Role="CongNo" Multiplicity="*" />
@@ -1044,18 +901,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DonHang__KhachHa__5441852A">
-          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="1" />
-          <End Type="QLDT.DonHang" Role="DonHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhachHang">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DonHang">
-              <PropertyRef Name="KhachHangId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ThuChi">
           <Key>
             <PropertyRef Name="Id" />
@@ -1064,10 +909,10 @@
           <Property Name="AuthorId" Type="Int64" Nullable="false" />
           <Property Name="CreatedDate" Type="Int64" />
           <Property Name="ModifiedDate" Type="Int64" />
-          <Property Name="IsActived" Type="Boolean" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
           <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SoTien" Type="Int64" />
+          <Property Name="Loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoTien" Type="Int64" Nullable="false" />
           <Property Name="NoiDungId" Type="Int64" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DanhMuc" Relationship="QLDT.FK__ThuChi__NoiDungI__787EE5A0" FromRole="ThuChi" ToRole="DanhMuc" />
@@ -1097,28 +942,196 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="Int64" />
+          <Property Name="ModifiedDate" Type="Int64" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
+          <Property Name="MaKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiKhachHang" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Dienthoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaSoThue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NganHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CongNoes" Relationship="QLDT.FK__CongNo__KhachHan__14270015" FromRole="KhachHang" ToRole="CongNo" />
+          <NavigationProperty Name="DonHangs" Relationship="QLDT.FK__DonHang__KhachHa__5441852A" FromRole="KhachHang" ToRole="DonHang" />
+          <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__KhachHang__Autho__31EC6D26" FromRole="KhachHang" ToRole="UserAccount" />
+          <NavigationProperty Name="ThanhToanCongNoes" Relationship="QLDT.FK__ThanhToan__Khach__3B40CD36" FromRole="KhachHang" ToRole="ThanhToanCongNo" />
+        </EntityType>
+        <Association Name="FK__CongNo__KhachHan__14270015">
+          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="1" />
+          <End Type="QLDT.CongNo" Role="CongNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CongNo">
+              <PropertyRef Name="KhachHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DonHang__KhachHa__5441852A">
+          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="1" />
+          <End Type="QLDT.DonHang" Role="DonHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DonHang">
+              <PropertyRef Name="KhachHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KhachHang__Autho__31EC6D26">
+          <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ChiTietDonHang">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="Int64" />
+          <Property Name="ModifiedDate" Type="Int64" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
+          <Property Name="DonHangId" Type="Int64" Nullable="false" />
+          <Property Name="HangHoaId" Type="Int64" Nullable="false" />
+          <Property Name="DonGia" Type="Int64" Nullable="false" />
+          <Property Name="SoLuong" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__ChiTietDo__Autho__5FB337D6" FromRole="ChiTietDonHang" ToRole="UserAccount" />
+          <NavigationProperty Name="DonHang" Relationship="QLDT.FK__ChiTietDo__DonHa__6383C8BA" FromRole="ChiTietDonHang" ToRole="DonHang" />
+          <NavigationProperty Name="KhoHang" Relationship="QLDT.FK__ChiTietDo__HangH__6477ECF3" FromRole="ChiTietDonHang" ToRole="KhoHang" />
+          <NavigationProperty Name="ChiTietHangHoas" Relationship="QLDT.FK__ChiTietHa__ChiTi__6E01572D" FromRole="ChiTietDonHang" ToRole="ChiTietHangHoa" />
+        </EntityType>
+        <Association Name="FK__ChiTietDo__Autho__5FB337D6">
+          <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChiTietDonHang">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDo__DonHa__6383C8BA">
+          <End Type="QLDT.DonHang" Role="DonHang" Multiplicity="1" />
+          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChiTietDonHang">
+              <PropertyRef Name="DonHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDo__HangH__6477ECF3">
+          <End Type="QLDT.KhoHang" Role="KhoHang" Multiplicity="1" />
+          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhoHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChiTietDonHang">
+              <PropertyRef Name="HangHoaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietHa__ChiTi__6E01572D">
+          <End Type="QLDT.ChiTietDonHang" Role="ChiTietDonHang" Multiplicity="1" />
+          <End Type="QLDT.ChiTietHangHoa" Role="ChiTietHangHoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDonHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChiTietHangHoa">
+              <PropertyRef Name="ChiTietDonHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ThanhToanCongNo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="Int64" Nullable="false" />
+          <Property Name="CreatedDate" Type="Int64" />
+          <Property Name="ModifiedDate" Type="Int64" />
+          <Property Name="IsActived" Type="Boolean" Nullable="false" />
+          <Property Name="CongNoId" Type="Int64" Nullable="false" />
+          <Property Name="ThanhToan" Type="Int64" Nullable="false" />
+          <Property Name="NgayThanhToan" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="GhiChu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="KhachHangId" Type="Int64" />
+          <NavigationProperty Name="CongNo" Relationship="QLDT.FK__ThanhToan__CongN__09A971A2" FromRole="ThanhToanCongNo" ToRole="CongNo" />
+          <NavigationProperty Name="KhachHang" Relationship="QLDT.FK__ThanhToan__Khach__3B40CD36" FromRole="ThanhToanCongNo" ToRole="KhachHang" />
+          <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__ThanhToan__Autho__05D8E0BE" FromRole="ThanhToanCongNo" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK__ThanhToan__CongN__09A971A2">
+          <End Type="QLDT.CongNo" Role="CongNo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="QLDT.ThanhToanCongNo" Role="ThanhToanCongNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CongNo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThanhToanCongNo">
+              <PropertyRef Name="CongNoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ThanhToan__Khach__3B40CD36">
+          <End Type="QLDT.KhachHang" Role="KhachHang" Multiplicity="0..1" />
+          <End Type="QLDT.ThanhToanCongNo" Role="ThanhToanCongNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThanhToanCongNo">
+              <PropertyRef Name="KhachHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ThanhToan__Autho__05D8E0BE">
+          <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="QLDT.ThanhToanCongNo" Role="ThanhToanCongNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThanhToanCongNo">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QLDTStoreContainer" CdmEntityContainer="QLDTEntities">
-          <EntitySetMapping Name="ChiTietDonHangs">
-            <EntityTypeMapping TypeName="QLDT.ChiTietDonHang">
-              <MappingFragment StoreEntitySet="ChiTietDonHang">
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
-                <ScalarProperty Name="LoaiDonHang" ColumnName="LoaiDonHang" />
-                <ScalarProperty Name="HangHoaId" ColumnName="HangHoaId" />
-                <ScalarProperty Name="DonHangId" ColumnName="DonHangId" />
-                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DanhMucs">
             <EntityTypeMapping TypeName="QLDT.DanhMuc">
               <MappingFragment StoreEntitySet="DanhMuc">
@@ -1139,29 +1152,6 @@
                 <ScalarProperty Name="Messagelog" ColumnName="Messagelog" />
                 <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KhachHangs">
-            <EntityTypeMapping TypeName="QLDT.KhachHang">
-              <MappingFragment StoreEntitySet="KhachHang">
-                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NganHang" ColumnName="NganHang" />
-                <ScalarProperty Name="STK" ColumnName="STK" />
-                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
-                <ScalarProperty Name="CMND" ColumnName="CMND" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="LoaiKhachHang" ColumnName="LoaiKhachHang" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1228,22 +1218,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ThanhToanCongNoes">
-            <EntityTypeMapping TypeName="QLDT.ThanhToanCongNo">
-              <MappingFragment StoreEntitySet="ThanhToanCongNo">
-                <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
-                <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
-                <ScalarProperty Name="CongNoId" ColumnName="CongNoId" />
-                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CongNoes">
             <EntityTypeMapping TypeName="QLDT.CongNo">
               <MappingFragment StoreEntitySet="CongNo">
@@ -1295,6 +1269,63 @@
                 <ScalarProperty Name="SoTien" ColumnName="SoTien" />
                 <ScalarProperty Name="Loai" ColumnName="Loai" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ADD_DEFAULT_CONSTRAINT" FunctionName="QLDT.Store.ADD_DEFAULT_CONSTRAINT" />
+          <FunctionImportMapping FunctionImportName="DROP_COLUMN" FunctionName="QLDT.Store.DROP_COLUMN" />
+          <FunctionImportMapping FunctionImportName="DROP_DEFAULT_CONSTRAINT" FunctionName="QLDT.Store.DROP_DEFAULT_CONSTRAINT" />
+          <EntitySetMapping Name="KhachHangs">
+            <EntityTypeMapping TypeName="QLDT.KhachHang">
+              <MappingFragment StoreEntitySet="KhachHang">
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="NganHang" ColumnName="NganHang" />
+                <ScalarProperty Name="STK" ColumnName="STK" />
+                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="LoaiKhachHang" ColumnName="LoaiKhachHang" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietDonHangs">
+            <EntityTypeMapping TypeName="QLDT.ChiTietDonHang">
+              <MappingFragment StoreEntitySet="ChiTietDonHang">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="HangHoaId" ColumnName="HangHoaId" />
+                <ScalarProperty Name="DonHangId" ColumnName="DonHangId" />
+                <ScalarProperty Name="IsActived" ColumnName="IsActived" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThanhToanCongNoes">
+            <EntityTypeMapping TypeName="QLDT.ThanhToanCongNo">
+              <MappingFragment StoreEntitySet="ThanhToanCongNo">
+                <ScalarProperty Name="KhachHangId" ColumnName="KhachHangId" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
+                <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+                <ScalarProperty Name="CongNoId" ColumnName="CongNoId" />
                 <ScalarProperty Name="IsActived" ColumnName="IsActived" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
