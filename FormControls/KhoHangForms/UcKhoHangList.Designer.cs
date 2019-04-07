@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcKhoHangList));
             this.IsAlertTon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,7 +70,6 @@
             // 
             // colSoLuong
             // 
-            this.colSoLuong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colSoLuong.AppearanceCell.Options.UseFont = true;
             this.colSoLuong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colSoLuong.AppearanceHeader.Options.UseFont = true;
@@ -97,7 +96,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlHangHoa);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1192, 600);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1192, 596);
             this.splitContainerControl1.SplitterPosition = 278;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -108,7 +107,7 @@
             this.gridControlLoaiHang.Location = new System.Drawing.Point(0, 0);
             this.gridControlLoaiHang.MainView = this.gridViewLoaiHang;
             this.gridControlLoaiHang.Name = "gridControlLoaiHang";
-            this.gridControlLoaiHang.Size = new System.Drawing.Size(278, 600);
+            this.gridControlLoaiHang.Size = new System.Drawing.Size(278, 596);
             this.gridControlLoaiHang.TabIndex = 0;
             this.gridControlLoaiHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLoaiHang});
@@ -144,7 +143,6 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
@@ -166,7 +164,7 @@
             this.gridControlHangHoa.Location = new System.Drawing.Point(0, 0);
             this.gridControlHangHoa.MainView = this.gridViewHangHoa;
             this.gridControlHangHoa.Name = "gridControlHangHoa";
-            this.gridControlHangHoa.Size = new System.Drawing.Size(908, 600);
+            this.gridControlHangHoa.Size = new System.Drawing.Size(904, 596);
             this.gridControlHangHoa.TabIndex = 1;
             this.gridControlHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHangHoa});
@@ -192,21 +190,21 @@
             this.colTonLyTuong,
             this.IsAlertTon});
             this.gridViewHangHoa.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Column = this.IsAlertTon;
-            gridFormatRule1.ColumnApplyTo = this.colSoLuong;
-            gridFormatRule1.Name = "AlertTon";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue1.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue1.Appearance.Options.UseFont = true;
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue1.Expression = "1";
-            formatConditionRuleValue1.Value1 = true;
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            this.gridViewHangHoa.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Column = this.IsAlertTon;
+            gridFormatRule2.ColumnApplyTo = this.colSoLuong;
+            gridFormatRule2.Name = "AlertTon";
+            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue2.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue2.Appearance.Options.UseFont = true;
+            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue2.Expression = "1";
+            formatConditionRuleValue2.Value1 = true;
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            this.gridViewHangHoa.FormatRules.Add(gridFormatRule2);
             this.gridViewHangHoa.GridControl = this.gridControlHangHoa;
             this.gridViewHangHoa.Name = "gridViewHangHoa";
             this.gridViewHangHoa.OptionsBehavior.Editable = false;
@@ -220,7 +218,6 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
@@ -233,7 +230,6 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn3.AppearanceCell.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
@@ -246,7 +242,6 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
@@ -261,7 +256,6 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn6.AppearanceCell.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
@@ -315,9 +309,9 @@
             this.btnRefresh.Appearance.Options.UseForeColor = true;
             this.btnRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(951, 12);
+            this.btnRefresh.Location = new System.Drawing.Point(924, 12);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(226, 44);
+            this.btnRefresh.Size = new System.Drawing.Size(253, 44);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Cập Nhật Số Lượng";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -332,9 +326,9 @@
             this.btnAddHangHoa.Appearance.Options.UseForeColor = true;
             this.btnAddHangHoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnAddHangHoa.Image = ((System.Drawing.Image)(resources.GetObject("btnAddHangHoa.Image")));
-            this.btnAddHangHoa.Location = new System.Drawing.Point(284, 12);
+            this.btnAddHangHoa.Location = new System.Drawing.Point(288, 12);
             this.btnAddHangHoa.Name = "btnAddHangHoa";
-            this.btnAddHangHoa.Size = new System.Drawing.Size(195, 44);
+            this.btnAddHangHoa.Size = new System.Drawing.Size(243, 44);
             this.btnAddHangHoa.TabIndex = 4;
             this.btnAddHangHoa.Text = "Thêm Hàng Hóa";
             this.btnAddHangHoa.Click += new System.EventHandler(this.btnAddHangHoa_Click);
@@ -351,7 +345,7 @@
             this.btnAddNhomHang.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNhomHang.Image")));
             this.btnAddNhomHang.Location = new System.Drawing.Point(13, 12);
             this.btnAddNhomHang.Name = "btnAddNhomHang";
-            this.btnAddNhomHang.Size = new System.Drawing.Size(234, 44);
+            this.btnAddNhomHang.Size = new System.Drawing.Size(265, 44);
             this.btnAddNhomHang.TabIndex = 3;
             this.btnAddNhomHang.Text = "Thêm Hãng Sản Xuất";
             this.btnAddNhomHang.Click += new System.EventHandler(this.btnAddNhomHang_Click);

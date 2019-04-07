@@ -12,7 +12,7 @@ namespace QLDT
     using System;
     using System.Collections.Generic;
     
-    public partial class UserAccount
+    public partial class UserAccount : BaseModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserAccount()
@@ -29,18 +29,162 @@ namespace QLDT
             this.ThanhToanCongNoes = new HashSet<ThanhToanCongNo>();
         }
     
-        public long Id { get; set; }
-        public Nullable<long> CreatedDate { get; set; }
-        public Nullable<long> ModifiedDate { get; set; }
-        public bool IsActived { get; set; }
-        public string TenNguoiDung { get; set; }
-        public string MatKhau { get; set; }
-        public string LoaiNguoiDung { get; set; }
-        public string TenNhanVien { get; set; }
-        public string DiaChi { get; set; }
-        public string CMND { get; set; }
-        public string Dienthoai { get; set; }
-        public string GhiChu { get; set; }
+        private long _id;
+    	public long Id 
+    	{ 
+    		get { return _id; } 
+    		set
+    		{
+    			if (value != _id) {
+    				_id = value;
+    				 OnPropertyChanged("Id");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _createdDate;
+    	public Nullable<long> CreatedDate 
+    	{ 
+    		get { return _createdDate; } 
+    		set
+    		{
+    			if (value != _createdDate) {
+    				_createdDate = value;
+    				 OnPropertyChanged("CreatedDate");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _modifiedDate;
+    	public Nullable<long> ModifiedDate 
+    	{ 
+    		get { return _modifiedDate; } 
+    		set
+    		{
+    			if (value != _modifiedDate) {
+    				_modifiedDate = value;
+    				 OnPropertyChanged("ModifiedDate");
+    			}
+    		} 
+    	}
+    
+        private bool _isActived;
+    	public bool IsActived 
+    	{ 
+    		get { return _isActived; } 
+    		set
+    		{
+    			if (value != _isActived) {
+    				_isActived = value;
+    				 OnPropertyChanged("IsActived");
+    			}
+    		} 
+    	}
+    
+        private string _tenNguoiDung;
+    	public string TenNguoiDung 
+    	{ 
+    		get { return _tenNguoiDung; } 
+    		set
+    		{
+    			if (value != _tenNguoiDung) {
+    				_tenNguoiDung = value;
+    				 OnPropertyChanged("TenNguoiDung");
+    			}
+    		} 
+    	}
+    
+        private string _matKhau;
+    	public string MatKhau 
+    	{ 
+    		get { return _matKhau; } 
+    		set
+    		{
+    			if (value != _matKhau) {
+    				_matKhau = value;
+    				 OnPropertyChanged("MatKhau");
+    			}
+    		} 
+    	}
+    
+        private string _loaiNguoiDung;
+    	public string LoaiNguoiDung 
+    	{ 
+    		get { return _loaiNguoiDung; } 
+    		set
+    		{
+    			if (value != _loaiNguoiDung) {
+    				_loaiNguoiDung = value;
+    				 OnPropertyChanged("LoaiNguoiDung");
+    			}
+    		} 
+    	}
+    
+        private string _tenNhanVien;
+    	public string TenNhanVien 
+    	{ 
+    		get { return _tenNhanVien; } 
+    		set
+    		{
+    			if (value != _tenNhanVien) {
+    				_tenNhanVien = value;
+    				 OnPropertyChanged("TenNhanVien");
+    			}
+    		} 
+    	}
+    
+        private string _diaChi;
+    	public string DiaChi 
+    	{ 
+    		get { return _diaChi; } 
+    		set
+    		{
+    			if (value != _diaChi) {
+    				_diaChi = value;
+    				 OnPropertyChanged("DiaChi");
+    			}
+    		} 
+    	}
+    
+        private string _cMND;
+    	public string CMND 
+    	{ 
+    		get { return _cMND; } 
+    		set
+    		{
+    			if (value != _cMND) {
+    				_cMND = value;
+    				 OnPropertyChanged("CMND");
+    			}
+    		} 
+    	}
+    
+        private string _dienthoai;
+    	public string Dienthoai 
+    	{ 
+    		get { return _dienthoai; } 
+    		set
+    		{
+    			if (value != _dienthoai) {
+    				_dienthoai = value;
+    				 OnPropertyChanged("Dienthoai");
+    			}
+    		} 
+    	}
+    
+        private string _ghiChu;
+    	public string GhiChu 
+    	{ 
+    		get { return _ghiChu; } 
+    		set
+    		{
+    			if (value != _ghiChu) {
+    				_ghiChu = value;
+    				 OnPropertyChanged("GhiChu");
+    			}
+    		} 
+    	}
+    
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhMuc> DanhMucs { get; set; }

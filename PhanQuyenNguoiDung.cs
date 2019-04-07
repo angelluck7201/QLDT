@@ -12,15 +12,99 @@ namespace QLDT
     using System;
     using System.Collections.Generic;
     
-    public partial class PhanQuyenNguoiDung
+    public partial class PhanQuyenNguoiDung : BaseModel
     {
-        public long Id { get; set; }
-        public Nullable<long> CreatedDate { get; set; }
-        public Nullable<long> ModifiedDate { get; set; }
-        public bool IsActived { get; set; }
-        public long UserAccountId { get; set; }
-        public string Feature { get; set; }
-        public string Permission { get; set; }
+        private long _id;
+    	public long Id 
+    	{ 
+    		get { return _id; } 
+    		set
+    		{
+    			if (value != _id) {
+    				_id = value;
+    				 OnPropertyChanged("Id");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _createdDate;
+    	public Nullable<long> CreatedDate 
+    	{ 
+    		get { return _createdDate; } 
+    		set
+    		{
+    			if (value != _createdDate) {
+    				_createdDate = value;
+    				 OnPropertyChanged("CreatedDate");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _modifiedDate;
+    	public Nullable<long> ModifiedDate 
+    	{ 
+    		get { return _modifiedDate; } 
+    		set
+    		{
+    			if (value != _modifiedDate) {
+    				_modifiedDate = value;
+    				 OnPropertyChanged("ModifiedDate");
+    			}
+    		} 
+    	}
+    
+        private bool _isActived;
+    	public bool IsActived 
+    	{ 
+    		get { return _isActived; } 
+    		set
+    		{
+    			if (value != _isActived) {
+    				_isActived = value;
+    				 OnPropertyChanged("IsActived");
+    			}
+    		} 
+    	}
+    
+        private long _userAccountId;
+    	public long UserAccountId 
+    	{ 
+    		get { return _userAccountId; } 
+    		set
+    		{
+    			if (value != _userAccountId) {
+    				_userAccountId = value;
+    				 OnPropertyChanged("UserAccountId");
+    			}
+    		} 
+    	}
+    
+        private string _feature;
+    	public string Feature 
+    	{ 
+    		get { return _feature; } 
+    		set
+    		{
+    			if (value != _feature) {
+    				_feature = value;
+    				 OnPropertyChanged("Feature");
+    			}
+    		} 
+    	}
+    
+        private string _permission;
+    	public string Permission 
+    	{ 
+    		get { return _permission; } 
+    		set
+    		{
+    			if (value != _permission) {
+    				_permission = value;
+    				 OnPropertyChanged("Permission");
+    			}
+    		} 
+    	}
+    
     
         public virtual UserAccount UserAccount { get; set; }
     }

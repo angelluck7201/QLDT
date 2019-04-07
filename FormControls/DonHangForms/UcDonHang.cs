@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity.Migrations;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Transactions;
@@ -12,12 +13,10 @@ using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace QLDT.FormControls.DonHangForms
 {
-    public partial class UcDonHang : BaseUserControl
-    {
+    public partial class UcDonHang : BaseUserControl{
         private readonly DonHang _domainData;
         private readonly Define.LoaiDonHangEnum _loaiDonHang;
         private readonly BindingList<ChiTietDonHang> _chiTietDonhang = new BindingList<ChiTietDonHang>();
-        private readonly List<ChiTietDonHang> _deletedDonHangs = new List<ChiTietDonHang>();
 
         public UcDonHang(Define.LoaiDonHangEnum loaiDonHang, DonHang data = null)
         {
@@ -41,10 +40,14 @@ namespace QLDT.FormControls.DonHangForms
             if (_domainData == null)
             {
                 _domainData = new DonHang();
-            }
+                _domainData.NgayLap = TimeHelper.CurentDateTime();
+                _domainData.LoaiDonHang = loaiDonHang.ToString();
+                _domainData.TrangThai = Define.TrangThaiDonHang.Moi.ToString();
 
-            Init(_domainData);
-            if (_domainData.Id > 0)
+                btnDelete.Visible = false;
+                GenerateMaDH();
+            }
+            else
             {
                 _chiTietDonhang = new BindingList<ChiTietDonHang>(_domainData.ChiTietDonHangs.ToList());
                 if (_domainData.KhachHangId == Define.KhachLeId)
@@ -58,16 +61,18 @@ namespace QLDT.FormControls.DonHangForms
                 btnDelete.Visible = true;
 
                 _chiTietDonhang.ForEach(s => s.ListChiTietHangHoa = s.ChiTietHangHoas.ToList());
+
+                if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
+                {
+                    btnSave.Enabled = false;
+                }
             }
-            else
-            {
-                btnDelete.Visible = false;
-                _domainData.NgayLap = TimeHelper.CurentDateTime();
-            }
+
+            Init(_domainData);
 
             // Get list hang hoa
             var dataSource = CRUD.DbContext.KhoHangs
-                .Where(s => s.IsActived == null || s.IsActived == true)
+                .Where(s => s.IsActived)
                 .Select(s => new { s.TenHang, s.Id })
                 .Union(CRUD.DbContext.ChiTietDonHangs.Join(CRUD.DbContext.KhoHangs, ctdh => ctdh.HangHoaId, kh => kh.Id, 
                 (ctdh, kh)=> new {kh.TenHang, kh.Id})).ToList();
@@ -91,19 +96,29 @@ namespace QLDT.FormControls.DonHangForms
                 return false;
             }
 
+            // Check chot donhang
+            if (_domainData.TrangThai == Define.TrangThaiDonHang.Moi.ToString())
+            {
+                var confirmChotDhDialog = MessageBox.Show(Define.MESSAGE_CHOT_HOA_DON, Define.MESSAGE_XOA_HOA_DON_TITLE, MessageBoxButtons.YesNo);
+                if (confirmChotDhDialog == DialogResult.Yes)
+                {
+                    _domainData.TrangThai = Define.TrangThaiDonHang.ThanhToan.ToString();
+                }
+            }
+
             // Save Don Hang
             CRUD.DecorateSaveData(_domainData);
 
             using (var transaction = new TransactionScope())
             {
-                if (_domainData.Id > 0)
-                {
-                    // Remove chi tiet don hang cu
-                    DeleteChiTietDonHang(_domainData);
-                    CRUD.DbContext.DonHangs.AddOrUpdate(_domainData);
-                }
+                //if (_domainData.Id > 0)
+                //{
+                //    // Remove chi tiet don hang cu
+                //    DeleteChiTietDonHang(_domainData);
+                //    CRUD.DbContext.DonHangs.AddOrUpdate(_domainData);
+                //}
 
-                CRUD.DbContext.SaveChanges();
+                //CRUD.DbContext.SaveChanges();
 
                 // Save chi tiet Don Hang
                 foreach (var chiTietDonHang in _chiTietDonhang)
@@ -138,50 +153,59 @@ namespace QLDT.FormControls.DonHangForms
                 }
 
                 // Save cong no neu co
-                var congNo = (long)DonHang_No.EditValue;
-                if (congNo > 0)
+                if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
                 {
-                    // Add Cong no moi
-                    var congNoHienTai = new CongNo();
-                    if (_domainData != null && _domainData.CongNoes.FirstOrDefault() != null)
+                    var congNo = (long)DonHang_No.EditValue;
+                    if (congNo > 0)
                     {
-                        congNoHienTai = _domainData.CongNoes.FirstOrDefault();
-                        congNoHienTai.No = congNoHienTai.NoDonHang - congNoHienTai.DaThanhToan;
-                    }
-                    else
-                    {
-                        congNoHienTai.No = Math.Abs(congNo);
-                    }
-                    CRUD.DecorateSaveData(congNoHienTai);
-                    congNoHienTai.DonHangId = _domainData.Id;
-                    congNoHienTai.KhachHangId = _domainData.KhachHangId;
-                    congNoHienTai.NgayLap = _domainData.NgayLap;
-                    congNoHienTai.LoaiDonHang = _domainData.LoaiDonHang;
-                    congNoHienTai.GhiChu = _domainData.GhiChu;
-                    CRUD.DbContext.CongNoes.AddOrUpdate(congNoHienTai);
-                    CRUD.DbContext.SaveChanges();
+                        // Add Cong no moi
+                        var congNoHienTai = _domainData.CongNoes.FirstOrDefault();
 
-                    // Add chi tiet thanh toanh
-                    if (_domainData.ThanhToan > 0)
-                    {
-                        var thanhToan = new ThanhToanCongNo();
-                        CRUD.DecorateSaveData(thanhToan);
-                        thanhToan.CongNoId = congNoHienTai.Id;
-                        thanhToan.ThanhToan = _domainData.ThanhToan;
-                        thanhToan.NgayThanhToan = _domainData.NgayLap;
-                        CRUD.DbContext.ThanhToanCongNoes.AddOrUpdate(thanhToan);
+                        if (congNoHienTai == null)
+                        {
+                            congNoHienTai = new CongNo();
+                            congNoHienTai.No = Math.Abs(congNo);
+                        }
+                        else
+                        {
+                            congNoHienTai.No = congNoHienTai.NoDonHang - congNoHienTai.DaThanhToan;
+                        }
+
+                        CRUD.DecorateSaveData(congNoHienTai);
+                        congNoHienTai.DonHangId = _domainData.Id;
+                        congNoHienTai.KhachHangId = _domainData.KhachHangId;
+                        congNoHienTai.NgayLap = _domainData.NgayLap;
+                        congNoHienTai.LoaiDonHang = _domainData.LoaiDonHang;
+                        congNoHienTai.GhiChu = _domainData.GhiChu;
+                        CRUD.DbContext.CongNoes.AddOrUpdate(congNoHienTai);
+                        CRUD.DbContext.SaveChanges();
+
+                        // Add chi tiet thanh toan
+                        if (_domainData.ThanhToan > 0)
+                        {
+                            var thanhToan = new ThanhToanCongNo();
+                            CRUD.DecorateSaveData(thanhToan);
+                            thanhToan.CongNoId = congNoHienTai.Id;
+                            thanhToan.ThanhToan = _domainData.ThanhToan;
+                            thanhToan.NgayThanhToan = _domainData.NgayLap;
+                            CRUD.DbContext.ThanhToanCongNoes.AddOrUpdate(thanhToan);
+                        }
                     }
                 }
+
                 CRUD.DbContext.SaveChanges();
                 transaction.Complete();
             }
 
-            var confirmDialog = MessageBox.Show(Define.MESSAGE_IN_HOA_DON, Define.MESSAGE_IN_HOA_DON_TITLE, MessageBoxButtons.YesNo);
-            if (confirmDialog == DialogResult.Yes)
+            if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
             {
-                InHoaDon();
+                var confirmDialog = MessageBox.Show(Define.MESSAGE_IN_HOA_DON, Define.MESSAGE_IN_HOA_DON_TITLE, MessageBoxButtons.YesNo);
+                if (confirmDialog == DialogResult.Yes)
+                {
+                    InHoaDon();
+                }
             }
-
+            
             return true;
         }
 
@@ -241,7 +265,7 @@ namespace QLDT.FormControls.DonHangForms
 
         private void UpdateTongTien()
         {
-            var thanhTien = _chiTietDonhang.Sum(s => s.ThanhTien);
+            var thanhTien = _chiTietDonhang.Where(s=>s.IsActived).Sum(s => s.ThanhTien);
             var chietKhau = 0L;
             if (!string.IsNullOrEmpty(DonHang_ChietKhau.Text))
             {
@@ -260,8 +284,8 @@ namespace QLDT.FormControls.DonHangForms
 
         private void UpdateNo()
         {
-            var tongTien = PrimitiveConvert.StringToInt(DonHang_TongCong.Text);
-            var thanhToan = PrimitiveConvert.StringToInt(DonHang_ThanhToan.Text);
+            var tongTien = _domainData.TongCong;
+            var thanhToan = _domainData.ThanhToan;
             var conLai = thanhToan - tongTien;
             if (conLai < 0)
             {
@@ -276,13 +300,21 @@ namespace QLDT.FormControls.DonHangForms
 
         private void btnDeleteRow_ButtonClick(object sender, EventArgs e)
         {
-            dynamic data = gridViewChiTiet.GetRow(gridViewChiTiet.FocusedRowHandle);
-            if (data != null && data.Id != 0)
+            var index = gridViewChiTiet.GetFocusedDataSourceRowIndex();
+            if (_chiTietDonhang.Count > 0)
             {
-                _deletedDonHangs.Add(data);
+                var data = _chiTietDonhang[index];
+                if (data.Id == 0)
+                {
+                    _chiTietDonhang.Remove(data);
+                }
+                else
+                {
+                    data.IsActived = false;
+                }
+                UpdateTongTien();
+                gridControlChiTiet.Refresh();
             }
-            gridViewChiTiet.DeleteRow(gridViewChiTiet.FocusedRowHandle);
-            UpdateTongTien();
         }
 
         private void DonHang_Thue_TextChanged(object sender, EventArgs e)
@@ -316,7 +348,6 @@ namespace QLDT.FormControls.DonHangForms
                 row.SoLuongTon = hangHoa.SoLuong;
             }
         }
-
 
         private void DonHang_ThanhToan_EditValueChanged(object sender, EventArgs e)
         {
@@ -376,9 +407,30 @@ namespace QLDT.FormControls.DonHangForms
         {
             using (var transaction = new TransactionScope())
             {
-                DeleteCongNo(donHang);
-                DeleteChiTietDonHang(donHang);
-                CRUD.DbContext.DonHangs.Remove(donHang);
+                donHang.IsActived = false;
+
+                // Update hang hoa
+                foreach (var chiTietDonHang in donHang.ChiTietDonHangs)
+                {
+                    chiTietDonHang.IsActived = false;
+                    var sign = donHang.LoaiDonHang == "NhapKho" ? -1 : 1;
+                    chiTietDonHang.KhoHang.SoLuong = chiTietDonHang.KhoHang.SoLuong + sign*chiTietDonHang.SoLuong;
+
+                    foreach (var chiTietHangHoa in chiTietDonHang.ChiTietHangHoas)
+                    {
+                        chiTietHangHoa.IsActived = false;
+                    }
+                }
+
+                // Update CongNo
+                foreach (var congNo in donHang.CongNoes)
+                {
+                    congNo.IsActived = false;
+                    foreach (var thanhToanCongNo in congNo.ThanhToanCongNoes)
+                    {
+                        thanhToanCongNo.IsActived = false;
+                    }
+                }
                 CRUD.DbContext.SaveChanges();
                 transaction.Complete();
             }
@@ -445,7 +497,6 @@ namespace QLDT.FormControls.DonHangForms
                 CRUD.DbContext.KhoHangs.AddOrUpdate(hangHoa);
                 CRUD.DbContext.SaveChanges();
             }
-
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -453,6 +504,37 @@ namespace QLDT.FormControls.DonHangForms
             if (_domainData != null)
             {
                 InHoaDon();
+            }
+        }
+
+        private void GenerateMaDH()
+        {
+            if(_domainData != null && string.IsNullOrEmpty(_domainData.MaDH))
+            {
+                var currentDatetime = TimeHelper.CurentDateTime();
+                var year = currentDatetime.ToString("yy");
+                var month = currentDatetime.ToString("MM");
+                var date = currentDatetime.ToString("dd");
+                var hour = currentDatetime.ToString("HH");
+                var minute = currentDatetime.ToString("mm");
+                var second = currentDatetime.ToString("ss");
+                _domainData.MaDH = string.Format("{0}{1}{2}{3}{4}{5}", year, month, date, hour, minute, second);
+            }
+        }
+
+        private void gridViewChiTiet_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            var data = gridViewChiTiet.GetRow(e.RowHandle) as ChiTietDonHang;
+            if (data != null) data.IsActived = true;
+        }
+
+        private void gridViewChiTiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            var data = gridViewChiTiet.GetRow(e.RowHandle) as ChiTietDonHang;
+            if (data != null && !data.IsActived)
+            {
+               
+
             }
         }
     }

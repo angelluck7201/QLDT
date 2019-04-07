@@ -99,6 +99,48 @@ BEGIN
 END
 GO
 
+
+IF OBJECT_ID(N'DonHang_Insert_Update', N'TR') IS NOT NULL
+    DROP TRIGGER DonHang_Insert_Update
+GO
+
+CREATE TRIGGER DonHang_Insert_Update
+ON DonHang
+FOR Insert, Update
+AS
+BEGIN
+BEGIN TRANSACTION	
+	UPDATE	CTDH
+	SET		CTDH.IsActived = I.IsActived
+	FROM	ChiTietDonHang CTDH
+	JOIN	Inserted I 
+		ON	CTDH.DonHangId = I.Id
+
+	UPDATE	CTHH
+	SET		CTHH.IsActived = I.IsActived
+	FROM	ChiTietDonHang CTDH
+	JOIN	Inserted I 
+		ON	CTDH.DonHangId = I.Id
+	JOIN	ChiTietHangHoa CTHH 
+		ON	CTHH.ChiTietDonHangId = CTDH.ID
+
+	UPDATE	CN
+	SET		CN.IsActived = I.IsActived
+	FROM	CongNo CN
+	JOIN	Inserted I 
+		ON	CN.DonHangId = I.Id
+
+	UPDATE	TTCN
+	SET		TTCN.IsActived = I.IsActived
+	FROM	CongNo CN
+	JOIN	Inserted I 
+		ON	CN.DonHangId = I.Id
+	JOIN	ThanhToanCongNo TTCN
+		ON	TTCN.CongNoId = CN.Id
+COMMIT
+END
+GO
+
 -- ChiTietDonHang
 exec DROP_COLUMN 'ChiTietDonHang', 'LoaiDonHang'
 exec ADD_DEFAULT_CONSTRAINT 'ChiTietDonHang', 'IsActived', '1', 'bit'
@@ -155,4 +197,16 @@ exec ADD_DEFAULT_CONSTRAINT 'ThuChi', 'SoTien', '0', 'bigint'
 
 --UserAccount
 exec ADD_DEFAULT_CONSTRAINT 'UserAccount', 'IsActived', '1', 'bit'
+
+--Update MaDH
+UPDATE DonHang
+SET MaDH = 
+	CONVERT(FORMAT(NgayLap, 'yy') as nvarchar)
+	+ CONVERT(FORMAT(NgayLap, 'MM') as nvarchar)
+	+ CONVERT(FORMAT(NgayLap, 'dd') as nvarchar)
+	+ CONVERT(FORMAT(NgayLap, 'HH') as nvarchar)
+	+ CONVERT(FORMAT(NgayLap, 'mm') as nvarchar)
+	+ CONVERT(FORMAT(NgayLap, 'ss') as nvarchar)
+WHERE MaDH IS NULL
+
 

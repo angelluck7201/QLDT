@@ -86,6 +86,12 @@ namespace QLDT
             Admin
         }
 
+        public enum TrangThaiDonHang
+        {
+            Moi,
+            ThanhToan
+        }
+
         public static Dictionary<FeatureEnum, string> FeatureDict = new Dictionary<FeatureEnum, string>()
         {
             {FeatureEnum.KhoHang, "KHO HÀNG"},
@@ -130,9 +136,12 @@ namespace QLDT
         public static string MESSAGE_LOCK_USER = "Bạn có chắc muốn khóa/mở khóa tài khoản này?";
         public static string MESSAGE_LOCK_USER_TITLE = "Khóa tài khoản";
 
-        public static string MESSAGE_IN_HOA_DON = "Bạn có muốn in hóa đơn này?";
+        public static string MESSAGE_IN_HOA_DON = "Bạn có muốn in đơn hàng này?";
         public static string MESSAGE_IN_HOA_DON_TITLE = "Thanh toán thành công";
-        public static string MESSAGE_XOA_HOA_DON = "Khi xóa hóa đơn, những phần liên quan đến hóa đơn: Công Nợ của hóa đơn, hàng tồn trong kho sẽ được cập nhật lại. Bạn có chắc muốn xóa?";
-        public static string MESSAGE_XOA_HOA_DON_TITLE = "Xóa Hóa Đơn";
+        public static string MESSAGE_XOA_HOA_DON = "Khi xóa đơn hàng, những phần liên quan đến hóa đơn: Công Nợ của hóa đơn, hàng tồn trong kho sẽ được cập nhật lại. Bạn có chắc muốn xóa?";
+        public static string MESSAGE_XOA_HOA_DON_TITLE = "Xóa Đơn Hàng";
+
+        public static string MESSAGE_CHOT_HOA_DON = "Bạn có muốn chốt đơn hàng này không? Đơn Hàng sau khi chốt sẽ không thể chỉnh sửa và được lưu thành công nợ(nếu có nợ).";
+        public static string MESSAGE_CHOT_HOA_DON_TITLE = "Chốt Đơn Hàng";
     }
 }

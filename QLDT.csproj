@@ -224,10 +224,10 @@
     <Compile Include="FormControls\TheKhoForms\UcTheKho.Designer.cs">
       <DependentUpon>UcTheKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormControls\TheKhoForms\UcThongKe.cs">
+    <Compile Include="FormControls\ThongKeForms\UcThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FormControls\TheKhoForms\UcThongKe.Designer.cs">
+    <Compile Include="FormControls\ThongKeForms\UcThongKe.Designer.cs">
       <DependentUpon>UcThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="FormControls\ThuChiForms\UcThuChi.cs">
@@ -302,6 +302,7 @@
     <Compile Include="UserAccount.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BaseModel.cs" />
     <Compile Include="ViewModels\CongNoViewModel.cs" />
     <Compile Include="ViewModels\DonHangViewModel.cs" />
     <Compile Include="ViewModels\KhoHangViewModel.cs" />
@@ -356,7 +357,7 @@
     <EmbeddedResource Include="FormControls\TheKhoForms\UcTheKho.resx">
       <DependentUpon>UcTheKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormControls\TheKhoForms\UcThongKe.resx">
+    <EmbeddedResource Include="FormControls\ThongKeForms\UcThongKe.resx">
       <DependentUpon>UcThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormControls\ThuChiForms\UcThuChi.resx">
@@ -423,9 +424,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FormControls\ThongKeForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="mobile-icon-shadow.ico" />
     <Content Include="Resource\app_icon.ico" />

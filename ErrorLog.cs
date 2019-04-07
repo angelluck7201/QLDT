@@ -12,11 +12,59 @@ namespace QLDT
     using System;
     using System.Collections.Generic;
     
-    public partial class ErrorLog
+    public partial class ErrorLog : BaseModel
     {
-        public long Id { get; set; }
-        public string CreatedDate { get; set; }
-        public string AppVersion { get; set; }
-        public string Messagelog { get; set; }
+        private long _id;
+    	public long Id 
+    	{ 
+    		get { return _id; } 
+    		set
+    		{
+    			if (value != _id) {
+    				_id = value;
+    				 OnPropertyChanged("Id");
+    			}
+    		} 
+    	}
+    
+        private string _createdDate;
+    	public string CreatedDate 
+    	{ 
+    		get { return _createdDate; } 
+    		set
+    		{
+    			if (value != _createdDate) {
+    				_createdDate = value;
+    				 OnPropertyChanged("CreatedDate");
+    			}
+    		} 
+    	}
+    
+        private string _appVersion;
+    	public string AppVersion 
+    	{ 
+    		get { return _appVersion; } 
+    		set
+    		{
+    			if (value != _appVersion) {
+    				_appVersion = value;
+    				 OnPropertyChanged("AppVersion");
+    			}
+    		} 
+    	}
+    
+        private string _messagelog;
+    	public string Messagelog 
+    	{ 
+    		get { return _messagelog; } 
+    		set
+    		{
+    			if (value != _messagelog) {
+    				_messagelog = value;
+    				 OnPropertyChanged("Messagelog");
+    			}
+    		} 
+    	}
+    
     }
 }

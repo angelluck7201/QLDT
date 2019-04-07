@@ -12,18 +12,138 @@ namespace QLDT
     using System;
     using System.Collections.Generic;
     
-    public partial class ThuChi
+    public partial class ThuChi : BaseModel
     {
-        public long Id { get; set; }
-        public long AuthorId { get; set; }
-        public Nullable<long> CreatedDate { get; set; }
-        public Nullable<long> ModifiedDate { get; set; }
-        public bool IsActived { get; set; }
-        public System.DateTime NgayLap { get; set; }
-        public string Loai { get; set; }
-        public long SoTien { get; set; }
-        public long NoiDungId { get; set; }
-        public string GhiChu { get; set; }
+        private long _id;
+    	public long Id 
+    	{ 
+    		get { return _id; } 
+    		set
+    		{
+    			if (value != _id) {
+    				_id = value;
+    				 OnPropertyChanged("Id");
+    			}
+    		} 
+    	}
+    
+        private long _authorId;
+    	public long AuthorId 
+    	{ 
+    		get { return _authorId; } 
+    		set
+    		{
+    			if (value != _authorId) {
+    				_authorId = value;
+    				 OnPropertyChanged("AuthorId");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _createdDate;
+    	public Nullable<long> CreatedDate 
+    	{ 
+    		get { return _createdDate; } 
+    		set
+    		{
+    			if (value != _createdDate) {
+    				_createdDate = value;
+    				 OnPropertyChanged("CreatedDate");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _modifiedDate;
+    	public Nullable<long> ModifiedDate 
+    	{ 
+    		get { return _modifiedDate; } 
+    		set
+    		{
+    			if (value != _modifiedDate) {
+    				_modifiedDate = value;
+    				 OnPropertyChanged("ModifiedDate");
+    			}
+    		} 
+    	}
+    
+        private bool _isActived;
+    	public bool IsActived 
+    	{ 
+    		get { return _isActived; } 
+    		set
+    		{
+    			if (value != _isActived) {
+    				_isActived = value;
+    				 OnPropertyChanged("IsActived");
+    			}
+    		} 
+    	}
+    
+        private System.DateTime _ngayLap;
+    	public System.DateTime NgayLap 
+    	{ 
+    		get { return _ngayLap; } 
+    		set
+    		{
+    			if (value != _ngayLap) {
+    				_ngayLap = value;
+    				 OnPropertyChanged("NgayLap");
+    			}
+    		} 
+    	}
+    
+        private string _loai;
+    	public string Loai 
+    	{ 
+    		get { return _loai; } 
+    		set
+    		{
+    			if (value != _loai) {
+    				_loai = value;
+    				 OnPropertyChanged("Loai");
+    			}
+    		} 
+    	}
+    
+        private long _soTien;
+    	public long SoTien 
+    	{ 
+    		get { return _soTien; } 
+    		set
+    		{
+    			if (value != _soTien) {
+    				_soTien = value;
+    				 OnPropertyChanged("SoTien");
+    			}
+    		} 
+    	}
+    
+        private long _noiDungId;
+    	public long NoiDungId 
+    	{ 
+    		get { return _noiDungId; } 
+    		set
+    		{
+    			if (value != _noiDungId) {
+    				_noiDungId = value;
+    				 OnPropertyChanged("NoiDungId");
+    			}
+    		} 
+    	}
+    
+        private string _ghiChu;
+    	public string GhiChu 
+    	{ 
+    		get { return _ghiChu; } 
+    		set
+    		{
+    			if (value != _ghiChu) {
+    				_ghiChu = value;
+    				 OnPropertyChanged("GhiChu");
+    			}
+    		} 
+    	}
+    
     
         public virtual DanhMuc DanhMuc { get; set; }
         public virtual UserAccount UserAccount { get; set; }

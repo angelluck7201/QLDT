@@ -30,15 +30,15 @@
         {
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThongKe));
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement21 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement22 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
@@ -89,7 +89,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlHangHoa);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1166, 785);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1140, 785);
             this.splitContainerControl1.SplitterPosition = 90;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -105,7 +105,7 @@
             this.btnAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnAll.Location = new System.Drawing.Point(824, 21);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(124, 30);
+            this.btnAll.Size = new System.Drawing.Size(124, 35);
             this.btnAll.TabIndex = 39;
             this.btnAll.Text = "Bỏ Lọc";
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
@@ -121,7 +121,7 @@
             this.btnTim.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnTim.Location = new System.Drawing.Point(683, 21);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(124, 30);
+            this.btnTim.Size = new System.Drawing.Size(124, 35);
             this.btnTim.TabIndex = 38;
             this.btnTim.Text = "Lọc";
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
@@ -132,7 +132,7 @@
             this.EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.EndDate.Location = new System.Drawing.Point(348, 23);
             this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(311, 28);
+            this.EndDate.Size = new System.Drawing.Size(311, 33);
             this.EndDate.TabIndex = 37;
             // 
             // StartDate
@@ -141,7 +141,7 @@
             this.StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.StartDate.Location = new System.Drawing.Point(15, 23);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(311, 28);
+            this.StartDate.Size = new System.Drawing.Size(311, 33);
             this.StartDate.TabIndex = 36;
             // 
             // gridControlHangHoa
@@ -150,7 +150,7 @@
             this.gridControlHangHoa.Location = new System.Drawing.Point(0, 0);
             this.gridControlHangHoa.MainView = this.gridViewHangHoa;
             this.gridControlHangHoa.Name = "gridControlHangHoa";
-            this.gridControlHangHoa.Size = new System.Drawing.Size(1166, 689);
+            this.gridControlHangHoa.Size = new System.Drawing.Size(1140, 685);
             this.gridControlHangHoa.TabIndex = 6;
             this.gridControlHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHangHoa,
@@ -216,7 +216,6 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
@@ -227,7 +226,6 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn7.AppearanceCell.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
@@ -238,7 +236,6 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn8.AppearanceCell.Options.UseFont = true;
             this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
@@ -249,7 +246,6 @@
             // 
             // gridColumn9
             // 
-            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn9.AppearanceCell.Options.UseFont = true;
             this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
@@ -260,7 +256,6 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
@@ -273,7 +268,6 @@
             // 
             // colSoLuongNhap
             // 
-            this.colSoLuongNhap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colSoLuongNhap.AppearanceCell.Options.UseFont = true;
             this.colSoLuongNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colSoLuongNhap.AppearanceHeader.Options.UseFont = true;
@@ -288,7 +282,6 @@
             // 
             // colSoLuongXuat
             // 
-            this.colSoLuongXuat.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colSoLuongXuat.AppearanceCell.Options.UseFont = true;
             this.colSoLuongXuat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colSoLuongXuat.AppearanceHeader.Options.UseFont = true;
@@ -303,7 +296,6 @@
             // 
             // colDoanhThuBan
             // 
-            this.colDoanhThuBan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colDoanhThuBan.AppearanceCell.Options.UseFont = true;
             this.colDoanhThuBan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colDoanhThuBan.AppearanceHeader.Options.UseFont = true;
@@ -320,7 +312,6 @@
             // 
             // colDoanhThuNhap
             // 
-            this.colDoanhThuNhap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colDoanhThuNhap.AppearanceCell.Options.UseFont = true;
             this.colDoanhThuNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colDoanhThuNhap.AppearanceHeader.Options.UseFont = true;
@@ -337,7 +328,6 @@
             // 
             // colLoiNhuan
             // 
-            this.colLoiNhuan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.colLoiNhuan.AppearanceCell.Options.UseFont = true;
             this.colLoiNhuan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.colLoiNhuan.AppearanceHeader.Options.UseFont = true;
@@ -378,7 +368,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1404, 785);
-            this.splitContainerControl2.SplitterPosition = 232;
+            this.splitContainerControl2.SplitterPosition = 254;
             this.splitContainerControl2.TabIndex = 1;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -388,24 +378,20 @@
             this.tileControl.AllowGlyphSkinning = true;
             this.tileControl.AllowSelectedItem = true;
             this.tileControl.AppearanceItem.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(191)))));
-            this.tileControl.AppearanceItem.Hovered.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Hovered.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Hovered.Options.UseFont = true;
             this.tileControl.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
             this.tileControl.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.tileControl.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.tileControl.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Normal.Options.UseBorderColor = true;
             this.tileControl.AppearanceItem.Normal.Options.UseFont = true;
             this.tileControl.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileControl.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(148)))));
-            this.tileControl.AppearanceItem.Pressed.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Pressed.Options.UseFont = true;
             this.tileControl.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(81)))), ((int)(((byte)(165)))));
             this.tileControl.AppearanceItem.Selected.BorderColor = System.Drawing.Color.Transparent;
-            this.tileControl.AppearanceItem.Selected.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.tileControl.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
             this.tileControl.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileControl.AppearanceItem.Selected.Options.UseBorderColor = true;
@@ -416,14 +402,14 @@
             this.tileControl.Groups.Add(this.tileGroup);
             this.tileControl.IndentBetweenItems = 5;
             this.tileControl.ItemPadding = new System.Windows.Forms.Padding(7, 7, 7, 4);
-            this.tileControl.ItemSize = 80;
+            this.tileControl.ItemSize = 100;
             this.tileControl.Location = new System.Drawing.Point(0, 0);
             this.tileControl.Margin = new System.Windows.Forms.Padding(0);
             this.tileControl.MaxId = 8;
             this.tileControl.Name = "tileControl";
             this.tileControl.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.tileControl.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.tileControl.Size = new System.Drawing.Size(232, 785);
+            this.tileControl.Size = new System.Drawing.Size(254, 785);
             this.tileControl.TabIndex = 27;
             this.tileControl.Text = "tileControl";
             // 
@@ -438,23 +424,23 @@
             // 
             // tileItemNgay
             // 
-            tileItemElement1.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement1.Appearance.Normal.Options.UseFont = true;
-            tileItemElement1.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement1.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement1.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement1.Appearance.Selected.Options.UseFont = true;
-            tileItemElement1.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement1.Text = "Ngày";
-            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement1.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement2.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement2.Image")));
-            tileItemElement2.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement2.Text = "Thống Kê";
-            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemNgay.Elements.Add(tileItemElement1);
-            this.tileItemNgay.Elements.Add(tileItemElement2);
+            tileItemElement17.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement17.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement17.Appearance.Normal.Options.UseFont = true;
+            tileItemElement17.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement17.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement17.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement17.Appearance.Selected.Options.UseFont = true;
+            tileItemElement17.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement17.Text = "Ngày";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement17.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement18.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement18.Image")));
+            tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement18.Text = "Thống Kê";
+            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemNgay.Elements.Add(tileItemElement17);
+            this.tileItemNgay.Elements.Add(tileItemElement18);
             this.tileItemNgay.Id = 1;
             this.tileItemNgay.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemNgay.Name = "tileItemNgay";
@@ -463,23 +449,23 @@
             // 
             // tileItemThang
             // 
-            tileItemElement3.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement3.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement3.Appearance.Normal.Options.UseFont = true;
-            tileItemElement3.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement3.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement3.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement3.Appearance.Selected.Options.UseFont = true;
-            tileItemElement3.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement3.Text = "Tháng";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement3.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement4.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement4.Image")));
-            tileItemElement4.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement4.Text = "Thống Kê";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemThang.Elements.Add(tileItemElement3);
-            this.tileItemThang.Elements.Add(tileItemElement4);
+            tileItemElement19.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement19.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement19.Appearance.Normal.Options.UseFont = true;
+            tileItemElement19.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement19.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement19.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement19.Appearance.Selected.Options.UseFont = true;
+            tileItemElement19.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement19.Text = "Tháng";
+            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement19.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement20.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement20.Image")));
+            tileItemElement20.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement20.Text = "Thống Kê";
+            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemThang.Elements.Add(tileItemElement19);
+            this.tileItemThang.Elements.Add(tileItemElement20);
             this.tileItemThang.Id = 2;
             this.tileItemThang.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemThang.Name = "tileItemThang";
@@ -488,23 +474,23 @@
             // 
             // tileItemQuy
             // 
-            tileItemElement5.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement5.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement5.Appearance.Normal.Options.UseFont = true;
-            tileItemElement5.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement5.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement5.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement5.Appearance.Selected.Options.UseFont = true;
-            tileItemElement5.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement5.Text = "Quý";
-            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement5.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement6.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement6.Image")));
-            tileItemElement6.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement6.Text = "Thống Kê";
-            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemQuy.Elements.Add(tileItemElement5);
-            this.tileItemQuy.Elements.Add(tileItemElement6);
+            tileItemElement21.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement21.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement21.Appearance.Normal.Options.UseFont = true;
+            tileItemElement21.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement21.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement21.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement21.Appearance.Selected.Options.UseFont = true;
+            tileItemElement21.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement21.Text = "Quý";
+            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement21.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement22.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement22.Image")));
+            tileItemElement22.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement22.Text = "Thống Kê";
+            tileItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemQuy.Elements.Add(tileItemElement21);
+            this.tileItemQuy.Elements.Add(tileItemElement22);
             this.tileItemQuy.Id = 3;
             this.tileItemQuy.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemQuy.Name = "tileItemQuy";
@@ -513,23 +499,23 @@
             // 
             // tileItemNam
             // 
-            tileItemElement7.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement7.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement7.Appearance.Normal.Options.UseFont = true;
-            tileItemElement7.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement7.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement7.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement7.Appearance.Selected.Options.UseFont = true;
-            tileItemElement7.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement7.Text = "Năm";
-            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement7.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement8.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement8.Image")));
-            tileItemElement8.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement8.Text = "Thống Kê";
-            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemNam.Elements.Add(tileItemElement7);
-            this.tileItemNam.Elements.Add(tileItemElement8);
+            tileItemElement23.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement23.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement23.Appearance.Normal.Options.UseFont = true;
+            tileItemElement23.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement23.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement23.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement23.Appearance.Selected.Options.UseFont = true;
+            tileItemElement23.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement23.Text = "Năm";
+            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement23.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement24.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement24.Image")));
+            tileItemElement24.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement24.Text = "Thống Kê";
+            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemNam.Elements.Add(tileItemElement23);
+            this.tileItemNam.Elements.Add(tileItemElement24);
             this.tileItemNam.Id = 4;
             this.tileItemNam.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemNam.Name = "tileItemNam";

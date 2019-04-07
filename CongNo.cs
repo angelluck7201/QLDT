@@ -12,7 +12,7 @@ namespace QLDT
     using System;
     using System.Collections.Generic;
     
-    public partial class CongNo
+    public partial class CongNo : BaseModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CongNo()
@@ -20,18 +20,162 @@ namespace QLDT
             this.ThanhToanCongNoes = new HashSet<ThanhToanCongNo>();
         }
     
-        public long Id { get; set; }
-        public long AuthorId { get; set; }
-        public Nullable<long> CreatedDate { get; set; }
-        public Nullable<long> ModifiedDate { get; set; }
-        public bool IsActived { get; set; }
-        public long No { get; set; }
-        public long ThanhToan { get; set; }
-        public string GhiChu { get; set; }
-        public long KhachHangId { get; set; }
-        public Nullable<long> DonHangId { get; set; }
-        public string LoaiDonHang { get; set; }
-        public System.DateTime NgayLap { get; set; }
+        private long _id;
+    	public long Id 
+    	{ 
+    		get { return _id; } 
+    		set
+    		{
+    			if (value != _id) {
+    				_id = value;
+    				 OnPropertyChanged("Id");
+    			}
+    		} 
+    	}
+    
+        private long _authorId;
+    	public long AuthorId 
+    	{ 
+    		get { return _authorId; } 
+    		set
+    		{
+    			if (value != _authorId) {
+    				_authorId = value;
+    				 OnPropertyChanged("AuthorId");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _createdDate;
+    	public Nullable<long> CreatedDate 
+    	{ 
+    		get { return _createdDate; } 
+    		set
+    		{
+    			if (value != _createdDate) {
+    				_createdDate = value;
+    				 OnPropertyChanged("CreatedDate");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _modifiedDate;
+    	public Nullable<long> ModifiedDate 
+    	{ 
+    		get { return _modifiedDate; } 
+    		set
+    		{
+    			if (value != _modifiedDate) {
+    				_modifiedDate = value;
+    				 OnPropertyChanged("ModifiedDate");
+    			}
+    		} 
+    	}
+    
+        private bool _isActived;
+    	public bool IsActived 
+    	{ 
+    		get { return _isActived; } 
+    		set
+    		{
+    			if (value != _isActived) {
+    				_isActived = value;
+    				 OnPropertyChanged("IsActived");
+    			}
+    		} 
+    	}
+    
+        private long _no;
+    	public long No 
+    	{ 
+    		get { return _no; } 
+    		set
+    		{
+    			if (value != _no) {
+    				_no = value;
+    				 OnPropertyChanged("No");
+    			}
+    		} 
+    	}
+    
+        private long _thanhToan;
+    	public long ThanhToan 
+    	{ 
+    		get { return _thanhToan; } 
+    		set
+    		{
+    			if (value != _thanhToan) {
+    				_thanhToan = value;
+    				 OnPropertyChanged("ThanhToan");
+    			}
+    		} 
+    	}
+    
+        private string _ghiChu;
+    	public string GhiChu 
+    	{ 
+    		get { return _ghiChu; } 
+    		set
+    		{
+    			if (value != _ghiChu) {
+    				_ghiChu = value;
+    				 OnPropertyChanged("GhiChu");
+    			}
+    		} 
+    	}
+    
+        private long _khachHangId;
+    	public long KhachHangId 
+    	{ 
+    		get { return _khachHangId; } 
+    		set
+    		{
+    			if (value != _khachHangId) {
+    				_khachHangId = value;
+    				 OnPropertyChanged("KhachHangId");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _donHangId;
+    	public Nullable<long> DonHangId 
+    	{ 
+    		get { return _donHangId; } 
+    		set
+    		{
+    			if (value != _donHangId) {
+    				_donHangId = value;
+    				 OnPropertyChanged("DonHangId");
+    			}
+    		} 
+    	}
+    
+        private string _loaiDonHang;
+    	public string LoaiDonHang 
+    	{ 
+    		get { return _loaiDonHang; } 
+    		set
+    		{
+    			if (value != _loaiDonHang) {
+    				_loaiDonHang = value;
+    				 OnPropertyChanged("LoaiDonHang");
+    			}
+    		} 
+    	}
+    
+        private System.DateTime _ngayLap;
+    	public System.DateTime NgayLap 
+    	{ 
+    		get { return _ngayLap; } 
+    		set
+    		{
+    			if (value != _ngayLap) {
+    				_ngayLap = value;
+    				 OnPropertyChanged("NgayLap");
+    			}
+    		} 
+    	}
+    
     
         public virtual UserAccount UserAccount { get; set; }
         public virtual DonHang DonHang { get; set; }

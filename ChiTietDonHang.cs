@@ -12,7 +12,7 @@ namespace QLDT
     using System;
     using System.Collections.Generic;
     
-    public partial class ChiTietDonHang
+    public partial class ChiTietDonHang : BaseModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ChiTietDonHang()
@@ -20,15 +20,123 @@ namespace QLDT
             this.ChiTietHangHoas = new HashSet<ChiTietHangHoa>();
         }
     
-        public long Id { get; set; }
-        public long AuthorId { get; set; }
-        public Nullable<long> CreatedDate { get; set; }
-        public Nullable<long> ModifiedDate { get; set; }
-        public bool IsActived { get; set; }
-        public long DonHangId { get; set; }
-        public long HangHoaId { get; set; }
-        public long DonGia { get; set; }
-        public long SoLuong { get; set; }
+        private long _id;
+    	public long Id 
+    	{ 
+    		get { return _id; } 
+    		set
+    		{
+    			if (value != _id) {
+    				_id = value;
+    				 OnPropertyChanged("Id");
+    			}
+    		} 
+    	}
+    
+        private long _authorId;
+    	public long AuthorId 
+    	{ 
+    		get { return _authorId; } 
+    		set
+    		{
+    			if (value != _authorId) {
+    				_authorId = value;
+    				 OnPropertyChanged("AuthorId");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _createdDate;
+    	public Nullable<long> CreatedDate 
+    	{ 
+    		get { return _createdDate; } 
+    		set
+    		{
+    			if (value != _createdDate) {
+    				_createdDate = value;
+    				 OnPropertyChanged("CreatedDate");
+    			}
+    		} 
+    	}
+    
+        private Nullable<long> _modifiedDate;
+    	public Nullable<long> ModifiedDate 
+    	{ 
+    		get { return _modifiedDate; } 
+    		set
+    		{
+    			if (value != _modifiedDate) {
+    				_modifiedDate = value;
+    				 OnPropertyChanged("ModifiedDate");
+    			}
+    		} 
+    	}
+    
+        private bool _isActived;
+    	public bool IsActived 
+    	{ 
+    		get { return _isActived; } 
+    		set
+    		{
+    			if (value != _isActived) {
+    				_isActived = value;
+    				 OnPropertyChanged("IsActived");
+    			}
+    		} 
+    	}
+    
+        private long _donHangId;
+    	public long DonHangId 
+    	{ 
+    		get { return _donHangId; } 
+    		set
+    		{
+    			if (value != _donHangId) {
+    				_donHangId = value;
+    				 OnPropertyChanged("DonHangId");
+    			}
+    		} 
+    	}
+    
+        private long _hangHoaId;
+    	public long HangHoaId 
+    	{ 
+    		get { return _hangHoaId; } 
+    		set
+    		{
+    			if (value != _hangHoaId) {
+    				_hangHoaId = value;
+    				 OnPropertyChanged("HangHoaId");
+    			}
+    		} 
+    	}
+    
+        private long _donGia;
+    	public long DonGia 
+    	{ 
+    		get { return _donGia; } 
+    		set
+    		{
+    			if (value != _donGia) {
+    				_donGia = value;
+    				 OnPropertyChanged("DonGia");
+    			}
+    		} 
+    	}
+    
+        private long _soLuong;
+    	public long SoLuong 
+    	{ 
+    		get { return _soLuong; } 
+    		set
+    		{
+    			if (value != _soLuong) {
+    				_soLuong = value;
+    				 OnPropertyChanged("SoLuong");
+    			}
+    		} 
+    	}
+    
     
         public virtual UserAccount UserAccount { get; set; }
         public virtual DonHang DonHang { get; set; }

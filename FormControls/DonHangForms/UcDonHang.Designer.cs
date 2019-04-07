@@ -32,9 +32,12 @@
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcDonHang));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonHang_KhachHangId = new System.Windows.Forms.ComboBox();
             this.lblKhachHangId = new System.Windows.Forms.Label();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.DonHang_MaDH = new System.Windows.Forms.TextBox();
+            this.lblMaDH = new System.Windows.Forms.Label();
             this.lblNgayLap = new System.Windows.Forms.Label();
             this.DonHang_NgayLap = new System.Windows.Forms.DateTimePicker();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -50,6 +53,7 @@
             this.listHangHoa = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,7 +72,6 @@
             this.lblTongThanhTien = new System.Windows.Forms.Label();
             this.lblThue = new System.Windows.Forms.Label();
             this.lblChietKhau = new System.Windows.Forms.Label();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -85,13 +88,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.DonHang_ChietKhau.Properties)).BeginInit();
             this.SuspendLayout();
             // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "gridColumn8";
+            this.gridColumn8.FieldName = "IsActived";
+            this.gridColumn8.Name = "gridColumn8";
+            // 
             // DonHang_KhachHangId
             // 
             this.DonHang_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_KhachHangId.FormattingEnabled = true;
-            this.DonHang_KhachHangId.Location = new System.Drawing.Point(204, 21);
+            this.DonHang_KhachHangId.Location = new System.Drawing.Point(220, 72);
             this.DonHang_KhachHangId.Name = "DonHang_KhachHangId";
-            this.DonHang_KhachHangId.Size = new System.Drawing.Size(339, 33);
+            this.DonHang_KhachHangId.Size = new System.Drawing.Size(426, 33);
             this.DonHang_KhachHangId.TabIndex = 20;
             this.DonHang_KhachHangId.SelectedValueChanged += new System.EventHandler(this.DonHang_NhaCungCapId_SelectedValueChanged);
             // 
@@ -99,7 +108,7 @@
             // 
             this.lblKhachHangId.AutoSize = true;
             this.lblKhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKhachHangId.Location = new System.Drawing.Point(33, 23);
+            this.lblKhachHangId.Location = new System.Drawing.Point(33, 71);
             this.lblKhachHangId.Name = "lblKhachHangId";
             this.lblKhachHangId.Size = new System.Drawing.Size(165, 25);
             this.lblKhachHangId.TabIndex = 21;
@@ -111,6 +120,8 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_MaDH);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lblMaDH);
             this.splitContainerControl1.Panel1.Controls.Add(this.lblNgayLap);
             this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_NgayLap);
             this.splitContainerControl1.Panel1.Controls.Add(this.lblDiaChi);
@@ -128,6 +139,25 @@
             this.splitContainerControl1.SplitterPosition = 219;
             this.splitContainerControl1.TabIndex = 23;
             this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
+            // DonHang_MaDH
+            // 
+            this.DonHang_MaDH.Enabled = false;
+            this.DonHang_MaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_MaDH.Location = new System.Drawing.Point(220, 27);
+            this.DonHang_MaDH.Name = "DonHang_MaDH";
+            this.DonHang_MaDH.Size = new System.Drawing.Size(426, 31);
+            this.DonHang_MaDH.TabIndex = 33;
+            // 
+            // lblMaDH
+            // 
+            this.lblMaDH.AutoSize = true;
+            this.lblMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaDH.Location = new System.Drawing.Point(33, 27);
+            this.lblMaDH.Name = "lblMaDH";
+            this.lblMaDH.Size = new System.Drawing.Size(155, 25);
+            this.lblMaDH.TabIndex = 32;
+            this.lblMaDH.Text = "Mã Đơn Hàng";
             // 
             // lblNgayLap
             // 
@@ -151,7 +181,7 @@
             // 
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaChi.Location = new System.Drawing.Point(33, 71);
+            this.lblDiaChi.Location = new System.Drawing.Point(33, 119);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(89, 25);
             this.lblDiaChi.TabIndex = 29;
@@ -160,9 +190,9 @@
             // DonHang_DiaChi
             // 
             this.DonHang_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_DiaChi.Location = new System.Drawing.Point(204, 69);
+            this.DonHang_DiaChi.Location = new System.Drawing.Point(220, 120);
             this.DonHang_DiaChi.Name = "DonHang_DiaChi";
-            this.DonHang_DiaChi.Size = new System.Drawing.Size(339, 76);
+            this.DonHang_DiaChi.Size = new System.Drawing.Size(426, 76);
             this.DonHang_DiaChi.TabIndex = 28;
             this.DonHang_DiaChi.Text = "";
             // 
@@ -261,15 +291,18 @@
             this.gridColumn4,
             this.gridColumn7,
             this.gridColumn1,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.gridColumn8});
             this.gridViewChiTiet.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "AlertTon";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            gridFormatRule1.Column = this.gridColumn8;
+            gridFormatRule1.Name = "IsActived";
+            formatConditionRuleValue1.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Strikeout))));
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue1.Appearance.Options.UseFont = true;
             formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue1.Value1 = "false";
             gridFormatRule1.Rule = formatConditionRuleValue1;
             this.gridViewChiTiet.FormatRules.Add(gridFormatRule1);
             this.gridViewChiTiet.GridControl = this.gridControlChiTiet;
@@ -278,6 +311,8 @@
             this.gridViewChiTiet.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridViewChiTiet.OptionsView.ShowFooter = true;
             this.gridViewChiTiet.OptionsView.ShowGroupPanel = false;
+            this.gridViewChiTiet.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridViewChiTiet_CustomDrawCell);
+            this.gridViewChiTiet.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewChiTiet_InitNewRow);
             this.gridViewChiTiet.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewChiTiet_CellValueChanged);
             this.gridViewChiTiet.DoubleClick += new System.EventHandler(this.gridViewChiTiet_DoubleClick);
             // 
@@ -324,6 +359,16 @@
             this.repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Tồn Kho";
+            this.gridColumn6.FieldName = "SoLuongTon";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 140;
+            // 
             // gridColumn4
             // 
             this.gridColumn4.AppearanceCell.Options.UseFont = true;
@@ -354,8 +399,6 @@
             this.gridColumn1.FieldName = "ThanhTien";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "THÀNH TIỀN: {0:n0}")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
             this.gridColumn1.Width = 352;
@@ -550,16 +593,6 @@
             this.lblChietKhau.TabIndex = 26;
             this.lblChietKhau.Text = "Chiết Khấu";
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Tồn Kho";
-            this.gridColumn6.FieldName = "SoLuongTon";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
-            this.gridColumn6.Width = 140;
-            // 
             // UcDonHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -625,5 +658,8 @@
         private System.Windows.Forms.Label lblNgayLap;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private System.Windows.Forms.TextBox DonHang_MaDH;
+        private System.Windows.Forms.Label lblMaDH;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
     }
 }
