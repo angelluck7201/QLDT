@@ -63,7 +63,8 @@ namespace QLDT
             {
                 var fieldType = prop.PropertyType;
 
-                if (fieldType == typeof(string))
+                if (fieldType == typeof(string)
+                    || fieldType == typeof(bool))
                 {
                     prop.SetValue(data, value, null);
                 }
@@ -267,6 +268,7 @@ namespace QLDT
             if (creationDate == null)
             {
                 ReflectionSet(data, "CreatedDate", currentTime);
+                ReflectionSet(data, "IsActived", true);
             }
 
             ReflectionSet(data, "ModifiedDate", currentTime);

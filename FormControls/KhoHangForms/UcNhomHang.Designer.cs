@@ -40,9 +40,9 @@
             // 
             this.lblTen.AutoSize = true;
             this.lblTen.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTen.Location = new System.Drawing.Point(28, 34);
+            this.lblTen.Location = new System.Drawing.Point(25, 32);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(89, 19);
+            this.lblTen.Size = new System.Drawing.Size(113, 24);
             this.lblTen.TabIndex = 0;
             this.lblTen.Text = "Tên Nhóm";
             // 
@@ -51,7 +51,7 @@
             this.DanhMuc_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhMuc_Ten.Location = new System.Drawing.Point(150, 32);
             this.DanhMuc_Ten.Name = "DanhMuc_Ten";
-            this.DanhMuc_Ten.Size = new System.Drawing.Size(499, 26);
+            this.DanhMuc_Ten.Size = new System.Drawing.Size(550, 31);
             this.DanhMuc_Ten.TabIndex = 0;
             // 
             // btnSave
@@ -63,9 +63,9 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(549, 198);
+            this.btnSave.Location = new System.Drawing.Point(588, 235);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 30);
+            this.btnSave.Size = new System.Drawing.Size(112, 40);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Lưu";
             // 
@@ -78,18 +78,18 @@
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Appearance.Options.UseForeColor = true;
             this.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCancel.Location = new System.Drawing.Point(32, 198);
+            this.btnCancel.Location = new System.Drawing.Point(29, 235);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 30);
+            this.btnCancel.Size = new System.Drawing.Size(112, 40);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Hủy";
             // 
             // DanhMuc_GhiChu
             // 
             this.DanhMuc_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhMuc_GhiChu.Location = new System.Drawing.Point(150, 72);
+            this.DanhMuc_GhiChu.Location = new System.Drawing.Point(150, 88);
             this.DanhMuc_GhiChu.Name = "DanhMuc_GhiChu";
-            this.DanhMuc_GhiChu.Size = new System.Drawing.Size(499, 96);
+            this.DanhMuc_GhiChu.Size = new System.Drawing.Size(550, 96);
             this.DanhMuc_GhiChu.TabIndex = 1;
             this.DanhMuc_GhiChu.Text = "";
             // 
@@ -97,9 +97,9 @@
             // 
             this.lblGhiChu.AutoSize = true;
             this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGhiChu.Location = new System.Drawing.Point(28, 75);
+            this.lblGhiChu.Location = new System.Drawing.Point(28, 88);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(73, 19);
+            this.lblGhiChu.Size = new System.Drawing.Size(91, 24);
             this.lblGhiChu.TabIndex = 15;
             this.lblGhiChu.Text = "Ghi Chú";
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.DanhMuc_Ten);
             this.Controls.Add(this.lblTen);
             this.Name = "UcNhomHang";
-            this.Size = new System.Drawing.Size(661, 244);
+            this.Size = new System.Drawing.Size(721, 295);
             this.ResumeLayout(false);
             this.PerformLayout();
 

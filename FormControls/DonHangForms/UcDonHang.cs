@@ -81,6 +81,8 @@ namespace QLDT.FormControls.DonHangForms
             listHangHoa.EditValueChanged += listHangHoa_EditValueChanged;
 
             gridControlChiTiet.DataSource = _chiTietDonhang;
+            gridViewChiTiet.ActiveFilterString = string.Format("[IsActived] = '{0}'", true);
+
             btnDeleteRow.ButtonClick += btnDeleteRow_ButtonClick;
 
             UpdateTongTien();
@@ -526,16 +528,6 @@ namespace QLDT.FormControls.DonHangForms
         {
             var data = gridViewChiTiet.GetRow(e.RowHandle) as ChiTietDonHang;
             if (data != null) data.IsActived = true;
-        }
-
-        private void gridViewChiTiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            var data = gridViewChiTiet.GetRow(e.RowHandle) as ChiTietDonHang;
-            if (data != null && !data.IsActived)
-            {
-               
-
-            }
         }
     }
 }

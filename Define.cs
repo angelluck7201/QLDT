@@ -143,5 +143,9 @@ namespace QLDT
 
         public static string MESSAGE_CHOT_HOA_DON = "Bạn có muốn chốt đơn hàng này không? Đơn Hàng sau khi chốt sẽ không thể chỉnh sửa và được lưu thành công nợ(nếu có nợ).";
         public static string MESSAGE_CHOT_HOA_DON_TITLE = "Chốt Đơn Hàng";
+
+        public static string MESSAGE_NGUNG_KINH_DOANH = "Bạn có chắc muốn ngưng kinh doanh {0}?";
+        public static string MESSAGE_NGUNG_KINH_DOANH_TITLE = "Xác Nhận";
+
     }
 }

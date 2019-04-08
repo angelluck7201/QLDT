@@ -209,4 +209,11 @@ SET MaDH =
 	+ CONVERT(FORMAT(NgayLap, 'ss') as nvarchar)
 WHERE MaDH IS NULL
 
+-- Update Hang Ngung Kinh Doanh
+UPDATE KhoHang
+SET		IsActived = 0
+WHERE	LoaiHangId = 45
+
+Update DanhMuc Set IsActived = 0 Where Id = 45 
+
 

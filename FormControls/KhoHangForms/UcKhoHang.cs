@@ -11,14 +11,25 @@ namespace QLDT.FormControls.KhoHangForms
         public UcKhoHang(KhoHang data = null)
         {
             InitializeComponent();
+            var selectedLoaiHang = data?.LoaiHangId ?? -1;
 
             KhoHang_LoaiHangId.DisplayMember = "Ten";
             KhoHang_LoaiHangId.ValueMember = "Id";
-            KhoHang_LoaiHangId.DataSource = new BindingSource(CRUD.DbContext.DanhMucs.Where(s => s.Loai == Define.LoaiDanhMucEnum.DienThoai.ToString()).ToList(), null);
-
-            Init(data);
+            var lstLoaiHang =
+                CRUD.DbContext.DanhMucs.Where(s => (s.IsActived || s.Id == selectedLoaiHang)
+                && s.Loai == Define.LoaiDanhMucEnum.DienThoai.ToString())
+                    .ToList();
+            KhoHang_LoaiHangId.DataSource = new BindingSource(lstLoaiHang, null);
 
             _domainData = data;
+            if (_domainData == null)
+            {
+                _domainData = new KhoHang();
+                _domainData.IsActived = true;
+            }
+            Init(_domainData);
+
+            btnNgungKinhDoanh.Text = _domainData.IsActived ? "Ngưng Kinh Doanh" : "Tiếp Tục Kinh Doanh";
         }
 
         public override bool SaveData()
@@ -30,24 +41,11 @@ namespace QLDT.FormControls.KhoHangForms
                 return false;
             }
 
-            using (var dbContext = new QLDTEntities())
-            {
-                var saveData = CRUD.GetFormObject<KhoHang>(FormControls);
-                CRUD.DecorateSaveData(saveData, _domainData);
-                if (_domainData != null)
-                {
-                    saveData.Id = _domainData.Id;
-                    saveData.SoLuong = _domainData.SoLuong;
-                }
-                else
-                {
-                    saveData.SoLuong = 0;
-                }
+            CRUD.DecorateSaveData(_domainData);
+            _domainData.DonViTinh = Define.DVTEnum.Cai.ToString();
+            CRUD.DbContext.KhoHangs.AddOrUpdate(_domainData);
+            CRUD.DbContext.SaveChanges();
 
-                saveData.DonViTinh = Define.DVTEnum.Cai.ToString();
-                dbContext.KhoHangs.AddOrUpdate(saveData);
-                dbContext.SaveChanges();
-            }
             return true;
         }
 
@@ -81,6 +79,27 @@ namespace QLDT.FormControls.KhoHangForms
                 return CRUD.DbContext.KhoHangs.Any(s => s.Id != _domainData.Id && s.TenHang == checkData);
             }
             return CRUD.DbContext.KhoHangs.Any(s => s.TenHang == checkData);
+        }
+
+        private void btnNgungKinhDoanh_Click(object sender, System.EventArgs e)
+        {
+            if (_domainData.IsActived)
+            {
+                var confirmDialog = MessageBox.Show(
+                    string.Format(Define.MESSAGE_NGUNG_KINH_DOANH, _domainData.TenHang),
+                    Define.MESSAGE_NGUNG_KINH_DOANH_TITLE, MessageBoxButtons.YesNo);
+                if (confirmDialog == DialogResult.Yes)
+                {
+                    _domainData.IsActived = false;
+                    btnSave.PerformClick();
+                }
+            }
+            else
+            {
+                _domainData.IsActived = true;
+                btnSave.PerformClick();
+            }
+
         }
     }
 }

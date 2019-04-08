@@ -13,9 +13,13 @@ namespace QLDT.FormControls.KhoHangForms
         {
             InitializeComponent();
 
-            Init(data);
             _domainData = data;
             _loaiDanhMuc = loaidDanhMuc;
+            if (_domainData == null)
+            {
+                _domainData = new DanhMuc();
+            }
+            Init(_domainData);
         }
 
         public override bool SaveData()
@@ -27,10 +31,9 @@ namespace QLDT.FormControls.KhoHangForms
                 return false;
             }
 
-            var saveData = CRUD.GetFormObject<DanhMuc>(FormControls);
-            saveData.Loai = _loaiDanhMuc.ToString();
-            CRUD.DecorateSaveData(saveData, _domainData);
-            CRUD.DbContext.DanhMucs.AddOrUpdate(saveData);
+            _domainData.Loai = _loaiDanhMuc.ToString();
+            CRUD.DecorateSaveData(_domainData);
+            CRUD.DbContext.DanhMucs.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
 
             return true;

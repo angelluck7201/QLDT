@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting.Native;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace QLDT.FormControls
 {
@@ -74,6 +76,10 @@ namespace QLDT.FormControls
                     if (control is ComboBox)
                     {
                         propertyName = "SelectedValue";
+                    }
+                    if (control is TextEdit)
+                    {
+                        propertyName = "EditValue";
                     }
 
                     var type = data.GetType();
