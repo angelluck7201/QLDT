@@ -35,8 +35,7 @@
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue4 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl = new DevExpress.XtraTab.XtraTabControl();
             this.tabNhaCungCap = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -67,26 +66,7 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabCongNo = new DevExpress.XtraTab.XtraTabPage();
-            this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnAddCongNo = new DevExpress.XtraEditors.SimpleButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCongNoHuyLoc = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCongNoLoc = new DevExpress.XtraEditors.SimpleButton();
-            this.CongNo_EndDate = new System.Windows.Forms.DateTimePicker();
-            this.CongNo_StartDate = new System.Windows.Forms.DateTimePicker();
-            this.gridControlCongNo = new DevExpress.XtraGrid.GridControl();
-            this.gridViewCongNo = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabThanhToan = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl4 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -102,6 +82,7 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ucCongNoList1 = new QLDT.FormControls.CongNoForms.UcCongNoList();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabNhaCungCap.SuspendLayout();
@@ -116,11 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhapKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewXuatKho)).BeginInit();
             this.tabCongNo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
-            this.splitContainerControl3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCongNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCongNo)).BeginInit();
             this.tabThanhToan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl4)).BeginInit();
             this.splitContainerControl4.SuspendLayout();
@@ -128,6 +104,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlThanhToan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewThanhToan)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "Trạng Thái";
+            this.gridColumn24.FieldName = "TrangThai";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 5;
+            this.gridColumn24.Width = 82;
             // 
             // tabControl
             // 
@@ -582,288 +567,12 @@
             this.gridColumn22.VisibleIndex = 3;
             this.gridColumn22.Width = 238;
             // 
-            // gridColumn24
-            // 
-            this.gridColumn24.Caption = "Trạng Thái";
-            this.gridColumn24.FieldName = "TrangThai";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 5;
-            this.gridColumn24.Width = 82;
-            // 
             // tabCongNo
             // 
-            this.tabCongNo.Controls.Add(this.splitContainerControl3);
+            this.tabCongNo.Controls.Add(this.ucCongNoList1);
             this.tabCongNo.Name = "tabCongNo";
             this.tabCongNo.Size = new System.Drawing.Size(1399, 697);
             this.tabCongNo.Text = "Công Nợ Xuất Kho";
-            // 
-            // splitContainerControl3
-            // 
-            this.splitContainerControl3.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.splitContainerControl3.Appearance.Options.UseBackColor = true;
-            this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl3.Horizontal = false;
-            this.splitContainerControl3.IsSplitterFixed = true;
-            this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl3.Name = "splitContainerControl3";
-            this.splitContainerControl3.Panel1.Controls.Add(this.btnAddCongNo);
-            this.splitContainerControl3.Panel1.Controls.Add(this.panel2);
-            this.splitContainerControl3.Panel1.Text = "Panel1";
-            this.splitContainerControl3.Panel2.Controls.Add(this.gridControlCongNo);
-            this.splitContainerControl3.Panel2.Text = "Panel2";
-            this.splitContainerControl3.Size = new System.Drawing.Size(1399, 697);
-            this.splitContainerControl3.SplitterPosition = 70;
-            this.splitContainerControl3.TabIndex = 5;
-            this.splitContainerControl3.Text = "splitContainerControl3";
-            // 
-            // btnAddCongNo
-            // 
-            this.btnAddCongNo.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAddCongNo.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnAddCongNo.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddCongNo.Appearance.Options.UseBackColor = true;
-            this.btnAddCongNo.Appearance.Options.UseFont = true;
-            this.btnAddCongNo.Appearance.Options.UseForeColor = true;
-            this.btnAddCongNo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAddCongNo.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCongNo.Image")));
-            this.btnAddCongNo.Location = new System.Drawing.Point(17, 18);
-            this.btnAddCongNo.Name = "btnAddCongNo";
-            this.btnAddCongNo.Size = new System.Drawing.Size(236, 44);
-            this.btnAddCongNo.TabIndex = 45;
-            this.btnAddCongNo.Text = "Nhập Công Nợ Cũ";
-            this.btnAddCongNo.Click += new System.EventHandler(this.btnAddCongNo_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCongNoHuyLoc);
-            this.panel2.Controls.Add(this.btnCongNoLoc);
-            this.panel2.Controls.Add(this.CongNo_EndDate);
-            this.panel2.Controls.Add(this.CongNo_StartDate);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(388, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1011, 70);
-            this.panel2.TabIndex = 44;
-            // 
-            // btnCongNoHuyLoc
-            // 
-            this.btnCongNoHuyLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCongNoHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnCongNoHuyLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCongNoHuyLoc.Appearance.Options.UseBackColor = true;
-            this.btnCongNoHuyLoc.Appearance.Options.UseFont = true;
-            this.btnCongNoHuyLoc.Appearance.Options.UseForeColor = true;
-            this.btnCongNoHuyLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCongNoHuyLoc.Location = new System.Drawing.Point(855, 22);
-            this.btnCongNoHuyLoc.Name = "btnCongNoHuyLoc";
-            this.btnCongNoHuyLoc.Size = new System.Drawing.Size(124, 35);
-            this.btnCongNoHuyLoc.TabIndex = 47;
-            this.btnCongNoHuyLoc.Text = "Bỏ Lọc";
-            this.btnCongNoHuyLoc.Click += new System.EventHandler(this.btnCongNoHuyLoc_Click);
-            // 
-            // btnCongNoLoc
-            // 
-            this.btnCongNoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCongNoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnCongNoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCongNoLoc.Appearance.Options.UseBackColor = true;
-            this.btnCongNoLoc.Appearance.Options.UseFont = true;
-            this.btnCongNoLoc.Appearance.Options.UseForeColor = true;
-            this.btnCongNoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCongNoLoc.Location = new System.Drawing.Point(714, 22);
-            this.btnCongNoLoc.Name = "btnCongNoLoc";
-            this.btnCongNoLoc.Size = new System.Drawing.Size(124, 35);
-            this.btnCongNoLoc.TabIndex = 46;
-            this.btnCongNoLoc.Text = "Lọc";
-            this.btnCongNoLoc.Click += new System.EventHandler(this.btnCongNoLoc_Click);
-            // 
-            // CongNo_EndDate
-            // 
-            this.CongNo_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_EndDate.Location = new System.Drawing.Point(379, 24);
-            this.CongNo_EndDate.Name = "CongNo_EndDate";
-            this.CongNo_EndDate.Size = new System.Drawing.Size(311, 33);
-            this.CongNo_EndDate.TabIndex = 45;
-            // 
-            // CongNo_StartDate
-            // 
-            this.CongNo_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_StartDate.Location = new System.Drawing.Point(46, 24);
-            this.CongNo_StartDate.Name = "CongNo_StartDate";
-            this.CongNo_StartDate.Size = new System.Drawing.Size(311, 33);
-            this.CongNo_StartDate.TabIndex = 44;
-            // 
-            // gridControlCongNo
-            // 
-            this.gridControlCongNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlCongNo.Location = new System.Drawing.Point(0, 0);
-            this.gridControlCongNo.MainView = this.gridViewCongNo;
-            this.gridControlCongNo.Name = "gridControlCongNo";
-            this.gridControlCongNo.Size = new System.Drawing.Size(1399, 617);
-            this.gridControlCongNo.TabIndex = 3;
-            this.gridControlCongNo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewCongNo});
-            // 
-            // gridViewCongNo
-            // 
-            this.gridViewCongNo.Appearance.FocusedCell.BackColor = System.Drawing.SystemColors.Highlight;
-            this.gridViewCongNo.Appearance.FocusedCell.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gridViewCongNo.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridViewCongNo.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gridViewCongNo.Appearance.FocusedRow.BackColor = System.Drawing.SystemColors.Highlight;
-            this.gridViewCongNo.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gridViewCongNo.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridViewCongNo.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewCongNo.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridViewCongNo.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewCongNo.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.gridViewCongNo.AppearancePrint.HeaderPanel.Options.UseFont = true;
-            this.gridViewCongNo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.gridViewCongNo.ColumnPanelRowHeight = 30;
-            this.gridViewCongNo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21});
-            this.gridViewCongNo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule3.ApplyToRow = true;
-            gridFormatRule3.Name = "AlertTon";
-            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            this.gridViewCongNo.FormatRules.Add(gridFormatRule3);
-            this.gridViewCongNo.GridControl = this.gridControlCongNo;
-            this.gridViewCongNo.Name = "gridViewCongNo";
-            this.gridViewCongNo.OptionsBehavior.AutoExpandAllGroups = true;
-            this.gridViewCongNo.OptionsBehavior.Editable = false;
-            this.gridViewCongNo.OptionsCustomization.AllowGroup = false;
-            this.gridViewCongNo.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewCongNo.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
-            this.gridViewCongNo.OptionsView.ShowFooter = true;
-            this.gridViewCongNo.OptionsView.ShowGroupPanel = false;
-            this.gridViewCongNo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn18, DevExpress.Data.ColumnSortOrder.Descending)});
-            this.gridViewCongNo.DoubleClick += new System.EventHandler(this.gridViewCongNo_DoubleClick);
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.AppearanceCell.Options.UseFont = true;
-            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn13.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn13.Caption = "Khách Hàng";
-            this.gridColumn13.FieldName = "TenKhachHang";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
-            this.gridColumn13.Width = 283;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.AppearanceCell.Options.UseFont = true;
-            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn14.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn14.Caption = "Điện Thoại";
-            this.gridColumn14.FieldName = "Dienthoai";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
-            this.gridColumn14.Width = 160;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.AppearanceCell.Options.UseFont = true;
-            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn15.Caption = "Ngày Lập";
-            this.gridColumn15.FieldName = "NgayLap";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 1;
-            this.gridColumn15.Width = 143;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.AppearanceCell.Options.UseFont = true;
-            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn16.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn16.Caption = "Ghi Chú";
-            this.gridColumn16.FieldName = "GhiChu";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 6;
-            this.gridColumn16.Width = 184;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Id";
-            this.gridColumn17.FieldName = "Id";
-            this.gridColumn17.Name = "gridColumn17";
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "gridColumn10";
-            this.gridColumn18.FieldName = "NgayLap";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.AppearanceCell.Options.UseFont = true;
-            this.gridColumn19.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn19.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn19.Caption = "Nợ";
-            this.gridColumn19.DisplayFormat.FormatString = "n0";
-            this.gridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn19.FieldName = "NoDonHang";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoDonHang", "NỢ={0:n0}")});
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 3;
-            this.gridColumn19.Width = 130;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.AppearanceCell.Options.UseFont = true;
-            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn20.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn20.Caption = "Đã Thanh Toán";
-            this.gridColumn20.DisplayFormat.FormatString = "n0";
-            this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn20.FieldName = "DaThanhToan";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DaThanhToan", "THANH TOÁN={0:n0}")});
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 4;
-            this.gridColumn20.Width = 135;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.AppearanceCell.Options.UseFont = true;
-            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn21.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn21.Caption = "Còn Lại";
-            this.gridColumn21.DisplayFormat.FormatString = "n0";
-            this.gridColumn21.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn21.FieldName = "No";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "No", "CÒN={0:n0}")});
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 5;
-            this.gridColumn21.Width = 116;
             // 
             // tabThanhToan
             // 
@@ -987,15 +696,15 @@
             this.gridColumn28,
             this.gridColumn30});
             this.gridViewThanhToan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule4.ApplyToRow = true;
-            gridFormatRule4.Name = "AlertTon";
-            formatConditionRuleValue4.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue4.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue4.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue4.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue4.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule4.Rule = formatConditionRuleValue4;
-            this.gridViewThanhToan.FormatRules.Add(gridFormatRule4);
+            gridFormatRule3.ApplyToRow = true;
+            gridFormatRule3.Name = "AlertTon";
+            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule3.Rule = formatConditionRuleValue3;
+            this.gridViewThanhToan.FormatRules.Add(gridFormatRule3);
             this.gridViewThanhToan.GridControl = this.gridControlThanhToan;
             this.gridViewThanhToan.GroupCount = 1;
             this.gridViewThanhToan.Name = "gridViewThanhToan";
@@ -1075,6 +784,15 @@
             this.gridColumn30.VisibleIndex = 1;
             this.gridColumn30.Width = 335;
             // 
+            // ucCongNoList1
+            // 
+            this.ucCongNoList1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucCongNoList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCongNoList1.Location = new System.Drawing.Point(0, 0);
+            this.ucCongNoList1.Name = "ucCongNoList1";
+            this.ucCongNoList1.Size = new System.Drawing.Size(1399, 697);
+            this.ucCongNoList1.TabIndex = 1;
+            // 
             // UcXuatKho
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1096,11 +814,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhapKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewXuatKho)).EndInit();
             this.tabCongNo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
-            this.splitContainerControl3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCongNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCongNo)).EndInit();
             this.tabThanhToan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl4)).EndInit();
             this.splitContainerControl4.ResumeLayout(false);
@@ -1143,24 +856,6 @@
         private DevExpress.XtraEditors.SimpleButton btnNhapKhoLoc;
         private System.Windows.Forms.DateTimePicker NhapKho_EndDate;
         private System.Windows.Forms.DateTimePicker NhapKho_StartDate;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
-        private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.SimpleButton btnCongNoHuyLoc;
-        private DevExpress.XtraEditors.SimpleButton btnCongNoLoc;
-        private System.Windows.Forms.DateTimePicker CongNo_EndDate;
-        private System.Windows.Forms.DateTimePicker CongNo_StartDate;
-        private DevExpress.XtraGrid.GridControl gridControlCongNo;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCongNo;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
-        private DevExpress.XtraEditors.SimpleButton btnAddCongNo;
         private DevExpress.XtraTab.XtraTabPage tabThanhToan;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl4;
         private System.Windows.Forms.Panel panel3;
@@ -1178,5 +873,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private CongNoForms.UcCongNoList ucCongNoList1;
     }
 }

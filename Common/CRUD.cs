@@ -250,6 +250,7 @@ namespace QLDT
             if (oldData == null)
             {
                 ReflectionSet(data, "CreatedDate", currentTime);
+                ReflectionSet(data, "IsActived", true);
             }
             else
             {

@@ -17,8 +17,9 @@ namespace QLDT.FormControls.DonHangForms
         private readonly DonHang _domainData;
         private readonly Define.LoaiDonHangEnum _loaiDonHang;
         private readonly BindingList<ChiTietDonHang> _chiTietDonhang = new BindingList<ChiTietDonHang>();
+        private List<DonHang> _donHangs; 
 
-        public UcDonHang(Define.LoaiDonHangEnum loaiDonHang, DonHang data = null)
+        public UcDonHang(Define.LoaiDonHangEnum loaiDonHang, DonHang data = null, List<DonHang> donHangs = null)
         {
             InitializeComponent();
 
@@ -37,6 +38,7 @@ namespace QLDT.FormControls.DonHangForms
             DonHang_KhachHangId.DataSource = new BindingSource((lstKhachHang), null);
             _loaiDonHang = loaiDonHang;
             _domainData = data;
+            _donHangs = donHangs;
             if (_domainData == null)
             {
                 _domainData = new DonHang();
@@ -65,6 +67,7 @@ namespace QLDT.FormControls.DonHangForms
                 if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
                 {
                     btnSave.Enabled = false;
+                    _domainData.ThanhToan += _domainData.CongNoes.Where(l => l.IsActived).Sum(l => l.ThanhToan);
                 }
             }
 
@@ -108,19 +111,13 @@ namespace QLDT.FormControls.DonHangForms
                 }
             }
 
-            // Save Don Hang
-            CRUD.DecorateSaveData(_domainData);
+           
 
             using (var transaction = new TransactionScope())
             {
-                //if (_domainData.Id > 0)
-                //{
-                //    // Remove chi tiet don hang cu
-                //    DeleteChiTietDonHang(_domainData);
-                //    CRUD.DbContext.DonHangs.AddOrUpdate(_domainData);
-                //}
-
-                //CRUD.DbContext.SaveChanges();
+                // Save Don Hang
+                CRUD.DecorateSaveData(_domainData);
+                CRUD.DbContext.DonHangs.AddOrUpdate(_domainData);
 
                 // Save chi tiet Don Hang
                 foreach (var chiTietDonHang in _chiTietDonhang)
@@ -131,18 +128,22 @@ namespace QLDT.FormControls.DonHangForms
                     CRUD.DbContext.SaveChanges();
 
                     // Cap nhat hang trong kho
-                    var hangHoa = CRUD.DbContext.KhoHangs.Find(chiTietDonHang.HangHoaId);
-                    if (hangHoa != null)
+                    if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString() 
+                        && chiTietDonHang.IsActived)
                     {
-                        if (_loaiDonHang == Define.LoaiDonHangEnum.NhapKho)
+                        var hangHoa = CRUD.DbContext.KhoHangs.Find(chiTietDonHang.HangHoaId);
+                        if (hangHoa != null)
                         {
-                            hangHoa.SoLuong += chiTietDonHang.SoLuong;
+                            if (_loaiDonHang == Define.LoaiDonHangEnum.NhapKho)
+                            {
+                                hangHoa.SoLuong += chiTietDonHang.SoLuong;
+                            }
+                            else
+                            {
+                                hangHoa.SoLuong -= chiTietDonHang.SoLuong;
+                            }
+                            CRUD.DbContext.KhoHangs.AddOrUpdate(hangHoa);
                         }
-                        else
-                        {
-                            hangHoa.SoLuong -= chiTietDonHang.SoLuong;
-                        }
-                        CRUD.DbContext.KhoHangs.AddOrUpdate(hangHoa);
                     }
 
                     // Save chi tiet hang hoa
@@ -161,17 +162,8 @@ namespace QLDT.FormControls.DonHangForms
                     if (congNo > 0)
                     {
                         // Add Cong no moi
-                        var congNoHienTai = _domainData.CongNoes.FirstOrDefault();
-
-                        if (congNoHienTai == null)
-                        {
-                            congNoHienTai = new CongNo();
-                            congNoHienTai.No = Math.Abs(congNo);
-                        }
-                        else
-                        {
-                            congNoHienTai.No = congNoHienTai.NoDonHang - congNoHienTai.DaThanhToan;
-                        }
+                        var congNoHienTai = new CongNo();
+                        congNoHienTai.No = Math.Abs(congNo);
 
                         CRUD.DecorateSaveData(congNoHienTai);
                         congNoHienTai.DonHangId = _domainData.Id;
@@ -181,22 +173,19 @@ namespace QLDT.FormControls.DonHangForms
                         congNoHienTai.GhiChu = _domainData.GhiChu;
                         CRUD.DbContext.CongNoes.AddOrUpdate(congNoHienTai);
                         CRUD.DbContext.SaveChanges();
-
-                        // Add chi tiet thanh toan
-                        if (_domainData.ThanhToan > 0)
-                        {
-                            var thanhToan = new ThanhToanCongNo();
-                            CRUD.DecorateSaveData(thanhToan);
-                            thanhToan.CongNoId = congNoHienTai.Id;
-                            thanhToan.ThanhToan = _domainData.ThanhToan;
-                            thanhToan.NgayThanhToan = _domainData.NgayLap;
-                            CRUD.DbContext.ThanhToanCongNoes.AddOrUpdate(thanhToan);
-                        }
                     }
                 }
 
                 CRUD.DbContext.SaveChanges();
                 transaction.Complete();
+            }
+
+            // Update grid view
+            if (_domainData.Id > 0 
+                && _donHangs != null
+                && _donHangs.All(l => l.Id != _domainData.Id))
+            {
+                _donHangs.Add(_domainData);
             }
 
             if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
@@ -229,10 +218,6 @@ namespace QLDT.FormControls.DonHangForms
                 if (chiTietDonHang.HangHoaId == 0)
                 {
                     return "Không được để trống hàng hóa";
-                }
-                if (chiTietDonHang.DonGia <= 0)
-                {
-                    return "Đơn giá phải > 0";
                 }
                 if (chiTietDonHang.SoLuong <= 0)
                 {
@@ -435,69 +420,6 @@ namespace QLDT.FormControls.DonHangForms
                 }
                 CRUD.DbContext.SaveChanges();
                 transaction.Complete();
-            }
-        }
-
-        private void DeleteCongNo(DonHang donHang)
-        {
-            var listCongNo = donHang.CongNoes.ToList();
-            foreach (var congNo in listCongNo)
-            {
-                DeleteThanhToanCongNo(congNo);
-                CRUD.DbContext.CongNoes.Remove(congNo);
-            }
-            CRUD.DbContext.SaveChanges();
-        }
-
-        private void DeleteThanhToanCongNo(CongNo congNo)
-        {
-            var listThanhToan = congNo.ThanhToanCongNoes.ToList();
-            foreach (var thanhToanCongNo in listThanhToan)
-            {
-                CRUD.DbContext.ThanhToanCongNoes.Remove(thanhToanCongNo);
-            }
-            CRUD.DbContext.SaveChanges();
-        }
-
-        private void DeleteChiTietDonHang(DonHang donHang)
-        {
-            var listChiTiet = donHang.ChiTietDonHangs.ToList();
-            foreach (var chiTietDonHang in listChiTiet)
-            {
-                UpdateTonKho(chiTietDonHang);
-                DeleteChiTietHangHoa(chiTietDonHang);
-                CRUD.DbContext.ChiTietDonHangs.Remove(chiTietDonHang);
-            }
-            CRUD.DbContext.SaveChanges();
-        }
-
-        private void DeleteChiTietHangHoa(ChiTietDonHang chitiet)
-        {
-            var listChiTiet = chitiet.ChiTietHangHoas.ToList();
-            foreach (var hangHoa in listChiTiet)
-            {
-                CRUD.DbContext.ChiTietHangHoas.Remove(hangHoa);
-            }
-            CRUD.DbContext.SaveChanges();
-        }
-
-        private void UpdateTonKho(ChiTietDonHang chitiet)
-        {
-            var loaiPhieu = chitiet.DonHang.LoaiDonHang;
-            var hangHoa = chitiet.KhoHang;
-            if (hangHoa != null)
-            {
-                var soluongThayDoi = chitiet.ChiTietHangHoas.Count;
-                if (Define.LoaiDonHangEnum.NhapKho.ToString() == loaiPhieu)
-                {
-                    hangHoa.SoLuong -= soluongThayDoi;
-                }
-                else
-                {
-                    hangHoa.SoLuong += soluongThayDoi;
-                }
-                CRUD.DbContext.KhoHangs.AddOrUpdate(hangHoa);
-                CRUD.DbContext.SaveChanges();
             }
         }
 

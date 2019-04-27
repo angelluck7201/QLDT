@@ -217,3 +217,4 @@ WHERE	LoaiHangId = 45
 Update DanhMuc Set IsActived = 0 Where Id = 45 
 
 
+

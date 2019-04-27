@@ -26,7 +26,7 @@ namespace QLDT.FormControls.NhapKhoForms
             InitAuthorize();
             ReloadData();
 
-            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, ReloadData);
+            //ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, ReloadData);
         }
 
         private void InitAuthorize()
@@ -42,67 +42,69 @@ namespace QLDT.FormControls.NhapKhoForms
         {
             ThreadHelper.LoadForm(() =>
             {
-                CRUD.DisposeDb();
-                _khachHangs = CRUD.DbContext.KhachHangs.Where(s => s.LoaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap.ToString()).ToList();
-                gridControlKhachHang.DataSource = _khachHangs;
+                if (tabControl.SelectedTabPage == tabNhaCungCap)
+                {
+                    _khachHangs = CRUD.DbContext.KhachHangs
+                    .Where(s => s.IsActived && s.LoaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap.ToString()).ToList();
+                    gridControlKhachHang.DataSource = _khachHangs;
+                }
 
-                _donHangs = CRUD.DbContext.DonHangs.Where(s => s.LoaiDonHang == Define.LoaiDonHangEnum.NhapKho.ToString()).ToList();
-                gridControlNhapKho.DataSource = _donHangs;
+                if (tabControl.SelectedTabPage == tabNhapKho)
+                {
+                    _donHangs =
+                        CRUD.DbContext.DonHangs
+                        .Where(s => s.IsActived && s.LoaiDonHang == Define.LoaiDonHangEnum.NhapKho.ToString())
+                            .ToList();
+                    gridControlNhapKho.DataSource = _donHangs;
+                }
 
-                _congNos = CRUD.DbContext.CongNoes.Where(s => s.LoaiDonHang == Define.LoaiDonHangEnum.NhapKho.ToString()).ToList();
-                gridControlCongNo.DataSource = _congNos;
+                if (tabControl.SelectedTabPage == tabCongNo)
+                {
+                    ucCongNoList1.SetLoaiDonHang(Define.LoaiDonHangEnum.NhapKho);
+                }
 
-                _thanhToanCongNoes = _congNos.SelectMany(s => s.ThanhToanCongNoes).ToList();
-                gridControlThanhToan.DataSource = _thanhToanCongNoes;
+                if (tabControl.SelectedTabPage == tabThanhToan)
+                {
+                    _thanhToanCongNoes = CRUD.DbContext.ThanhToanCongNoes.Where(s => s.IsActived && s.CongNo.IsActived).ToList();
+                    gridControlThanhToan.DataSource = _thanhToanCongNoes;
+                }
             });
         }
 
         private void btnAddNhaCungCap_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap), "Nhà Cung Cấp", this.ParentForm);
+            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap, null, _khachHangs), "Nhà Cung Cấp", this.ParentForm);
         }
 
         private void gridViewKhachHang_DoubleClick(object sender, EventArgs e)
         {
             ThreadHelper.LoadForm(() =>
             {
-                dynamic data = gridViewKhachHang.GetRow(gridViewKhachHang.FocusedRowHandle);
-                if (data != null && data.Id != null)
+                var data = _khachHangs[gridViewKhachHang.GetFocusedDataSourceRowIndex()];
+                if (data != null)
                 {
-
-                    var info = CRUD.DbContext.KhachHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap, info), "Nhà Cung Cấp", this.ParentForm);
+                    data = CRUD.DbContext.KhachHangs.Find(data.Id);
+                    _khachHangs[gridViewKhachHang.GetFocusedDataSourceRowIndex()] = data;
+                    FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap, data), "Nhà Cung Cấp", this.ParentForm);
                 }
             });
         }
 
         private void btnAddPNK_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho), "Nhập Kho", this.ParentForm);
+            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho, null, _donHangs), "Nhập Kho", this.ParentForm);
         }
 
         private void gridViewNhapKho_DoubleClick(object sender, EventArgs e)
         {
             ThreadHelper.LoadForm(() =>
             {
-                dynamic data = gridViewNhapKho.GetRow(gridViewNhapKho.FocusedRowHandle);
-                if (data != null && data.Id != null)
+                var data = (DonHang)gridViewNhapKho.GetRow(gridViewNhapKho.FocusedRowHandle);
+                if (data != null)
                 {
-                    var info = CRUD.DbContext.DonHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho, info), "Nhập Kho", this.ParentForm);
-                }
-            });
-        }
-
-        private void gridViewCongNo_DoubleClick(object sender, EventArgs e)
-        {
-            ThreadHelper.LoadForm(() =>
-            {
-                dynamic data = gridViewCongNo.GetRow(gridViewCongNo.FocusedRowHandle);
-                if (data != null && data.Id != null)
-                {
-                    var info = CRUD.DbContext.CongNoes.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcCongNo(Define.LoaiDonHangEnum.NhapKho, info), "Công Nợ", this.ParentForm);
+                    data = CRUD.DbContext.DonHangs.Find(data.Id);
+                    _donHangs[gridViewNhapKho.GetFocusedDataSourceRowIndex()] = data;
+                    FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho, data), "Nhập Kho", this.ParentForm);
                 }
             });
         }
@@ -121,26 +123,6 @@ namespace QLDT.FormControls.NhapKhoForms
             btnNhapKhoLoc.Appearance.BackColor = SystemColors.MenuHighlight;
         }
 
-        private void btnCongNoLoc_Click(object sender, EventArgs e)
-        {
-            var startDate = TimeHelper.StringToTimeStamp(CongNo_StartDate.Text);
-            var endDate = TimeHelper.StringToTimeStamp(CongNo_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
-            gridViewCongNo.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate, endDate);
-            btnCongNoLoc.Appearance.BackColor = Color.Silver;
-
-        }
-
-        private void btnCongNoHuyLoc_Click(object sender, EventArgs e)
-        {
-            gridViewCongNo.ActiveFilterString = "";
-            btnCongNoLoc.Appearance.BackColor = SystemColors.MenuHighlight;
-        }
-
-        private void btnAddCongNo_Click(object sender, EventArgs e)
-        {
-            FormBehavior.GenerateForm(new UcCongNoCu(Define.LoaiDonHangEnum.NhapKho), "Công Nợ", this.ParentForm);
-        }
-
         private void btnThanhToanLoc_Click(object sender, EventArgs e)
         {
             var startDate = TimeHelper.StringToTimeStamp(ThanhToan_StartDate.Text);
@@ -154,6 +136,11 @@ namespace QLDT.FormControls.NhapKhoForms
         {
             gridViewThanhToan.ActiveFilterString = "";
             btnThanhToanLoc.Appearance.BackColor = SystemColors.MenuHighlight;
+        }
+
+        private void tabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            ReloadData();
         }
     }
 }

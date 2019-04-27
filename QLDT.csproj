@@ -146,6 +146,12 @@
     <Compile Include="FormControls\CongNoForms\UcCongNoCu.Designer.cs">
       <DependentUpon>UcCongNoCu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormControls\CongNoForms\UcCongNoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\CongNoForms\UcCongNoList.Designer.cs">
+      <DependentUpon>UcCongNoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormControls\DefaultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,7 @@
     <Compile Include="ViewModels\BaseModel.cs" />
     <Compile Include="ViewModels\CongNoViewModel.cs" />
     <Compile Include="ViewModels\DonHangViewModel.cs" />
+    <Compile Include="ViewModels\KhachHangViewModel.cs" />
     <Compile Include="ViewModels\KhoHangViewModel.cs" />
     <Compile Include="ViewModels\ThongKeViewModel.cs" />
     <Compile Include="ViewModels\ThuChiViewModel.cs" />
@@ -314,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormControls\CongNoForms\UcCongNoCu.resx">
       <DependentUpon>UcCongNoCu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\CongNoForms\UcCongNoList.resx">
+      <DependentUpon>UcCongNoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormControls\DefaultForm.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>

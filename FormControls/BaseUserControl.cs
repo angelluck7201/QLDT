@@ -67,10 +67,12 @@ namespace QLDT.FormControls
         {
             if (data != null)
             {
+                var type = data.GetType();
+                var modelName = type.Name.Split('_')[0];
                 foreach (Control control in FormControls)
                 {
-                    var fieldName = CRUD.GetUIModelName(control.Name);
-                    if (string.IsNullOrEmpty(fieldName)) continue;
+                    var fieldName = control.Name.Split('_');
+                    if (fieldName.Length <2 || !modelName.Equals(fieldName[0], StringComparison.OrdinalIgnoreCase)) continue;
 
                     var propertyName = "Text";
                     if (control is ComboBox)
@@ -82,11 +84,10 @@ namespace QLDT.FormControls
                         propertyName = "EditValue";
                     }
 
-                    var type = data.GetType();
-                    var prop = type.GetProperty(fieldName);
+                    var prop = type.GetProperty(fieldName[1]);
                     if (prop != null) 
                     {
-                        control.DataBindings.Add(new Binding(propertyName, data, fieldName));
+                        control.DataBindings.Add(new Binding(propertyName, data, fieldName[1]));
                     }
                     //var modelData = CRUD.ReflectionGet(data, fieldName);
                     //if (modelData != null)

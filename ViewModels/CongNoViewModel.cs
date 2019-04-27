@@ -8,6 +8,7 @@ namespace QLDT
 {
     class CongNoViewModel
     {
+       
     }
 
     public partial class ThanhToanCongNo
@@ -36,38 +37,12 @@ namespace QLDT
                 return string.Empty;
             }
         }
-
-        public long DaThanhToan
+     
+        public long ConLai
         {
-            get
-            {
-                var thanhToanDonHang = 0L;
-                if (DonHang != null)
-                {
-                    thanhToanDonHang = DonHang.ThanhToan;
-                }
-                var thanhToanCongNo = 0L;
-                if (ThanhToanCongNoes != null)
-                {
-                    thanhToanCongNo = ThanhToanCongNoes.Sum(s => s.ThanhToan) - thanhToanDonHang;
-                }
-                return (long)(thanhToanCongNo);
-            }
+            get { return No - ThanhToan; }
         }
 
-        public long NoDonHang
-        {
-            get
-            {
-                if (DonHang != null)
-                {
-                    return (long)(DonHang.TongCong - DonHang.ThanhToan);
-                }
-                else
-                {
-                    return (long)(No + DaThanhToan);
-                }
-            }
-        }
+        public long ThanhToanNo { get; set; }
     }
 }

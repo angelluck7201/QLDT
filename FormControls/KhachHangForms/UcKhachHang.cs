@@ -13,17 +13,22 @@ namespace QLDT.FormControls.KhachHangForms
 {
     public partial class UcKhachHang : BaseUserControl
     {
-        private readonly KhachHang _domainData;
-        private readonly Define.LoaiKhachHangEnum _loaiKhachHang;
+        private  KhachHang _domainData;
+        private List<KhachHang> _khachHangs; 
 
-        public UcKhachHang(Define.LoaiKhachHangEnum loaiKhachHang, KhachHang data = null)
+        public UcKhachHang(Define.LoaiKhachHangEnum loaiKhachHang, KhachHang data = null, List<KhachHang> khachHangs = null )
         {
-            InitializeComponent();
-
-            Init(data);
-
-            _loaiKhachHang = loaiKhachHang;
             _domainData = data;
+            _khachHangs = khachHangs;
+
+            if (_domainData == null)
+            {
+                _domainData = new KhachHang();
+            }
+            _domainData.LoaiKhachHang = loaiKhachHang.ToString();
+
+            InitializeComponent();
+            Init(_domainData);
         }
 
         public override bool SaveData()
@@ -35,15 +40,15 @@ namespace QLDT.FormControls.KhachHangForms
                 return false;
             }
 
-            var saveData = CRUD.GetFormObject<KhachHang>(FormControls);
-            CRUD.DecorateSaveData(saveData, _domainData);
-            saveData.LoaiKhachHang = _loaiKhachHang.ToString();
-            if (_domainData != null)
-            {
-                saveData.Id = _domainData.Id;
-            }
-            CRUD.DbContext.KhachHangs.AddOrUpdate(saveData);
+            CRUD.DecorateSaveData(_domainData);
+            CRUD.DbContext.KhachHangs.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
+            if (_khachHangs != null
+                && _domainData.Id > 0
+                && _khachHangs.All(s => s.Id != _domainData.Id))
+            {
+                _khachHangs.Add(_domainData);
+            }
             return true;
         }
 

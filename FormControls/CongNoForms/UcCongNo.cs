@@ -9,54 +9,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Forms;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraEditors.DXErrorProvider;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace QLDT.FormControls.CongNoForms
 {
     public partial class UcCongNo : BaseUserControl
     {
+        private KhachHang _domainData;
+        private List<ThanhToanCongNo> _thanhToanCongNoes = new List<ThanhToanCongNo>();
+        private List<CongNo> _congNoes = new List<CongNo>();
 
-        private readonly CongNo _domainData;
-        private readonly List<ChiTietDonHang> _chiTietDonHangs = new List<ChiTietDonHang>();
-        private readonly List<ThanhToanCongNo> _thanhToanCongNoes = new List<ThanhToanCongNo>();
-        private readonly List<CongNo> _congNoes = new List<CongNo>();
-        private readonly Define.LoaiDonHangEnum _loaiDonHang;
-
-        public UcCongNo(Define.LoaiDonHangEnum loaiDonHang, CongNo data)
+        public UcCongNo(Define.LoaiDonHangEnum loaiDonHang, KhachHang data)
         {
             InitializeComponent();
-
-            Init(data);
             _domainData = data;
-            _loaiDonHang = loaiDonHang;
-
             if (loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
             {
                 lblKhachHangId.Text = "Khách Hàng";
             }
 
-            ThanhToanCongNo_NgayThanhToan.Text = TimeHelper.TimestampToString(TimeHelper.CurrentTimeStamp());
-
             // Khoi tao thong tin khach hang
-            KhachHang.Text = data.KhachHang.Ten;
-            NgayLap.Text = data.NgayLap.ToShortDateString();
+            KhachHang.Text = data.Ten;
+            GhiChu.Text = _domainData.GhiChu;
 
-            if (data.DonHang != null)
-            {
-                var donHang = data.DonHang;
-                TongCong.Text = donHang.TongCong.ToString();
+            _congNoes = data.CongNoes.Where(l => l.IsActived && l.ConLai > 0).ToList();
 
-                // Thong tin don hang 
-                _chiTietDonHangs = donHang.ChiTietDonHangs.ToList();
-                gridControlChiTiet.DataSource = _chiTietDonHangs;
-            }
-
-            // Lich su thanh toan
-            _thanhToanCongNoes = data.ThanhToanCongNoes.ToList();
+            TongCong.EditValue = _congNoes.Sum(l=>l.ConLai);
+            gridControlChiTiet.DataSource = _congNoes;
+            _thanhToanCongNoes = data.ThanhToanCongNoes.Where(l=>l.IsActived).ToList();
             gridControlNhatKy.DataSource = _thanhToanCongNoes;
-
-            // Lich su cong no
-            _congNoes = data.KhachHang.CongNoes.Where(s => s.No > 0).ToList();
-            gridControlCongNo.DataSource = _congNoes;
         }
 
         public override bool SaveData()
@@ -64,80 +49,41 @@ namespace QLDT.FormControls.CongNoForms
             var validateResult = ValidateInput();
             if (!string.IsNullOrEmpty(validateResult))
             {
-                MessageBox.Show(validateResult);
+                MessageBox.Show(validateResult, "Không hợp lệ.",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            var thanhToan = PrimitiveConvert.StringToInt(ThanhToanCongNo_ThanhToan.Text);
-            var no = PrimitiveConvert.StringToInt(CongNo_No.Text);
+            var ghichu = ThanhToanCongNo_GhiChu.Text;
+            var ngayThanhToan = (DateTime)ThanhToanCongNo_ThanhToan.EditValue;
+            var khachHangId = _domainData.Id;
             using (var transaction = new TransactionScope())
             {
-                if (thanhToan > no)
+                foreach (var congNo in _congNoes)
                 {
-                    foreach (var congNo in _congNoes)
+                    if (congNo.ThanhToanNo > 0)
                     {
-                        CRUD.DecorateSaveData(congNo);
-                        var tienThanhToan = thanhToan;
-                        if (congNo.No >= thanhToan)
-                        {
-                            thanhToan = 0;
-                        }
-                        else
-                        {
-                            tienThanhToan = (long)congNo.No;
-                            thanhToan -= (long)congNo.No;
-                        }
-                        congNo.No -= tienThanhToan;
-
-                        var thanhToanCongNo = CRUD.GetFormObject<ThanhToanCongNo>(FormControls);
-                        thanhToanCongNo.ThanhToan = tienThanhToan;
+                        var thanhToanCongNo = new ThanhToanCongNo();
+                        thanhToanCongNo.ThanhToan = congNo.ThanhToanNo;
+                        thanhToanCongNo.KhachHangId = khachHangId;
+                        thanhToanCongNo.NgayThanhToan = ngayThanhToan;
+                        thanhToanCongNo.GhiChu = ghichu;
                         thanhToanCongNo.CongNoId = congNo.Id;
                         CRUD.DecorateSaveData(thanhToanCongNo);
                         CRUD.DbContext.ThanhToanCongNoes.Add(thanhToanCongNo);
 
+                        congNo.ThanhToan += congNo.ThanhToanNo;
 
-                        if (thanhToan <= 0) break;
+                        CRUD.DecorateSaveData(congNo);
+                        CRUD.DbContext.CongNoes.Add(congNo);
                     }
-                    CRUD.DbContext.SaveChanges();
                 }
-                else
-                {
-
-                    // Update cong no
-                    var congNo = CRUD.GetFormObject<CongNo>(FormControls);
-                    congNo.DonHangId = _domainData.DonHangId;
-                    congNo.KhachHangId = _domainData.KhachHangId;
-                    congNo.NgayLap = _domainData.NgayLap;
-                    congNo.LoaiDonHang = _loaiDonHang.ToString();
-                    CRUD.DecorateSaveData(congNo, _domainData);
-                    UpdateCongNo(congNo);
-                }
-
                 transaction.Complete();
             }
 
             return true;
         }
 
-        private void UpdateCongNo(CongNo congNo)
-        {
-            var thanhToan = PrimitiveConvert.StringToInt(ThanhToanCongNo_ThanhToan.Text);
-            var no = PrimitiveConvert.StringToInt(CongNo_No.Text);
-            congNo.No = Math.Max(no - thanhToan, 0);
-            CRUD.DbContext.CongNoes.AddOrUpdate(congNo);
-
-            // Update chi tiet cong no
-            var thanhToanCongNo = CRUD.GetFormObject<ThanhToanCongNo>(FormControls);
-            if (thanhToanCongNo.ThanhToan > 0)
-            {
-                thanhToanCongNo.CongNoId = congNo.Id;
-                CRUD.DecorateSaveData(thanhToanCongNo);
-                CRUD.DbContext.ThanhToanCongNoes.Add(thanhToanCongNo);
-            }
-
-            CRUD.DbContext.SaveChanges();
-        }
-
+       
         public string ValidateInput()
         {
             if (string.IsNullOrEmpty(ThanhToanCongNo_ThanhToan.Text))
@@ -145,21 +91,82 @@ namespace QLDT.FormControls.CongNoForms
                 return string.Format("Không được phép để trống {0}!", lblThanhToan.Text);
             }
             var thanhToan = PrimitiveConvert.StringToInt(ThanhToanCongNo_ThanhToan.Text);
-            var no = PrimitiveConvert.StringToInt(CongNo_No.Text);
             if (thanhToan <= 0)
             {
                 return string.Format("Chưa nhập {0}!", lblThanhToan.Text);
             }
+
+            var no = _congNoes.Sum(s => s.No);
+
             if (thanhToan > no)
             {
-                var tongNo = _congNoes.Sum(s => s.No);
-                if (thanhToan > tongNo)
-                {
-                    return "Số tiền thanh toán lớn hơn số tiền nợ!";
-                }
+                return string.Format("Số tiền thanh toán {0} lớn hơn số tiền nợ {1}!",thanhToan, no);
+            }
+
+            var tienChuaPhanBo = PrimitiveConvert.StringToInt(txtConLai.Text);
+            if (tienChuaPhanBo > 0)
+            {
+                return string.Format("Còn {0} tiền chưa được phân bổ!", tienChuaPhanBo);
             }
 
             return string.Empty;
+        }
+
+        private void gridViewChiTiet_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+           
+        }
+
+        private void gridViewChiTiet_ValidateRow(object sender, ValidateRowEventArgs e)
+        {
+            var grid = sender as GridView;
+            var row = grid.GetRow(e.RowHandle) as CongNo;
+
+            if (row.ThanhToanNo < 0)
+            {
+                grid.SetColumnError(grid.Columns["ThanhToanNo"], "Không được nhập nhỏ hơn 0.", ErrorType.Critical);
+                e.Valid = false;
+                return;
+            }
+
+            if (row.ThanhToanNo > row.ConLai)
+            {
+                grid.SetColumnError(grid.Columns["ThanhToanNo"], "Không được nhập lớn hơn nợ còn lại.", ErrorType.Critical);
+                e.Valid = false;
+                return;
+            }
+
+            UpdateThongTin();
+        }
+
+        private void gridViewChiTiet_InvalidRowException(object sender, InvalidRowExceptionEventArgs e)
+        {
+            e.ExceptionMode = ExceptionMode.NoAction;
+        }
+
+        private void ThanhToanCongNo_ThanhToan_EditValueChanged(object sender, EventArgs e)
+        {
+            UpdateThongTin();
+        }
+
+        private void UpdateThongTin()
+        {
+            var thanhToan = PrimitiveConvert.StringToInt(ThanhToanCongNo_ThanhToan.Text);
+            var thanhToanNo = _congNoes.Sum(l => l.ThanhToanNo);
+            var conLai = thanhToan - thanhToanNo;
+            txtTienKhachTra.Text = thanhToan.ToString("n0");
+            txtDaThanhToan.Text = thanhToanNo.ToString("n0");
+            txtConLai.Text = conLai.ToString("n0");
+        }
+
+        private void ThanhToanCongNo_ThanhToan_EditValueChanging(object sender, ChangingEventArgs e)
+        {
+           
+        }
+
+        private void ThanhToanCongNo_ThanhToan_Leave(object sender, EventArgs e)
+        {
+            
         }
     }
 }
