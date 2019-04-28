@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.Migrations;
+﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,8 +7,8 @@ namespace QLDT.FormControls.KhoHangForms
 {
     public partial class UcNhomHang : BaseUserControl
     {
-        private readonly DanhMuc _domainData;
-        private readonly Define.LoaiDanhMucEnum _loaiDanhMuc;
+        private DanhMuc _domainData;
+        private Define.LoaiDanhMucEnum _loaiDanhMuc;
 
         public UcNhomHang(Define.LoaiDanhMucEnum loaidDanhMuc, DanhMuc data = null)
         {
@@ -15,6 +16,7 @@ namespace QLDT.FormControls.KhoHangForms
 
             _domainData = data;
             _loaiDanhMuc = loaidDanhMuc;
+
             if (_domainData == null)
             {
                 _domainData = new DanhMuc();
@@ -36,6 +38,8 @@ namespace QLDT.FormControls.KhoHangForms
             CRUD.DbContext.DanhMucs.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
 
+            ReturnObject = _domainData;
+
             return true;
         }
 
@@ -54,7 +58,6 @@ namespace QLDT.FormControls.KhoHangForms
 
         private bool CheckDuplicate(string tenDanhMuc)
         {
-
             var checkData = tenDanhMuc.Trim();
             if (_domainData != null)
             {

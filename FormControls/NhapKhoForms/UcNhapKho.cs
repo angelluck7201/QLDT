@@ -17,7 +17,6 @@ namespace QLDT.FormControls.NhapKhoForms
     {
         private List<KhachHang> _khachHangs = new List<KhachHang>();
         private List<DonHang> _donHangs = new List<DonHang>();
-        private List<CongNo> _congNos = new List<CongNo>();
         private List<ThanhToanCongNo> _thanhToanCongNoes = new List<ThanhToanCongNo>(); 
 
         public UcNhapKho()
@@ -26,7 +25,7 @@ namespace QLDT.FormControls.NhapKhoForms
             InitAuthorize();
             ReloadData();
 
-            //ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, ReloadData);
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
         private void InitAuthorize()
@@ -35,6 +34,18 @@ namespace QLDT.FormControls.NhapKhoForms
             {
                 btnAddNhaCungCap.Visible = false;
                 btnAddPNK.Visible = false;
+            }
+        }
+
+        private void RefreshData(object data)
+        {
+            if (data is DonHang)
+            {
+                FormBehavior.RefreshGrid(gridViewNhapKho, (DonHang)data);
+            }
+            if (data is KhachHang)
+            {
+                FormBehavior.RefreshGrid(gridViewKhachHang, (KhachHang)data);
             }
         }
 
@@ -73,7 +84,7 @@ namespace QLDT.FormControls.NhapKhoForms
 
         private void btnAddNhaCungCap_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap, null, _khachHangs), "Nhà Cung Cấp", this.ParentForm);
+            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap), "Nhà Cung Cấp", this.ParentForm);
         }
 
         private void gridViewKhachHang_DoubleClick(object sender, EventArgs e)
@@ -84,7 +95,6 @@ namespace QLDT.FormControls.NhapKhoForms
                 if (data != null)
                 {
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
-                    _khachHangs[gridViewKhachHang.GetFocusedDataSourceRowIndex()] = data;
                     FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap, data), "Nhà Cung Cấp", this.ParentForm);
                 }
             });
@@ -92,7 +102,7 @@ namespace QLDT.FormControls.NhapKhoForms
 
         private void btnAddPNK_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho, null, _donHangs), "Nhập Kho", this.ParentForm);
+            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho), "Nhập Kho", this.ParentForm);
         }
 
         private void gridViewNhapKho_DoubleClick(object sender, EventArgs e)
@@ -103,7 +113,6 @@ namespace QLDT.FormControls.NhapKhoForms
                 if (data != null)
                 {
                     data = CRUD.DbContext.DonHangs.Find(data.Id);
-                    _donHangs[gridViewNhapKho.GetFocusedDataSourceRowIndex()] = data;
                     FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho, data), "Nhập Kho", this.ParentForm);
                 }
             });

@@ -15,13 +15,14 @@ namespace QLDT.FormControls.KhoHangForms
     {
         private List<DanhMuc> _danhMucs = new List<DanhMuc>();
         private List<KhoHang> _khoHangs = new List<KhoHang>();
+        private DanhMuc selectedLoaiHang;
 
         public UcKhoHangList()
         {
             InitializeComponent();
             InitAuthorize();
             ReloadData();
-            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, ReloadData);
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
         private void InitAuthorize()
@@ -36,6 +37,18 @@ namespace QLDT.FormControls.KhoHangForms
             if (Authorization.LoginUser.LoaiNguoiDung == Define.LoaiNguoiDung.Admin.ToString())
             {
                 btnRefresh.Visible = true;
+            }
+        }
+
+        private void RefreshData(object data)
+        {
+            if (data is KhoHang)
+            {
+                FormBehavior.RefreshGrid(gridViewHangHoa, (KhoHang)data);
+            }
+            if (data is DanhMuc)
+            {
+                FormBehavior.RefreshGrid(gridViewLoaiHang, (DanhMuc)data);
             }
         }
 
@@ -63,18 +76,18 @@ namespace QLDT.FormControls.KhoHangForms
 
         private void btnAddHangHoa_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhoHang(), "Kho Hàng", this.ParentForm);
+            FormBehavior.GenerateForm(new UcKhoHang(selectedLoaiHang.Id), "Kho Hàng", this.ParentForm);
         }
 
         private void gridViewLoaiHang_DoubleClick(object sender, EventArgs e)
         {
             ThreadHelper.LoadForm(() =>
             {
-                dynamic data = gridViewLoaiHang.GetRow(gridViewLoaiHang.FocusedRowHandle);
-                if (data != null && data.Id != null)
+                var data = (DanhMuc)gridViewLoaiHang.GetRow(gridViewLoaiHang.FocusedRowHandle);
+                if (data != null)
                 {
-                    var info = CRUD.DbContext.DanhMucs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.DienThoai, info), "Nhóm Hàng", this.ParentForm);
+                    data = CRUD.DbContext.DanhMucs.Find(data.Id);
+                    FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.DienThoai, data), "Nhóm Hàng", this.ParentForm);
                 }
             });
         }
@@ -84,11 +97,12 @@ namespace QLDT.FormControls.KhoHangForms
         {
             ThreadHelper.LoadForm(() =>
             {
-                dynamic data = gridViewHangHoa.GetRow(gridViewHangHoa.FocusedRowHandle);
-                if (data != null && data.Id != null)
+                var data = (KhoHang)gridViewHangHoa.GetRow(gridViewHangHoa.FocusedRowHandle);
+                if (data != null)
                 {
-                    var info = CRUD.DbContext.KhoHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcKhoHang(info), "Kho Hàng", this.ParentForm);
+                    data = CRUD.DbContext.KhoHangs.Find(data.Id);
+                    _khoHangs[gridViewHangHoa.GetFocusedDataSourceRowIndex()] = data;
+                    FormBehavior.GenerateForm(new UcKhoHang(data.LoaiHangId, data), "Kho Hàng", this.ParentForm);
                 }
             });
         }
@@ -98,6 +112,7 @@ namespace QLDT.FormControls.KhoHangForms
             dynamic data = gridViewLoaiHang.GetRow(gridViewLoaiHang.FocusedRowHandle);
             if (data != null && data.Id != null)
             {
+                selectedLoaiHang = data as DanhMuc;
                 if (data.Ten == "Tất cả")
                 {
                     gridViewHangHoa.ActiveFilterString = string.Format("[IsActived] = '{0}'", true);

@@ -12,6 +12,7 @@ namespace QLDT.FormControls
 {
     public partial class DefaultForm : Form
     {
+        public object ReturnObject;
         public DefaultForm()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace QLDT.FormControls
         public virtual void DefaultForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormBehavior.Close(this);
-            ObserverControl.PulishAction(this.Name, Define.ActionTypeEnum.Close);
+            ObserverControl.PulishAction(this.Name, Define.ActionTypeEnum.Close, ReturnObject);
         }
 
 

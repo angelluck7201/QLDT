@@ -13,6 +13,7 @@ namespace QLDT.FormControls
 {
     public class BaseUserControl : UserControl
     {
+        public object ReturnObject;
         public List<Control> FormControls = new List<Control>();
 
         public void Init<T>(T data = null) where T : class
@@ -107,8 +108,12 @@ namespace QLDT.FormControls
         {
             if (SaveData())
             {
-                var parentForm = this.ParentForm;
-                if (parentForm != null) parentForm.Close();
+                var parentForm = this.ParentForm as DefaultForm;
+                if (parentForm != null)
+                {
+                    parentForm.ReturnObject = ReturnObject;
+                    parentForm.Close();
+                }
             }
         }
 

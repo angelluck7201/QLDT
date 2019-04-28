@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSplashScreen;
 using QLDT.FormControls;
 
@@ -61,7 +62,6 @@ namespace QLDT
             var defaultForm = new DefaultForm();
             defaultForm.Height = userControl.Height + 70;
             defaultForm.Width = userControl.Width + 15;
-
             defaultForm.Controls.Add(userControl);
             defaultForm.Text = title;
             userControl.Dock = DockStyle.Fill;
@@ -90,6 +90,22 @@ namespace QLDT
             lookEdit.ShowHeader = false;
             lookEdit.Columns[valueMember].Visible = false;
             lookEdit.NullText = "";
+        }
+
+        public static void RefreshGrid<T>(GridView grid, T data)
+        {
+            var gridDataSource = grid.DataSource as List<T>;
+            var existedData = gridDataSource.FindIndex(s => ((dynamic)s).Id == ((dynamic)data).Id);
+            if (existedData >= 0)
+            {
+                gridDataSource[existedData] = data;
+            }
+            else
+            {
+                gridDataSource.Add(data);
+            }
+
+            grid.RefreshData();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.Migrations;
+﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,11 +7,12 @@ namespace QLDT.FormControls.KhoHangForms
 {
     public partial class UcKhoHang : BaseUserControl
     {
-        private readonly KhoHang _domainData;
+        private KhoHang _domainData;
 
-        public UcKhoHang(KhoHang data = null)
+        public UcKhoHang(long defaultSelected, KhoHang data = null)
         {
             InitializeComponent();
+
             var selectedLoaiHang = data?.LoaiHangId ?? -1;
 
             KhoHang_LoaiHangId.DisplayMember = "Ten";
@@ -25,6 +27,7 @@ namespace QLDT.FormControls.KhoHangForms
             if (_domainData == null)
             {
                 _domainData = new KhoHang();
+                _domainData.LoaiHangId = defaultSelected;
                 _domainData.IsActived = true;
             }
             Init(_domainData);
@@ -45,6 +48,8 @@ namespace QLDT.FormControls.KhoHangForms
             _domainData.DonViTinh = Define.DVTEnum.Cai.ToString();
             CRUD.DbContext.KhoHangs.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
+
+            ReturnObject = _domainData;
 
             return true;
         }

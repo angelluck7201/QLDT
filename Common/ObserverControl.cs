@@ -54,11 +54,11 @@ namespace QLDT
             var listAction = RegisterList.Where(s => s.Publisher == publish && s.RegistAction == publishAction).ToList();
             foreach (var item in listAction)
             {
-                if (data == null)
+                if (data == null && item.Action != null)
                 {
                     item.Action();
                 }
-                else
+                else if(item.ActionParam != null)
                 {
                     item.ActionParam(data);
                 }

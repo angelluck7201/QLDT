@@ -14,12 +14,10 @@ namespace QLDT.FormControls.KhachHangForms
     public partial class UcKhachHang : BaseUserControl
     {
         private  KhachHang _domainData;
-        private List<KhachHang> _khachHangs; 
 
-        public UcKhachHang(Define.LoaiKhachHangEnum loaiKhachHang, KhachHang data = null, List<KhachHang> khachHangs = null )
+        public UcKhachHang(Define.LoaiKhachHangEnum loaiKhachHang, KhachHang data = null)
         {
             _domainData = data;
-            _khachHangs = khachHangs;
 
             if (_domainData == null)
             {
@@ -43,12 +41,8 @@ namespace QLDT.FormControls.KhachHangForms
             CRUD.DecorateSaveData(_domainData);
             CRUD.DbContext.KhachHangs.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
-            if (_khachHangs != null
-                && _domainData.Id > 0
-                && _khachHangs.All(s => s.Id != _domainData.Id))
-            {
-                _khachHangs.Add(_domainData);
-            }
+
+            ReturnObject = _domainData;
             return true;
         }
 

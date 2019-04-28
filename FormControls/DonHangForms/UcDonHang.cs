@@ -17,9 +17,8 @@ namespace QLDT.FormControls.DonHangForms
         private readonly DonHang _domainData;
         private readonly Define.LoaiDonHangEnum _loaiDonHang;
         private readonly BindingList<ChiTietDonHang> _chiTietDonhang = new BindingList<ChiTietDonHang>();
-        private List<DonHang> _donHangs; 
 
-        public UcDonHang(Define.LoaiDonHangEnum loaiDonHang, DonHang data = null, List<DonHang> donHangs = null)
+        public UcDonHang(Define.LoaiDonHangEnum loaiDonHang, DonHang data = null)
         {
             InitializeComponent();
 
@@ -36,9 +35,9 @@ namespace QLDT.FormControls.DonHangForms
                 lstKhachHang = CRUD.DbContext.KhachHangs.Where(s => s.LoaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap.ToString()).ToList();
             }
             DonHang_KhachHangId.DataSource = new BindingSource((lstKhachHang), null);
+
             _loaiDonHang = loaiDonHang;
             _domainData = data;
-            _donHangs = donHangs;
             if (_domainData == null)
             {
                 _domainData = new DonHang();
@@ -75,7 +74,8 @@ namespace QLDT.FormControls.DonHangForms
 
             // Get list hang hoa
             var dataSource = CRUD.DbContext.KhoHangs
-                .Where(s => s.IsActived)
+                .Where(s => s.IsActived 
+                    && (loaiDonHang == Define.LoaiDonHangEnum.NhapKho || s.SoLuong > 0))
                 .Select(s => new { s.TenHang, s.Id })
                 .Union(CRUD.DbContext.ChiTietDonHangs.Join(CRUD.DbContext.KhoHangs, ctdh => ctdh.HangHoaId, kh => kh.Id, 
                 (ctdh, kh)=> new {kh.TenHang, kh.Id})).ToList();
@@ -181,12 +181,7 @@ namespace QLDT.FormControls.DonHangForms
             }
 
             // Update grid view
-            if (_domainData.Id > 0 
-                && _donHangs != null
-                && _donHangs.All(l => l.Id != _domainData.Id))
-            {
-                _donHangs.Add(_domainData);
-            }
+            ReturnObject = _domainData;
 
             if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
             {
@@ -271,8 +266,8 @@ namespace QLDT.FormControls.DonHangForms
 
         private void UpdateNo()
         {
-            var tongTien = _domainData.TongCong;
-            var thanhToan = _domainData.ThanhToan;
+            var tongTien = PrimitiveConvert.StringToInt(DonHang_TongCong.Text);
+            var thanhToan = PrimitiveConvert.StringToInt(DonHang_ThanhToan.Text);
             var conLai = thanhToan - tongTien;
             if (conLai < 0)
             {
@@ -348,11 +343,12 @@ namespace QLDT.FormControls.DonHangForms
             {
                 var selectedValue = (long)combobox.SelectedValue;
                 var khachHangInfo = CRUD.DbContext.KhachHangs.Find(selectedValue);
-                if (khachHangInfo != null)
+                if (khachHangInfo != null && _domainData != null)
                 {
-                    DonHang_DiaChi.Text = khachHangInfo.DiaChi;
-                    DonHang_Dienthoai.Text = khachHangInfo.Dienthoai;
-                    DonHang_GhiChu.Text = khachHangInfo.GhiChu;
+                    _domainData.KhachHangId = selectedValue;
+                    _domainData.DiaChi = khachHangInfo.DiaChi;
+                    _domainData.Dienthoai = khachHangInfo.Dienthoai;
+                    _domainData.GhiChu = khachHangInfo.GhiChu;
                 }
             }
         }
