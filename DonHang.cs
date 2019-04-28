@@ -268,6 +268,19 @@ namespace QLDT
     		} 
     	}
     
+        private string _loaiTienTe;
+    	public string LoaiTienTe 
+    	{ 
+    		get { return _loaiTienTe; } 
+    		set
+    		{
+    			if (value != _loaiTienTe) {
+    				_loaiTienTe = value;
+    				 OnPropertyChanged("LoaiTienTe");
+    			}
+    		} 
+    	}
+    
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CongNo> CongNoes { get; set; }

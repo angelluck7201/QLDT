@@ -23,10 +23,13 @@ namespace QLDT.FormControls.CongNoForms
         private List<ThanhToanCongNo> _thanhToanCongNoes = new List<ThanhToanCongNo>();
         private List<CongNo> _congNoes = new List<CongNo>();
 
-        public UcCongNo(Define.LoaiDonHangEnum loaiDonHang, KhachHang data)
+        public UcCongNo(Define.LoaiDonHangEnum loaiDonHang, Define.LoaiTienTeEnum loaiTienTe, KhachHang data)
         {
             InitializeComponent();
+            Init(data);
+
             _domainData = data;
+            _domainData.LoaiTienTe = loaiTienTe.ToString();
             if (loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
             {
                 lblKhachHangId.Text = "Khách Hàng";
@@ -36,11 +39,12 @@ namespace QLDT.FormControls.CongNoForms
             KhachHang.Text = data.Ten;
             GhiChu.Text = _domainData.GhiChu;
 
-            _congNoes = data.CongNoes.Where(l => l.IsActived && l.ConLai > 0).ToList();
+            _congNoes = data.CongNoes.Where(l => l.IsActived && l.ConLai > 0 && l.LoaiTienTe == _domainData.LoaiTienTe).ToList();
 
             TongCong.EditValue = _congNoes.Sum(l=>l.ConLai);
             gridControlChiTiet.DataSource = _congNoes;
-            _thanhToanCongNoes = data.ThanhToanCongNoes.Where(l=>l.IsActived).ToList();
+
+            _thanhToanCongNoes = _domainData.ThanhToanCongNoes.Where(l=>l.IsActived && l.CongNo.LoaiTienTe == _domainData.LoaiTienTe).ToList();
             gridControlNhatKy.DataSource = _thanhToanCongNoes;
         }
 
@@ -54,7 +58,7 @@ namespace QLDT.FormControls.CongNoForms
             }
 
             var ghichu = ThanhToanCongNo_GhiChu.Text;
-            var ngayThanhToan = (DateTime)ThanhToanCongNo_ThanhToan.EditValue;
+            var ngayThanhToan = ThanhToanCongNo_NgayThanhToan.Value;
             var khachHangId = _domainData.Id;
             using (var transaction = new TransactionScope())
             {
@@ -69,16 +73,19 @@ namespace QLDT.FormControls.CongNoForms
                         thanhToanCongNo.GhiChu = ghichu;
                         thanhToanCongNo.CongNoId = congNo.Id;
                         CRUD.DecorateSaveData(thanhToanCongNo);
-                        CRUD.DbContext.ThanhToanCongNoes.Add(thanhToanCongNo);
+                        CRUD.DbContext.ThanhToanCongNoes.AddOrUpdate(thanhToanCongNo);
 
                         congNo.ThanhToan += congNo.ThanhToanNo;
+                        congNo.ThanhToanNo = 0;
 
                         CRUD.DecorateSaveData(congNo);
-                        CRUD.DbContext.CongNoes.Add(congNo);
+                        CRUD.DbContext.CongNoes.AddOrUpdate(congNo);
                     }
                 }
+                CRUD.DbContext.SaveChanges();
                 transaction.Complete();
             }
+            ReturnObject = _domainData;
 
             return true;
         }
@@ -100,21 +107,16 @@ namespace QLDT.FormControls.CongNoForms
 
             if (thanhToan > no)
             {
-                return string.Format("Số tiền thanh toán {0} lớn hơn số tiền nợ {1}!",thanhToan, no);
+                return string.Format("Số tiền thanh toán {0} lớn hơn số tiền nợ {1}!",thanhToan.ToString("n0"), no.ToString("n0"));
             }
 
             var tienChuaPhanBo = PrimitiveConvert.StringToInt(txtConLai.Text);
             if (tienChuaPhanBo > 0)
             {
-                return string.Format("Còn {0} tiền chưa được phân bổ!", tienChuaPhanBo);
+                return string.Format("Còn {0} tiền chưa được phân bổ!", tienChuaPhanBo.ToString("n0"));
             }
 
             return string.Empty;
-        }
-
-        private void gridViewChiTiet_CellValueChanged(object sender, CellValueChangedEventArgs e)
-        {
-           
         }
 
         private void gridViewChiTiet_ValidateRow(object sender, ValidateRowEventArgs e)
@@ -157,16 +159,6 @@ namespace QLDT.FormControls.CongNoForms
             txtTienKhachTra.Text = thanhToan.ToString("n0");
             txtDaThanhToan.Text = thanhToanNo.ToString("n0");
             txtConLai.Text = conLai.ToString("n0");
-        }
-
-        private void ThanhToanCongNo_ThanhToan_EditValueChanging(object sender, ChangingEventArgs e)
-        {
-           
-        }
-
-        private void ThanhToanCongNo_ThanhToan_Leave(object sender, EventArgs e)
-        {
-            
         }
     }
 }

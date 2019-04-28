@@ -11,28 +11,39 @@ namespace QLDT.FormControls.CongNoForms
         private List<KhachHang> _khachHangs = new List<KhachHang>();
         private Define.LoaiDonHangEnum _loaiDonHang;
         private Define.LoaiKhachHangEnum _loaiKhachHang;
+        private Define.LoaiTienTeEnum _loaiTienTe;
 
         public UcCongNoList()
         {
             InitializeComponent();
 
-            //ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, ReloadData);
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
-        public void SetLoaiDonHang(Define.LoaiDonHangEnum loaidDonHang)
+        public void SetLoaiDonHang(Define.LoaiDonHangEnum loaidDonHang, Define.LoaiTienTeEnum loaiTienTe)
         {
             _loaiDonHang = loaidDonHang;
+            _loaiTienTe = loaiTienTe;
             _loaiKhachHang = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? Define.LoaiKhachHangEnum.NhaCungCap : Define.LoaiKhachHangEnum.KhachSi;
             ReloadData();
         }
 
+        private void RefreshData(object data)
+        {
+            if (data is KhachHang)
+            {
+                FormBehavior.RefreshGrid(gridViewCongNo, (KhachHang)data);
+            }
+        }
 
         private void ReloadData()
         {
             ThreadHelper.LoadForm(() =>
             {
                 _khachHangs = CRUD.DbContext.KhachHangs
-                    .Where(k => k.LoaiKhachHang == _loaiKhachHang.ToString() && k.CongNoes.Any()).ToList();
+                    .Where(k => k.LoaiKhachHang == _loaiKhachHang.ToString() && k.CongNoes.Any(s=>s.LoaiTienTe == _loaiTienTe.ToString())).ToList();
+
+                _khachHangs.ForEach(s=>s.LoaiTienTe = _loaiTienTe.ToString());
                 gridControlCongNo.DataSource = _khachHangs;
             });
         }
@@ -45,7 +56,7 @@ namespace QLDT.FormControls.CongNoForms
                 if (data != null)
                 {
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcCongNo(_loaiDonHang, data), "Công Nợ",
+                    FormBehavior.GenerateForm(new UcCongNo(_loaiDonHang, _loaiTienTe, data), "Công Nợ",
                         this.ParentForm);
                 }
             });
@@ -69,7 +80,7 @@ namespace QLDT.FormControls.CongNoForms
 
         private void btnAddCongNo_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcCongNoCu(Define.LoaiDonHangEnum.NhapKho, _khachHangs), "Công Nợ", this.ParentForm);
+            FormBehavior.GenerateForm(new UcCongNoCu(_loaiDonHang, _loaiTienTe), "Công Nợ", this.ParentForm);
         }
     }
 }

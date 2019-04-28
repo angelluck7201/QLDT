@@ -47,6 +47,7 @@
           <Property Name="DonHangId" Type="bigint" />
           <Property Name="LoaiDonHang" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayLap" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LoaiTienTe" Type="nvarchar" MaxLength="5" Nullable="false" />
         </EntityType>
         <EntityType Name="DanhMuc">
           <Key>
@@ -84,6 +85,7 @@
           <Property Name="ThanhToan" Type="bigint" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
           <Property Name="TrangThai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="LoaiTienTe" Type="nvarchar" MaxLength="5" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorLog">
           <Key>
@@ -836,6 +838,7 @@
           <NavigationProperty Name="DonHang" Relationship="QLDT.FK__CongNo__DonHangI__151B244E" FromRole="CongNo" ToRole="DonHang" />
           <NavigationProperty Name="KhachHang" Relationship="QLDT.FK__CongNo__KhachHan__14270015" FromRole="CongNo" ToRole="KhachHang" />
           <NavigationProperty Name="ThanhToanCongNoes" Relationship="QLDT.FK__ThanhToan__CongN__09A971A2" FromRole="CongNo" ToRole="ThanhToanCongNo" />
+          <Property Name="LoaiTienTe" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__CongNo__AuthorId__7C4F7684">
           <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
@@ -876,6 +879,7 @@
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__DonHang__AuthorI__4E88ABD4" FromRole="DonHang" ToRole="UserAccount" />
           <NavigationProperty Name="KhachHang" Relationship="QLDT.FK__DonHang__KhachHa__5441852A" FromRole="DonHang" ToRole="KhachHang" />
           <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__DonHa__6383C8BA" FromRole="DonHang" ToRole="ChiTietDonHang" />
+          <Property Name="LoaiTienTe" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__CongNo__DonHangI__151B244E">
           <End Type="QLDT.DonHang" Role="DonHang" Multiplicity="0..1" />
@@ -1221,6 +1225,7 @@
           <EntitySetMapping Name="CongNoes">
             <EntityTypeMapping TypeName="QLDT.CongNo">
               <MappingFragment StoreEntitySet="CongNo">
+                <ScalarProperty Name="LoaiTienTe" ColumnName="LoaiTienTe" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
                 <ScalarProperty Name="LoaiDonHang" ColumnName="LoaiDonHang" />
                 <ScalarProperty Name="DonHangId" ColumnName="DonHangId" />
@@ -1239,6 +1244,7 @@
           <EntitySetMapping Name="DonHangs">
             <EntityTypeMapping TypeName="QLDT.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
+                <ScalarProperty Name="LoaiTienTe" ColumnName="LoaiTienTe" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />

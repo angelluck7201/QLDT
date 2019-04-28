@@ -36,6 +36,10 @@ namespace QLDT.FormControls.DonHangForms
             }
             DonHang_KhachHangId.DataSource = new BindingSource((lstKhachHang), null);
 
+            DonHang_LoaiTienTe.DisplayMember = "Value";
+            DonHang_LoaiTienTe.ValueMember = "Key";
+            DonHang_LoaiTienTe.DataSource = new BindingSource(Define.LoaiTienTeDict, null);
+
             _loaiDonHang = loaiDonHang;
             _domainData = data;
             if (_domainData == null)
@@ -44,6 +48,7 @@ namespace QLDT.FormControls.DonHangForms
                 _domainData.NgayLap = TimeHelper.CurentDateTime();
                 _domainData.LoaiDonHang = loaiDonHang.ToString();
                 _domainData.TrangThai = Define.TrangThaiDonHang.Moi.ToString();
+                _domainData.LoaiTienTe = Define.LoaiTienTeEnum.VND.ToString();
 
                 btnDelete.Visible = false;
                 GenerateMaDH();
@@ -104,14 +109,12 @@ namespace QLDT.FormControls.DonHangForms
             // Check chot donhang
             if (_domainData.TrangThai == Define.TrangThaiDonHang.Moi.ToString())
             {
-                var confirmChotDhDialog = MessageBox.Show(Define.MESSAGE_CHOT_HOA_DON, Define.MESSAGE_XOA_HOA_DON_TITLE, MessageBoxButtons.YesNo);
+                var confirmChotDhDialog = MessageBox.Show(Define.MESSAGE_CHOT_HOA_DON, Define.MESSAGE_CHOT_HOA_DON_TITLE, MessageBoxButtons.YesNo);
                 if (confirmChotDhDialog == DialogResult.Yes)
                 {
                     _domainData.TrangThai = Define.TrangThaiDonHang.ThanhToan.ToString();
                 }
             }
-
-           
 
             using (var transaction = new TransactionScope())
             {
@@ -128,7 +131,7 @@ namespace QLDT.FormControls.DonHangForms
                     CRUD.DbContext.SaveChanges();
 
                     // Cap nhat hang trong kho
-                    if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString() 
+                    if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString()
                         && chiTietDonHang.IsActived)
                     {
                         var hangHoa = CRUD.DbContext.KhoHangs.Find(chiTietDonHang.HangHoaId);
@@ -171,6 +174,7 @@ namespace QLDT.FormControls.DonHangForms
                         congNoHienTai.NgayLap = _domainData.NgayLap;
                         congNoHienTai.LoaiDonHang = _domainData.LoaiDonHang;
                         congNoHienTai.GhiChu = _domainData.GhiChu;
+                        congNoHienTai.LoaiTienTe = _domainData.LoaiTienTe;
                         CRUD.DbContext.CongNoes.AddOrUpdate(congNoHienTai);
                         CRUD.DbContext.SaveChanges();
                     }
@@ -180,9 +184,6 @@ namespace QLDT.FormControls.DonHangForms
                 transaction.Complete();
             }
 
-            // Update grid view
-            ReturnObject = _domainData;
-
             if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
             {
                 var confirmDialog = MessageBox.Show(Define.MESSAGE_IN_HOA_DON, Define.MESSAGE_IN_HOA_DON_TITLE, MessageBoxButtons.YesNo);
@@ -191,7 +192,10 @@ namespace QLDT.FormControls.DonHangForms
                     InHoaDon();
                 }
             }
-            
+
+            // Update grid view
+            ReturnObject = _domainData;
+
             return true;
         }
 
@@ -201,7 +205,11 @@ namespace QLDT.FormControls.DonHangForms
 
             if (string.IsNullOrEmpty(DonHang_KhachHangId.Text))
             {
-                return string.Format("Không được phép để trống {0}!", DonHang_KhachHangId.Text);
+                return string.Format("Không được phép để trống {0}!", lblKhachHangId.Text);
+            }
+            if (string.IsNullOrEmpty(DonHang_LoaiTienTe.Text))
+            {
+                return string.Format("Không được phép để trống {0}!", lblLoaiTienTe.Text);
             }
             if (_chiTietDonhang.Count == 0)
             {
@@ -380,8 +388,8 @@ namespace QLDT.FormControls.DonHangForms
                 if (confirmDialog == DialogResult.Yes)
                 {
                     DeleteDonhang(_domainData);
-                    var parentForm = this.ParentForm;
-                    if (parentForm != null) parentForm.Close();
+                    ReturnObject = _domainData;
+                    CloseForm();
                 }
             }
         }
@@ -397,7 +405,7 @@ namespace QLDT.FormControls.DonHangForms
                 {
                     chiTietDonHang.IsActived = false;
                     var sign = donHang.LoaiDonHang == "NhapKho" ? -1 : 1;
-                    chiTietDonHang.KhoHang.SoLuong = chiTietDonHang.KhoHang.SoLuong + sign*chiTietDonHang.SoLuong;
+                    chiTietDonHang.KhoHang.SoLuong = Math.Max(chiTietDonHang.KhoHang.SoLuong + sign*chiTietDonHang.SoLuong, 0);
 
                     foreach (var chiTietHangHoa in chiTietDonHang.ChiTietHangHoas)
                     {

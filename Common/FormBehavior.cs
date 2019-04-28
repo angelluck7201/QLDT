@@ -98,7 +98,14 @@ namespace QLDT
             var existedData = gridDataSource.FindIndex(s => ((dynamic)s).Id == ((dynamic)data).Id);
             if (existedData >= 0)
             {
-                gridDataSource[existedData] = data;
+                if (((dynamic) data).IsActived == false)
+                {
+                    gridDataSource.RemoveAt(existedData);
+                }
+                else
+                {
+                    gridDataSource[existedData] = data;
+                }
             }
             else
             {

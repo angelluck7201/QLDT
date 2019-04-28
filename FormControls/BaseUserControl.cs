@@ -108,19 +108,23 @@ namespace QLDT.FormControls
         {
             if (SaveData())
             {
-                var parentForm = this.ParentForm as DefaultForm;
-                if (parentForm != null)
-                {
-                    parentForm.ReturnObject = ReturnObject;
-                    parentForm.Close();
-                }
+                CloseForm();
+            }
+        }
+
+        public virtual void CloseForm()
+        {
+            var parentForm = this.ParentForm as DefaultForm;
+            if (parentForm != null)
+            {
+                parentForm.ReturnObject = ReturnObject;
+                parentForm.Close();
             }
         }
 
         public virtual void btnCancel_Click(object sender, EventArgs e)
         {
-            var parentForm = this.ParentForm;
-            if (parentForm != null) parentForm.Close();
+            CloseForm();
         }
     }
 }

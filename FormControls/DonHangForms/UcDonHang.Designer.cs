@@ -70,6 +70,8 @@
             this.lblTongThanhTien = new System.Windows.Forms.Label();
             this.lblThue = new System.Windows.Forms.Label();
             this.lblChietKhau = new System.Windows.Forms.Label();
+            this.DonHang_LoaiTienTe = new System.Windows.Forms.ComboBox();
+            this.lblLoaiTienTe = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -118,6 +120,8 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_LoaiTienTe);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lblLoaiTienTe);
             this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_MaDH);
             this.splitContainerControl1.Panel1.Controls.Add(this.lblMaDH);
             this.splitContainerControl1.Panel1.Controls.Add(this.lblNgayLap);
@@ -133,8 +137,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1469, 780);
-            this.splitContainerControl1.SplitterPosition = 219;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1469, 813);
+            this.splitContainerControl1.SplitterPosition = 261;
             this.splitContainerControl1.TabIndex = 23;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -251,7 +255,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.lblThue);
             this.splitContainerControl2.Panel2.Controls.Add(this.lblChietKhau);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1469, 551);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1469, 542);
             this.splitContainerControl2.SplitterPosition = 315;
             this.splitContainerControl2.TabIndex = 4;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -580,6 +584,25 @@
             this.lblChietKhau.TabIndex = 26;
             this.lblChietKhau.Text = "Chiết Khấu";
             // 
+            // DonHang_LoaiTienTe
+            // 
+            this.DonHang_LoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_LoaiTienTe.FormattingEnabled = true;
+            this.DonHang_LoaiTienTe.Location = new System.Drawing.Point(220, 214);
+            this.DonHang_LoaiTienTe.Name = "DonHang_LoaiTienTe";
+            this.DonHang_LoaiTienTe.Size = new System.Drawing.Size(426, 33);
+            this.DonHang_LoaiTienTe.TabIndex = 34;
+            // 
+            // lblLoaiTienTe
+            // 
+            this.lblLoaiTienTe.AutoSize = true;
+            this.lblLoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiTienTe.Location = new System.Drawing.Point(33, 213);
+            this.lblLoaiTienTe.Name = "lblLoaiTienTe";
+            this.lblLoaiTienTe.Size = new System.Drawing.Size(144, 25);
+            this.lblLoaiTienTe.TabIndex = 35;
+            this.lblLoaiTienTe.Text = "Loại Tiền Tệ";
+            // 
             // UcDonHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -587,7 +610,7 @@
             this.Controls.Add(this.splitContainerControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UcDonHang";
-            this.Size = new System.Drawing.Size(1469, 780);
+            this.Size = new System.Drawing.Size(1469, 813);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
@@ -648,5 +671,7 @@
         private System.Windows.Forms.TextBox DonHang_MaDH;
         private System.Windows.Forms.Label lblMaDH;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private System.Windows.Forms.ComboBox DonHang_LoaiTienTe;
+        private System.Windows.Forms.Label lblLoaiTienTe;
     }
 }

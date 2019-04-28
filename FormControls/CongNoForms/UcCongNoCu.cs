@@ -16,12 +16,10 @@ namespace QLDT.FormControls.CongNoForms
         private readonly Define.LoaiDonHangEnum _loaiDonHang;
         private List<KhachHang> _khachHangs;
         private CongNo _domainData;
-        public UcCongNoCu(Define.LoaiDonHangEnum loaiDonHang, List<KhachHang> khachHangs = null)
+        public UcCongNoCu(Define.LoaiDonHangEnum loaiDonHang, Define.LoaiTienTeEnum loaiTienTe)
         {
             InitializeComponent();
-            _domainData = new CongNo();
-            _domainData.LoaiDonHang = loaiDonHang.ToString();
-            _khachHangs = khachHangs;
+  
             CongNo_KhachHangId.DisplayMember = "Ten";
             CongNo_KhachHangId.ValueMember = "Id";
             var lstKhachHang = new List<KhachHang>();
@@ -35,6 +33,15 @@ namespace QLDT.FormControls.CongNoForms
                 lstKhachHang = CRUD.DbContext.KhachHangs.Where(s => s.LoaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap.ToString()).ToList();
             }
             CongNo_KhachHangId.DataSource = new BindingSource((lstKhachHang), null);
+
+            CongNo_LoaiTienTe.DisplayMember = "Value";
+            CongNo_LoaiTienTe.ValueMember = "Key";
+            CongNo_LoaiTienTe.DataSource = new BindingSource(Define.LoaiTienTeDict, null);
+
+            _domainData = new CongNo();
+            _domainData.NgayLap = TimeHelper.CurentDateTime();
+            _domainData.LoaiDonHang = loaiDonHang.ToString();
+            _domainData.LoaiTienTe = loaiTienTe.ToString();
 
             Init(_domainData);
         }
@@ -52,19 +59,7 @@ namespace QLDT.FormControls.CongNoForms
             CRUD.DbContext.CongNoes.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
 
-            if (_khachHangs != null)
-            {
-                var currentKhachHang = _khachHangs.FirstOrDefault(s => s.Id == _domainData.KhachHangId);
-                var khachHang = CRUD.DbContext.KhachHangs.Find(_domainData.KhachHangId);
-                if (currentKhachHang == null)
-                {
-                    _khachHangs.Add(khachHang);
-                }
-                else
-                {
-                    currentKhachHang = khachHang;
-                }
-            }
+            ReturnObject = _domainData.KhachHang;
 
             return true;
         }
@@ -72,6 +67,16 @@ namespace QLDT.FormControls.CongNoForms
         public string ValidateInput()
         {
             return string.Empty;
+        }
+
+        private void lblLoaiTienTe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DonHang_LoaiTienTe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

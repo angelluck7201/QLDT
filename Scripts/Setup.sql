@@ -200,13 +200,12 @@ exec ADD_DEFAULT_CONSTRAINT 'UserAccount', 'IsActived', '1', 'bit'
 
 --Update MaDH
 UPDATE DonHang
-SET MaDH = 
-	CONVERT(FORMAT(NgayLap, 'yy') as nvarchar)
-	+ CONVERT(FORMAT(NgayLap, 'MM') as nvarchar)
-	+ CONVERT(FORMAT(NgayLap, 'dd') as nvarchar)
-	+ CONVERT(FORMAT(NgayLap, 'HH') as nvarchar)
-	+ CONVERT(FORMAT(NgayLap, 'mm') as nvarchar)
-	+ CONVERT(FORMAT(NgayLap, 'ss') as nvarchar)
+SET MaDH = CONVERT(nvarchar, FORMAT(NgayLap, 'yy'))
+	+ CONVERT(nvarchar, FORMAT(NgayLap, 'MM'))
+	+ CONVERT(nvarchar, FORMAT(NgayLap, 'dd'))
+	+ CONVERT(nvarchar, FORMAT(NgayLap, 'HH'))
+	+ CONVERT(nvarchar, FORMAT(NgayLap, 'mm'))
+	+ CONVERT(nvarchar, FORMAT(NgayLap, 'ss'))
 WHERE MaDH IS NULL
 
 -- Update Hang Ngung Kinh Doanh
@@ -217,4 +216,16 @@ WHERE	LoaiHangId = 45
 Update DanhMuc Set IsActived = 0 Where Id = 45 
 
 
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'DBO' AND TABLE_NAME = 'DonHang' AND COLUMN_NAME = 'LoaiTienTe')
+BEGIN	
+	ALTER TABLE DBO.DonHang 
+	ADD LoaiTienTe NVARCHAR(5) NOT NULL
+	CONSTRAINT DF_DonHang_LoaiTienTe DEFAULT('VND') 
+END
 
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'DBO' AND TABLE_NAME = 'CongNo' AND COLUMN_NAME = 'LoaiTienTe')
+BEGIN	
+	ALTER TABLE DBO.CongNo 
+	ADD LoaiTienTe NVARCHAR(5) NOT NULL
+	CONSTRAINT DF_CongNo_LoaiTienTe DEFAULT('VND') 
+END

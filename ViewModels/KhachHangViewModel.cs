@@ -12,18 +12,20 @@ namespace QLDT
 
     public partial class KhachHang
     {
+        public string LoaiTienTe { get; set; }
+
         public long No
         {
-            get { return CongNoes.Sum(s => s.No); }
+            get { return CongNoes.Where(s=>s.IsActived && s.LoaiTienTe == LoaiTienTe).Sum(s => s.No); }
         }
 
         public long ThanhToan
         {
-            get { return CongNoes.Sum(s => s.ThanhToan); }
+            get { return CongNoes.Where(s => s.IsActived &&  s.LoaiTienTe == LoaiTienTe).Sum(s => s.ThanhToan); }
         }
 
         public DateTime NgayChinhSua{
-            get { return TimeHelper.TimeStampToDateTime(CongNoes.Max(s => s.ModifiedDate.GetValueOrDefault())); }
+            get { return TimeHelper.TimeStampToDateTime(CongNoes.Where(s => s.IsActived && s.LoaiTienTe == LoaiTienTe).Max(s => s.ModifiedDate.GetValueOrDefault())); }
         }
 
         public long ConLai => No - ThanhToan;

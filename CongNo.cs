@@ -176,6 +176,19 @@ namespace QLDT
     		} 
     	}
     
+        private string _loaiTienTe;
+    	public string LoaiTienTe 
+    	{ 
+    		get { return _loaiTienTe; } 
+    		set
+    		{
+    			if (value != _loaiTienTe) {
+    				_loaiTienTe = value;
+    				 OnPropertyChanged("LoaiTienTe");
+    			}
+    		} 
+    	}
+    
     
         public virtual UserAccount UserAccount { get; set; }
         public virtual DonHang DonHang { get; set; }

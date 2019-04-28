@@ -29,6 +29,7 @@ namespace QLDT.FormControls
         public virtual void DefaultForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormBehavior.Close(this);
+            CRUD.DisposeDb();
             ObserverControl.PulishAction(this.Name, Define.ActionTypeEnum.Close, ReturnObject);
         }
 

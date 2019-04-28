@@ -68,10 +68,10 @@
             this.btnAddLoaiThuChi.Appearance.Options.UseForeColor = true;
             this.btnAddLoaiThuChi.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnAddLoaiThuChi.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLoaiThuChi.Image")));
-            this.btnAddLoaiThuChi.Location = new System.Drawing.Point(24, 19);
+            this.btnAddLoaiThuChi.Location = new System.Drawing.Point(4, 19);
             this.btnAddLoaiThuChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddLoaiThuChi.Name = "btnAddLoaiThuChi";
-            this.btnAddLoaiThuChi.Size = new System.Drawing.Size(327, 45);
+            this.btnAddLoaiThuChi.Size = new System.Drawing.Size(254, 45);
             this.btnAddLoaiThuChi.TabIndex = 3;
             this.btnAddLoaiThuChi.Text = "Thêm Loại Thu/Chi";
             this.btnAddLoaiThuChi.Click += new System.EventHandler(this.btnAddLoaiThuChi_Click);
@@ -106,7 +106,7 @@
             this.btnAddThuChi.Appearance.Options.UseForeColor = true;
             this.btnAddThuChi.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnAddThuChi.Image = ((System.Drawing.Image)(resources.GetObject("btnAddThuChi.Image")));
-            this.btnAddThuChi.Location = new System.Drawing.Point(427, 19);
+            this.btnAddThuChi.Location = new System.Drawing.Point(288, 19);
             this.btnAddThuChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddThuChi.Name = "btnAddThuChi";
             this.btnAddThuChi.Size = new System.Drawing.Size(231, 45);
@@ -125,7 +125,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlThuChi);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(2040, 1061);
+            this.splitContainerControl1.Size = new System.Drawing.Size(2040, 1091);
             this.splitContainerControl1.SplitterPosition = 278;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -138,7 +138,7 @@
             this.gridControlLoaiThuChi.MainView = this.gridViewLoaiThuChi;
             this.gridControlLoaiThuChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlLoaiThuChi.Name = "gridControlLoaiThuChi";
-            this.gridControlLoaiThuChi.Size = new System.Drawing.Size(417, 1061);
+            this.gridControlLoaiThuChi.Size = new System.Drawing.Size(278, 1091);
             this.gridControlLoaiThuChi.TabIndex = 0;
             this.gridControlLoaiThuChi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLoaiThuChi});
@@ -197,7 +197,7 @@
             this.gridControlThuChi.MainView = this.gridViewThuChi;
             this.gridControlThuChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlThuChi.Name = "gridControlThuChi";
-            this.gridControlThuChi.Size = new System.Drawing.Size(1613, 1061);
+            this.gridControlThuChi.Size = new System.Drawing.Size(1752, 1091);
             this.gridControlThuChi.TabIndex = 1;
             this.gridControlThuChi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewThuChi});
@@ -310,7 +310,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Ngày";
-            this.gridColumn3.FieldName = "NgayLapFormat";
+            this.gridColumn3.FieldName = "NgayLap";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 4;

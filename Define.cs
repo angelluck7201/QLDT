@@ -37,6 +37,12 @@ namespace QLDT
             NhaCungCap,
         }
 
+        public enum LoaiTienTeEnum
+        {
+            VND,
+            USD
+        }
+
         public enum LoaiDonHangEnum
         {
             XuatKho,
@@ -126,6 +132,12 @@ namespace QLDT
         public static Dictionary<DVTEnum, string> DVTDict = new Dictionary<DVTEnum, string>()
         {
             {DVTEnum.Cai, "CÁI"},
+        };
+
+        public static Dictionary<string, string> LoaiTienTeDict = new Dictionary<string, string>()
+        {
+            {LoaiTienTeEnum.VND.ToString(), "VND"},
+            {LoaiTienTeEnum.USD.ToString(), "USD"}
         };
 
         public static long KhachLeId = 3;

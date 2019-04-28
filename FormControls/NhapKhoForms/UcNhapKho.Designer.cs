@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcNhapKho));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue4 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl = new DevExpress.XtraTab.XtraTabControl();
             this.tabNhaCungCap = new DevExpress.XtraTab.XtraTabPage();
@@ -83,6 +83,8 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabCongNoUSD = new DevExpress.XtraTab.XtraTabPage();
+            this.ucCongNoList2 = new QLDT.FormControls.CongNoForms.UcCongNoList();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabNhaCungCap.SuspendLayout();
@@ -103,6 +105,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlThanhToan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewThanhToan)).BeginInit();
+            this.tabCongNoUSD.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridColumn24
@@ -145,6 +148,7 @@
             this.tabNhaCungCap,
             this.tabNhapKho,
             this.tabCongNo,
+            this.tabCongNoUSD,
             this.tabThanhToan});
             this.tabControl.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.tabControl_SelectedPageChanged);
             // 
@@ -226,15 +230,15 @@
             this.gridColumn6,
             this.gridColumn7});
             this.gridViewKhachHang.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "AlertTon";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            this.gridViewKhachHang.FormatRules.Add(gridFormatRule1);
+            gridFormatRule3.ApplyToRow = true;
+            gridFormatRule3.Name = "AlertTon";
+            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule3.Rule = formatConditionRuleValue3;
+            this.gridViewKhachHang.FormatRules.Add(gridFormatRule3);
             this.gridViewKhachHang.GridControl = this.gridControlKhachHang;
             this.gridViewKhachHang.Name = "gridViewKhachHang";
             this.gridViewKhachHang.OptionsBehavior.AutoExpandAllGroups = true;
@@ -464,15 +468,15 @@
             this.gridColumn22,
             this.gridColumn24});
             this.gridViewNhapKho.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule2.ApplyToRow = true;
-            gridFormatRule2.Column = this.gridColumn24;
-            gridFormatRule2.Name = "TrangThai";
-            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue2.Value1 = "Moi";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            this.gridViewNhapKho.FormatRules.Add(gridFormatRule2);
+            gridFormatRule4.ApplyToRow = true;
+            gridFormatRule4.Column = this.gridColumn24;
+            gridFormatRule4.Name = "TrangThai";
+            formatConditionRuleValue4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRuleValue4.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue4.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue4.Value1 = "Moi";
+            gridFormatRule4.Rule = formatConditionRuleValue4;
+            this.gridViewNhapKho.FormatRules.Add(gridFormatRule4);
             this.gridViewNhapKho.GridControl = this.gridControlNhapKho;
             this.gridViewNhapKho.GroupCount = 1;
             this.gridViewNhapKho.Name = "gridViewNhapKho";
@@ -720,15 +724,15 @@
             this.gridColumn28,
             this.gridColumn30});
             this.gridViewThanhToan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule3.ApplyToRow = true;
-            gridFormatRule3.Name = "AlertTon";
-            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            this.gridViewThanhToan.FormatRules.Add(gridFormatRule3);
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Name = "AlertTon";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridViewThanhToan.FormatRules.Add(gridFormatRule1);
             this.gridViewThanhToan.GridControl = this.gridControlThanhToan;
             this.gridViewThanhToan.GroupCount = 1;
             this.gridViewThanhToan.Name = "gridViewThanhToan";
@@ -814,6 +818,22 @@
             this.gridColumn30.VisibleIndex = 1;
             this.gridColumn30.Width = 335;
             // 
+            // tabCongNoUSD
+            // 
+            this.tabCongNoUSD.Controls.Add(this.ucCongNoList2);
+            this.tabCongNoUSD.Name = "tabCongNoUSD";
+            this.tabCongNoUSD.Size = new System.Drawing.Size(1368, 658);
+            this.tabCongNoUSD.Text = "Công Nợ USD";
+            // 
+            // ucCongNoList2
+            // 
+            this.ucCongNoList2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucCongNoList2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCongNoList2.Location = new System.Drawing.Point(0, 0);
+            this.ucCongNoList2.Name = "ucCongNoList2";
+            this.ucCongNoList2.Size = new System.Drawing.Size(1368, 658);
+            this.ucCongNoList2.TabIndex = 0;
+            // 
             // UcNhapKho
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -841,6 +861,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlThanhToan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewThanhToan)).EndInit();
+            this.tabCongNoUSD.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -895,5 +916,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
         private CongNoForms.UcCongNoList ucCongNoList1;
+        private DevExpress.XtraTab.XtraTabPage tabCongNoUSD;
+        private CongNoForms.UcCongNoList ucCongNoList2;
     }
 }

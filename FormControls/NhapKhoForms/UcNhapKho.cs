@@ -71,7 +71,12 @@ namespace QLDT.FormControls.NhapKhoForms
 
                 if (tabControl.SelectedTabPage == tabCongNo)
                 {
-                    ucCongNoList1.SetLoaiDonHang(Define.LoaiDonHangEnum.NhapKho);
+                    ucCongNoList1.SetLoaiDonHang(Define.LoaiDonHangEnum.NhapKho, Define.LoaiTienTeEnum.VND);
+                }
+
+                if(tabControl.SelectedTabPage == tabCongNoUSD)
+                {
+                    ucCongNoList2.SetLoaiDonHang(Define.LoaiDonHangEnum.NhapKho, Define.LoaiTienTeEnum.USD);
                 }
 
                 if (tabControl.SelectedTabPage == tabThanhToan)
