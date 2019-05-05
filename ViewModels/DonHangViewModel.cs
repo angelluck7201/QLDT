@@ -134,7 +134,10 @@ namespace QLDT
             get { return TimeHelper.TimeStampToQuarter(DonHang.NgayLap); }
         }
 
-        public long SoLuongTon { get; set; }
+        public long SoLuongTon
+        {
+            get { return KhoHang.SoLuong; }
+        }
         public List<ChiTietHangHoa> ListChiTietHangHoa { get; set; }
     }
 

@@ -12,10 +12,12 @@ namespace QLDT.FormControls.CongNoForms
         private Define.LoaiDonHangEnum _loaiDonHang;
         private Define.LoaiKhachHangEnum _loaiKhachHang;
         private Define.LoaiTienTeEnum _loaiTienTe;
+        private bool _isFiltering = false;
 
         public UcCongNoList()
         {
             InitializeComponent();
+            FilterCongNo();
 
             ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
@@ -64,23 +66,43 @@ namespace QLDT.FormControls.CongNoForms
 
         private void btnCongNoLoc_Click(object sender, EventArgs e)
         {
-            var startDate = TimeHelper.StringToTimeStamp(CongNo_StartDate.Text);
-            var endDate = TimeHelper.StringToTimeStamp(CongNo_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
-            gridViewCongNo.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate,
-                endDate);
+            _isFiltering = true;
+            FilterCongNo();
             btnCongNoLoc.Appearance.BackColor = Color.Silver;
 
         }
 
         private void btnCongNoHuyLoc_Click(object sender, EventArgs e)
         {
-            gridViewCongNo.ActiveFilterString = "";
+            _isFiltering = false;
+            FilterCongNo();
             btnCongNoLoc.Appearance.BackColor = SystemColors.MenuHighlight;
         }
 
         private void btnAddCongNo_Click(object sender, EventArgs e)
         {
             FormBehavior.GenerateForm(new UcCongNoCu(_loaiDonHang, _loaiTienTe), "Công Nợ", this.ParentForm);
+        }
+
+        private void chkNoOnly_CheckStateChanged(object sender, EventArgs e)
+        {
+            FilterCongNo();
+        }
+
+        private void FilterCongNo()
+        {
+            gridViewCongNo.ActiveFilterString = "1=1";
+            if (_isFiltering)
+            {
+                var startDate = TimeHelper.StringToTimeStamp(CongNo_StartDate.Text);
+                var endDate = TimeHelper.StringToTimeStamp(CongNo_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
+                gridViewCongNo.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate, endDate);
+            }
+
+            if (chkNoOnly.Checked)
+            {
+                gridViewCongNo.ActiveFilterString += "AND [ConLai] > 0";
+            }
         }
     }
 }

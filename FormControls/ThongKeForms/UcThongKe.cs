@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
@@ -19,10 +20,17 @@ namespace QLDT.FormControls.ThongKeForms
         private string _curPage = "tabTKHangHoa";
         private List<ThongKeViewModel> _lstThongKe = new List<ThongKeViewModel>();
         Dictionary<Define.LoaiThongKeEnum, object> _cacheThongKe = new Dictionary<Define.LoaiThongKeEnum, object>();
+        private Define.LoaiThongKeEnum _loaiThongKe;
+
+        private bool _isLoaded = false;
         public UcThongKe()
         {
             InitializeComponent();
-            ReloadData();
+
+            var currentDate = TimeHelper.CurentDateTime();
+
+            EndDate.Value = currentDate;
+            StartDate.Value = currentDate.AddYears(-1);
 
             GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
             GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.Greater, Color.Honeydew, Color.Green);
@@ -49,12 +57,15 @@ namespace QLDT.FormControls.ThongKeForms
         {
             ThreadHelper.LoadForm(() =>
             {
-                var thongKeDonHang = CRUD.DbContext.ChiTietDonHangs.ToList();
+                _lstThongKe = new List<ThongKeViewModel>();
+
+                var thongKeDonHang = CRUD.DbContext.ChiTietDonHangs
+                    .Where(s=> s.IsActived && s.DonHang.IsActived && s.DonHang.NgayLap >= StartDate.Value && s.DonHang.NgayLap <=EndDate.Value).ToList();
                 _lstThongKe.AddRange(thongKeDonHang.Select(s => new ThongKeViewModel(s)));
 
-                var thongKeThuChi = CRUD.DbContext.ThuChis.ToList();
+                var thongKeThuChi = CRUD.DbContext.ThuChis.Where(s=>s.NgayLap >= StartDate.Value && s.NgayLap <=EndDate.Value).ToList();
                 _lstThongKe.AddRange(thongKeThuChi.Select(s => new ThongKeViewModel(s)));
-                ThongKe(Define.LoaiThongKeEnum.Thang);
+                _isLoaded = true;
             });
         }
 
@@ -75,7 +86,10 @@ namespace QLDT.FormControls.ThongKeForms
 
         private void ThongKe(Define.LoaiThongKeEnum thongKe)
         {
-            btnAll.PerformClick();
+            if (!_isLoaded)
+            {
+                ReloadData();
+            }
 
             // Reset all group
             HideReportColumn();
@@ -86,6 +100,7 @@ namespace QLDT.FormControls.ThongKeForms
             if (!_cacheThongKe.ContainsKey(thongKe))
             {
                 var result = new List<object>();
+
                 var groupBy = _lstThongKe.GroupBy(s => s.Ngay.ToString());
                 if (thongKe == Define.LoaiThongKeEnum.Thang)
                 {
@@ -103,6 +118,7 @@ namespace QLDT.FormControls.ThongKeForms
                 foreach (var thoigian in groupBy)
                 {
                     var groupByNoiDung = thoigian.GroupBy(s => s.NoiDung).ToList();
+                    var groupByTime = thoigian.FirstOrDefault();
                     foreach (var noiDung in groupByNoiDung)
                     {
                         var grouped = noiDung.First().Clone();
@@ -110,7 +126,7 @@ namespace QLDT.FormControls.ThongKeForms
                         grouped.SoLuongXuat = noiDung.Sum(s => s.SoLuongXuat);
                         grouped.Thu = noiDung.Sum(s => (long)s.Thu);
                         grouped.Chi = noiDung.Sum(s => (long)s.Chi);
-                        grouped.NgaySort = TimeHelper.StringToTimeStamp(grouped.Ngay);
+                        grouped.NgaySort = groupByTime.NgaySort;
                         result.Add(grouped);
                     }
                 }
@@ -122,37 +138,33 @@ namespace QLDT.FormControls.ThongKeForms
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            var startDate = TimeHelper.StringToTimeStamp(StartDate.Text);
-            var endDate = TimeHelper.StringToTimeStamp(EndDate.Text);
-            gridViewHangHoa.ActiveFilterString = string.Format("[NgaySort] >= '{0}' AND [NgaySort] <= '{1}'", startDate, endDate);
-
-            btnTim.Appearance.BackColor = Color.Silver;
-        }
-        private void btnAll_Click(object sender, EventArgs e)
-        {
-            gridViewHangHoa.ActiveFilterString = "";
-
-            btnTim.Appearance.BackColor = SystemColors.MenuHighlight;
+            _isLoaded = false;
+            _cacheThongKe.Clear();
+            ThongKe(_loaiThongKe);
         }
 
         private void tileItemNgay_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            ThongKe(Define.LoaiThongKeEnum.Ngay);
+            _loaiThongKe = Define.LoaiThongKeEnum.Ngay;
+            ThongKe(_loaiThongKe);
         }
 
         private void tileItemThang_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            ThongKe(Define.LoaiThongKeEnum.Thang);
+            _loaiThongKe = Define.LoaiThongKeEnum.Thang;
+            ThongKe(_loaiThongKe);
         }
 
         private void tileItemQuy_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            ThongKe(Define.LoaiThongKeEnum.Quy);
+            _loaiThongKe = Define.LoaiThongKeEnum.Nam;
+            ThongKe(_loaiThongKe);
         }
 
         private void tileItemNam_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            ThongKe(Define.LoaiThongKeEnum.Nam);
+            _loaiThongKe = Define.LoaiThongKeEnum.Quy;
+            ThongKe(_loaiThongKe);
         }
     }
 }

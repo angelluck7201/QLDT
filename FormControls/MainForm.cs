@@ -74,12 +74,12 @@ namespace QLDT.FormControls
 
         private void navNhapKho_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
-            AddControl(new UcNhapKho());
+            AddControl(new UcNhapKho(Define.LoaiDonHangEnum.NhapKho));
         }
 
         private void navXuatKho_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
-            AddControl(new UcXuatKho());
+            AddControl(new UcNhapKho(Define.LoaiDonHangEnum.XuatKho));
         }
 
         private void navThongKe_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)

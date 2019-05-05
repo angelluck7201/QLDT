@@ -17,20 +17,37 @@ namespace QLDT.FormControls.NhapKhoForms
     {
         private List<KhachHang> _khachHangs = new List<KhachHang>();
         private List<DonHang> _donHangs = new List<DonHang>();
-        private List<ThanhToanCongNo> _thanhToanCongNoes = new List<ThanhToanCongNo>(); 
+        private List<ThanhToanCongNo> _thanhToanCongNoes = new List<ThanhToanCongNo>();
+        private Define.LoaiDonHangEnum _loaiDonHang;
+        private Define.LoaiKhachHangEnum _loaiKhachHang;
 
-        public UcNhapKho()
+        public UcNhapKho(Define.LoaiDonHangEnum loaiDonHang)
         {
+            _loaiDonHang = loaiDonHang;
+            _loaiKhachHang = _loaiDonHang == Define.LoaiDonHangEnum.XuatKho
+                                       ? Define.LoaiKhachHangEnum.KhachSi
+                                       : Define.LoaiKhachHangEnum.NhaCungCap;
             InitializeComponent();
             InitAuthorize();
             ReloadData();
+
+            if (_loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
+            {
+                btnAddPNK.Text = "Xuất Kho";
+                tabNhaCungCap.Text = "Khách Hàng";
+                tabNhapKho.Text = "Xuất Kho";
+                tabCongNo.Text = "Công Nợ Xuất Kho";
+            }
 
             ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
         private void InitAuthorize()
         {
-            if (!Authorization.IsHavePermission(Define.FeatureEnum.NhapKho.ToString(), Define.PermissionEnum.Write.ToString()))
+            var feature = _loaiDonHang == Define.LoaiDonHangEnum.XuatKho
+                ? Define.FeatureEnum.XuatKho
+                : Define.FeatureEnum.NhapKho;
+            if (!Authorization.IsHavePermission(feature.ToString(), Define.PermissionEnum.Write.ToString()))
             {
                 btnAddNhaCungCap.Visible = false;
                 btnAddPNK.Visible = false;
@@ -55,8 +72,7 @@ namespace QLDT.FormControls.NhapKhoForms
             {
                 if (tabControl.SelectedTabPage == tabNhaCungCap)
                 {
-                    _khachHangs = CRUD.DbContext.KhachHangs
-                    .Where(s => s.IsActived && s.LoaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap.ToString()).ToList();
+                    _khachHangs = CRUD.DbContext.KhachHangs.Where(s => s.IsActived && s.LoaiKhachHang == _loaiKhachHang.ToString()).ToList();
                     gridControlKhachHang.DataSource = _khachHangs;
                 }
 
@@ -64,24 +80,27 @@ namespace QLDT.FormControls.NhapKhoForms
                 {
                     _donHangs =
                         CRUD.DbContext.DonHangs
-                        .Where(s => s.IsActived && s.LoaiDonHang == Define.LoaiDonHangEnum.NhapKho.ToString())
+                        .Where(s => s.IsActived && s.LoaiDonHang == _loaiDonHang.ToString())
                             .ToList();
                     gridControlNhapKho.DataSource = _donHangs;
                 }
 
                 if (tabControl.SelectedTabPage == tabCongNo)
                 {
-                    ucCongNoList1.SetLoaiDonHang(Define.LoaiDonHangEnum.NhapKho, Define.LoaiTienTeEnum.VND);
+                    ucCongNoList1.SetLoaiDonHang(_loaiDonHang, Define.LoaiTienTeEnum.VND);
                 }
 
                 if(tabControl.SelectedTabPage == tabCongNoUSD)
                 {
-                    ucCongNoList2.SetLoaiDonHang(Define.LoaiDonHangEnum.NhapKho, Define.LoaiTienTeEnum.USD);
+                    ucCongNoList2.SetLoaiDonHang(_loaiDonHang, Define.LoaiTienTeEnum.USD);
                 }
 
                 if (tabControl.SelectedTabPage == tabThanhToan)
                 {
-                    _thanhToanCongNoes = CRUD.DbContext.ThanhToanCongNoes.Where(s => s.IsActived && s.CongNo.IsActived).ToList();
+                    _thanhToanCongNoes = CRUD.DbContext.ThanhToanCongNoes
+                                            .Where(s => s.IsActived 
+                                                        && s.CongNo.IsActived
+                                                        && s.CongNo.LoaiDonHang == _loaiDonHang.ToString()).ToList();
                     gridControlThanhToan.DataSource = _thanhToanCongNoes;
                 }
             });
@@ -89,7 +108,8 @@ namespace QLDT.FormControls.NhapKhoForms
 
         private void btnAddNhaCungCap_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap), "Nhà Cung Cấp", this.ParentForm);
+            var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
+            FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang), title, this.ParentForm);
         }
 
         private void gridViewKhachHang_DoubleClick(object sender, EventArgs e)
@@ -99,15 +119,18 @@ namespace QLDT.FormControls.NhapKhoForms
                 var data = _khachHangs[gridViewKhachHang.GetFocusedDataSourceRowIndex()];
                 if (data != null)
                 {
+                    var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
+
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.NhaCungCap, data), "Nhà Cung Cấp", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang, data), title, this.ParentForm);
                 }
             });
         }
 
         private void btnAddPNK_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho), "Nhập Kho", this.ParentForm);
+            var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
+            FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang), title, this.ParentForm);
         }
 
         private void gridViewNhapKho_DoubleClick(object sender, EventArgs e)
@@ -117,8 +140,10 @@ namespace QLDT.FormControls.NhapKhoForms
                 var data = (DonHang)gridViewNhapKho.GetRow(gridViewNhapKho.FocusedRowHandle);
                 if (data != null)
                 {
+                    var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
+
                     data = CRUD.DbContext.DonHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.NhapKho, data), "Nhập Kho", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang, data), title, this.ParentForm);
                 }
             });
         }

@@ -30,17 +30,16 @@
         {
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThongKe));
-            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement21 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement22 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
@@ -82,7 +81,6 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnAll);
             this.splitContainerControl1.Panel1.Controls.Add(this.btnTim);
             this.splitContainerControl1.Panel1.Controls.Add(this.EndDate);
             this.splitContainerControl1.Panel1.Controls.Add(this.StartDate);
@@ -94,22 +92,6 @@
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // btnAll
-            // 
-            this.btnAll.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAll.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnAll.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAll.Appearance.Options.UseBackColor = true;
-            this.btnAll.Appearance.Options.UseFont = true;
-            this.btnAll.Appearance.Options.UseForeColor = true;
-            this.btnAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAll.Location = new System.Drawing.Point(824, 21);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(124, 35);
-            this.btnAll.TabIndex = 39;
-            this.btnAll.Text = "Bỏ Lọc";
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
-            // 
             // btnTim
             // 
             this.btnTim.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -119,7 +101,7 @@
             this.btnTim.Appearance.Options.UseFont = true;
             this.btnTim.Appearance.Options.UseForeColor = true;
             this.btnTim.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTim.Location = new System.Drawing.Point(683, 21);
+            this.btnTim.Location = new System.Drawing.Point(768, 21);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(124, 35);
             this.btnTim.TabIndex = 38;
@@ -130,18 +112,19 @@
             // 
             this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.EndDate.Location = new System.Drawing.Point(348, 23);
+            this.EndDate.Location = new System.Drawing.Point(390, 23);
             this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(311, 33);
+            this.EndDate.Size = new System.Drawing.Size(348, 33);
             this.EndDate.TabIndex = 37;
             // 
             // StartDate
             // 
             this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.StartDate.CustomFormat = "";
             this.StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.StartDate.Location = new System.Drawing.Point(15, 23);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(311, 33);
+            this.StartDate.Size = new System.Drawing.Size(349, 33);
             this.StartDate.TabIndex = 36;
             // 
             // gridControlHangHoa
@@ -212,7 +195,11 @@
             this.gridViewHangHoa.OptionsView.ShowFooter = true;
             this.gridViewHangHoa.OptionsView.ShowGroupPanel = false;
             this.gridViewHangHoa.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.NgaySort, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.NgaySort, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn7, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn8, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn9, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn1
             // 
@@ -220,8 +207,12 @@
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Ngày";
+            this.gridColumn1.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn1.FieldName = "Ngay";
+            this.gridColumn1.FieldNameSortGroup = "NgaySort";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn1.Width = 58;
             // 
             // gridColumn7
@@ -230,8 +221,12 @@
             this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.Caption = "Tháng";
+            this.gridColumn7.DisplayFormat.FormatString = "MM/yyyy";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn7.FieldName = "Thang";
+            this.gridColumn7.FieldNameSortGroup = "NgaySort";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn7.Width = 58;
             // 
             // gridColumn8
@@ -241,7 +236,9 @@
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "Quý";
             this.gridColumn8.FieldName = "Quy";
+            this.gridColumn8.FieldNameSortGroup = "NgaySort";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn8.Width = 58;
             // 
             // gridColumn9
@@ -250,8 +247,12 @@
             this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "Năm";
+            this.gridColumn9.DisplayFormat.FormatString = "yyyy";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn9.FieldName = "Nam";
+            this.gridColumn9.FieldNameSortGroup = "NgaySort";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn9.Width = 66;
             // 
             // gridColumn2
@@ -348,6 +349,8 @@
             this.NgaySort.FieldName = "NgaySort";
             this.NgaySort.Name = "NgaySort";
             this.NgaySort.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.NgaySort.Visible = true;
+            this.NgaySort.VisibleIndex = 6;
             // 
             // gridView3
             // 
@@ -424,23 +427,23 @@
             // 
             // tileItemNgay
             // 
-            tileItemElement17.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement17.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement17.Appearance.Normal.Options.UseFont = true;
-            tileItemElement17.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement17.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement17.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement17.Appearance.Selected.Options.UseFont = true;
-            tileItemElement17.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement17.Text = "Ngày";
-            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement17.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement18.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement18.Image")));
-            tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement18.Text = "Thống Kê";
-            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemNgay.Elements.Add(tileItemElement17);
-            this.tileItemNgay.Elements.Add(tileItemElement18);
+            tileItemElement1.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement1.Appearance.Normal.Options.UseFont = true;
+            tileItemElement1.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement1.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement1.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement1.Appearance.Selected.Options.UseFont = true;
+            tileItemElement1.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement1.Text = "Ngày";
+            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement1.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement2.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement2.Image")));
+            tileItemElement2.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement2.Text = "Thống Kê";
+            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemNgay.Elements.Add(tileItemElement1);
+            this.tileItemNgay.Elements.Add(tileItemElement2);
             this.tileItemNgay.Id = 1;
             this.tileItemNgay.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemNgay.Name = "tileItemNgay";
@@ -449,23 +452,23 @@
             // 
             // tileItemThang
             // 
-            tileItemElement19.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement19.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement19.Appearance.Normal.Options.UseFont = true;
-            tileItemElement19.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement19.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement19.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement19.Appearance.Selected.Options.UseFont = true;
-            tileItemElement19.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement19.Text = "Tháng";
-            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement19.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement20.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement20.Image")));
-            tileItemElement20.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement20.Text = "Thống Kê";
-            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemThang.Elements.Add(tileItemElement19);
-            this.tileItemThang.Elements.Add(tileItemElement20);
+            tileItemElement3.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement3.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement3.Appearance.Normal.Options.UseFont = true;
+            tileItemElement3.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement3.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement3.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement3.Appearance.Selected.Options.UseFont = true;
+            tileItemElement3.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement3.Text = "Tháng";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement3.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement4.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement4.Image")));
+            tileItemElement4.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement4.Text = "Thống Kê";
+            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemThang.Elements.Add(tileItemElement3);
+            this.tileItemThang.Elements.Add(tileItemElement4);
             this.tileItemThang.Id = 2;
             this.tileItemThang.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemThang.Name = "tileItemThang";
@@ -474,23 +477,23 @@
             // 
             // tileItemQuy
             // 
-            tileItemElement21.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement21.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement21.Appearance.Normal.Options.UseFont = true;
-            tileItemElement21.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement21.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement21.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement21.Appearance.Selected.Options.UseFont = true;
-            tileItemElement21.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement21.Text = "Quý";
-            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement21.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement22.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement22.Image")));
-            tileItemElement22.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement22.Text = "Thống Kê";
-            tileItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemQuy.Elements.Add(tileItemElement21);
-            this.tileItemQuy.Elements.Add(tileItemElement22);
+            tileItemElement5.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement5.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement5.Appearance.Normal.Options.UseFont = true;
+            tileItemElement5.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement5.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement5.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement5.Appearance.Selected.Options.UseFont = true;
+            tileItemElement5.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement5.Text = "Quý";
+            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement5.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement6.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement6.Image")));
+            tileItemElement6.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement6.Text = "Thống Kê";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemQuy.Elements.Add(tileItemElement5);
+            this.tileItemQuy.Elements.Add(tileItemElement6);
             this.tileItemQuy.Id = 3;
             this.tileItemQuy.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemQuy.Name = "tileItemQuy";
@@ -499,23 +502,23 @@
             // 
             // tileItemNam
             // 
-            tileItemElement23.Appearance.Normal.FontSizeDelta = 128;
-            tileItemElement23.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            tileItemElement23.Appearance.Normal.Options.UseFont = true;
-            tileItemElement23.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement23.Appearance.Selected.FontSizeDelta = 128;
-            tileItemElement23.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
-            tileItemElement23.Appearance.Selected.Options.UseFont = true;
-            tileItemElement23.Appearance.Selected.Options.UseForeColor = true;
-            tileItemElement23.Text = "Năm";
-            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement23.TextLocation = new System.Drawing.Point(-2, -12);
-            tileItemElement24.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement24.Image")));
-            tileItemElement24.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement24.Text = "Thống Kê";
-            tileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.tileItemNam.Elements.Add(tileItemElement23);
-            this.tileItemNam.Elements.Add(tileItemElement24);
+            tileItemElement7.Appearance.Normal.FontSizeDelta = 128;
+            tileItemElement7.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            tileItemElement7.Appearance.Normal.Options.UseFont = true;
+            tileItemElement7.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement7.Appearance.Selected.FontSizeDelta = 128;
+            tileItemElement7.Appearance.Selected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(168)))), ((int)(((byte)(209)))));
+            tileItemElement7.Appearance.Selected.Options.UseFont = true;
+            tileItemElement7.Appearance.Selected.Options.UseForeColor = true;
+            tileItemElement7.Text = "Năm";
+            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement7.TextLocation = new System.Drawing.Point(-2, -12);
+            tileItemElement8.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement8.Image")));
+            tileItemElement8.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement8.Text = "Thống Kê";
+            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.tileItemNam.Elements.Add(tileItemElement7);
+            this.tileItemNam.Elements.Add(tileItemElement8);
             this.tileItemNam.Id = 4;
             this.tileItemNam.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemNam.Name = "tileItemNam";
@@ -569,6 +572,5 @@
         private DevExpress.XtraEditors.TileItem tileItemThang;
         private DevExpress.XtraEditors.TileItem tileItemQuy;
         private DevExpress.XtraEditors.TileItem tileItemNam;
-        private DevExpress.XtraEditors.SimpleButton btnAll;
     }
 }

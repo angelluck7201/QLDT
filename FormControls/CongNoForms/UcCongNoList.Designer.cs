@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcCongNoList));
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,6 +47,7 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnAddCongNo = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.chkNoOnly = new System.Windows.Forms.CheckBox();
             this.btnCongNoHuyLoc = new DevExpress.XtraEditors.SimpleButton();
             this.btnCongNoLoc = new DevExpress.XtraEditors.SimpleButton();
             this.CongNo_EndDate = new System.Windows.Forms.DateTimePicker();
@@ -83,7 +84,7 @@
             this.gridControlCongNo.Location = new System.Drawing.Point(0, 0);
             this.gridControlCongNo.MainView = this.gridViewCongNo;
             this.gridControlCongNo.Name = "gridControlCongNo";
-            this.gridControlCongNo.Size = new System.Drawing.Size(1382, 633);
+            this.gridControlCongNo.Size = new System.Drawing.Size(1792, 914);
             this.gridControlCongNo.TabIndex = 3;
             this.gridControlCongNo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCongNo,
@@ -115,15 +116,15 @@
             this.gridColumn20,
             this.gridColumn21});
             this.gridViewCongNo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "AlertTon";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            this.gridViewCongNo.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Name = "AlertTon";
+            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            this.gridViewCongNo.FormatRules.Add(gridFormatRule2);
             this.gridViewCongNo.GridControl = this.gridControlCongNo;
             this.gridViewCongNo.Name = "gridViewCongNo";
             this.gridViewCongNo.OptionsBehavior.AutoExpandAllGroups = true;
@@ -142,7 +143,7 @@
             this.gridColumn13.AppearanceCell.Options.UseFont = true;
             this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn13.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn13.Caption = "Nhà Cung Cấp";
+            this.gridColumn13.Caption = "Tên";
             this.gridColumn13.FieldName = "Ten";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
@@ -277,6 +278,7 @@
             this.splitContainerControl3.IsSplitterFixed = true;
             this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl3.Name = "splitContainerControl3";
+            this.splitContainerControl3.Panel1.Controls.Add(this.chkNoOnly);
             this.splitContainerControl3.Panel1.Controls.Add(this.btnCongNoHuyLoc);
             this.splitContainerControl3.Panel1.Controls.Add(this.btnCongNoLoc);
             this.splitContainerControl3.Panel1.Controls.Add(this.CongNo_EndDate);
@@ -285,10 +287,24 @@
             this.splitContainerControl3.Panel1.Text = "Panel1";
             this.splitContainerControl3.Panel2.Controls.Add(this.gridControlCongNo);
             this.splitContainerControl3.Panel2.Text = "Panel2";
-            this.splitContainerControl3.Size = new System.Drawing.Size(1382, 713);
+            this.splitContainerControl3.Size = new System.Drawing.Size(1792, 994);
             this.splitContainerControl3.SplitterPosition = 70;
             this.splitContainerControl3.TabIndex = 4;
             this.splitContainerControl3.Text = "splitContainerControl3";
+            // 
+            // chkNoOnly
+            // 
+            this.chkNoOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkNoOnly.AutoSize = true;
+            this.chkNoOnly.Checked = true;
+            this.chkNoOnly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkNoOnly.Location = new System.Drawing.Point(464, 27);
+            this.chkNoOnly.Name = "chkNoOnly";
+            this.chkNoOnly.Size = new System.Drawing.Size(299, 29);
+            this.chkNoOnly.TabIndex = 52;
+            this.chkNoOnly.Text = "Chỉ Hiển Thị Khách Còn Nợ";
+            this.chkNoOnly.UseVisualStyleBackColor = true;
+            this.chkNoOnly.CheckStateChanged += new System.EventHandler(this.chkNoOnly_CheckStateChanged);
             // 
             // btnCongNoHuyLoc
             // 
@@ -300,7 +316,7 @@
             this.btnCongNoHuyLoc.Appearance.Options.UseFont = true;
             this.btnCongNoHuyLoc.Appearance.Options.UseForeColor = true;
             this.btnCongNoHuyLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCongNoHuyLoc.Location = new System.Drawing.Point(1244, 16);
+            this.btnCongNoHuyLoc.Location = new System.Drawing.Point(1654, 16);
             this.btnCongNoHuyLoc.Name = "btnCongNoHuyLoc";
             this.btnCongNoHuyLoc.Size = new System.Drawing.Size(124, 35);
             this.btnCongNoHuyLoc.TabIndex = 51;
@@ -317,7 +333,7 @@
             this.btnCongNoLoc.Appearance.Options.UseFont = true;
             this.btnCongNoLoc.Appearance.Options.UseForeColor = true;
             this.btnCongNoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCongNoLoc.Location = new System.Drawing.Point(1104, 18);
+            this.btnCongNoLoc.Location = new System.Drawing.Point(1514, 18);
             this.btnCongNoLoc.Name = "btnCongNoLoc";
             this.btnCongNoLoc.Size = new System.Drawing.Size(124, 35);
             this.btnCongNoLoc.TabIndex = 50;
@@ -329,9 +345,9 @@
             this.CongNo_EndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CongNo_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_EndDate.Location = new System.Drawing.Point(767, 18);
+            this.CongNo_EndDate.Location = new System.Drawing.Point(1152, 22);
             this.CongNo_EndDate.Name = "CongNo_EndDate";
-            this.CongNo_EndDate.Size = new System.Drawing.Size(311, 33);
+            this.CongNo_EndDate.Size = new System.Drawing.Size(356, 33);
             this.CongNo_EndDate.TabIndex = 49;
             // 
             // CongNo_StartDate
@@ -339,9 +355,9 @@
             this.CongNo_StartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CongNo_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_StartDate.Location = new System.Drawing.Point(434, 18);
+            this.CongNo_StartDate.Location = new System.Drawing.Point(793, 22);
             this.CongNo_StartDate.Name = "CongNo_StartDate";
-            this.CongNo_StartDate.Size = new System.Drawing.Size(311, 33);
+            this.CongNo_StartDate.Size = new System.Drawing.Size(353, 33);
             this.CongNo_StartDate.TabIndex = 48;
             // 
             // UcCongNoList
@@ -350,7 +366,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.splitContainerControl3);
             this.Name = "UcCongNoList";
-            this.Size = new System.Drawing.Size(1382, 713);
+            this.Size = new System.Drawing.Size(1792, 994);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCongNo)).EndInit();
@@ -384,5 +400,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCongNoLoc;
         private System.Windows.Forms.DateTimePicker CongNo_EndDate;
         private System.Windows.Forms.DateTimePicker CongNo_StartDate;
+        private System.Windows.Forms.CheckBox chkNoOnly;
     }
 }

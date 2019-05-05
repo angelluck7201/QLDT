@@ -71,6 +71,7 @@ namespace QLDT.FormControls.DonHangForms
                 if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
                 {
                     btnSave.Enabled = false;
+                    btnDelete.Visible = false;
                     _domainData.ThanhToan += _domainData.CongNoes.Where(l => l.IsActived).Sum(l => l.ThanhToan);
                 }
             }
@@ -82,7 +83,9 @@ namespace QLDT.FormControls.DonHangForms
                 .Where(s => s.IsActived 
                     && (loaiDonHang == Define.LoaiDonHangEnum.NhapKho || s.SoLuong > 0))
                 .Select(s => new { s.TenHang, s.Id })
-                .Union(CRUD.DbContext.ChiTietDonHangs.Join(CRUD.DbContext.KhoHangs, ctdh => ctdh.HangHoaId, kh => kh.Id, 
+                .Union(CRUD.DbContext.ChiTietDonHangs
+                    .Where(s=>_domainData.Id == s.DonHangId)
+                    .Join(CRUD.DbContext.KhoHangs, ctdh => ctdh.HangHoaId, kh => kh.Id, 
                 (ctdh, kh)=> new {kh.TenHang, kh.Id})).ToList();
             
             FormBehavior.DecoreateLookEdit(listHangHoa, dataSource, "TenHang");
@@ -334,8 +337,8 @@ namespace QLDT.FormControls.DonHangForms
                 var hangHoa = CRUD.DbContext.KhoHangs.Find(hangHoaId);
 
                 if (hangHoa == null) return;
+                row.KhoHang = hangHoa;
                 row.DonGia = hangHoa.GiaBan;
-                row.SoLuongTon = hangHoa.SoLuong;
             }
         }
 
@@ -400,28 +403,32 @@ namespace QLDT.FormControls.DonHangForms
             {
                 donHang.IsActived = false;
 
-                // Update hang hoa
-                foreach (var chiTietDonHang in donHang.ChiTietDonHangs)
+                if (donHang.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
                 {
-                    chiTietDonHang.IsActived = false;
-                    var sign = donHang.LoaiDonHang == "NhapKho" ? -1 : 1;
-                    chiTietDonHang.KhoHang.SoLuong = Math.Max(chiTietDonHang.KhoHang.SoLuong + sign*chiTietDonHang.SoLuong, 0);
-
-                    foreach (var chiTietHangHoa in chiTietDonHang.ChiTietHangHoas)
+                    // Update hang hoa
+                    foreach (var chiTietDonHang in donHang.ChiTietDonHangs)
                     {
-                        chiTietHangHoa.IsActived = false;
+                        chiTietDonHang.IsActived = false;
+                        var sign = donHang.LoaiDonHang == "NhapKho" ? -1 : 1;
+                        chiTietDonHang.KhoHang.SoLuong = Math.Max(chiTietDonHang.KhoHang.SoLuong + sign * chiTietDonHang.SoLuong, 0);
+
+                        foreach (var chiTietHangHoa in chiTietDonHang.ChiTietHangHoas)
+                        {
+                            chiTietHangHoa.IsActived = false;
+                        }
+                    }
+
+                    // Update CongNo
+                    foreach (var congNo in donHang.CongNoes)
+                    {
+                        congNo.IsActived = false;
+                        foreach (var thanhToanCongNo in congNo.ThanhToanCongNoes)
+                        {
+                            thanhToanCongNo.IsActived = false;
+                        }
                     }
                 }
-
-                // Update CongNo
-                foreach (var congNo in donHang.CongNoes)
-                {
-                    congNo.IsActived = false;
-                    foreach (var thanhToanCongNo in congNo.ThanhToanCongNoes)
-                    {
-                        thanhToanCongNo.IsActived = false;
-                    }
-                }
+                
                 CRUD.DbContext.SaveChanges();
                 transaction.Complete();
             }

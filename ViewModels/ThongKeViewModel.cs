@@ -20,7 +20,7 @@ namespace QLDT
         public string Thang { get; set; }
         public string Nam { get; set; }
         public string Quy { get; set; }
-        public long NgaySort { get; set; }
+        public DateTime NgaySort { get; set; }
 
         public ThongKeViewModel(ChiTietDonHang donHang)
         {
@@ -61,6 +61,7 @@ namespace QLDT
             Thang = string.Format("{0}/{1}", dateTime.Month, dateTime.Year);
             Nam = dateTime.Year.ToString();
             Quy = TimeHelper.TimeStampToQuarter(dateTime);
+            NgaySort = dateTime;
         }
 
         public ThongKeViewModel Clone()
