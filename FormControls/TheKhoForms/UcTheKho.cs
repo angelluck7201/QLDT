@@ -10,6 +10,8 @@ namespace QLDT.FormControls.TheKhoForms
         public UcTheKho()
         {
             InitializeComponent();
+            EndDate.Value = TimeHelper.CurentDateTime();
+            StartDate.Value = EndDate.Value.AddYears(-1);
             ReloadData();
         }
 
@@ -17,8 +19,10 @@ namespace QLDT.FormControls.TheKhoForms
         {
             ThreadHelper.LoadForm(() =>
             {
-                CRUD.DisposeDb();
-                gridControlHangHoa.DataSource = CRUD.DbContext.ChiTietHangHoas.ToList();
+                var startDate = StartDate.Value;
+                var endDate = EndDate.Value;
+                gridControlHangHoa.DataSource = CRUD.DbContext.ChiTietHangHoas.Where(s=>s.ChiTietDonHang.DonHang.NgayLap >= startDate 
+                                                                                            && s.ChiTietDonHang.DonHang.NgayLap <= endDate).ToList();
             });
         }
 
@@ -38,16 +42,7 @@ namespace QLDT.FormControls.TheKhoForms
 
         private void btnNhapKhoLoc_Click(object sender, System.EventArgs e)
         {
-            var startDate = TimeHelper.StringToTimeStamp(StartDate.Text);
-            var endDate = TimeHelper.StringToTimeStamp(EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
-            gridViewHangHoa.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate, endDate);
-            btnNhapKhoLoc.Appearance.BackColor = Color.Silver;
-        }
-
-        private void btnNhapKhoBoLoc_Click(object sender, System.EventArgs e)
-        {
-            gridViewHangHoa.ActiveFilterString = "";
-            btnNhapKhoLoc.Appearance.BackColor = SystemColors.MenuHighlight;
+            ReloadData();
         }
     }
 }

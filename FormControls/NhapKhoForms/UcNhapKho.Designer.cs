@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcNhapKho));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue4 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl = new DevExpress.XtraTab.XtraTabControl();
             this.tabNhaCungCap = new DevExpress.XtraTab.XtraTabPage();
@@ -51,7 +51,6 @@
             this.tabNhapKho = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNhapKhoBoLoc = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapKhoLoc = new DevExpress.XtraEditors.SimpleButton();
             this.NhapKho_EndDate = new System.Windows.Forms.DateTimePicker();
             this.NhapKho_StartDate = new System.Windows.Forms.DateTimePicker();
@@ -73,7 +72,6 @@
             this.tabThanhToan = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl4 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnThanhToanHuyLoc = new DevExpress.XtraEditors.SimpleButton();
             this.btnThanhToanLoc = new DevExpress.XtraEditors.SimpleButton();
             this.ThanhToan_EndDate = new System.Windows.Forms.DateTimePicker();
             this.ThanhToan_StartDate = new System.Windows.Forms.DateTimePicker();
@@ -159,7 +157,7 @@
             this.tabNhaCungCap.Appearance.HeaderActive.Options.UseFont = true;
             this.tabNhaCungCap.Controls.Add(this.splitContainerControl2);
             this.tabNhaCungCap.Name = "tabNhaCungCap";
-            this.tabNhaCungCap.Size = new System.Drawing.Size(1368, 658);
+            this.tabNhaCungCap.Size = new System.Drawing.Size(1613, 925);
             this.tabNhaCungCap.Text = "Nhà Cung Cấp";
             // 
             // splitContainerControl2
@@ -175,7 +173,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gridControlKhachHang);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1368, 658);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1613, 925);
             this.splitContainerControl2.SplitterPosition = 70;
             this.splitContainerControl2.TabIndex = 2;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -203,7 +201,7 @@
             this.gridControlKhachHang.Location = new System.Drawing.Point(0, 0);
             this.gridControlKhachHang.MainView = this.gridViewKhachHang;
             this.gridControlKhachHang.Name = "gridControlKhachHang";
-            this.gridControlKhachHang.Size = new System.Drawing.Size(1368, 578);
+            this.gridControlKhachHang.Size = new System.Drawing.Size(1613, 845);
             this.gridControlKhachHang.TabIndex = 2;
             this.gridControlKhachHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewKhachHang});
@@ -230,15 +228,15 @@
             this.gridColumn6,
             this.gridColumn7});
             this.gridViewKhachHang.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule2.ApplyToRow = true;
-            gridFormatRule2.Name = "AlertTon";
-            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            this.gridViewKhachHang.FormatRules.Add(gridFormatRule2);
+            gridFormatRule3.ApplyToRow = true;
+            gridFormatRule3.Name = "AlertTon";
+            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule3.Rule = formatConditionRuleValue3;
+            this.gridViewKhachHang.FormatRules.Add(gridFormatRule3);
             this.gridViewKhachHang.GridControl = this.gridControlKhachHang;
             this.gridViewKhachHang.Name = "gridViewKhachHang";
             this.gridViewKhachHang.OptionsBehavior.AutoExpandAllGroups = true;
@@ -347,7 +345,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnNhapKhoBoLoc);
             this.panel1.Controls.Add(this.btnNhapKhoLoc);
             this.panel1.Controls.Add(this.NhapKho_EndDate);
             this.panel1.Controls.Add(this.NhapKho_StartDate);
@@ -356,23 +353,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1101, 70);
             this.panel1.TabIndex = 4;
-            // 
-            // btnNhapKhoBoLoc
-            // 
-            this.btnNhapKhoBoLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNhapKhoBoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnNhapKhoBoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnNhapKhoBoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNhapKhoBoLoc.Appearance.Options.UseBackColor = true;
-            this.btnNhapKhoBoLoc.Appearance.Options.UseFont = true;
-            this.btnNhapKhoBoLoc.Appearance.Options.UseForeColor = true;
-            this.btnNhapKhoBoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNhapKhoBoLoc.Location = new System.Drawing.Point(957, 19);
-            this.btnNhapKhoBoLoc.Name = "btnNhapKhoBoLoc";
-            this.btnNhapKhoBoLoc.Size = new System.Drawing.Size(124, 30);
-            this.btnNhapKhoBoLoc.TabIndex = 51;
-            this.btnNhapKhoBoLoc.Text = "Bỏ Lọc";
-            this.btnNhapKhoBoLoc.Click += new System.EventHandler(this.btnNhapKhoBoLoc_Click);
             // 
             // btnNhapKhoLoc
             // 
@@ -384,9 +364,9 @@
             this.btnNhapKhoLoc.Appearance.Options.UseFont = true;
             this.btnNhapKhoLoc.Appearance.Options.UseForeColor = true;
             this.btnNhapKhoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNhapKhoLoc.Location = new System.Drawing.Point(816, 19);
+            this.btnNhapKhoLoc.Location = new System.Drawing.Point(944, 16);
             this.btnNhapKhoLoc.Name = "btnNhapKhoLoc";
-            this.btnNhapKhoLoc.Size = new System.Drawing.Size(124, 30);
+            this.btnNhapKhoLoc.Size = new System.Drawing.Size(124, 33);
             this.btnNhapKhoLoc.TabIndex = 50;
             this.btnNhapKhoLoc.Text = "Lọc";
             this.btnNhapKhoLoc.Click += new System.EventHandler(this.btnNhapKhoLoc_Click);
@@ -396,20 +376,22 @@
             this.NhapKho_EndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NhapKho_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.NhapKho_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.NhapKho_EndDate.Location = new System.Drawing.Point(441, 19);
+            this.NhapKho_EndDate.Location = new System.Drawing.Point(569, 16);
             this.NhapKho_EndDate.Name = "NhapKho_EndDate";
             this.NhapKho_EndDate.Size = new System.Drawing.Size(355, 33);
             this.NhapKho_EndDate.TabIndex = 49;
+            this.NhapKho_EndDate.ValueChanged += new System.EventHandler(this.NhapKho_EndDate_ValueChanged);
             // 
             // NhapKho_StartDate
             // 
             this.NhapKho_StartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NhapKho_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.NhapKho_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.NhapKho_StartDate.Location = new System.Drawing.Point(82, 21);
+            this.NhapKho_StartDate.Location = new System.Drawing.Point(210, 16);
             this.NhapKho_StartDate.Name = "NhapKho_StartDate";
             this.NhapKho_StartDate.Size = new System.Drawing.Size(353, 33);
             this.NhapKho_StartDate.TabIndex = 48;
+            this.NhapKho_StartDate.ValueChanged += new System.EventHandler(this.NhapKho_StartDate_ValueChanged);
             // 
             // btnAddPNK
             // 
@@ -468,15 +450,15 @@
             this.gridColumn22,
             this.gridColumn24});
             this.gridViewNhapKho.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule3.ApplyToRow = true;
-            gridFormatRule3.Column = this.gridColumn24;
-            gridFormatRule3.Name = "TrangThai";
-            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
-            formatConditionRuleValue3.Value1 = "Moi";
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            this.gridViewNhapKho.FormatRules.Add(gridFormatRule3);
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Column = this.gridColumn24;
+            gridFormatRule1.Name = "TrangThai";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue1.Value1 = "Moi";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridViewNhapKho.FormatRules.Add(gridFormatRule1);
             this.gridViewNhapKho.GridControl = this.gridControlNhapKho;
             this.gridViewNhapKho.GroupCount = 1;
             this.gridViewNhapKho.Name = "gridViewNhapKho";
@@ -645,7 +627,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnThanhToanHuyLoc);
             this.panel3.Controls.Add(this.btnThanhToanLoc);
             this.panel3.Controls.Add(this.ThanhToan_EndDate);
             this.panel3.Controls.Add(this.ThanhToan_StartDate);
@@ -654,22 +635,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1079, 70);
             this.panel3.TabIndex = 44;
-            // 
-            // btnThanhToanHuyLoc
-            // 
-            this.btnThanhToanHuyLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnThanhToanHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnThanhToanHuyLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThanhToanHuyLoc.Appearance.Options.UseBackColor = true;
-            this.btnThanhToanHuyLoc.Appearance.Options.UseFont = true;
-            this.btnThanhToanHuyLoc.Appearance.Options.UseForeColor = true;
-            this.btnThanhToanHuyLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnThanhToanHuyLoc.Location = new System.Drawing.Point(937, 24);
-            this.btnThanhToanHuyLoc.Name = "btnThanhToanHuyLoc";
-            this.btnThanhToanHuyLoc.Size = new System.Drawing.Size(124, 30);
-            this.btnThanhToanHuyLoc.TabIndex = 47;
-            this.btnThanhToanHuyLoc.Text = "Bỏ Lọc";
-            this.btnThanhToanHuyLoc.Click += new System.EventHandler(this.btnThanhToanHuyLoc_Click);
             // 
             // btnThanhToanLoc
             // 
@@ -680,9 +645,9 @@
             this.btnThanhToanLoc.Appearance.Options.UseFont = true;
             this.btnThanhToanLoc.Appearance.Options.UseForeColor = true;
             this.btnThanhToanLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnThanhToanLoc.Location = new System.Drawing.Point(796, 24);
+            this.btnThanhToanLoc.Location = new System.Drawing.Point(928, 21);
             this.btnThanhToanLoc.Name = "btnThanhToanLoc";
-            this.btnThanhToanLoc.Size = new System.Drawing.Size(124, 30);
+            this.btnThanhToanLoc.Size = new System.Drawing.Size(124, 33);
             this.btnThanhToanLoc.TabIndex = 46;
             this.btnThanhToanLoc.Text = "Lọc";
             this.btnThanhToanLoc.Click += new System.EventHandler(this.btnThanhToanLoc_Click);
@@ -691,7 +656,7 @@
             // 
             this.ThanhToan_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.ThanhToan_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.ThanhToan_EndDate.Location = new System.Drawing.Point(427, 21);
+            this.ThanhToan_EndDate.Location = new System.Drawing.Point(550, 21);
             this.ThanhToan_EndDate.Name = "ThanhToan_EndDate";
             this.ThanhToan_EndDate.Size = new System.Drawing.Size(363, 33);
             this.ThanhToan_EndDate.TabIndex = 45;
@@ -700,7 +665,7 @@
             // 
             this.ThanhToan_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.ThanhToan_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.ThanhToan_StartDate.Location = new System.Drawing.Point(63, 21);
+            this.ThanhToan_StartDate.Location = new System.Drawing.Point(186, 21);
             this.ThanhToan_StartDate.Name = "ThanhToan_StartDate";
             this.ThanhToan_StartDate.Size = new System.Drawing.Size(358, 33);
             this.ThanhToan_StartDate.TabIndex = 44;
@@ -740,15 +705,15 @@
             this.gridColumn28,
             this.gridColumn30});
             this.gridViewThanhToan.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "AlertTon";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            this.gridViewThanhToan.FormatRules.Add(gridFormatRule1);
+            gridFormatRule4.ApplyToRow = true;
+            gridFormatRule4.Name = "AlertTon";
+            formatConditionRuleValue4.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue4.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue4.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue4.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue4.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule4.Rule = formatConditionRuleValue4;
+            this.gridViewThanhToan.FormatRules.Add(gridFormatRule4);
             this.gridViewThanhToan.GridControl = this.gridControlThanhToan;
             this.gridViewThanhToan.GroupCount = 1;
             this.gridViewThanhToan.Name = "gridViewThanhToan";
@@ -892,7 +857,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton btnNhapKhoBoLoc;
         private DevExpress.XtraEditors.SimpleButton btnNhapKhoLoc;
         private System.Windows.Forms.DateTimePicker NhapKho_EndDate;
         private System.Windows.Forms.DateTimePicker NhapKho_StartDate;
@@ -901,7 +865,6 @@
         private DevExpress.XtraTab.XtraTabPage tabThanhToan;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl4;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.SimpleButton btnThanhToanHuyLoc;
         private DevExpress.XtraEditors.SimpleButton btnThanhToanLoc;
         private System.Windows.Forms.DateTimePicker ThanhToan_EndDate;
         private System.Windows.Forms.DateTimePicker ThanhToan_StartDate;

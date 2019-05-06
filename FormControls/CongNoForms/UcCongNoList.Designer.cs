@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcCongNoList));
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -48,7 +48,6 @@
             this.btnAddCongNo = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
             this.chkNoOnly = new System.Windows.Forms.CheckBox();
-            this.btnCongNoHuyLoc = new DevExpress.XtraEditors.SimpleButton();
             this.btnCongNoLoc = new DevExpress.XtraEditors.SimpleButton();
             this.CongNo_EndDate = new System.Windows.Forms.DateTimePicker();
             this.CongNo_StartDate = new System.Windows.Forms.DateTimePicker();
@@ -116,15 +115,15 @@
             this.gridColumn20,
             this.gridColumn21});
             this.gridViewCongNo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule2.ApplyToRow = true;
-            gridFormatRule2.Name = "AlertTon";
-            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            this.gridViewCongNo.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Name = "AlertTon";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.LessOrEqual;
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridViewCongNo.FormatRules.Add(gridFormatRule1);
             this.gridViewCongNo.GridControl = this.gridControlCongNo;
             this.gridViewCongNo.Name = "gridViewCongNo";
             this.gridViewCongNo.OptionsBehavior.AutoExpandAllGroups = true;
@@ -279,7 +278,6 @@
             this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl3.Name = "splitContainerControl3";
             this.splitContainerControl3.Panel1.Controls.Add(this.chkNoOnly);
-            this.splitContainerControl3.Panel1.Controls.Add(this.btnCongNoHuyLoc);
             this.splitContainerControl3.Panel1.Controls.Add(this.btnCongNoLoc);
             this.splitContainerControl3.Panel1.Controls.Add(this.CongNo_EndDate);
             this.splitContainerControl3.Panel1.Controls.Add(this.CongNo_StartDate);
@@ -306,23 +304,6 @@
             this.chkNoOnly.UseVisualStyleBackColor = true;
             this.chkNoOnly.CheckStateChanged += new System.EventHandler(this.chkNoOnly_CheckStateChanged);
             // 
-            // btnCongNoHuyLoc
-            // 
-            this.btnCongNoHuyLoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCongNoHuyLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCongNoHuyLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnCongNoHuyLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCongNoHuyLoc.Appearance.Options.UseBackColor = true;
-            this.btnCongNoHuyLoc.Appearance.Options.UseFont = true;
-            this.btnCongNoHuyLoc.Appearance.Options.UseForeColor = true;
-            this.btnCongNoHuyLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCongNoHuyLoc.Location = new System.Drawing.Point(1654, 16);
-            this.btnCongNoHuyLoc.Name = "btnCongNoHuyLoc";
-            this.btnCongNoHuyLoc.Size = new System.Drawing.Size(124, 35);
-            this.btnCongNoHuyLoc.TabIndex = 51;
-            this.btnCongNoHuyLoc.Text = "Bỏ Lọc";
-            this.btnCongNoHuyLoc.Click += new System.EventHandler(this.btnCongNoHuyLoc_Click);
-            // 
             // btnCongNoLoc
             // 
             this.btnCongNoLoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -333,7 +314,7 @@
             this.btnCongNoLoc.Appearance.Options.UseFont = true;
             this.btnCongNoLoc.Appearance.Options.UseForeColor = true;
             this.btnCongNoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCongNoLoc.Location = new System.Drawing.Point(1514, 18);
+            this.btnCongNoLoc.Location = new System.Drawing.Point(1637, 20);
             this.btnCongNoLoc.Name = "btnCongNoLoc";
             this.btnCongNoLoc.Size = new System.Drawing.Size(124, 35);
             this.btnCongNoLoc.TabIndex = 50;
@@ -345,7 +326,7 @@
             this.CongNo_EndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CongNo_EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_EndDate.Location = new System.Drawing.Point(1152, 22);
+            this.CongNo_EndDate.Location = new System.Drawing.Point(1258, 22);
             this.CongNo_EndDate.Name = "CongNo_EndDate";
             this.CongNo_EndDate.Size = new System.Drawing.Size(356, 33);
             this.CongNo_EndDate.TabIndex = 49;
@@ -355,7 +336,7 @@
             this.CongNo_StartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CongNo_StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.CongNo_StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_StartDate.Location = new System.Drawing.Point(793, 22);
+            this.CongNo_StartDate.Location = new System.Drawing.Point(899, 24);
             this.CongNo_StartDate.Name = "CongNo_StartDate";
             this.CongNo_StartDate.Size = new System.Drawing.Size(353, 33);
             this.CongNo_StartDate.TabIndex = 48;
@@ -396,7 +377,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraEditors.SimpleButton btnAddCongNo;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
-        private DevExpress.XtraEditors.SimpleButton btnCongNoHuyLoc;
         private DevExpress.XtraEditors.SimpleButton btnCongNoLoc;
         private System.Windows.Forms.DateTimePicker CongNo_EndDate;
         private System.Windows.Forms.DateTimePicker CongNo_StartDate;

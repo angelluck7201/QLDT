@@ -17,6 +17,10 @@ namespace QLDT.FormControls.CongNoForms
         public UcCongNoList()
         {
             InitializeComponent();
+
+            CongNo_EndDate.Value = TimeHelper.CurentDateTime();
+            CongNo_StartDate.Value = CongNo_EndDate.Value.AddYears(-1);
+
             FilterCongNo();
 
             ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
@@ -42,8 +46,13 @@ namespace QLDT.FormControls.CongNoForms
         {
             ThreadHelper.LoadForm(() =>
             {
+                var startDate = CongNo_StartDate.Value;
+                var endDate = CongNo_EndDate.Value;
                 _khachHangs = CRUD.DbContext.KhachHangs
-                    .Where(k => k.LoaiKhachHang == _loaiKhachHang.ToString() && k.CongNoes.Any(s=>s.LoaiTienTe == _loaiTienTe.ToString())).ToList();
+                    .Where(k => k.LoaiKhachHang == _loaiKhachHang.ToString() 
+                        && k.CongNoes.Any(s=>s.LoaiTienTe == _loaiTienTe.ToString()
+                                            && s.NgayLap >= startDate 
+                                            && s.NgayLap <= endDate)).ToList();
 
                 _khachHangs.ForEach(s=>s.LoaiTienTe = _loaiTienTe.ToString());
                 gridControlCongNo.DataSource = _khachHangs;
@@ -66,17 +75,8 @@ namespace QLDT.FormControls.CongNoForms
 
         private void btnCongNoLoc_Click(object sender, EventArgs e)
         {
-            _isFiltering = true;
+            ReloadData();
             FilterCongNo();
-            btnCongNoLoc.Appearance.BackColor = Color.Silver;
-
-        }
-
-        private void btnCongNoHuyLoc_Click(object sender, EventArgs e)
-        {
-            _isFiltering = false;
-            FilterCongNo();
-            btnCongNoLoc.Appearance.BackColor = SystemColors.MenuHighlight;
         }
 
         private void btnAddCongNo_Click(object sender, EventArgs e)
@@ -92,12 +92,12 @@ namespace QLDT.FormControls.CongNoForms
         private void FilterCongNo()
         {
             gridViewCongNo.ActiveFilterString = "1=1";
-            if (_isFiltering)
-            {
-                var startDate = TimeHelper.StringToTimeStamp(CongNo_StartDate.Text);
-                var endDate = TimeHelper.StringToTimeStamp(CongNo_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
-                gridViewCongNo.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate, endDate);
-            }
+            //if (_isFiltering)
+            //{
+            //    var startDate = TimeHelper.StringToTimeStamp(CongNo_StartDate.Text);
+            //    var endDate = TimeHelper.StringToTimeStamp(CongNo_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
+            //    gridViewCongNo.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate, endDate);
+            //}
 
             if (chkNoOnly.Checked)
             {

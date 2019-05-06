@@ -31,6 +31,14 @@ namespace QLDT.FormControls.NhapKhoForms
             InitAuthorize();
             ReloadData();
 
+            var endDate = TimeHelper.CurentDateTime();
+            var startDate = endDate.AddYears(-1);
+
+            NhapKho_StartDate.Value = startDate;
+            NhapKho_EndDate.Value = endDate;
+            ThanhToan_StartDate.Value = startDate;
+            ThanhToan_EndDate.Value = endDate;
+
             if (_loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
             {
                 btnAddPNK.Text = "Xuất Kho";
@@ -78,9 +86,14 @@ namespace QLDT.FormControls.NhapKhoForms
 
                 if (tabControl.SelectedTabPage == tabNhapKho)
                 {
+                    var startDate = NhapKho_StartDate.Value;
+                    var endDate = NhapKho_EndDate.Value;
                     _donHangs =
                         CRUD.DbContext.DonHangs
-                        .Where(s => s.IsActived && s.LoaiDonHang == _loaiDonHang.ToString())
+                        .Where(s => s.IsActived 
+                            && s.LoaiDonHang == _loaiDonHang.ToString()
+                            && s.NgayLap >= startDate
+                            && s.NgayLap <= endDate)
                             .ToList();
                     gridControlNhapKho.DataSource = _donHangs;
                 }
@@ -97,10 +110,15 @@ namespace QLDT.FormControls.NhapKhoForms
 
                 if (tabControl.SelectedTabPage == tabThanhToan)
                 {
+                    var startDate = ThanhToan_StartDate.Value;
+                    var endDate = ThanhToan_EndDate.Value;
+
                     _thanhToanCongNoes = CRUD.DbContext.ThanhToanCongNoes
                                             .Where(s => s.IsActived 
                                                         && s.CongNo.IsActived
-                                                        && s.CongNo.LoaiDonHang == _loaiDonHang.ToString()).ToList();
+                                                        && s.CongNo.LoaiDonHang == _loaiDonHang.ToString()
+                                                        && s.NgayThanhToan >= startDate
+                                                        && s.NgayThanhToan <= endDate).ToList();
                     gridControlThanhToan.DataSource = _thanhToanCongNoes;
                 }
             });
@@ -150,36 +168,28 @@ namespace QLDT.FormControls.NhapKhoForms
 
         private void btnNhapKhoLoc_Click(object sender, EventArgs e)
         {
-            var startDate = TimeHelper.StringToTimeStamp(NhapKho_StartDate.Text);
-            var endDate = TimeHelper.StringToTimeStamp(NhapKho_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
-            gridViewNhapKho.ActiveFilterString = string.Format("[NgayLap] >= '{0}' AND [NgayLap] <= '{1}'", startDate, endDate);
-            btnNhapKhoLoc.Appearance.BackColor = Color.Silver;
-        }
-
-        private void btnNhapKhoBoLoc_Click(object sender, EventArgs e)
-        {
-            gridViewNhapKho.ActiveFilterString = "";
-            btnNhapKhoLoc.Appearance.BackColor = SystemColors.MenuHighlight;
-        }
+            ReloadData();
+        }     
 
         private void btnThanhToanLoc_Click(object sender, EventArgs e)
         {
-            var startDate = TimeHelper.StringToTimeStamp(ThanhToan_StartDate.Text);
-            var endDate = TimeHelper.StringToTimeStamp(ThanhToan_EndDate.Text) + TimeHelper.MILISECOND_PER_DAY - 1;
-            gridViewThanhToan.ActiveFilterString = string.Format("[NgayThanhToan] >= '{0}' AND [NgayThanhToan] <= '{1}'", startDate, endDate);
-            btnThanhToanLoc.Appearance.BackColor = Color.Silver;
-
-        }
-
-        private void btnThanhToanHuyLoc_Click(object sender, EventArgs e)
-        {
-            gridViewThanhToan.ActiveFilterString = "";
-            btnThanhToanLoc.Appearance.BackColor = SystemColors.MenuHighlight;
+            ReloadData();
         }
 
         private void tabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             ReloadData();
+        }
+
+
+        private void NhapKho_StartDate_ValueChanged(object sender, EventArgs e)
+        {
+            //_startDate = NhapKho_StartDate.Value;
+        }
+
+        private void NhapKho_EndDate_ValueChanged(object sender, EventArgs e)
+        {
+            //_endDate = NhapKho_EndDate.Value;
         }
     }
 }

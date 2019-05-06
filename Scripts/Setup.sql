@@ -198,6 +198,20 @@ exec ADD_DEFAULT_CONSTRAINT 'ThuChi', 'SoTien', '0', 'bigint'
 --UserAccount
 exec ADD_DEFAULT_CONSTRAINT 'UserAccount', 'IsActived', '1', 'bit'
 
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'DBO' AND TABLE_NAME = 'DonHang' AND COLUMN_NAME = 'LoaiTienTe')
+BEGIN	
+	ALTER TABLE DBO.DonHang 
+	ADD LoaiTienTe NVARCHAR(5) NOT NULL
+	CONSTRAINT DF_DonHang_LoaiTienTe DEFAULT('VND') 
+END
+
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'DBO' AND TABLE_NAME = 'CongNo' AND COLUMN_NAME = 'LoaiTienTe')
+BEGIN	
+	ALTER TABLE DBO.CongNo 
+	ADD LoaiTienTe NVARCHAR(5) NOT NULL
+	CONSTRAINT DF_CongNo_LoaiTienTe DEFAULT('VND') 
+END
+
 --Update MaDH
 UPDATE DonHang
 SET MaDH = CONVERT(nvarchar, FORMAT(NgayLap, 'yy'))
@@ -216,16 +230,28 @@ WHERE	LoaiHangId = 45
 Update DanhMuc Set IsActived = 0 Where Id = 45 
 
 
-IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'DBO' AND TABLE_NAME = 'DonHang' AND COLUMN_NAME = 'LoaiTienTe')
-BEGIN	
-	ALTER TABLE DBO.DonHang 
-	ADD LoaiTienTe NVARCHAR(5) NOT NULL
-	CONSTRAINT DF_DonHang_LoaiTienTe DEFAULT('VND') 
-END
+-- Fix data KhoHang
+UPDATE	KhoHang
+SET		SoLuong = 0
+Where	SoLuong < 0
 
-IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'DBO' AND TABLE_NAME = 'CongNo' AND COLUMN_NAME = 'LoaiTienTe')
-BEGIN	
-	ALTER TABLE DBO.CongNo 
-	ADD LoaiTienTe NVARCHAR(5) NOT NULL
-	CONSTRAINT DF_CongNo_LoaiTienTe DEFAULT('VND') 
-END
+-- Fix data DonHang
+
+;with UpdateDH as 
+(
+select	dh.Id,
+		dh.TongCong,
+		dh.LoaiDonHang,
+		sum(ctdh.DonGia * ctdh.SoLuong) TongCongDH
+	from DonHang DH
+	join ChiTietDonHang ctdh on ctdh.DonHangId = dh.Id  and ctdh.IsActived = 1
+	group by dh.Id,
+			dh.TongCong,
+			dh.LoaiDonHang
+	having dh.TongCong <> sum(ctdh.DonGia * ctdh.SoLuong)
+)
+UPDATE	DH
+SET		DH.TongCong = UDP.TongCongDH
+FROM	DonHang DH
+JOIN	UpdateDH UDP on UDP.Id = DH.Id
+	

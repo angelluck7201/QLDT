@@ -32,7 +32,6 @@
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNhapKhoBoLoc = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapKhoLoc = new DevExpress.XtraEditors.SimpleButton();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
@@ -59,44 +58,28 @@
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.panel1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlHangHoa);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1236, 775);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1854, 1211);
             this.splitContainerControl1.SplitterPosition = 79;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnNhapKhoBoLoc);
             this.panel1.Controls.Add(this.btnNhapKhoLoc);
             this.panel1.Controls.Add(this.EndDate);
             this.panel1.Controls.Add(this.StartDate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(221, 0);
+            this.panel1.Location = new System.Drawing.Point(332, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 79);
+            this.panel1.Size = new System.Drawing.Size(1522, 79);
             this.panel1.TabIndex = 6;
-            // 
-            // btnNhapKhoBoLoc
-            // 
-            this.btnNhapKhoBoLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNhapKhoBoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnNhapKhoBoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.btnNhapKhoBoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNhapKhoBoLoc.Appearance.Options.UseBackColor = true;
-            this.btnNhapKhoBoLoc.Appearance.Options.UseFont = true;
-            this.btnNhapKhoBoLoc.Appearance.Options.UseForeColor = true;
-            this.btnNhapKhoBoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNhapKhoBoLoc.Location = new System.Drawing.Point(850, 24);
-            this.btnNhapKhoBoLoc.Name = "btnNhapKhoBoLoc";
-            this.btnNhapKhoBoLoc.Size = new System.Drawing.Size(124, 30);
-            this.btnNhapKhoBoLoc.TabIndex = 51;
-            this.btnNhapKhoBoLoc.Text = "Bỏ Lọc";
-            this.btnNhapKhoBoLoc.Click += new System.EventHandler(this.btnNhapKhoBoLoc_Click);
             // 
             // btnNhapKhoLoc
             // 
@@ -108,9 +91,10 @@
             this.btnNhapKhoLoc.Appearance.Options.UseFont = true;
             this.btnNhapKhoLoc.Appearance.Options.UseForeColor = true;
             this.btnNhapKhoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNhapKhoLoc.Location = new System.Drawing.Point(709, 24);
+            this.btnNhapKhoLoc.Location = new System.Drawing.Point(1314, 33);
+            this.btnNhapKhoLoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNhapKhoLoc.Name = "btnNhapKhoLoc";
-            this.btnNhapKhoLoc.Size = new System.Drawing.Size(124, 30);
+            this.btnNhapKhoLoc.Size = new System.Drawing.Size(160, 33);
             this.btnNhapKhoLoc.TabIndex = 50;
             this.btnNhapKhoLoc.Text = "Lọc";
             this.btnNhapKhoLoc.Click += new System.EventHandler(this.btnNhapKhoLoc_Click);
@@ -120,9 +104,10 @@
             this.EndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.EndDate.Location = new System.Drawing.Point(374, 26);
+            this.EndDate.Location = new System.Drawing.Point(842, 33);
+            this.EndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(311, 28);
+            this.EndDate.Size = new System.Drawing.Size(464, 33);
             this.EndDate.TabIndex = 49;
             // 
             // StartDate
@@ -130,18 +115,21 @@
             this.StartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
             this.StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.StartDate.Location = new System.Drawing.Point(41, 26);
+            this.StartDate.Location = new System.Drawing.Point(370, 33);
+            this.StartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(311, 28);
+            this.StartDate.Size = new System.Drawing.Size(464, 33);
             this.StartDate.TabIndex = 48;
             // 
             // gridControlHangHoa
             // 
             this.gridControlHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlHangHoa.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlHangHoa.Location = new System.Drawing.Point(0, 0);
             this.gridControlHangHoa.MainView = this.gridViewHangHoa;
+            this.gridControlHangHoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlHangHoa.Name = "gridControlHangHoa";
-            this.gridControlHangHoa.Size = new System.Drawing.Size(1236, 690);
+            this.gridControlHangHoa.Size = new System.Drawing.Size(1854, 1122);
             this.gridControlHangHoa.TabIndex = 3;
             this.gridControlHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHangHoa});
@@ -154,7 +142,6 @@
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseForeColor = true;
             this.gridViewHangHoa.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewHangHoa.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridViewHangHoa.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewHangHoa.Appearance.Row.Options.UseFont = true;
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Options.UseFont = true;
@@ -203,14 +190,13 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Ngày";
-            this.gridColumn3.FieldName = "NgayLapFormat";
+            this.gridColumn3.FieldName = "NgayLap";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 4;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
@@ -223,7 +209,6 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
@@ -281,12 +266,13 @@
             // 
             // UcTheKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.splitContainerControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UcTheKho";
-            this.Size = new System.Drawing.Size(1236, 775);
+            this.Size = new System.Drawing.Size(1854, 1211);
             this.DoubleClick += new System.EventHandler(this.gridViewHangHoa_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
@@ -311,7 +297,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton btnNhapKhoBoLoc;
         private DevExpress.XtraEditors.SimpleButton btnNhapKhoLoc;
         private System.Windows.Forms.DateTimePicker EndDate;
         private System.Windows.Forms.DateTimePicker StartDate;
