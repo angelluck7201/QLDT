@@ -15,25 +15,29 @@ namespace QLDT.FormControls.ThuChiForms
     {
         private readonly ThuChi _domainData;
 
-        public UcThuChi(ThuChi data = null)
+        public UcThuChi(long noiDungId, ThuChi data = null)
         {
             InitializeComponent();
 
             ThuChi_NoiDungId.DisplayMember = "Ten";
             ThuChi_NoiDungId.ValueMember = "Id";
-            ThuChi_NoiDungId.DataSource = new BindingSource(CRUD.DbContext.DanhMucs.Where(s => s.Loai == Define.LoaiDanhMucEnum.ThuChi.ToString()).ToList(), null);
+            ThuChi_NoiDungId.DataSource = new BindingSource(CRUD.DbContext.DanhMucs.Where(s => s.Loai == Define.LoaiDanhMucEnum.ThuChi.ToString() && s.IsActived).ToList(), null);
 
             ThuChi_Loai.DisplayMember = "Value";
             ThuChi_Loai.ValueMember = "Key";
             ThuChi_Loai.DataSource = new BindingSource(Define.LoaiThuChiDict, null);
 
-            Init(data);
-            if (data != null)
+            _domainData = data;
+            if (_domainData == null)
             {
-                ThuChi_Loai.SelectedValue = PrimitiveConvert.StringToEnum<Define.LoaiThuChiEnum>(data.Loai);
+                _domainData = new ThuChi();
+                _domainData.NgayLap = TimeHelper.CurentDateTime();
+                _domainData.Loai = Define.LoaiThuChiEnum.Thu.ToString();
+                _domainData.NoiDungId = noiDungId;
             }
 
-            _domainData = data;
+            Init(_domainData);
+
         }
 
         public override bool SaveData()
@@ -45,16 +49,28 @@ namespace QLDT.FormControls.ThuChiForms
                 return false;
             }
 
-            var saveData = CRUD.GetFormObject<ThuChi>(FormControls);
-            CRUD.DecorateSaveData(saveData, _domainData);
-            CRUD.DbContext.ThuChis.AddOrUpdate(saveData);
+            CRUD.DecorateSaveData(_domainData);
+            CRUD.DbContext.ThuChis.AddOrUpdate(_domainData);
             CRUD.DbContext.SaveChanges();
+
+            ReturnObject = _domainData;
 
             return true;
         }
 
         public string ValidateInput()
         {
+            if (_domainData.NoiDungId <= 0)
+            {
+                ThuChi_NoiDungId.Focus();
+                return "Chưa Nhập Nội Dung";
+            }
+
+            if (string.IsNullOrEmpty(_domainData.Loai))
+            {
+                ThuChi_Loai.Focus();
+                return "Chưa Chọn Loại Thu Chi";
+            }
             return string.Empty;
         }
     }

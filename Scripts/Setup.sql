@@ -212,6 +212,11 @@ BEGIN
 	CONSTRAINT DF_CongNo_LoaiTienTe DEFAULT('VND') 
 END
 
+-- Create index on Donhang
+CREATE INDEX INDEX_DonHang_NgayLap ON DonHang (NgayLap desc);
+CREATE INDEX INDEX_ChiTietDonHang_DonHangId ON ChiTietDonHang (DonHangId);
+CREATE INDEX INDEX_ChiTietHangHoa_ChiTietDonHangId ON ChiTietHangHoa (ChiTietDonHangId);
+
 --Update MaDH
 UPDATE DonHang
 SET MaDH = CONVERT(nvarchar, FORMAT(NgayLap, 'yy'))

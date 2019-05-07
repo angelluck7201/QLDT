@@ -15,13 +15,14 @@ namespace QLDT.FormControls.ThuChiForms
     {
         private List<DanhMuc> _danhMucs = new List<DanhMuc>();
         private List<ThuChi> _thuChis = new List<ThuChi>();
+        private long _selectedNoiDungId;
 
         public UcThuChiList()
         {
             InitializeComponent();
             InitAuthorize();
             ReloadData();
-            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, ReloadData);
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
         private void InitAuthorize()
@@ -33,13 +34,23 @@ namespace QLDT.FormControls.ThuChiForms
             }
         }
 
+        private void RefreshData(object data)
+        {
+            if (data is DanhMuc)
+            {
+                FormBehavior.RefreshGrid(gridViewLoaiThuChi, (DanhMuc)data);
+            }
+            if (data is ThuChi)
+            {
+                FormBehavior.RefreshGrid(gridViewThuChi, (ThuChi)data);
+            }
+        }
+
         private void ReloadData()
         {
             ThreadHelper.LoadForm(() =>
             {
-                CRUD.DisposeDb();
-
-                _danhMucs = CRUD.DbContext.DanhMucs.Where(s => s.Loai == Define.LoaiDanhMucEnum.ThuChi.ToString()).ToList();
+                _danhMucs = CRUD.DbContext.DanhMucs.Where(s => s.Loai == Define.LoaiDanhMucEnum.ThuChi.ToString() && s.IsActived).ToList();
                 _danhMucs.Add(new DanhMuc() { Ten = "Tất cả" });
                 _thuChis = CRUD.DbContext.ThuChis.ToList();
 
@@ -52,7 +63,8 @@ namespace QLDT.FormControls.ThuChiForms
         {
             dynamic data = gridViewLoaiThuChi.GetRow(gridViewLoaiThuChi.FocusedRowHandle);
             if (data != null && data.Id != null)
-            { 
+            {
+                _selectedNoiDungId = data.Id;
                 if (data.Ten == "Tất cả")
                 {
                     gridViewThuChi.ActiveFilterString = "";
@@ -66,7 +78,7 @@ namespace QLDT.FormControls.ThuChiForms
 
         private void btnAddThuChi_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcThuChi(), "Thu Chi", this.ParentForm);
+            FormBehavior.GenerateForm(new UcThuChi(_selectedNoiDungId), "Thu Chi", this.ParentForm);
         }
 
         private void btnAddLoaiThuChi_Click(object sender, EventArgs e)
@@ -95,7 +107,7 @@ namespace QLDT.FormControls.ThuChiForms
                 if (data != null && data.Id != null)
                 {
                     var info = CRUD.DbContext.ThuChis.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcThuChi(info), "Thu Chi", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcThuChi(_selectedNoiDungId, info), "Thu Chi", this.ParentForm);
                 }
             });
         }

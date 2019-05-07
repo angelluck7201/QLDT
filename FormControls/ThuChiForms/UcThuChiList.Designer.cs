@@ -71,7 +71,7 @@
             this.btnAddLoaiThuChi.Location = new System.Drawing.Point(4, 19);
             this.btnAddLoaiThuChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddLoaiThuChi.Name = "btnAddLoaiThuChi";
-            this.btnAddLoaiThuChi.Size = new System.Drawing.Size(254, 45);
+            this.btnAddLoaiThuChi.Size = new System.Drawing.Size(274, 45);
             this.btnAddLoaiThuChi.TabIndex = 3;
             this.btnAddLoaiThuChi.Text = "Thêm Loại Thu/Chi";
             this.btnAddLoaiThuChi.Click += new System.EventHandler(this.btnAddLoaiThuChi_Click);

@@ -123,10 +123,10 @@ namespace QLDT
             {LoaiKhachHangEnum.NhaCungCap, "NHÀ CUNG CẤP"},
         };
 
-        public static Dictionary<LoaiThuChiEnum, string> LoaiThuChiDict = new Dictionary<LoaiThuChiEnum, string>()
+        public static Dictionary<string, string> LoaiThuChiDict = new Dictionary<string, string>()
         {
-         {LoaiThuChiEnum.Thu, "THU"},
-         {LoaiThuChiEnum.Chi, "CHI"}
+            {LoaiThuChiEnum.Thu.ToString(), "THU"},
+            {LoaiThuChiEnum.Chi.ToString(), "CHI"}
         };
 
         public static Dictionary<DVTEnum, string> DVTDict = new Dictionary<DVTEnum, string>()
