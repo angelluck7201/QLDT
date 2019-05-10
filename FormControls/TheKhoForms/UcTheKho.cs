@@ -35,7 +35,7 @@ namespace QLDT.FormControls.TheKhoForms
                 {
                     var info = CRUD.DbContext.DonHangs.Find(data.DonHangId);
                     var loaiDonHang = PrimitiveConvert.StringToEnum<Define.LoaiDonHangEnum>(info.LoaiDonHang);
-                    FormBehavior.GenerateForm(new UcDonHang(loaiDonHang, info), data.LoaiPhieu, this.ParentForm);
+                    FormBehavior.GenerateForm(new UcDonHang(loaiDonHang, info), data.LoaiPhieu, this.ParentForm, this.Name);
                 }
             });
         }

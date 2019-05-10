@@ -78,6 +78,8 @@ namespace QLDT.FormControls.NhapKhoForms
         {
             ThreadHelper.LoadForm(() =>
             {
+                CRUD.DisposeDb();
+
                 if (tabControl.SelectedTabPage == tabNhaCungCap)
                 {
                     _khachHangs = CRUD.DbContext.KhachHangs.Where(s => s.IsActived && s.LoaiKhachHang == _loaiKhachHang.ToString()).ToList();
@@ -127,7 +129,7 @@ namespace QLDT.FormControls.NhapKhoForms
         private void btnAddNhaCungCap_Click(object sender, EventArgs e)
         {
             var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
-            FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang), title, this.ParentForm);
+            FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang), title, this.ParentForm, this.Name);
         }
 
         private void gridViewKhachHang_DoubleClick(object sender, EventArgs e)
@@ -140,7 +142,7 @@ namespace QLDT.FormControls.NhapKhoForms
                     var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
 
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang, data), title, this.ParentForm);
+                    FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang, data), title, this.ParentForm, this.Name);
                 }
             });
         }
@@ -148,7 +150,7 @@ namespace QLDT.FormControls.NhapKhoForms
         private void btnAddPNK_Click(object sender, EventArgs e)
         {
             var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
-            FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang), title, this.ParentForm);
+            FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang), title, this.ParentForm, this.Name);
         }
 
         private void gridViewNhapKho_DoubleClick(object sender, EventArgs e)
@@ -161,7 +163,7 @@ namespace QLDT.FormControls.NhapKhoForms
                     var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
 
                     data = CRUD.DbContext.DonHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang, data), title, this.ParentForm);
+                    FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang, data), title, this.ParentForm, this.Name);
                 }
             });
         }

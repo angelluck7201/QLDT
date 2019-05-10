@@ -58,6 +58,7 @@
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnSave);
             this.splitContainerControl1.Panel1.Controls.Add(this.txtTenHang);
@@ -65,7 +66,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlChiTiet);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(699, 626);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1048, 978);
             this.splitContainerControl1.SplitterPosition = 63;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -79,9 +80,10 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(546, 20);
+            this.btnSave.Location = new System.Drawing.Point(818, 7);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(116, 30);
+            this.btnSave.Size = new System.Drawing.Size(174, 47);
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "Lưu";
             // 
@@ -89,31 +91,35 @@
             // 
             this.txtTenHang.Enabled = false;
             this.txtTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHang.Location = new System.Drawing.Point(141, 24);
+            this.txtTenHang.Location = new System.Drawing.Point(211, 14);
+            this.txtTenHang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Size = new System.Drawing.Size(339, 26);
+            this.txtTenHang.Size = new System.Drawing.Size(506, 31);
             this.txtTenHang.TabIndex = 26;
             // 
             // lblTenHang
             // 
             this.lblTenHang.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenHang.Location = new System.Drawing.Point(9, 29);
+            this.lblTenHang.Location = new System.Drawing.Point(13, 21);
+            this.lblTenHang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenHang.Name = "lblTenHang";
-            this.lblTenHang.Size = new System.Drawing.Size(92, 19);
+            this.lblTenHang.Size = new System.Drawing.Size(138, 30);
             this.lblTenHang.TabIndex = 25;
             this.lblTenHang.Text = "Tên Hàng";
             // 
             // gridControlChiTiet
             // 
             this.gridControlChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlChiTiet.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlChiTiet.Location = new System.Drawing.Point(0, 0);
             this.gridControlChiTiet.MainView = this.gridViewChiTiet;
+            this.gridControlChiTiet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlChiTiet.Name = "gridControlChiTiet";
             this.gridControlChiTiet.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.listHangHoa,
             this.btnDeleteRow,
             this.repositoryItemTextEdit1});
-            this.gridControlChiTiet.Size = new System.Drawing.Size(699, 557);
+            this.gridControlChiTiet.Size = new System.Drawing.Size(1048, 905);
             this.gridControlChiTiet.TabIndex = 4;
             this.gridControlChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewChiTiet});
@@ -122,7 +128,6 @@
             // 
             this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewChiTiet.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewChiTiet.Appearance.Row.Options.UseFont = true;
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Options.UseFont = true;
@@ -145,13 +150,14 @@
             this.gridViewChiTiet.GridControl = this.gridControlChiTiet;
             this.gridViewChiTiet.Name = "gridViewChiTiet";
             this.gridViewChiTiet.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gridViewChiTiet.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridViewChiTiet.OptionsView.ShowFooter = true;
             this.gridViewChiTiet.OptionsView.ShowGroupPanel = false;
+            this.gridViewChiTiet.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewChiTiet_InitNewRow);
             this.gridViewChiTiet.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridViewChiTiet_ValidatingEditor);
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
@@ -205,12 +211,13 @@
             // 
             // UcChiTietHangHoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.splitContainerControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UcChiTietHangHoa";
-            this.Size = new System.Drawing.Size(699, 626);
+            this.Size = new System.Drawing.Size(1048, 978);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChiTiet)).EndInit();

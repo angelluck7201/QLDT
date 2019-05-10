@@ -62,6 +62,7 @@ namespace QLDT.FormControls
 
         private void AddControl(UserControl userControl)
         {
+            ObserverControl.DetachAllExcept(userControl.Name);
             userControl.Dock = DockStyle.Fill;
             splitContainerControl1.Panel2.Controls.Clear();
             splitContainerControl1.Panel2.Controls.Add(userControl);
@@ -104,7 +105,7 @@ namespace QLDT.FormControls
 
         private void navResetPass_ElementClick(object sender, NavElementEventArgs e)
         {
-            FormBehavior.GenerateForm(new UcResetPass(), "Thông Tin Người Dùng", this);
+            FormBehavior.GenerateForm(new UcResetPass(), "Thông Tin Người Dùng", this, string.Empty);
         }
 
 

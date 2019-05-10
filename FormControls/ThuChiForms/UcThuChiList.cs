@@ -50,6 +50,8 @@ namespace QLDT.FormControls.ThuChiForms
         {
             ThreadHelper.LoadForm(() =>
             {
+                CRUD.DisposeDb();
+
                 _danhMucs = CRUD.DbContext.DanhMucs.Where(s => s.Loai == Define.LoaiDanhMucEnum.ThuChi.ToString() && s.IsActived).ToList();
                 _danhMucs.Add(new DanhMuc() { Ten = "Tất cả" });
                 _thuChis = CRUD.DbContext.ThuChis.ToList();
@@ -78,12 +80,12 @@ namespace QLDT.FormControls.ThuChiForms
 
         private void btnAddThuChi_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcThuChi(_selectedNoiDungId), "Thu Chi", this.ParentForm);
+            FormBehavior.GenerateForm(new UcThuChi(_selectedNoiDungId), "Thu Chi", this.ParentForm, this.Name);
         }
 
         private void btnAddLoaiThuChi_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.ThuChi), "Loại Thu Chi", this.ParentForm);
+            FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.ThuChi), "Loại Thu Chi", this.ParentForm, this.Name);
         }
 
         private void gridViewLoaiThuChi_DoubleClick(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace QLDT.FormControls.ThuChiForms
                 if (data != null && data.Id != null)
                 {
                     var info = CRUD.DbContext.DanhMucs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.ThuChi, info), "Loại Thu Chi", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.ThuChi, info), "Loại Thu Chi", this.ParentForm, this.Name);
                 }
             });
         }
@@ -107,7 +109,7 @@ namespace QLDT.FormControls.ThuChiForms
                 if (data != null && data.Id != null)
                 {
                     var info = CRUD.DbContext.ThuChis.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcThuChi(_selectedNoiDungId, info), "Thu Chi", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcThuChi(_selectedNoiDungId, info), "Thu Chi", this.ParentForm, this.Name);
                 }
             });
         }

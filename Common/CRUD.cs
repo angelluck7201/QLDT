@@ -273,6 +273,12 @@ namespace QLDT
             }
 
             ReflectionSet(data, "ModifiedDate", currentTime);
+
+            var isActived = (bool)ReflectionGet(data, "IsActived");
+            if (!isActived)
+            {
+                CRUD.DbContext.Entry(data).Property("IsActived").IsModified = true;
+            }
         }
 
 

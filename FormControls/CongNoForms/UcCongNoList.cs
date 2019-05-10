@@ -46,6 +46,7 @@ namespace QLDT.FormControls.CongNoForms
         {
             ThreadHelper.LoadForm(() =>
             {
+                CRUD.DisposeDb();
                 var startDate = CongNo_StartDate.Value;
                 var endDate = CongNo_EndDate.Value;
                 _khachHangs = CRUD.DbContext.KhachHangs
@@ -68,7 +69,8 @@ namespace QLDT.FormControls.CongNoForms
                 {
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
                     FormBehavior.GenerateForm(new UcCongNo(_loaiDonHang, _loaiTienTe, data), "Công Nợ",
-                        this.ParentForm);
+                        this.ParentForm,
+                        this.Name);
                 }
             });
         }
@@ -81,7 +83,7 @@ namespace QLDT.FormControls.CongNoForms
 
         private void btnAddCongNo_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcCongNoCu(_loaiDonHang, _loaiTienTe), "Công Nợ", this.ParentForm);
+            FormBehavior.GenerateForm(new UcCongNoCu(_loaiDonHang, _loaiTienTe), "Công Nợ", this.ParentForm, this.Name);
         }
 
         private void chkNoOnly_CheckStateChanged(object sender, EventArgs e)

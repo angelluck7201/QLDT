@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
@@ -187,14 +188,14 @@ namespace QLDT.FormControls.DonHangForms
                 transaction.Complete();
             }
 
-            if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
-            {
-                var confirmDialog = MessageBox.Show(Define.MESSAGE_IN_HOA_DON, Define.MESSAGE_IN_HOA_DON_TITLE, MessageBoxButtons.YesNo);
-                if (confirmDialog == DialogResult.Yes)
-                {
-                    InHoaDon();
-                }
-            }
+            //if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString())
+            //{
+            //    var confirmDialog = MessageBox.Show(Define.MESSAGE_IN_HOA_DON, Define.MESSAGE_IN_HOA_DON_TITLE, MessageBoxButtons.YesNo);
+            //    if (confirmDialog == DialogResult.Yes)
+            //    {
+            //        InHoaDon();
+            //    }
+            //}
 
             // Update grid view
             ReturnObject = _domainData;
@@ -214,13 +215,14 @@ namespace QLDT.FormControls.DonHangForms
             {
                 return string.Format("Không được phép để trống {0}!", lblLoaiTienTe.Text);
             }
-            if (_chiTietDonhang.Count == 0)
+            if (_chiTietDonhang.Count(s=>s.IsActived) == 0)
             {
                 return "Chưa nhập hàng hóa cho đơn hàng";
             }
 
             foreach (var chiTietDonHang in _chiTietDonhang)
             {
+                if (!chiTietDonHang.IsActived) continue;
                 if (chiTietDonHang.HangHoaId == 0)
                 {
                     return "Không được để trống hàng hóa";
@@ -236,15 +238,25 @@ namespace QLDT.FormControls.DonHangForms
                         return string.Format("Không đủ hàng. Chỉ còn {0} {1} trong kho", chiTietDonHang.SoLuongTon, chiTietDonHang.TenHangHoa);
                     }
                 }
+                if (_domainData.TrangThai == Define.TrangThaiDonHang.Moi.ToString()
+                    && !chiTietDonHang.KhoHang.IsActived)
+                {
+                    return string.Format("{0} hiện đã ngưng kinh doanh.", chiTietDonHang.TenHangHoa);
+                }
             }
 
-            if (_domainData.ThanhToan > 0)
+            //if (_domainData.ThanhToan > 0)
+            //{
+            //    var congNoDangThanhToan = _domainData.CongNoes.Any(s => s.ThanhToanCongNoes.Any());
+            //    if (congNoDangThanhToan)
+            //    {
+            //        return string.Format("Đơn hàng này đang trong quá trình thanh toán nên không thể chỉnh sửa!");
+            //    }
+            //}
+
+            if (_domainData.ThanhToan > _domainData.TongCong)
             {
-                var congNoDangThanhToan = _domainData.CongNoes.Any(s => s.ThanhToanCongNoes.Any());
-                if (congNoDangThanhToan)
-                {
-                    return string.Format("Đơn hàng này đang trong quá trình thanh toán nên không thể chỉnh sửa!");
-                }
+                return "Số tiền thanh toán lớn hơn giá trị đơn hàng.";
             }
 
             if (_domainData.KhachHangId == Define.KhachLeId

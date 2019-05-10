@@ -36,14 +36,14 @@ namespace QLDT.FormControls.UserAccountForms
                 if (data != null && data.Id != null)
                 {
                     var info = CRUD.DbContext.UserAccounts.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcUserAccount(info), "Thông Tin Người Dùng", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcUserAccount(info), "Thông Tin Người Dùng", this.ParentForm, this.Name);
                 }
             });
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcUserAccount(), "Thông Tin Người Dùng", this.ParentForm);
+            FormBehavior.GenerateForm(new UcUserAccount(), "Thông Tin Người Dùng", this.ParentForm, this.Name);
         }
     }
 }

@@ -71,12 +71,12 @@ namespace QLDT.FormControls.KhoHangForms
 
         private void btnAddNhomHang_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.DienThoai), "Nhóm Hàng", this.ParentForm);
+            FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.DienThoai), "Nhóm Hàng", this.ParentForm, this.Name);
         }
 
         private void btnAddHangHoa_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhoHang(selectedLoaiHang.Id), "Kho Hàng", this.ParentForm);
+            FormBehavior.GenerateForm(new UcKhoHang(selectedLoaiHang.Id), "Kho Hàng", this.ParentForm, this.Name);
         }
 
         private void gridViewLoaiHang_DoubleClick(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace QLDT.FormControls.KhoHangForms
                 if (data != null)
                 {
                     data = CRUD.DbContext.DanhMucs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.DienThoai, data), "Nhóm Hàng", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcNhomHang(Define.LoaiDanhMucEnum.DienThoai, data), "Nhóm Hàng", this.ParentForm, this.Name);
                 }
             });
         }
@@ -102,7 +102,7 @@ namespace QLDT.FormControls.KhoHangForms
                 {
                     data = CRUD.DbContext.KhoHangs.Find(data.Id);
                     _khoHangs[gridViewHangHoa.GetFocusedDataSourceRowIndex()] = data;
-                    FormBehavior.GenerateForm(new UcKhoHang(data.LoaiHangId, data), "Kho Hàng", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcKhoHang(data.LoaiHangId, data), "Kho Hàng", this.ParentForm, this.Name);
                 }
             });
         }

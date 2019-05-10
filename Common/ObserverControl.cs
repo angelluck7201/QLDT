@@ -49,9 +49,16 @@ namespace QLDT
             RegisterList.RemoveAll(s => s.Register == registerName);
         }
 
-        public static void PulishAction(string publish, Define.ActionTypeEnum publishAction, object data = null)
+        public static void DetachAllExcept(string registerName)
         {
-            var listAction = RegisterList.Where(s => s.Publisher == publish && s.RegistAction == publishAction).ToList();
+            RegisterList.RemoveAll(s => s.Register != registerName);
+        }
+
+        public static void PulishAction(string publish, string register, Define.ActionTypeEnum publishAction, object data = null)
+        {
+            var listAction = RegisterList.Where(s => s.Publisher == publish 
+            && s.Register == register
+            && s.RegistAction == publishAction).ToList();
             foreach (var item in listAction)
             {
                 if (data == null && item.Action != null)

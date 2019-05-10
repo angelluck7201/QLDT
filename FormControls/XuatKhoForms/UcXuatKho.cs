@@ -56,7 +56,7 @@ namespace QLDT.FormControls.XuatKhoForms
 
         private void btnAddNhaCungCap_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.KhachSi), "Khách Hàng", this.ParentForm);
+            FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.KhachSi), "Khách Hàng", this.ParentForm, this.Name);
         }
 
         private void gridViewKhachHang_DoubleClick(object sender, EventArgs e)
@@ -67,14 +67,14 @@ namespace QLDT.FormControls.XuatKhoForms
                 if (data != null && data.Id != null)
                 {
                     var info = CRUD.DbContext.KhachHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.KhachSi, info), "Khách Hàng", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcKhachHang(Define.LoaiKhachHangEnum.KhachSi, info), "Khách Hàng", this.ParentForm, this.Name);
                 }
             });
         }
 
         private void btnAddPXK_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.XuatKho), "Xuất Kho", this.ParentForm);
+            FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.XuatKho), "Xuất Kho", this.ParentForm, this.Name);
         }
 
         private void gridViewNhapKho_DoubleClick(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace QLDT.FormControls.XuatKhoForms
                 if (data != null && data.Id != null)
                 {
                     var info = CRUD.DbContext.DonHangs.Find(data.Id);
-                    FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.XuatKho, info), "Xuất Kho", this.ParentForm);
+                    FormBehavior.GenerateForm(new UcDonHang(Define.LoaiDonHangEnum.XuatKho, info), "Xuất Kho", this.ParentForm, this.Name);
                 }
             });
         }

@@ -57,7 +57,10 @@ namespace QLDT
 //            CRUD.DisposeDb();
         }
 
-        public static void GenerateForm(UserControl userControl, string title, Form parentForm)
+        public static void GenerateForm(UserControl userControl, 
+            string title, 
+            Form parentForm,
+            string register)
         {
             var defaultForm = new DefaultForm();
             defaultForm.Height = userControl.Height + 70;
@@ -65,6 +68,7 @@ namespace QLDT
             defaultForm.Controls.Add(userControl);
             defaultForm.Text = title;
             userControl.Dock = DockStyle.Fill;
+            defaultForm.RegisterName = register;
             defaultForm.CustomShow(parentForm);
         }
 

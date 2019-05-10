@@ -13,6 +13,7 @@ namespace QLDT.FormControls
     public partial class DefaultForm : Form
     {
         public object ReturnObject;
+        public string RegisterName;
         public DefaultForm()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace QLDT.FormControls
         {
             FormBehavior.Close(this);
             CRUD.DisposeDb();
-            ObserverControl.PulishAction(this.Name, Define.ActionTypeEnum.Close, ReturnObject);
+            ObserverControl.PulishAction(this.Name, RegisterName, Define.ActionTypeEnum.Close, ReturnObject);
         }
 
 

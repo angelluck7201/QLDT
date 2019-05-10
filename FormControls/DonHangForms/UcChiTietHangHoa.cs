@@ -33,12 +33,14 @@ namespace QLDT.FormControls.DonHangForms
             _callBack = callBack;
             _chiTiet = chitiet;
             btnDeleteRow.ButtonClick += btnDeleteRow_ButtonClick;
+            gridViewChiTiet.ActiveFilterString = string.Format("[IsActived] = '{0}'", true);
+
         }
 
         public override bool SaveData()
         {
             _chiTiet.ListChiTietHangHoa = _bindingList.ToList();
-            _chiTiet.SoLuong = _bindingList.Count;
+            _chiTiet.SoLuong = _bindingList.Count(s=>s.IsActived);
             _callBack();
 
             return true;
@@ -46,7 +48,20 @@ namespace QLDT.FormControls.DonHangForms
 
         private void btnDeleteRow_ButtonClick(object sender, EventArgs e)
         {
-            gridViewChiTiet.DeleteRow(gridViewChiTiet.FocusedRowHandle);
+            var index = gridViewChiTiet.GetFocusedDataSourceRowIndex();
+            if (_bindingList.Count > 0)
+            {
+                var data = _bindingList[index];
+                if (data.Id == 0)
+                {
+                    _bindingList.Remove(data);
+                }
+                else
+                {
+                    data.IsActived = false;
+                }
+            }
+            gridControlChiTiet.Refresh();
         }
 
         private void gridViewChiTiet_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
@@ -69,6 +84,12 @@ namespace QLDT.FormControls.DonHangForms
                     }
                 }
             }
+        }
+
+        private void gridViewChiTiet_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            var data = gridViewChiTiet.GetRow(e.RowHandle) as ChiTietHangHoa;
+            if (data != null) data.IsActived = true;
         }
     }
 }
