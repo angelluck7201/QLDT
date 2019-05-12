@@ -81,17 +81,18 @@ namespace QLDT
         {
             get
             {
-                var soLuong = 0L;
-                if (SoLuong != null)
-                {
-                    soLuong = (long)SoLuong;
-                }
-                var donGia = 0L;
-                if (DonGia != null)
-                {
-                    donGia = (long)DonGia;
-                }
-                return soLuong * donGia;
+                return SoLuong * DonGia;
+            }
+        }
+
+        public long ThanhTienVND
+        {
+            get
+            {
+                long tyGia = 1;
+                if (DonHang != null)
+                    tyGia = DonHang.TyGia;
+                return ThanhTien * tyGia;
             }
         }
 

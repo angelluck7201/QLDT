@@ -157,13 +157,13 @@ namespace QLDT.FormControls.ThongKeForms
 
         private void tileItemQuy_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            _loaiThongKe = Define.LoaiThongKeEnum.Nam;
+            _loaiThongKe = Define.LoaiThongKeEnum.Quy;
             ThongKe(_loaiThongKe);
         }
 
         private void tileItemNam_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            _loaiThongKe = Define.LoaiThongKeEnum.Quy;
+            _loaiThongKe = Define.LoaiThongKeEnum.Nam;
             ThongKe(_loaiThongKe);
         }
     }

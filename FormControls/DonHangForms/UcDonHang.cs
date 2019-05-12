@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Transactions;
@@ -18,6 +19,7 @@ namespace QLDT.FormControls.DonHangForms
         private readonly DonHang _domainData;
         private readonly Define.LoaiDonHangEnum _loaiDonHang;
         private readonly BindingList<ChiTietDonHang> _chiTietDonhang = new BindingList<ChiTietDonHang>();
+        private bool _isUsd;
 
         public UcDonHang(Define.LoaiDonHangEnum loaiDonHang, DonHang data = null)
         {
@@ -50,8 +52,10 @@ namespace QLDT.FormControls.DonHangForms
                 _domainData.LoaiDonHang = loaiDonHang.ToString();
                 _domainData.TrangThai = Define.TrangThaiDonHang.Moi.ToString();
                 _domainData.LoaiTienTe = Define.LoaiTienTeEnum.VND.ToString();
+                _domainData.TyGia = 1;
 
                 btnDelete.Visible = false;
+                btnIn.Visible = false;
                 GenerateMaDH();
             }
             else
@@ -94,6 +98,8 @@ namespace QLDT.FormControls.DonHangForms
 
             gridControlChiTiet.DataSource = _chiTietDonhang;
             gridViewChiTiet.ActiveFilterString = string.Format("[IsActived] = '{0}'", true);
+
+            CheckDonHangUSD();
 
             btnDeleteRow.ButtonClick += btnDeleteRow_ButtonClick;
 
@@ -350,7 +356,10 @@ namespace QLDT.FormControls.DonHangForms
 
                 if (hangHoa == null) return;
                 row.KhoHang = hangHoa;
-                row.DonGia = hangHoa.GiaBan;
+                if (!_isUsd)
+                {
+                    row.DonGia = hangHoa.GiaBan;
+                }
             }
         }
 
@@ -390,7 +399,9 @@ namespace QLDT.FormControls.DonHangForms
         {
             if (_domainData == null) return;
             var report = new ReportDonHang();
-            var dataSource = _domainData.ChiTietDonHangs.SelectMany(s => s.ChiTietHangHoas).ToList();
+            var dataSource = _domainData
+                                .ChiTietDonHangs.Where(s=>s.IsActived)
+                                .SelectMany(s => s.ChiTietHangHoas.Where(c=>c.IsActived)).ToList();
             report.DataSource = dataSource;
             report.ShowPreviewDialog();
         }
@@ -472,7 +483,30 @@ namespace QLDT.FormControls.DonHangForms
         private void gridViewChiTiet_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             var data = gridViewChiTiet.GetRow(e.RowHandle) as ChiTietDonHang;
-            if (data != null) data.IsActived = true;
+            if (data != null)
+            {
+                data.IsActived = true;
+                data.DonHang = _domainData;
+            }
+        }
+
+        private void DonHang_LoaiTienTe_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CheckDonHangUSD();
+        }
+
+        private void CheckDonHangUSD()
+        {
+            if (DonHang_LoaiTienTe.SelectedValue != null)
+            {
+                _isUsd = DonHang_LoaiTienTe.SelectedValue.ToString() == Define.LoaiTienTeEnum.USD.ToString();
+                DonHang_TyGia.Enabled = _isUsd;
+                gridViewChiTiet.Columns["ThanhTienVND"].Visible = _isUsd;
+                if (!_isUsd && _domainData != null)
+                {
+                    _domainData.TyGia = 1;
+                }
+            }
         }
     }
 }

@@ -115,6 +115,10 @@ namespace QLDT.FormControls.CongNoForms
             {
                 return string.Format("Còn {0} tiền chưa được phân bổ!", tienChuaPhanBo.ToString("n0"));
             }
+            if (tienChuaPhanBo < 0)
+            {
+                return string.Format("Số tiền phân bổ({0}) lớn hơn số tiền khách trả({1}).", txtDaThanhToan.Text, txtTienKhachTra.Text);
+            }
 
             return string.Empty;
         }
@@ -159,6 +163,23 @@ namespace QLDT.FormControls.CongNoForms
             txtTienKhachTra.Text = thanhToan.ToString("n0");
             txtDaThanhToan.Text = thanhToanNo.ToString("n0");
             txtConLai.Text = conLai.ToString("n0");
+        }
+
+        private void gridViewChiTiet_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            var index = gridViewChiTiet.GetFocusedDataSourceRowIndex();
+            if (index >= 0 && _congNoes != null)
+            {
+                UpdateThongTin();
+                var congNo = _congNoes[index];
+                if (congNo.ThanhToanNo == 0)
+                {
+                    var conLai = PrimitiveConvert.StringToInt(txtConLai.Text);
+                    congNo.ThanhToanNo = Math.Min(congNo.ConLai, conLai);
+                    UpdateThongTin();
+                    gridViewChiTiet.RefreshData();
+                }
+            }
         }
     }
 }

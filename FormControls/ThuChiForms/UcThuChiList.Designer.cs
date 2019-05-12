@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThuChiList));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.btnAddLoaiThuChi = new DevExpress.XtraEditors.SimpleButton();
@@ -154,6 +155,10 @@
             this.gridViewLoaiThuChi.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewLoaiThuChi.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewLoaiThuChi.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridViewLoaiThuChi.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewLoaiThuChi.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewLoaiThuChi.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridViewLoaiThuChi.Appearance.Row.Options.UseFont = true;
             this.gridViewLoaiThuChi.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewLoaiThuChi.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewLoaiThuChi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -174,9 +179,7 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Loại Thu Chi";
             this.gridColumn1.FieldName = "Ten";
             this.gridColumn1.Name = "gridColumn1";
@@ -193,6 +196,9 @@
             // 
             this.gridControlThuChi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlThuChi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControlThuChi.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControlThuChi.Location = new System.Drawing.Point(0, 0);
             this.gridControlThuChi.MainView = this.gridViewThuChi;
             this.gridControlThuChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -209,8 +215,11 @@
             this.gridViewThuChi.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewThuChi.Appearance.FocusedRow.Options.UseForeColor = true;
             this.gridViewThuChi.Appearance.GroupFooter.Options.UseFont = true;
-            this.gridViewThuChi.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewThuChi.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewThuChi.Appearance.GroupRow.Options.UseFont = true;
+            this.gridViewThuChi.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewThuChi.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewThuChi.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewThuChi.Appearance.Row.Options.UseFont = true;
             this.gridViewThuChi.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewThuChi.AppearancePrint.HeaderPanel.Options.UseFont = true;
@@ -254,9 +263,7 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Loại";
             this.gridColumn2.FieldName = "Loai";
             this.gridColumn2.Name = "gridColumn2";
@@ -275,9 +282,7 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Số Tiền";
             this.gridColumn5.DisplayFormat.FormatString = "n0";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -291,9 +296,7 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.AppearanceCell.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "Ghi Chú";
             this.gridColumn6.FieldName = "GhiChu";
             this.gridColumn6.Name = "gridColumn6";

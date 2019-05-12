@@ -34,6 +34,10 @@
             this.DonHang_KhachHangId = new System.Windows.Forms.ComboBox();
             this.lblKhachHangId = new System.Windows.Forms.Label();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.DonHang_TyGia = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DonHang_LoaiTienTe = new System.Windows.Forms.ComboBox();
+            this.lblLoaiTienTe = new System.Windows.Forms.Label();
             this.DonHang_MaDH = new System.Windows.Forms.TextBox();
             this.lblMaDH = new System.Windows.Forms.Label();
             this.lblNgayLap = new System.Windows.Forms.Label();
@@ -57,6 +61,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDeleteRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.DonHang_No = new DevExpress.XtraEditors.TextEdit();
             this.DonHang_ThanhToan = new DevExpress.XtraEditors.TextEdit();
@@ -70,10 +75,9 @@
             this.lblTongThanhTien = new System.Windows.Forms.Label();
             this.lblThue = new System.Windows.Forms.Label();
             this.lblChietKhau = new System.Windows.Forms.Label();
-            this.DonHang_LoaiTienTe = new System.Windows.Forms.ComboBox();
-            this.lblLoaiTienTe = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DonHang_TyGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChiTiet)).BeginInit();
@@ -96,21 +100,21 @@
             // 
             // DonHang_KhachHangId
             // 
-            this.DonHang_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_KhachHangId.FormattingEnabled = true;
-            this.DonHang_KhachHangId.Location = new System.Drawing.Point(220, 72);
+            this.DonHang_KhachHangId.Location = new System.Drawing.Point(248, 72);
             this.DonHang_KhachHangId.Name = "DonHang_KhachHangId";
-            this.DonHang_KhachHangId.Size = new System.Drawing.Size(426, 33);
+            this.DonHang_KhachHangId.Size = new System.Drawing.Size(537, 37);
             this.DonHang_KhachHangId.TabIndex = 20;
             this.DonHang_KhachHangId.SelectedValueChanged += new System.EventHandler(this.DonHang_NhaCungCapId_SelectedValueChanged);
             // 
             // lblKhachHangId
             // 
             this.lblKhachHangId.AutoSize = true;
-            this.lblKhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHangId.Location = new System.Drawing.Point(33, 71);
             this.lblKhachHangId.Name = "lblKhachHangId";
-            this.lblKhachHangId.Size = new System.Drawing.Size(165, 25);
+            this.lblKhachHangId.Size = new System.Drawing.Size(182, 29);
             this.lblKhachHangId.TabIndex = 21;
             this.lblKhachHangId.Text = "Nhà Cung Cấp";
             // 
@@ -120,6 +124,8 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_TyGia);
+            this.splitContainerControl1.Panel1.Controls.Add(this.label1);
             this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_LoaiTienTe);
             this.splitContainerControl1.Panel1.Controls.Add(this.lblLoaiTienTe);
             this.splitContainerControl1.Panel1.Controls.Add(this.DonHang_MaDH);
@@ -137,34 +143,78 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1469, 813);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1772, 956);
             this.splitContainerControl1.SplitterPosition = 261;
             this.splitContainerControl1.TabIndex = 23;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
+            // DonHang_TyGia
+            // 
+            this.DonHang_TyGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DonHang_TyGia.Location = new System.Drawing.Point(1196, 214);
+            this.DonHang_TyGia.Name = "DonHang_TyGia";
+            this.DonHang_TyGia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.DonHang_TyGia.Properties.Mask.EditMask = "n0";
+            this.DonHang_TyGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.DonHang_TyGia.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.DonHang_TyGia.Size = new System.Drawing.Size(535, 32);
+            this.DonHang_TyGia.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1007, 217);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 29);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Tỷ Giá";
+            // 
+            // DonHang_LoaiTienTe
+            // 
+            this.DonHang_LoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_LoaiTienTe.FormattingEnabled = true;
+            this.DonHang_LoaiTienTe.Location = new System.Drawing.Point(248, 214);
+            this.DonHang_LoaiTienTe.Name = "DonHang_LoaiTienTe";
+            this.DonHang_LoaiTienTe.Size = new System.Drawing.Size(537, 37);
+            this.DonHang_LoaiTienTe.TabIndex = 34;
+            this.DonHang_LoaiTienTe.SelectedValueChanged += new System.EventHandler(this.DonHang_LoaiTienTe_SelectedValueChanged);
+            // 
+            // lblLoaiTienTe
+            // 
+            this.lblLoaiTienTe.AutoSize = true;
+            this.lblLoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiTienTe.Location = new System.Drawing.Point(33, 213);
+            this.lblLoaiTienTe.Name = "lblLoaiTienTe";
+            this.lblLoaiTienTe.Size = new System.Drawing.Size(162, 29);
+            this.lblLoaiTienTe.TabIndex = 35;
+            this.lblLoaiTienTe.Text = "Loại Tiền Tệ";
+            // 
             // DonHang_MaDH
             // 
             this.DonHang_MaDH.Enabled = false;
-            this.DonHang_MaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_MaDH.Location = new System.Drawing.Point(220, 27);
+            this.DonHang_MaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_MaDH.Location = new System.Drawing.Point(248, 27);
             this.DonHang_MaDH.Name = "DonHang_MaDH";
-            this.DonHang_MaDH.Size = new System.Drawing.Size(426, 31);
+            this.DonHang_MaDH.Size = new System.Drawing.Size(537, 35);
             this.DonHang_MaDH.TabIndex = 33;
             // 
             // lblMaDH
             // 
             this.lblMaDH.AutoSize = true;
-            this.lblMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaDH.Location = new System.Drawing.Point(33, 27);
             this.lblMaDH.Name = "lblMaDH";
-            this.lblMaDH.Size = new System.Drawing.Size(155, 25);
+            this.lblMaDH.Size = new System.Drawing.Size(170, 29);
             this.lblMaDH.TabIndex = 32;
             this.lblMaDH.Text = "Mã Đơn Hàng";
             // 
             // lblNgayLap
             // 
-            this.lblNgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayLap.Location = new System.Drawing.Point(836, 160);
+            this.lblNgayLap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayLap.Location = new System.Drawing.Point(1006, 161);
             this.lblNgayLap.Name = "lblNgayLap";
             this.lblNgayLap.Size = new System.Drawing.Size(154, 27);
             this.lblNgayLap.TabIndex = 31;
@@ -172,36 +222,38 @@
             // 
             // DonHang_NgayLap
             // 
+            this.DonHang_NgayLap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DonHang_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.DonHang_NgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_NgayLap.Location = new System.Drawing.Point(1023, 160);
+            this.DonHang_NgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_NgayLap.Location = new System.Drawing.Point(1196, 161);
             this.DonHang_NgayLap.Name = "DonHang_NgayLap";
-            this.DonHang_NgayLap.Size = new System.Drawing.Size(405, 31);
+            this.DonHang_NgayLap.Size = new System.Drawing.Size(535, 35);
             this.DonHang_NgayLap.TabIndex = 30;
             // 
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.Location = new System.Drawing.Point(33, 119);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(89, 25);
+            this.lblDiaChi.Size = new System.Drawing.Size(98, 29);
             this.lblDiaChi.TabIndex = 29;
             this.lblDiaChi.Text = "Địa Chỉ";
             // 
             // DonHang_DiaChi
             // 
-            this.DonHang_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_DiaChi.Location = new System.Drawing.Point(220, 120);
+            this.DonHang_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_DiaChi.Location = new System.Drawing.Point(248, 120);
             this.DonHang_DiaChi.Name = "DonHang_DiaChi";
-            this.DonHang_DiaChi.Size = new System.Drawing.Size(426, 76);
+            this.DonHang_DiaChi.Size = new System.Drawing.Size(537, 76);
             this.DonHang_DiaChi.TabIndex = 28;
             this.DonHang_DiaChi.Text = "";
             // 
             // lblGhiChu
             // 
-            this.lblGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGhiChu.Location = new System.Drawing.Point(836, 68);
+            this.lblGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Location = new System.Drawing.Point(1006, 69);
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(137, 64);
             this.lblGhiChu.TabIndex = 27;
@@ -209,25 +261,28 @@
             // 
             // DonHang_GhiChu
             // 
-            this.DonHang_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_GhiChu.Location = new System.Drawing.Point(1023, 68);
+            this.DonHang_GhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DonHang_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_GhiChu.Location = new System.Drawing.Point(1196, 69);
             this.DonHang_GhiChu.Name = "DonHang_GhiChu";
-            this.DonHang_GhiChu.Size = new System.Drawing.Size(405, 76);
+            this.DonHang_GhiChu.Size = new System.Drawing.Size(535, 76);
             this.DonHang_GhiChu.TabIndex = 26;
             this.DonHang_GhiChu.Text = "";
             // 
             // DonHang_Dienthoai
             // 
-            this.DonHang_Dienthoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_Dienthoai.Location = new System.Drawing.Point(1023, 20);
+            this.DonHang_Dienthoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DonHang_Dienthoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_Dienthoai.Location = new System.Drawing.Point(1196, 21);
             this.DonHang_Dienthoai.Name = "DonHang_Dienthoai";
-            this.DonHang_Dienthoai.Size = new System.Drawing.Size(405, 31);
+            this.DonHang_Dienthoai.Size = new System.Drawing.Size(535, 35);
             this.DonHang_Dienthoai.TabIndex = 24;
             // 
             // lblDienThoai
             // 
-            this.lblDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDienThoai.Location = new System.Drawing.Point(836, 24);
+            this.lblDienThoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDienThoai.Location = new System.Drawing.Point(1006, 25);
             this.lblDienThoai.Name = "lblDienThoai";
             this.lblDienThoai.Size = new System.Drawing.Size(154, 28);
             this.lblDienThoai.TabIndex = 23;
@@ -255,8 +310,8 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.lblThue);
             this.splitContainerControl2.Panel2.Controls.Add(this.lblChietKhau);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1469, 542);
-            this.splitContainerControl2.SplitterPosition = 315;
+            this.splitContainerControl2.Size = new System.Drawing.Size(1772, 685);
+            this.splitContainerControl2.SplitterPosition = 428;
             this.splitContainerControl2.TabIndex = 4;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -270,16 +325,16 @@
             this.listHangHoa,
             this.btnDeleteRow,
             this.repositoryItemTextEdit1});
-            this.gridControlChiTiet.Size = new System.Drawing.Size(1469, 315);
+            this.gridControlChiTiet.Size = new System.Drawing.Size(1772, 428);
             this.gridControlChiTiet.TabIndex = 3;
             this.gridControlChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewChiTiet});
             // 
             // gridViewChiTiet
             // 
-            this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewChiTiet.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewChiTiet.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridViewChiTiet.Appearance.Row.Options.UseFont = true;
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
@@ -294,7 +349,8 @@
             this.gridColumn7,
             this.gridColumn1,
             this.gridColumn5,
-            this.gridColumn8});
+            this.gridColumn8,
+            this.gridColumn9});
             this.gridViewChiTiet.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridViewChiTiet.GridControl = this.gridControlChiTiet;
             this.gridViewChiTiet.Name = "gridViewChiTiet";
@@ -309,16 +365,13 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Tên Hàng";
             this.gridColumn2.ColumnEdit = this.listHangHoa;
             this.gridColumn2.FieldName = "HangHoaId";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 493;
+            this.gridColumn2.Width = 567;
             // 
             // listHangHoa
             // 
@@ -329,9 +382,6 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Đơn Giá";
             this.gridColumn3.ColumnEdit = this.repositoryItemTextEdit1;
             this.gridColumn3.DisplayFormat.FormatString = "n0";
@@ -340,7 +390,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 226;
+            this.gridColumn3.Width = 168;
             // 
             // repositoryItemTextEdit1
             // 
@@ -358,20 +408,17 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
-            this.gridColumn6.Width = 140;
+            this.gridColumn6.Width = 177;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.AppearanceCell.Options.UseFont = true;
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "Số Lượng";
             this.gridColumn4.FieldName = "SoLuong";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 140;
+            this.gridColumn4.Width = 177;
             // 
             // gridColumn7
             // 
@@ -381,9 +428,6 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Thành Tiền";
             this.gridColumn1.DisplayFormat.FormatString = "n0";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -392,15 +436,15 @@
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 352;
+            this.gridColumn1.Width = 278;
             // 
             // gridColumn5
             // 
             this.gridColumn5.ColumnEdit = this.btnDeleteRow;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
-            this.gridColumn5.Width = 84;
+            this.gridColumn5.VisibleIndex = 6;
+            this.gridColumn5.Width = 77;
             // 
             // btnDeleteRow
             // 
@@ -412,6 +456,17 @@
             this.btnDeleteRow.Name = "btnDeleteRow";
             this.btnDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Thành Tiền VND";
+            this.gridColumn9.DisplayFormat.FormatString = "n0";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn9.FieldName = "ThanhTienVND";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 294;
+            // 
             // btnDelete
             // 
             this.btnDelete.Appearance.BackColor = System.Drawing.Color.OrangeRed;
@@ -421,7 +476,7 @@
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Appearance.Options.UseForeColor = true;
             this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelete.Location = new System.Drawing.Point(208, 158);
+            this.btnDelete.Location = new System.Drawing.Point(208, 177);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(164, 43);
             this.btnDelete.TabIndex = 43;
@@ -432,29 +487,29 @@
             // 
             this.DonHang_No.EditValue = ((long)(0));
             this.DonHang_No.Enabled = false;
-            this.DonHang_No.Location = new System.Drawing.Point(1089, 102);
+            this.DonHang_No.Location = new System.Drawing.Point(1196, 120);
             this.DonHang_No.Name = "DonHang_No";
-            this.DonHang_No.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_No.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_No.Properties.Appearance.Options.UseFont = true;
             this.DonHang_No.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.DonHang_No.Properties.Mask.EditMask = "n0";
             this.DonHang_No.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DonHang_No.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DonHang_No.Size = new System.Drawing.Size(339, 32);
+            this.DonHang_No.Size = new System.Drawing.Size(535, 36);
             this.DonHang_No.TabIndex = 42;
             // 
             // DonHang_ThanhToan
             // 
             this.DonHang_ThanhToan.EditValue = ((long)(0));
-            this.DonHang_ThanhToan.Location = new System.Drawing.Point(1089, 59);
+            this.DonHang_ThanhToan.Location = new System.Drawing.Point(1196, 77);
             this.DonHang_ThanhToan.Name = "DonHang_ThanhToan";
-            this.DonHang_ThanhToan.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_ThanhToan.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_ThanhToan.Properties.Appearance.Options.UseFont = true;
             this.DonHang_ThanhToan.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.DonHang_ThanhToan.Properties.Mask.EditMask = "n0";
             this.DonHang_ThanhToan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DonHang_ThanhToan.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DonHang_ThanhToan.Size = new System.Drawing.Size(339, 32);
+            this.DonHang_ThanhToan.Size = new System.Drawing.Size(535, 36);
             this.DonHang_ThanhToan.TabIndex = 41;
             this.DonHang_ThanhToan.EditValueChanged += new System.EventHandler(this.DonHang_ThanhToan_EditValueChanged);
             // 
@@ -462,64 +517,64 @@
             // 
             this.DonHang_TongCong.EditValue = ((long)(0));
             this.DonHang_TongCong.Enabled = false;
-            this.DonHang_TongCong.Location = new System.Drawing.Point(1089, 9);
+            this.DonHang_TongCong.Location = new System.Drawing.Point(1196, 27);
             this.DonHang_TongCong.Name = "DonHang_TongCong";
-            this.DonHang_TongCong.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_TongCong.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_TongCong.Properties.Appearance.Options.UseFont = true;
             this.DonHang_TongCong.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.DonHang_TongCong.Properties.Mask.EditMask = "n0";
             this.DonHang_TongCong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DonHang_TongCong.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DonHang_TongCong.Size = new System.Drawing.Size(339, 32);
+            this.DonHang_TongCong.Size = new System.Drawing.Size(535, 36);
             this.DonHang_TongCong.TabIndex = 40;
             // 
             // DonHang_Thue
             // 
             this.DonHang_Thue.EditValue = "0";
-            this.DonHang_Thue.Location = new System.Drawing.Point(565, 24);
+            this.DonHang_Thue.Location = new System.Drawing.Point(620, 20);
             this.DonHang_Thue.Name = "DonHang_Thue";
-            this.DonHang_Thue.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_Thue.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_Thue.Properties.Appearance.Options.UseFont = true;
             this.DonHang_Thue.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.DonHang_Thue.Properties.Mask.EditMask = "n0";
             this.DonHang_Thue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DonHang_Thue.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DonHang_Thue.Size = new System.Drawing.Size(81, 32);
+            this.DonHang_Thue.Size = new System.Drawing.Size(81, 36);
             this.DonHang_Thue.TabIndex = 39;
             this.DonHang_Thue.TextChanged += new System.EventHandler(this.DonHang_Thue_TextChanged);
             // 
             // DonHang_ChietKhau
             // 
             this.DonHang_ChietKhau.EditValue = "0";
-            this.DonHang_ChietKhau.Location = new System.Drawing.Point(367, 22);
+            this.DonHang_ChietKhau.Location = new System.Drawing.Point(389, 22);
             this.DonHang_ChietKhau.Name = "DonHang_ChietKhau";
-            this.DonHang_ChietKhau.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonHang_ChietKhau.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DonHang_ChietKhau.Properties.Appearance.Options.UseFont = true;
             this.DonHang_ChietKhau.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.DonHang_ChietKhau.Properties.Mask.EditMask = "n0";
             this.DonHang_ChietKhau.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.DonHang_ChietKhau.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.DonHang_ChietKhau.Size = new System.Drawing.Size(81, 32);
+            this.DonHang_ChietKhau.Size = new System.Drawing.Size(81, 36);
             this.DonHang_ChietKhau.TabIndex = 38;
             this.DonHang_ChietKhau.TextChanged += new System.EventHandler(this.DonHang_ChietKhau_TextChanged);
             // 
             // lblCongNo
             // 
             this.lblCongNo.AutoSize = true;
-            this.lblCongNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCongNo.Location = new System.Drawing.Point(925, 105);
+            this.lblCongNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCongNo.Location = new System.Drawing.Point(1040, 123);
             this.lblCongNo.Name = "lblCongNo";
-            this.lblCongNo.Size = new System.Drawing.Size(48, 25);
+            this.lblCongNo.Size = new System.Drawing.Size(54, 29);
             this.lblCongNo.TabIndex = 35;
             this.lblCongNo.Text = "Nợ:";
             // 
             // lblThanhToan
             // 
             this.lblThanhToan.AutoSize = true;
-            this.lblThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhToan.Location = new System.Drawing.Point(925, 62);
+            this.lblThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThanhToan.Location = new System.Drawing.Point(1040, 80);
             this.lblThanhToan.Name = "lblThanhToan";
-            this.lblThanhToan.Size = new System.Drawing.Size(145, 25);
+            this.lblThanhToan.Size = new System.Drawing.Size(160, 29);
             this.lblThanhToan.TabIndex = 33;
             this.lblThanhToan.Text = "Thanh Toán:";
             // 
@@ -532,7 +587,7 @@
             this.btnIn.Appearance.Options.UseFont = true;
             this.btnIn.Appearance.Options.UseForeColor = true;
             this.btnIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnIn.Location = new System.Drawing.Point(38, 158);
+            this.btnIn.Location = new System.Drawing.Point(39, 177);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(164, 43);
             this.btnIn.TabIndex = 32;
@@ -548,7 +603,7 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(1264, 158);
+            this.btnSave.Location = new System.Drawing.Point(1567, 177);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 43);
             this.btnSave.TabIndex = 31;
@@ -557,51 +612,32 @@
             // lblTongThanhTien
             // 
             this.lblTongThanhTien.AutoSize = true;
-            this.lblTongThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongThanhTien.Location = new System.Drawing.Point(924, 12);
+            this.lblTongThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongThanhTien.Location = new System.Drawing.Point(1039, 30);
             this.lblTongThanhTien.Name = "lblTongThanhTien";
-            this.lblTongThanhTien.Size = new System.Drawing.Size(125, 25);
+            this.lblTongThanhTien.Size = new System.Drawing.Size(141, 29);
             this.lblTongThanhTien.TabIndex = 30;
             this.lblTongThanhTien.Text = "Tổng Tiền:";
             // 
             // lblThue
             // 
             this.lblThue.AutoSize = true;
-            this.lblThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThue.Location = new System.Drawing.Point(494, 27);
+            this.lblThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThue.Location = new System.Drawing.Point(532, 27);
             this.lblThue.Name = "lblThue";
-            this.lblThue.Size = new System.Drawing.Size(65, 25);
+            this.lblThue.Size = new System.Drawing.Size(73, 29);
             this.lblThue.TabIndex = 27;
             this.lblThue.Text = "Thuế";
             // 
             // lblChietKhau
             // 
             this.lblChietKhau.AutoSize = true;
-            this.lblChietKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChietKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChietKhau.Location = new System.Drawing.Point(243, 25);
             this.lblChietKhau.Name = "lblChietKhau";
-            this.lblChietKhau.Size = new System.Drawing.Size(128, 25);
+            this.lblChietKhau.Size = new System.Drawing.Size(140, 29);
             this.lblChietKhau.TabIndex = 26;
             this.lblChietKhau.Text = "Chiết Khấu";
-            // 
-            // DonHang_LoaiTienTe
-            // 
-            this.DonHang_LoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DonHang_LoaiTienTe.FormattingEnabled = true;
-            this.DonHang_LoaiTienTe.Location = new System.Drawing.Point(220, 214);
-            this.DonHang_LoaiTienTe.Name = "DonHang_LoaiTienTe";
-            this.DonHang_LoaiTienTe.Size = new System.Drawing.Size(426, 33);
-            this.DonHang_LoaiTienTe.TabIndex = 34;
-            // 
-            // lblLoaiTienTe
-            // 
-            this.lblLoaiTienTe.AutoSize = true;
-            this.lblLoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoaiTienTe.Location = new System.Drawing.Point(33, 213);
-            this.lblLoaiTienTe.Name = "lblLoaiTienTe";
-            this.lblLoaiTienTe.Size = new System.Drawing.Size(144, 25);
-            this.lblLoaiTienTe.TabIndex = 35;
-            this.lblLoaiTienTe.Text = "Loại Tiền Tệ";
             // 
             // UcDonHang
             // 
@@ -610,9 +646,10 @@
             this.Controls.Add(this.splitContainerControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UcDonHang";
-            this.Size = new System.Drawing.Size(1469, 813);
+            this.Size = new System.Drawing.Size(1772, 956);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DonHang_TyGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChiTiet)).EndInit();
@@ -673,5 +710,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private System.Windows.Forms.ComboBox DonHang_LoaiTienTe;
         private System.Windows.Forms.Label lblLoaiTienTe;
+        private DevExpress.XtraEditors.TextEdit DonHang_TyGia;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

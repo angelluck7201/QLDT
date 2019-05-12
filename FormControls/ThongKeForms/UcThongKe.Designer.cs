@@ -95,13 +95,13 @@
             // btnTim
             // 
             this.btnTim.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnTim.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTim.Appearance.Options.UseBackColor = true;
             this.btnTim.Appearance.Options.UseFont = true;
             this.btnTim.Appearance.Options.UseForeColor = true;
             this.btnTim.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTim.Location = new System.Drawing.Point(768, 21);
+            this.btnTim.Location = new System.Drawing.Point(855, 23);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(124, 35);
             this.btnTim.TabIndex = 38;
@@ -110,21 +110,21 @@
             // 
             // EndDate
             // 
-            this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.EndDate.Location = new System.Drawing.Point(390, 23);
+            this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 9F);
+            this.EndDate.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.EndDate.Location = new System.Drawing.Point(426, 23);
             this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(348, 33);
+            this.EndDate.Size = new System.Drawing.Size(402, 36);
             this.EndDate.TabIndex = 37;
             // 
             // StartDate
             // 
-            this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
+            this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 9F);
             this.StartDate.CustomFormat = "";
-            this.StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.StartDate.Font = new System.Drawing.Font("Tahoma", 9F);
             this.StartDate.Location = new System.Drawing.Point(15, 23);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(349, 33);
+            this.StartDate.Size = new System.Drawing.Size(391, 36);
             this.StartDate.TabIndex = 36;
             // 
             // gridControlHangHoa
@@ -149,11 +149,19 @@
             this.gridViewHangHoa.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewHangHoa.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewHangHoa.Appearance.FooterPanel.Options.UseFont = true;
             this.gridViewHangHoa.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.gridViewHangHoa.Appearance.GroupFooter.Options.UseFont = true;
-            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.gridViewHangHoa.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewHangHoa.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.GroupRow.Options.UseFont = true;
+            this.gridViewHangHoa.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewHangHoa.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridViewHangHoa.Appearance.Row.Options.UseFont = true;
+            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewHangHoa.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewHangHoa.ColumnPanelRowHeight = 30;
@@ -203,9 +211,7 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.Caption = "Ngày";
             this.gridColumn1.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -217,9 +223,7 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.AppearanceCell.Options.UseFont = true;
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn7.Caption = "Tháng";
             this.gridColumn7.DisplayFormat.FormatString = "MM/yyyy";
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -231,9 +235,7 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceCell.Options.UseFont = true;
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn8.Caption = "Quý";
             this.gridColumn8.FieldName = "Quy";
             this.gridColumn8.FieldNameSortGroup = "NgaySort";
@@ -243,9 +245,7 @@
             // 
             // gridColumn9
             // 
-            this.gridColumn9.AppearanceCell.Options.UseFont = true;
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn9.Caption = "Năm";
             this.gridColumn9.DisplayFormat.FormatString = "yyyy";
             this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -257,9 +257,7 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.Caption = "Nội Dung";
             this.gridColumn2.FieldName = "NoiDung";
             this.gridColumn2.Name = "gridColumn2";
@@ -269,9 +267,7 @@
             // 
             // colSoLuongNhap
             // 
-            this.colSoLuongNhap.AppearanceCell.Options.UseFont = true;
-            this.colSoLuongNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.colSoLuongNhap.AppearanceHeader.Options.UseFont = true;
+            this.colSoLuongNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.colSoLuongNhap.Caption = "Số Lượng Nhập";
             this.colSoLuongNhap.FieldName = "SoLuongNhap";
             this.colSoLuongNhap.Name = "colSoLuongNhap";
@@ -283,9 +279,7 @@
             // 
             // colSoLuongXuat
             // 
-            this.colSoLuongXuat.AppearanceCell.Options.UseFont = true;
-            this.colSoLuongXuat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.colSoLuongXuat.AppearanceHeader.Options.UseFont = true;
+            this.colSoLuongXuat.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.colSoLuongXuat.Caption = "Số Lượng Xuất";
             this.colSoLuongXuat.FieldName = "SoLuongXuat";
             this.colSoLuongXuat.Name = "colSoLuongXuat";
@@ -297,9 +291,7 @@
             // 
             // colDoanhThuBan
             // 
-            this.colDoanhThuBan.AppearanceCell.Options.UseFont = true;
-            this.colDoanhThuBan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.colDoanhThuBan.AppearanceHeader.Options.UseFont = true;
+            this.colDoanhThuBan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.colDoanhThuBan.Caption = "Thu";
             this.colDoanhThuBan.DisplayFormat.FormatString = "n0";
             this.colDoanhThuBan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -313,9 +305,7 @@
             // 
             // colDoanhThuNhap
             // 
-            this.colDoanhThuNhap.AppearanceCell.Options.UseFont = true;
-            this.colDoanhThuNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.colDoanhThuNhap.AppearanceHeader.Options.UseFont = true;
+            this.colDoanhThuNhap.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.colDoanhThuNhap.Caption = "Chi";
             this.colDoanhThuNhap.DisplayFormat.FormatString = "n0";
             this.colDoanhThuNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -329,9 +319,7 @@
             // 
             // colLoiNhuan
             // 
-            this.colLoiNhuan.AppearanceCell.Options.UseFont = true;
-            this.colLoiNhuan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.colLoiNhuan.AppearanceHeader.Options.UseFont = true;
+            this.colLoiNhuan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.colLoiNhuan.Caption = "Lợi Nhuận";
             this.colLoiNhuan.DisplayFormat.FormatString = "n0";
             this.colLoiNhuan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -349,8 +337,6 @@
             this.NgaySort.FieldName = "NgaySort";
             this.NgaySort.Name = "NgaySort";
             this.NgaySort.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
-            this.NgaySort.Visible = true;
-            this.NgaySort.VisibleIndex = 6;
             // 
             // gridView3
             // 

@@ -29,12 +29,12 @@ namespace QLDT
             if (donHang.DonHang.LoaiDonHang == Define.LoaiDonHangEnum.NhapKho.ToString())
             {
                 SoLuongNhap = (long)donHang.SoLuong;
-                Chi = donHang.ThanhTien;
+                Chi = donHang.ThanhTienVND;
             }
             else
             {
                 SoLuongXuat = (long)donHang.SoLuong;
-                Thu = donHang.ThanhTien;
+                Thu = donHang.ThanhTienVND;
             }
             SetThoiGian(donHang.DonHang.NgayLap);
         }

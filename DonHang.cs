@@ -281,6 +281,19 @@ namespace QLDT
     		} 
     	}
     
+        private long _tyGia;
+    	public long TyGia 
+    	{ 
+    		get { return _tyGia; } 
+    		set
+    		{
+    			if (value != _tyGia) {
+    				_tyGia = value;
+    				 OnPropertyChanged("TyGia");
+    			}
+    		} 
+    	}
+    
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CongNo> CongNoes { get; set; }

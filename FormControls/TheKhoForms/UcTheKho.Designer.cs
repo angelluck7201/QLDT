@@ -85,16 +85,16 @@
             // 
             this.btnNhapKhoLoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNhapKhoLoc.Appearance.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnNhapKhoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.btnNhapKhoLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapKhoLoc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNhapKhoLoc.Appearance.Options.UseBackColor = true;
             this.btnNhapKhoLoc.Appearance.Options.UseFont = true;
             this.btnNhapKhoLoc.Appearance.Options.UseForeColor = true;
             this.btnNhapKhoLoc.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNhapKhoLoc.Location = new System.Drawing.Point(1314, 33);
+            this.btnNhapKhoLoc.Location = new System.Drawing.Point(1308, 19);
             this.btnNhapKhoLoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNhapKhoLoc.Name = "btnNhapKhoLoc";
-            this.btnNhapKhoLoc.Size = new System.Drawing.Size(160, 33);
+            this.btnNhapKhoLoc.Size = new System.Drawing.Size(160, 36);
             this.btnNhapKhoLoc.TabIndex = 50;
             this.btnNhapKhoLoc.Text = "Lọc";
             this.btnNhapKhoLoc.Click += new System.EventHandler(this.btnNhapKhoLoc_Click);
@@ -102,23 +102,23 @@
             // EndDate
             // 
             this.EndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.EndDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.EndDate.Location = new System.Drawing.Point(842, 33);
+            this.EndDate.CalendarFont = new System.Drawing.Font("Tahoma", 9F);
+            this.EndDate.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.EndDate.Location = new System.Drawing.Point(793, 19);
             this.EndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(464, 33);
+            this.EndDate.Size = new System.Drawing.Size(464, 36);
             this.EndDate.TabIndex = 49;
             // 
             // StartDate
             // 
             this.StartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.StartDate.Font = new System.Drawing.Font("Tahoma", 7.875F);
-            this.StartDate.Location = new System.Drawing.Point(370, 33);
+            this.StartDate.CalendarFont = new System.Drawing.Font("Tahoma", 9F);
+            this.StartDate.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.StartDate.Location = new System.Drawing.Point(308, 19);
             this.StartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(464, 33);
+            this.StartDate.Size = new System.Drawing.Size(464, 36);
             this.StartDate.TabIndex = 48;
             // 
             // gridControlHangHoa
@@ -140,10 +140,13 @@
             this.gridViewHangHoa.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewHangHoa.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.GroupRow.Options.UseFont = true;
+            this.gridViewHangHoa.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewHangHoa.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewHangHoa.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewHangHoa.Appearance.Row.Options.UseFont = true;
-            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewHangHoa.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewHangHoa.ColumnPanelRowHeight = 30;
@@ -197,9 +200,7 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn2.Caption = "Tên Hàng";
             this.gridColumn2.FieldName = "TenHang";
             this.gridColumn2.Name = "gridColumn2";
@@ -209,9 +210,7 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.Caption = "Đơn Giá";
             this.gridColumn5.DisplayFormat.FormatString = "n0";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;

@@ -119,83 +119,128 @@
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BottomMargin.HeightF" type="System.Single, mscorlib">
-    <value>273</value>
+    <value>0</value>
+  </data>
+  <data name="xrTableCell9.Weight" type="System.Double, mscorlib">
+    <value>1.5169768449372465</value>
+  </data>
+  <assembly alias="DevExpress.Data.v15.1" name="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="xrLabel13.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>10.00007, 136.4583</value>
   </data>
   <data name="xrLabel13.Text" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="xrLabel11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Underline</value>
-  </data>
-  <assembly alias="DevExpress.Data.v15.1" name="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="xrLabel11.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>414.999969, 33.54168</value>
-  </data>
-  <data name="xrLabel10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Underline</value>
+    <value>499.325562, 38.1041527</value>
   </data>
   <data name="xrLabel10.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>9.999943, 33.54168</value>
+    <value>9.999998, 38.1041527</value>
   </data>
-  <data name="xrLabel14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  <data name="xrLabel12.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>499.325562, 136.4583</value>
   </data>
-  <data name="xrLabel15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  <data name="xrLabel14.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>576.9384, 0</value>
   </data>
-  <data name="xrLabel9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt, style=Bold</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="xrLabel14.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>190.061768, 23</value>
   </data>
-  <data name="xrLabel8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  <data name="xrLabel14.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
+    <value>TopRight</value>
+  </data>
+  <data name="xrLabel15.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>476.9384, 0</value>
+  </data>
+  <data name="xrTableCell3.Weight" type="System.Double, mscorlib">
+    <value>1.8972147396858645</value>
+  </data>
+  <data name="xrTableCell6.Weight" type="System.Double, mscorlib">
+    <value>1.8398610107697744</value>
+  </data>
+  <data name="xrTableCell1.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
+    <value>TopCenter</value>
+  </data>
+  <data name="xrTableCell4.Weight" type="System.Double, mscorlib">
+    <value>2.3010310896332831</value>
+  </data>
+  <data name="xrTableCell8.Weight" type="System.Double, mscorlib">
+    <value>1.1566090114333618</value>
+  </data>
+  <data name="xrTable2.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>767.0001, 23.333334</value>
+  </data>
+  <data name="xrLabel1.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>45.8332863, 60.0000076</value>
+  </data>
+  <data name="xrLabel9.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>538.9583, 63.041687</value>
+  </data>
+  <data name="xrLabel8.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>10.0000687, 189.708328</value>
   </data>
   <data name="xrLabel8.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>102.187515, 23</value>
   </data>
-  <data name="xrLabel7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
   <data name="xrLabel7.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>0, 110.541695</value>
+    <value>10.0000687, 160.541687</value>
   </data>
   <data name="xrLabel7.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>102.187515, 22.9999924</value>
   </data>
-  <data name="xrLabel6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
   <data name="xrLabel6.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>0, 84.70834</value>
+    <value>10.00007, 134.708344</value>
   </data>
   <data name="xrLabel6.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>102.187515, 23.0000076</value>
   </data>
   <data name="xrLabel5.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>102.187508, 110.541695</value>
+    <value>112.187531, 160.541687</value>
   </data>
   <data name="xrLabel4.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>102.187508, 139.708328</value>
+    <value>112.187531, 189.708328</value>
   </data>
   <data name="xrLabel3.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>102.187508, 84.70834</value>
+    <value>112.187531, 134.708344</value>
+  </data>
+  <data name="xrLabel2.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>556.7837, 189.708328</value>
+  </data>
+  <data name="xrTableCell5.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
+    <value>TopCenter</value>
+  </data>
+  <data name="xrTableCell2.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
+    <value>TopRight</value>
+  </data>
+  <data name="xrTableCell2.Weight" type="System.Double, mscorlib">
+    <value>0.92480194169423169</value>
+  </data>
+  <data name="xrTable1.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>767, 25</value>
   </data>
   <data name="TopMargin.HeightF" type="System.Single, mscorlib">
-    <value>73</value>
+    <value>0</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+  <data name="ReportFooter.HeightF" type="System.Single, mscorlib">
+    <value>162.5</value>
+  </data>
+  <data name="ReportHeader.HeightF" type="System.Single, mscorlib">
+    <value>212.708328</value>
   </data>
   <data name="$this.Landscape" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="$this.Margins" type="System.Drawing.Printing.Margins, System.Drawing">
-    <value>98, 99, 73, 273</value>
+    <value>30, 30, 0, 0</value>
   </data>
   <data name="$this.PageHeight" type="System.Int32, mscorlib">
-    <value>-1</value>
+    <value>1169</value>
   </data>
   <data name="$this.PageWidth" type="System.Int32, mscorlib">
-    <value>-1</value>
+    <value>827</value>
+  </data>
+  <data name="$this.PaperKind" type="System.Drawing.Printing.PaperKind, System.Drawing">
+    <value>A4</value>
   </data>
 </root>

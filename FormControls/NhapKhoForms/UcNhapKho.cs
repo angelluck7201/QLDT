@@ -46,8 +46,6 @@ namespace QLDT.FormControls.NhapKhoForms
                 tabNhapKho.Text = "Xuất Kho";
                 tabCongNo.Text = "Công Nợ Xuất Kho";
             }
-
-            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
         private void InitAuthorize()
@@ -128,6 +126,7 @@ namespace QLDT.FormControls.NhapKhoForms
 
         private void btnAddNhaCungCap_Click(object sender, EventArgs e)
         {
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
             var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
             FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang), title, this.ParentForm, this.Name);
         }
@@ -139,6 +138,7 @@ namespace QLDT.FormControls.NhapKhoForms
                 var data = _khachHangs[gridViewKhachHang.GetFocusedDataSourceRowIndex()];
                 if (data != null)
                 {
+                    ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
                     var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
 
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
@@ -149,6 +149,7 @@ namespace QLDT.FormControls.NhapKhoForms
 
         private void btnAddPNK_Click(object sender, EventArgs e)
         {
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
             var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
             FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang), title, this.ParentForm, this.Name);
         }
@@ -157,6 +158,7 @@ namespace QLDT.FormControls.NhapKhoForms
         {
             ThreadHelper.LoadForm(() =>
             {
+                ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
                 var data = (DonHang)gridViewNhapKho.GetRow(gridViewNhapKho.FocusedRowHandle);
                 if (data != null)
                 {

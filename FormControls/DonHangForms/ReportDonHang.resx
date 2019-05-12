@@ -133,6 +133,10 @@
   <data name="xrTableCell2.Text" xml:space="preserve">
     <value>4</value>
   </data>
+  <assembly alias="DevExpress.Data.v15.1" name="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="xrLabel11.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>415, 45</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="xrTableRow1.Weight" type="System.Double, mscorlib">
     <value>1</value>
@@ -140,11 +144,11 @@
   <data name="xrLabel6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
-  <data name="PageHeader.HeightF" type="System.Single, mscorlib">
-    <value>172.708328</value>
-  </data>
   <data name="xrLabel3.Text" xml:space="preserve">
     <value>xrLabel3</value>
+  </data>
+  <data name="$this.Landscape" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="xrLabel12.Text" xml:space="preserve">
     <value>xrLabel3</value>
@@ -155,14 +159,14 @@
   <data name="xrLabel10.Text" xml:space="preserve">
     <value>Nhân viên bán hàng</value>
   </data>
+  <data name="Detail.BorderColor" type="System.Drawing.Color, System.Drawing">
+    <value>64, 64, 64</value>
+  </data>
   <data name="xrLabel15.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>100, 23</value>
   </data>
   <data name="xrTableCell4.Text" xml:space="preserve">
     <value>Tên Hàng	</value>
-  </data>
-  <data name="xrTableCell1.Text" xml:space="preserve">
-    <value>STT</value>
   </data>
   <data name="xrLabel15.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
@@ -170,15 +174,17 @@
   <data name="PageFooter.BackColor" type="System.Drawing.Color, System.Drawing">
     <value>0, 0, 0, 0</value>
   </data>
-  <assembly alias="DevExpress.Data.v15.1" name="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="xrTable1.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>649.9999, 25</value>
+  </data>
+  <data name="xrLabel2.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>202.174561, 23</value>
+  </data>
   <data name="TopMargin.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
     <value>TopLeft</value>
   </data>
   <data name="xrTableCell9.Weight" type="System.Double, mscorlib">
     <value>0.97289036220203062</value>
-  </data>
-  <data name="xrLabel15.Text" xml:space="preserve">
-    <value>Tổng tiền:</value>
   </data>
   <data name="xrLabel9.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
     <value>MiddleCenter</value>
@@ -216,11 +222,11 @@
   <data name="PageHeader.BackColor" type="System.Drawing.Color, System.Drawing">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="BottomMargin.BackColor" type="System.Drawing.Color, System.Drawing">
-    <value>0, 0, 0, 0</value>
-  </data>
   <data name="xrTableCell2.Weight" type="System.Double, mscorlib">
     <value>1.4545390823697844</value>
+  </data>
+  <data name="xrLabel12.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>415, 113.666687</value>
   </data>
   <data name="xrTable1.BorderColor" type="System.Drawing.Color, System.Drawing">
     <value>Black</value>
@@ -246,8 +252,8 @@
   <data name="xrTableCell8.Text" xml:space="preserve">
     <value>Thành Tiền</value>
   </data>
-  <data name="xrLabel15.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>309.230133, 0</value>
+  <data name="xrLabel14.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>240.444427, 23</value>
   </data>
   <data name="xrLabel6.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>72.5, 23.0000076</value>
@@ -264,9 +270,6 @@
   <data name="xrLabel10.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
     <value>MiddleCenter</value>
   </data>
-  <data name="xrTableCell8.Weight" type="System.Double, mscorlib">
-    <value>1.816668650465791</value>
-  </data>
   <data name="$this.Margins" type="System.Drawing.Printing.Margins, System.Drawing">
     <value>100, 100, 73, 273</value>
   </data>
@@ -275,9 +278,6 @@
   </data>
   <data name="xrLabel5.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>252.5, 23</value>
-  </data>
-  <data name="xrLabel11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Underline</value>
   </data>
   <data name="xrTableCell6.Weight" type="System.Double, mscorlib">
     <value>1.1473887632647202</value>
@@ -300,9 +300,6 @@
   <data name="Detail.HeightF" type="System.Single, mscorlib">
     <value>25</value>
   </data>
-  <data name="xrLabel12.SizeF" type="System.Drawing.SizeF, System.Drawing">
-    <value>207.500031, 23</value>
-  </data>
   <data name="xrTableRow2.Weight" type="System.Double, mscorlib">
     <value>1</value>
   </data>
@@ -311,6 +308,9 @@
   </data>
   <data name="xrLabel4.SizeF" type="System.Drawing.SizeF, System.Drawing">
     <value>252.5, 23</value>
+  </data>
+  <data name="xrLabel4.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>72.5, 139.708328</value>
   </data>
   <data name="xrLabel13.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
     <value>MiddleCenter</value>
@@ -324,8 +324,8 @@
   <data name="xrTableCell3.Text" xml:space="preserve">
     <value>IMEI</value>
   </data>
-  <data name="xrLabel11.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>415, 45</value>
+  <data name="BottomMargin.BackColor" type="System.Drawing.Color, System.Drawing">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="xrTable2.BackColor" type="System.Drawing.Color, System.Drawing">
     <value>White</value>
@@ -336,20 +336,20 @@
   <data name="GroupHeader1.HeightF" type="System.Single, mscorlib">
     <value>23.333334</value>
   </data>
+  <data name="xrSummary2.FormatString" xml:space="preserve">
+    <value>{0:#}</value>
+  </data>
+  <data name="xrLabel8.Text" xml:space="preserve">
+    <value>Điện Thoại:</value>
+  </data>
   <data name="TopMargin.HeightF" type="System.Single, mscorlib">
     <value>72.91666</value>
-  </data>
-  <data name="xrLabel13.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>10, 113.666687</value>
   </data>
   <data name="xrTable2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10pt, style=Bold</value>
   </data>
-  <data name="xrLabel14.SizeF" type="System.Drawing.SizeF, System.Drawing">
-    <value>240.444427, 23</value>
-  </data>
-  <data name="xrTable1.SizeF" type="System.Drawing.SizeF, System.Drawing">
-    <value>649.9999, 25</value>
+  <data name="xrLabel12.SizeF" type="System.Drawing.SizeF, System.Drawing">
+    <value>207.500031, 23</value>
   </data>
   <data name="xrTableCell3.Weight" type="System.Double, mscorlib">
     <value>1.2167500647131311</value>
@@ -359,6 +359,9 @@
   </data>
   <data name="BottomMargin.HeightF" type="System.Single, mscorlib">
     <value>272.9167</value>
+  </data>
+  <data name="xrTableCell2.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
+    <value>MiddleCenter</value>
   </data>
   <data name="xrLabel9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 20pt, style=Bold</value>
@@ -375,17 +378,17 @@
   <data name="$this.BorderColor" type="System.Drawing.Color, System.Drawing">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="$this.Landscape" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="PageHeader.HeightF" type="System.Single, mscorlib">
+    <value>172.708328</value>
   </data>
-  <data name="xrSummary2.FormatString" xml:space="preserve">
-    <value>{0:#}</value>
+  <data name="xrTableCell1.Text" xml:space="preserve">
+    <value>STT</value>
   </data>
   <data name="xrLabel14.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
     <value>MiddleCenter</value>
   </data>
-  <data name="Detail.BorderColor" type="System.Drawing.Color, System.Drawing">
-    <value>64, 64, 64</value>
+  <data name="xrTableCell8.Weight" type="System.Double, mscorlib">
+    <value>1.816668650465791</value>
   </data>
   <data name="$this.BackColor" type="System.Drawing.Color, System.Drawing">
     <value>0, 0, 0, 0</value>
@@ -396,8 +399,8 @@
   <data name="xrLabel1.Text" xml:space="preserve">
     <value>Minh Phát</value>
   </data>
-  <data name="xrLabel2.SizeF" type="System.Drawing.SizeF, System.Drawing">
-    <value>202.174561, 23</value>
+  <data name="xrLabel15.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>309.230133, 0</value>
   </data>
   <data name="xrLabel9.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
     <value>402.5, 13.041687</value>
@@ -423,8 +426,8 @@
   <data name="xrLabel10.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Underline</value>
   </data>
-  <data name="xrTableCell2.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
-    <value>MiddleCenter</value>
+  <data name="xrLabel11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Underline</value>
   </data>
   <data name="xrLabel12.TextAlignment" type="DevExpress.XtraPrinting.TextAlignment, DevExpress.Data.v15.1">
     <value>MiddleCenter</value>
@@ -432,11 +435,8 @@
   <data name="PageFooter.HeightF" type="System.Single, mscorlib">
     <value>136.666687</value>
   </data>
-  <data name="xrLabel2.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>420.3254, 139.708328</value>
-  </data>
-  <data name="xrLabel4.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>72.5, 139.708328</value>
+  <data name="xrLabel15.Text" xml:space="preserve">
+    <value>Tổng tiền:</value>
   </data>
   <data name="xrLabel3.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
     <value>72.5, 84.70833</value>
@@ -453,11 +453,11 @@
   <data name="$this.PageHeight" type="System.Int32, mscorlib">
     <value>850</value>
   </data>
-  <data name="xrLabel8.Text" xml:space="preserve">
-    <value>Điện Thoại:</value>
+  <data name="xrLabel13.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>10, 113.666687</value>
   </data>
-  <data name="xrLabel12.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
-    <value>415, 113.666687</value>
+  <data name="xrLabel2.LocationFloat" type="DevExpress.Utils.PointFloat, DevExpress.Data.v15.1">
+    <value>420.3254, 139.708328</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

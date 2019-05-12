@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.Drawing.Printing;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 

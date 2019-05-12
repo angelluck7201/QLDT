@@ -58,7 +58,7 @@
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(76, 311);
             this.lblGhiChu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGhiChu.Name = "lblGhiChu";
@@ -69,7 +69,7 @@
             // lblNo
             // 
             this.lblNo.AutoSize = true;
-            this.lblNo.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNo.Location = new System.Drawing.Point(74, 182);
             this.lblNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNo.Name = "lblNo";
@@ -79,7 +79,7 @@
             // 
             // CongNo_KhachHangId
             // 
-            this.CongNo_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CongNo_KhachHangId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CongNo_KhachHangId.FormattingEnabled = true;
             this.CongNo_KhachHangId.Location = new System.Drawing.Point(308, 52);
             this.CongNo_KhachHangId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -90,7 +90,7 @@
             // lblNgayLap
             // 
             this.lblNgayLap.AutoSize = true;
-            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgayLap.Location = new System.Drawing.Point(74, 128);
             this.lblNgayLap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNgayLap.Name = "lblNgayLap";
@@ -100,7 +100,7 @@
             // 
             // CongNo_GhiChu
             // 
-            this.CongNo_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CongNo_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CongNo_GhiChu.Location = new System.Drawing.Point(310, 305);
             this.CongNo_GhiChu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CongNo_GhiChu.Name = "CongNo_GhiChu";
@@ -111,7 +111,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -127,7 +127,7 @@
             // lblKhachHangId
             // 
             this.lblKhachHangId.AutoSize = true;
-            this.lblKhachHangId.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKhachHangId.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHangId.Location = new System.Drawing.Point(74, 62);
             this.lblKhachHangId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKhachHangId.Name = "lblKhachHangId";
@@ -137,8 +137,8 @@
             // 
             // CongNo_NgayLap
             // 
-            this.CongNo_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.CongNo_NgayLap.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.CongNo_NgayLap.CalendarFont = new System.Drawing.Font("Tahoma", 9F);
+            this.CongNo_NgayLap.Font = new System.Drawing.Font("Tahoma", 9F);
             this.CongNo_NgayLap.Location = new System.Drawing.Point(308, 119);
             this.CongNo_NgayLap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CongNo_NgayLap.Name = "CongNo_NgayLap";
@@ -148,7 +148,7 @@
             // CongNo_LoaiTienTe
             // 
             this.CongNo_LoaiTienTe.Enabled = false;
-            this.CongNo_LoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CongNo_LoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CongNo_LoaiTienTe.FormattingEnabled = true;
             this.CongNo_LoaiTienTe.Location = new System.Drawing.Point(308, 232);
             this.CongNo_LoaiTienTe.Name = "CongNo_LoaiTienTe";
@@ -159,7 +159,7 @@
             // lblLoaiTienTe
             // 
             this.lblLoaiTienTe.AutoSize = true;
-            this.lblLoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiTienTe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaiTienTe.Location = new System.Drawing.Point(73, 232);
             this.lblLoaiTienTe.Name = "lblLoaiTienTe";
             this.lblLoaiTienTe.Size = new System.Drawing.Size(144, 25);

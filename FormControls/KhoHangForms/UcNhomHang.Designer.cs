@@ -39,25 +39,25 @@
             // lblTen
             // 
             this.lblTen.AutoSize = true;
-            this.lblTen.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.Location = new System.Drawing.Point(25, 32);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(113, 24);
+            this.lblTen.Size = new System.Drawing.Size(131, 29);
             this.lblTen.TabIndex = 0;
             this.lblTen.Text = "Tên Nhóm";
             // 
             // DanhMuc_Ten
             // 
-            this.DanhMuc_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhMuc_Ten.Location = new System.Drawing.Point(150, 32);
+            this.DanhMuc_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhMuc_Ten.Location = new System.Drawing.Point(172, 32);
             this.DanhMuc_Ten.Name = "DanhMuc_Ten";
-            this.DanhMuc_Ten.Size = new System.Drawing.Size(550, 31);
+            this.DanhMuc_Ten.Size = new System.Drawing.Size(528, 35);
             this.DanhMuc_Ten.TabIndex = 0;
             // 
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -72,7 +72,7 @@
             // btnCancel
             // 
             this.btnCancel.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -86,20 +86,20 @@
             // 
             // DanhMuc_GhiChu
             // 
-            this.DanhMuc_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DanhMuc_GhiChu.Location = new System.Drawing.Point(150, 88);
+            this.DanhMuc_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhMuc_GhiChu.Location = new System.Drawing.Point(172, 88);
             this.DanhMuc_GhiChu.Name = "DanhMuc_GhiChu";
-            this.DanhMuc_GhiChu.Size = new System.Drawing.Size(550, 96);
+            this.DanhMuc_GhiChu.Size = new System.Drawing.Size(528, 96);
             this.DanhMuc_GhiChu.TabIndex = 1;
             this.DanhMuc_GhiChu.Text = "";
             // 
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(28, 88);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(91, 24);
+            this.lblGhiChu.Size = new System.Drawing.Size(108, 29);
             this.lblGhiChu.TabIndex = 15;
             this.lblGhiChu.Text = "Ghi Chú";
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcKhoHangList));
@@ -70,14 +71,12 @@
             // 
             // colSoLuong
             // 
-            this.colSoLuong.AppearanceCell.Options.UseFont = true;
             this.colSoLuong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.colSoLuong.AppearanceHeader.Options.UseFont = true;
             this.colSoLuong.Caption = "Tồn Kho";
             this.colSoLuong.FieldName = "SoLuong";
             this.colSoLuong.Name = "colSoLuong";
             this.colSoLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "TỔNG={0:n0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:n0}")});
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 2;
             this.colSoLuong.Width = 138;
@@ -106,6 +105,9 @@
             // gridControlLoaiHang
             // 
             this.gridControlLoaiHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControlLoaiHang.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControlLoaiHang.Location = new System.Drawing.Point(0, 0);
             this.gridControlLoaiHang.MainView = this.gridViewLoaiHang;
             this.gridControlLoaiHang.Name = "gridControlLoaiHang";
@@ -125,6 +127,10 @@
             this.gridViewLoaiHang.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewLoaiHang.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewLoaiHang.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridViewLoaiHang.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewLoaiHang.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewLoaiHang.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridViewLoaiHang.Appearance.Row.Options.UseFont = true;
             this.gridViewLoaiHang.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewLoaiHang.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewLoaiHang.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -145,9 +151,7 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Hãng Sản Xuất";
             this.gridColumn1.FieldName = "Ten";
             this.gridColumn1.Name = "gridColumn1";
@@ -177,6 +181,10 @@
             this.gridViewHangHoa.Appearance.FocusedRow.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridViewHangHoa.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridViewHangHoa.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewHangHoa.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewHangHoa.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridViewHangHoa.Appearance.Row.Options.UseFont = true;
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
             this.gridViewHangHoa.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewHangHoa.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -197,7 +205,7 @@
             gridFormatRule1.ColumnApplyTo = this.colSoLuong;
             gridFormatRule1.Name = "AlertTon";
             formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
-            formatConditionRuleValue1.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            formatConditionRuleValue1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
             formatConditionRuleValue1.Appearance.Options.UseFont = true;
@@ -213,6 +221,7 @@
             this.gridViewHangHoa.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewHangHoa.OptionsView.ShowAutoFilterRow = true;
             this.gridViewHangHoa.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridViewHangHoa.OptionsView.ShowFooter = true;
             this.gridViewHangHoa.OptionsView.ShowGroupPanel = false;
             this.gridViewHangHoa.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.IsAlertTon, DevExpress.Data.ColumnSortOrder.Descending)});
@@ -220,9 +229,7 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Tên Hàng";
             this.gridColumn2.FieldName = "TenHang";
             this.gridColumn2.Name = "gridColumn2";
@@ -232,9 +239,7 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "ĐVT";
             this.gridColumn3.FieldName = "DVT";
             this.gridColumn3.Name = "gridColumn3";
@@ -244,9 +249,7 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Giá Bán";
             this.gridColumn5.DisplayFormat.FormatString = "n0";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -258,9 +261,7 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.AppearanceCell.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "Ghi Chú";
             this.gridColumn6.FieldName = "GhiChu";
             this.gridColumn6.Name = "gridColumn6";

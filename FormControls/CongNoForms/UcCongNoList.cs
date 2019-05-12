@@ -23,7 +23,6 @@ namespace QLDT.FormControls.CongNoForms
 
             FilterCongNo();
 
-            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
         }
 
         public void SetLoaiDonHang(Define.LoaiDonHangEnum loaidDonHang, Define.LoaiTienTeEnum loaiTienTe)
@@ -67,6 +66,7 @@ namespace QLDT.FormControls.CongNoForms
                 var data = (KhachHang) gridViewCongNo.GetRow(gridViewCongNo.FocusedRowHandle);
                 if (data != null)
                 {
+                    ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
                     FormBehavior.GenerateForm(new UcCongNo(_loaiDonHang, _loaiTienTe, data), "Công Nợ",
                         this.ParentForm,
@@ -83,6 +83,7 @@ namespace QLDT.FormControls.CongNoForms
 
         private void btnAddCongNo_Click(object sender, EventArgs e)
         {
+            ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
             FormBehavior.GenerateForm(new UcCongNoCu(_loaiDonHang, _loaiTienTe), "Công Nợ", this.ParentForm, this.Name);
         }
 

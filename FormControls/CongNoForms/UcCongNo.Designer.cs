@@ -59,10 +59,10 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -170,15 +170,18 @@
             // tabControl
             // 
             this.tabControl.Appearance.BackColor = System.Drawing.Color.White;
+            this.tabControl.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.tabControl.Appearance.Options.UseBackColor = true;
+            this.tabControl.Appearance.Options.UseFont = true;
             this.tabControl.AppearancePage.Header.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tabControl.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 9F);
             this.tabControl.AppearancePage.Header.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tabControl.AppearancePage.Header.Options.UseBackColor = true;
             this.tabControl.AppearancePage.Header.Options.UseFont = true;
             this.tabControl.AppearancePage.Header.Options.UseForeColor = true;
             this.tabControl.AppearancePage.HeaderActive.BackColor = System.Drawing.SystemColors.Highlight;
             this.tabControl.AppearancePage.HeaderActive.BackColor2 = System.Drawing.SystemColors.Highlight;
-            this.tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.tabControl.AppearancePage.HeaderActive.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.tabControl.AppearancePage.HeaderActive.Options.UseBackColor = true;
             this.tabControl.AppearancePage.HeaderActive.Options.UseFont = true;
@@ -199,12 +202,13 @@
             // 
             // tabDonHang
             // 
+            this.tabDonHang.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9F);
             this.tabDonHang.Appearance.Header.Options.UseFont = true;
-            this.tabDonHang.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.tabDonHang.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.tabDonHang.Appearance.HeaderActive.Options.UseFont = true;
             this.tabDonHang.Controls.Add(this.gridControlChiTiet);
             this.tabDonHang.Name = "tabDonHang";
-            this.tabDonHang.Size = new System.Drawing.Size(1729, 789);
+            this.tabDonHang.Size = new System.Drawing.Size(1729, 785);
             this.tabDonHang.Text = "Đơn Hàng";
             // 
             // gridControlChiTiet
@@ -213,19 +217,20 @@
             this.gridControlChiTiet.Location = new System.Drawing.Point(0, 0);
             this.gridControlChiTiet.MainView = this.gridViewChiTiet;
             this.gridControlChiTiet.Name = "gridControlChiTiet";
-            this.gridControlChiTiet.Size = new System.Drawing.Size(1729, 789);
+            this.gridControlChiTiet.Size = new System.Drawing.Size(1729, 785);
             this.gridControlChiTiet.TabIndex = 4;
             this.gridControlChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewChiTiet});
             // 
             // gridViewChiTiet
             // 
-            this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewChiTiet.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewChiTiet.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewChiTiet.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewChiTiet.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewChiTiet.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewChiTiet.Appearance.Row.Options.UseFont = true;
-            this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.gridViewChiTiet.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewChiTiet.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewChiTiet.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewChiTiet.ColumnPanelRowHeight = 30;
@@ -257,6 +262,7 @@
             this.gridViewChiTiet.OptionsView.ShowGroupPanel = false;
             this.gridViewChiTiet.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn6, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridViewChiTiet.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewChiTiet_RowCellClick);
             this.gridViewChiTiet.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridViewChiTiet_InvalidRowException);
             this.gridViewChiTiet.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewChiTiet_ValidateRow);
             // 
@@ -367,7 +373,7 @@
             // 
             this.tabNhatKy.Controls.Add(this.gridControlNhatKy);
             this.tabNhatKy.Name = "tabNhatKy";
-            this.tabNhatKy.Size = new System.Drawing.Size(1729, 789);
+            this.tabNhatKy.Size = new System.Drawing.Size(1729, 785);
             this.tabNhatKy.Text = "Lịch Sử Thanh Toán";
             // 
             // gridControlNhatKy
@@ -376,19 +382,22 @@
             this.gridControlNhatKy.Location = new System.Drawing.Point(0, 0);
             this.gridControlNhatKy.MainView = this.gridViewNhatKy;
             this.gridControlNhatKy.Name = "gridControlNhatKy";
-            this.gridControlNhatKy.Size = new System.Drawing.Size(1729, 789);
+            this.gridControlNhatKy.Size = new System.Drawing.Size(1729, 785);
             this.gridControlNhatKy.TabIndex = 5;
             this.gridControlNhatKy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNhatKy});
             // 
             // gridViewNhatKy
             // 
-            this.gridViewNhatKy.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewNhatKy.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewNhatKy.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridViewNhatKy.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridViewNhatKy.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridViewNhatKy.Appearance.GroupRow.Options.UseFont = true;
+            this.gridViewNhatKy.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridViewNhatKy.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewNhatKy.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewNhatKy.Appearance.Row.Options.UseFont = true;
-            this.gridViewNhatKy.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.gridViewNhatKy.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gridViewNhatKy.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewNhatKy.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewNhatKy.ColumnPanelRowHeight = 30;
@@ -396,10 +405,10 @@
             this.gridColumn5,
             this.gridColumn8,
             this.gridColumn9,
-            this.gridColumn10,
+            this.colThanhToan,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn12});
+            this.colNo});
             this.gridViewNhatKy.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridFormatRule2.ApplyToRow = true;
             gridFormatRule2.Name = "AlertTon";
@@ -412,6 +421,8 @@
             this.gridViewNhatKy.FormatRules.Add(gridFormatRule2);
             this.gridViewNhatKy.GridControl = this.gridControlNhatKy;
             this.gridViewNhatKy.GroupCount = 1;
+            this.gridViewNhatKy.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhToan", null, "(Đã Trả: {0:n0})")});
             this.gridViewNhatKy.Name = "gridViewNhatKy";
             this.gridViewNhatKy.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridViewNhatKy.OptionsView.ShowFooter = true;
@@ -421,9 +432,7 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.Caption = "Ngày Thanh Toán";
             this.gridColumn5.FieldName = "NgayThanhToan";
             this.gridColumn5.Name = "gridColumn5";
@@ -433,9 +442,7 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceCell.Options.UseFont = true;
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.gridColumn8.Caption = "Ghi Chú";
             this.gridColumn8.FieldName = "GhiChu";
             this.gridColumn8.Name = "gridColumn8";
@@ -449,21 +456,19 @@
             this.gridColumn9.FieldName = "Id";
             this.gridColumn9.Name = "gridColumn9";
             // 
-            // gridColumn10
+            // colThanhToan
             // 
-            this.gridColumn10.AppearanceCell.Options.UseFont = true;
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn10.Caption = "Thanh Toán";
-            this.gridColumn10.DisplayFormat.FormatString = "n0";
-            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn10.FieldName = "ThanhToan";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.colThanhToan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.colThanhToan.Caption = "Thanh Toán";
+            this.colThanhToan.DisplayFormat.FormatString = "n0";
+            this.colThanhToan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colThanhToan.FieldName = "ThanhToan";
+            this.colThanhToan.Name = "colThanhToan";
+            this.colThanhToan.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhToan", "{0:n0}")});
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            this.gridColumn10.Width = 253;
+            this.colThanhToan.Visible = true;
+            this.colThanhToan.VisibleIndex = 3;
+            this.colThanhToan.Width = 253;
             // 
             // gridColumn3
             // 
@@ -481,20 +486,18 @@
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn4.FieldName = "CongNo.DonHang.TongCong";
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CongNo.DonHang.TongCong", "{0:n0}")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 0;
             this.gridColumn4.Width = 244;
             // 
-            // gridColumn12
+            // colNo
             // 
-            this.gridColumn12.Caption = "Nợ";
-            this.gridColumn12.FieldName = "CongNo.No";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 2;
-            this.gridColumn12.Width = 252;
+            this.colNo.Caption = "Nợ";
+            this.colNo.FieldName = "CongNo.No";
+            this.colNo.Name = "colNo";
+            this.colNo.Visible = true;
+            this.colNo.VisibleIndex = 2;
+            this.colNo.Width = 252;
             // 
             // splitContainerControl1
             // 
@@ -560,11 +563,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(293, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 24);
+            this.label1.Size = new System.Drawing.Size(240, 29);
             this.label1.TabIndex = 53;
             this.label1.Text = "Thông Tin Hóa Đơn";
             // 
@@ -599,20 +602,20 @@
             // lblKhachHangId
             // 
             this.lblKhachHangId.AutoSize = true;
-            this.lblKhachHangId.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKhachHangId.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHangId.Location = new System.Drawing.Point(21, 17);
             this.lblKhachHangId.Name = "lblKhachHangId";
-            this.lblKhachHangId.Size = new System.Drawing.Size(155, 24);
+            this.lblKhachHangId.Size = new System.Drawing.Size(179, 29);
             this.lblKhachHangId.TabIndex = 22;
             this.lblKhachHangId.Text = "Nhà Cung Cấp";
             // 
             // lblTongCong
             // 
             this.lblTongCong.AutoSize = true;
-            this.lblTongCong.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongCong.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongCong.Location = new System.Drawing.Point(21, 178);
             this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(97, 24);
+            this.lblTongCong.Size = new System.Drawing.Size(114, 29);
             this.lblTongCong.TabIndex = 28;
             this.lblTongCong.Text = "Tổng Nợ";
             // 
@@ -621,7 +624,7 @@
             this.TongCong.Enabled = false;
             this.TongCong.Location = new System.Drawing.Point(21, 214);
             this.TongCong.Name = "TongCong";
-            this.TongCong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.TongCong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.TongCong.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.TongCong.Properties.Appearance.Options.UseFont = true;
             this.TongCong.Properties.Appearance.Options.UseForeColor = true;
@@ -629,7 +632,7 @@
             this.TongCong.Properties.Mask.EditMask = "n0";
             this.TongCong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TongCong.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.TongCong.Size = new System.Drawing.Size(347, 32);
+            this.TongCong.Size = new System.Drawing.Size(347, 36);
             this.TongCong.TabIndex = 41;
             // 
             // KhachHang
@@ -637,12 +640,12 @@
             this.KhachHang.Enabled = false;
             this.KhachHang.Location = new System.Drawing.Point(21, 53);
             this.KhachHang.Name = "KhachHang";
-            this.KhachHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.KhachHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.KhachHang.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.KhachHang.Properties.Appearance.Options.UseFont = true;
             this.KhachHang.Properties.Appearance.Options.UseForeColor = true;
             this.KhachHang.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.KhachHang.Size = new System.Drawing.Size(347, 32);
+            this.KhachHang.Size = new System.Drawing.Size(347, 36);
             this.KhachHang.TabIndex = 42;
             // 
             // GhiChu
@@ -650,21 +653,21 @@
             this.GhiChu.Enabled = false;
             this.GhiChu.Location = new System.Drawing.Point(21, 129);
             this.GhiChu.Name = "GhiChu";
-            this.GhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.GhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.GhiChu.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.GhiChu.Properties.Appearance.Options.UseFont = true;
             this.GhiChu.Properties.Appearance.Options.UseForeColor = true;
             this.GhiChu.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.GhiChu.Size = new System.Drawing.Size(347, 32);
+            this.GhiChu.Size = new System.Drawing.Size(347, 36);
             this.GhiChu.TabIndex = 50;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(21, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 24);
+            this.label2.Size = new System.Drawing.Size(108, 29);
             this.label2.TabIndex = 49;
             this.label2.Text = "Ghi Chú";
             // 
@@ -673,13 +676,13 @@
             this.txtConLai.Enabled = false;
             this.txtConLai.Location = new System.Drawing.Point(16, 214);
             this.txtConLai.Name = "txtConLai";
-            this.txtConLai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.txtConLai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.txtConLai.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtConLai.Properties.Appearance.Options.UseFont = true;
             this.txtConLai.Properties.Appearance.Options.UseForeColor = true;
             this.txtConLai.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtConLai.Properties.Mask.EditMask = "n0";
-            this.txtConLai.Size = new System.Drawing.Size(286, 32);
+            this.txtConLai.Size = new System.Drawing.Size(286, 36);
             this.txtConLai.TabIndex = 57;
             // 
             // txtDaThanhToan
@@ -687,13 +690,13 @@
             this.txtDaThanhToan.Enabled = false;
             this.txtDaThanhToan.Location = new System.Drawing.Point(16, 129);
             this.txtDaThanhToan.Name = "txtDaThanhToan";
-            this.txtDaThanhToan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.txtDaThanhToan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.txtDaThanhToan.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtDaThanhToan.Properties.Appearance.Options.UseFont = true;
             this.txtDaThanhToan.Properties.Appearance.Options.UseForeColor = true;
             this.txtDaThanhToan.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtDaThanhToan.Properties.Mask.EditMask = "n0";
-            this.txtDaThanhToan.Size = new System.Drawing.Size(286, 32);
+            this.txtDaThanhToan.Size = new System.Drawing.Size(286, 36);
             this.txtDaThanhToan.TabIndex = 56;
             // 
             // txtTienKhachTra
@@ -701,43 +704,43 @@
             this.txtTienKhachTra.Enabled = false;
             this.txtTienKhachTra.Location = new System.Drawing.Point(16, 53);
             this.txtTienKhachTra.Name = "txtTienKhachTra";
-            this.txtTienKhachTra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.txtTienKhachTra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.txtTienKhachTra.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtTienKhachTra.Properties.Appearance.Options.UseFont = true;
             this.txtTienKhachTra.Properties.Appearance.Options.UseForeColor = true;
             this.txtTienKhachTra.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtTienKhachTra.Properties.Mask.EditMask = "n0";
             this.txtTienKhachTra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtTienKhachTra.Size = new System.Drawing.Size(286, 32);
+            this.txtTienKhachTra.Size = new System.Drawing.Size(286, 36);
             this.txtTienKhachTra.TabIndex = 55;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(20, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 24);
+            this.label5.Size = new System.Drawing.Size(237, 29);
             this.label5.TabIndex = 54;
             this.label5.Text = "Tiền Chưa Phân Bổ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 24);
+            this.label4.Size = new System.Drawing.Size(205, 29);
             this.label4.TabIndex = 53;
             this.label4.Text = "Tiền Đã Phân Bổ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 24);
+            this.label3.Size = new System.Drawing.Size(244, 29);
             this.label3.TabIndex = 52;
             this.label3.Text = "Tiền Khách Đem Trả";
             // 
@@ -746,15 +749,15 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(632, 278);
+            this.btnSave.Location = new System.Drawing.Point(607, 278);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(146, 40);
+            this.btnSave.Size = new System.Drawing.Size(171, 40);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Thanh Toán";
             // 
@@ -764,7 +767,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ThanhToanCongNo_ThanhToan.Location = new System.Drawing.Point(277, 31);
             this.ThanhToanCongNo_ThanhToan.Name = "ThanhToanCongNo_ThanhToan";
-            this.ThanhToanCongNo_ThanhToan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.ThanhToanCongNo_ThanhToan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.ThanhToanCongNo_ThanhToan.Properties.Appearance.Options.UseFont = true;
             this.ThanhToanCongNo_ThanhToan.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.ThanhToanCongNo_ThanhToan.Properties.Mask.EditMask = "n0";
@@ -779,10 +782,10 @@
             this.lblThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblThanhToan.AutoSize = true;
-            this.lblThanhToan.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhToan.Location = new System.Drawing.Point(109, 39);
+            this.lblThanhToan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThanhToan.Location = new System.Drawing.Point(57, 35);
             this.lblThanhToan.Name = "lblThanhToan";
-            this.lblThanhToan.Size = new System.Drawing.Size(162, 24);
+            this.lblThanhToan.Size = new System.Drawing.Size(186, 29);
             this.lblThanhToan.TabIndex = 51;
             this.lblThanhToan.Text = "Tiền Khách Trả";
             // 
@@ -791,10 +794,10 @@
             this.lblNgayLap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNgayLap.AutoSize = true;
-            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayLap.Location = new System.Drawing.Point(109, 230);
+            this.lblNgayLap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayLap.Location = new System.Drawing.Point(57, 226);
             this.lblNgayLap.Name = "lblNgayLap";
-            this.lblNgayLap.Size = new System.Drawing.Size(104, 24);
+            this.lblNgayLap.Size = new System.Drawing.Size(121, 29);
             this.lblNgayLap.TabIndex = 50;
             this.lblNgayLap.Text = "Ngày Lập";
             // 
@@ -802,11 +805,11 @@
             // 
             this.ThanhToanCongNo_NgayThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ThanhToanCongNo_NgayThanhToan.CalendarFont = new System.Drawing.Font("Tahoma", 7.875F);
-            this.ThanhToanCongNo_NgayThanhToan.Font = new System.Drawing.Font("Tahoma", 7.875F);
+            this.ThanhToanCongNo_NgayThanhToan.CalendarFont = new System.Drawing.Font("Tahoma", 9F);
+            this.ThanhToanCongNo_NgayThanhToan.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ThanhToanCongNo_NgayThanhToan.Location = new System.Drawing.Point(277, 230);
             this.ThanhToanCongNo_NgayThanhToan.Name = "ThanhToanCongNo_NgayThanhToan";
-            this.ThanhToanCongNo_NgayThanhToan.Size = new System.Drawing.Size(501, 33);
+            this.ThanhToanCongNo_NgayThanhToan.Size = new System.Drawing.Size(501, 36);
             this.ThanhToanCongNo_NgayThanhToan.TabIndex = 3;
             // 
             // lblGhiChu
@@ -814,10 +817,10 @@
             this.lblGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGhiChu.Location = new System.Drawing.Point(109, 82);
+            this.lblGhiChu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Location = new System.Drawing.Point(57, 78);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(91, 24);
+            this.lblGhiChu.Size = new System.Drawing.Size(108, 29);
             this.lblGhiChu.TabIndex = 48;
             this.lblGhiChu.Text = "Ghi Chú";
             // 
@@ -825,7 +828,7 @@
             // 
             this.ThanhToanCongNo_GhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ThanhToanCongNo_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThanhToanCongNo_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThanhToanCongNo_GhiChu.Location = new System.Drawing.Point(277, 78);
             this.ThanhToanCongNo_GhiChu.Name = "ThanhToanCongNo_GhiChu";
             this.ThanhToanCongNo_GhiChu.Size = new System.Drawing.Size(501, 124);
@@ -907,7 +910,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn colThanhToan;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevExpress.XtraEditors.TextEdit ThanhToanCongNo_ThanhToan;
@@ -940,7 +943,7 @@
         private DevExpress.XtraEditors.TextEdit txtTienKhachTra;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn colNo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
     }
 }
