@@ -30,7 +30,7 @@ namespace QLDT
         {
             get
             {
-                return TonLyTuong > 0 && SoLuong <= TonLyTuong;
+                return SoLuong <= TonLyTuong;
             }
         }
     }
