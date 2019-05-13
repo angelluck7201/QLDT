@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using QLDT.FormControls.KhoHangForms;
 
 namespace QLDT.FormControls.ThuChiForms
@@ -23,6 +24,10 @@ namespace QLDT.FormControls.ThuChiForms
             InitAuthorize();
             ReloadData();
             ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
+
+            FormBehavior.GenerateFormatRuleByValue(gridViewThuChi, colLoai, "Chi", FormatCondition.Equal, Color.Wheat, Color.Red);
+            FormBehavior.GenerateFormatRuleByValue(gridViewThuChi, colLoai, "Thu", FormatCondition.Equal, Color.Honeydew, Color.Green);
+
         }
 
         private void InitAuthorize()

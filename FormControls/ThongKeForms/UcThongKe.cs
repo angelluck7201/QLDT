@@ -32,26 +32,11 @@ namespace QLDT.FormControls.ThongKeForms
             EndDate.Value = currentDate;
             StartDate.Value = currentDate.AddYears(-1);
 
-            GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
-            GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.Greater, Color.Honeydew, Color.Green);
+            FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
+            FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.Greater, Color.Honeydew, Color.Green);
         }
 
-        public void GenerateFormatRuleByValue(GridView gridView, GridColumn column, object value, FormatCondition condition, Color backColor, Color fontColor)
-        {
-            GridFormatRule gridFormatRule = new GridFormatRule();
-            gridFormatRule.Column = column;
-            gridFormatRule.ApplyToRow = true;
-            FormatConditionRuleValue formatConditionRuleValue = new FormatConditionRuleValue();
-            formatConditionRuleValue.PredefinedName = value.ToString();
-            formatConditionRuleValue.Condition = condition;
-            formatConditionRuleValue.Value1 = value.ToString();
-            formatConditionRuleValue.Appearance.BackColor = backColor;
-            formatConditionRuleValue.Appearance.ForeColor = fontColor;
-            formatConditionRuleValue.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue.Appearance.Options.UseForeColor = true;
-            gridFormatRule.Rule = formatConditionRuleValue;
-            gridView.FormatRules.Add(gridFormatRule);
-        }
+        
 
         private void ReloadData()
         {

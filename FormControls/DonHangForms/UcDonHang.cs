@@ -502,11 +502,16 @@ namespace QLDT.FormControls.DonHangForms
                 _isUsd = DonHang_LoaiTienTe.SelectedValue.ToString() == Define.LoaiTienTeEnum.USD.ToString();
                 DonHang_TyGia.Enabled = _isUsd;
                 gridViewChiTiet.Columns["ThanhTienVND"].Visible = _isUsd;
-                if (!_isUsd && _domainData != null)
+                if (_domainData != null && _domainData.TyGia == 0)
                 {
                     _domainData.TyGia = 1;
                 }
             }
+        }
+
+        private void DonHang_TyGia_EditValueChanged(object sender, EventArgs e)
+        {
+            gridViewChiTiet.RefreshData();
         }
     }
 }

@@ -76,7 +76,9 @@ namespace QLDT.FormControls.KhoHangForms
 
         private void btnAddHangHoa_Click(object sender, EventArgs e)
         {
-            FormBehavior.GenerateForm(new UcKhoHang(selectedLoaiHang.Id), "Kho Hàng", this.ParentForm, this.Name);
+            var defaultSelected = 0l;
+            if (selectedLoaiHang != null) defaultSelected = selectedLoaiHang.Id;
+            FormBehavior.GenerateForm(new UcKhoHang(defaultSelected), "Kho Hàng", this.ParentForm, this.Name);
         }
 
         private void gridViewLoaiHang_DoubleClick(object sender, EventArgs e)

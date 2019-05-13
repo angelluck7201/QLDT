@@ -42,7 +42,7 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlThuChi = new DevExpress.XtraGrid.GridControl();
             this.gridViewThuChi = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -226,7 +226,7 @@
             this.gridViewThuChi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.gridViewThuChi.ColumnPanelRowHeight = 30;
             this.gridViewThuChi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
+            this.colLoai,
             this.gridColumn9,
             this.gridColumn5,
             this.gridColumn6,
@@ -258,18 +258,18 @@
             this.gridViewThuChi.OptionsView.ShowGroupPanel = false;
             this.gridViewThuChi.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn3, DevExpress.Data.ColumnSortOrder.Descending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colLoai, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewThuChi.DoubleClick += new System.EventHandler(this.gridViewThuChi_DoubleClick);
             // 
-            // gridColumn2
+            // colLoai
             // 
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.Caption = "Loại";
-            this.gridColumn2.FieldName = "Loai";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 250;
+            this.colLoai.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.colLoai.Caption = "Loại";
+            this.colLoai.FieldName = "Loai";
+            this.colLoai.Name = "colLoai";
+            this.colLoai.Visible = true;
+            this.colLoai.VisibleIndex = 0;
+            this.colLoai.Width = 250;
             // 
             // gridColumn9
             // 
@@ -357,7 +357,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.GridControl gridControlThuChi;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewThuChi;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colLoai;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;

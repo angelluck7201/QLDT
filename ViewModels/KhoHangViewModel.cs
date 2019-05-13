@@ -33,5 +33,10 @@ namespace QLDT
                 return SoLuong <= TonLyTuong;
             }
         }
+
+        public long GiaTri
+        {
+            get { return SoLuong*GiaBan; }
+        }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSplashScreen;
 using QLDT.FormControls;
@@ -117,6 +121,23 @@ namespace QLDT
             }
 
             grid.RefreshData();
+        }
+
+        public static void GenerateFormatRuleByValue(GridView gridView, GridColumn column, object value, FormatCondition condition, Color backColor, Color fontColor)
+        {
+            GridFormatRule gridFormatRule = new GridFormatRule();
+            gridFormatRule.Column = column;
+            gridFormatRule.ApplyToRow = true;
+            FormatConditionRuleValue formatConditionRuleValue = new FormatConditionRuleValue();
+            formatConditionRuleValue.PredefinedName = value.ToString();
+            formatConditionRuleValue.Condition = condition;
+            formatConditionRuleValue.Value1 = value.ToString();
+            formatConditionRuleValue.Appearance.BackColor = backColor;
+            formatConditionRuleValue.Appearance.ForeColor = fontColor;
+            formatConditionRuleValue.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue.Appearance.Options.UseForeColor = true;
+            gridFormatRule.Rule = formatConditionRuleValue;
+            gridView.FormatRules.Add(gridFormatRule);
         }
     }
 }

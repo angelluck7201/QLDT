@@ -159,6 +159,7 @@
             this.DonHang_TyGia.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.DonHang_TyGia.Size = new System.Drawing.Size(535, 32);
             this.DonHang_TyGia.TabIndex = 52;
+            this.DonHang_TyGia.EditValueChanged += new System.EventHandler(this.DonHang_TyGia_EditValueChanged);
             // 
             // label1
             // 
@@ -416,6 +417,8 @@
             this.gridColumn4.FieldName = "SoLuong";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:n0}")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 177;
@@ -434,6 +437,8 @@
             this.gridColumn1.FieldName = "ThanhTien";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:n0}")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
             this.gridColumn1.Width = 278;
@@ -463,6 +468,8 @@
             this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn9.FieldName = "ThanhTienVND";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTienVND", "{0:n0}")});
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
             this.gridColumn9.Width = 294;

@@ -48,6 +48,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddHangHoa = new DevExpress.XtraEditors.SimpleButton();
@@ -79,7 +80,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:n0}")});
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 2;
-            this.colSoLuong.Width = 138;
+            this.colSoLuong.Width = 119;
             // 
             // colTonLyTuong
             // 
@@ -198,7 +199,8 @@
             this.gridColumn7,
             this.gridColumn9,
             this.colTonLyTuong,
-            this.IsAlertTon});
+            this.IsAlertTon,
+            this.gridColumn4});
             this.gridViewHangHoa.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridFormatRule1.ApplyToRow = true;
             gridFormatRule1.Column = this.IsAlertTon;
@@ -235,7 +237,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 248;
+            this.gridColumn2.Width = 240;
             // 
             // gridColumn3
             // 
@@ -243,9 +245,7 @@
             this.gridColumn3.Caption = "ĐVT";
             this.gridColumn3.FieldName = "DVT";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 84;
+            this.gridColumn3.Width = 59;
             // 
             // gridColumn5
             // 
@@ -256,8 +256,8 @@
             this.gridColumn5.FieldName = "GiaBan";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 205;
+            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 134;
             // 
             // gridColumn6
             // 
@@ -267,7 +267,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 213;
+            this.gridColumn6.Width = 228;
             // 
             // gridColumn7
             // 
@@ -280,6 +280,19 @@
             this.gridColumn9.Caption = "LoaiHangId";
             this.gridColumn9.FieldName = "LoaiHangId";
             this.gridColumn9.Name = "gridColumn9";
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tổng Giá Trị";
+            this.gridColumn4.DisplayFormat.FormatString = "n0";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn4.FieldName = "GiaTri";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GiaTri", "{0:n0}")});
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 149;
             // 
             // splitContainerControl2
             // 
@@ -394,6 +407,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTonLyTuong;
         private DevExpress.XtraGrid.Columns.GridColumn IsAlertTon;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
-
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }
