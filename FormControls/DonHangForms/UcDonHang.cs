@@ -140,6 +140,19 @@ namespace QLDT.FormControls.DonHangForms
                     CRUD.DbContext.ChiTietDonHangs.AddOrUpdate(chiTietDonHang);
                     CRUD.DbContext.SaveChanges();
 
+                    if (!chiTietDonHang.IsActived)
+                    {
+                        CRUD.DbContext.ChiTietDonHangs.Remove(chiTietDonHang);
+                        // Save chi tiet hang hoa
+                        foreach (var chiTietHangHoa in chiTietDonHang.ListChiTietHangHoa)
+                        {
+                            CRUD.DecorateSaveData(chiTietHangHoa);
+                            chiTietHangHoa.ChiTietDonHangId = chiTietDonHang.Id;
+                            CRUD.DbContext.ChiTietHangHoas.Remove(chiTietHangHoa);
+                        }
+                        continue;
+                    }
+
                     // Cap nhat hang trong kho
                     if (_domainData.TrangThai == Define.TrangThaiDonHang.ThanhToan.ToString()
                         && chiTietDonHang.IsActived)
@@ -153,7 +166,7 @@ namespace QLDT.FormControls.DonHangForms
                             }
                             else
                             {
-                                hangHoa.SoLuong -= chiTietDonHang.SoLuong;
+                                hangHoa.SoLuong = Math.Max(hangHoa.SoLuong - chiTietDonHang.SoLuong, 0);
                             }
                             CRUD.DbContext.KhoHangs.AddOrUpdate(hangHoa);
                         }
@@ -237,19 +250,26 @@ namespace QLDT.FormControls.DonHangForms
                 {
                     return "Số lượng phải > 0";
                 }
-                if (_loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
-                {
-                    if (chiTietDonHang.SoLuongTon < chiTietDonHang.SoLuong)
-                    {
-                        return string.Format("Không đủ hàng. Chỉ còn {0} {1} trong kho", chiTietDonHang.SoLuongTon, chiTietDonHang.TenHangHoa);
-                    }
-                }
                 if (_domainData.TrangThai == Define.TrangThaiDonHang.Moi.ToString()
                     && !chiTietDonHang.KhoHang.IsActived)
                 {
                     return string.Format("{0} hiện đã ngưng kinh doanh.", chiTietDonHang.TenHangHoa);
                 }
             }
+
+            if (_loaiDonHang == Define.LoaiDonHangEnum.XuatKho)
+            {
+                var groupByHangHoa = _chiTietDonhang.GroupBy(s => s.KhoHang);
+                foreach (var hanghoa in groupByHangHoa)
+                {
+                    var soLuongXuat = hanghoa.Where(s=>s.IsActived).Sum(s => s.SoLuong);
+                    if (hanghoa.Key.SoLuong < soLuongXuat)
+                    {
+                        return string.Format("Không đủ hàng. Chỉ còn {0} {1} trong kho", hanghoa.Key.SoLuong, hanghoa.Key.TenHang);
+                    }
+                }
+            }
+
 
             //if (_domainData.ThanhToan > 0)
             //{

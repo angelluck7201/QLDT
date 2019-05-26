@@ -140,7 +140,6 @@ namespace QLDT.FormControls.NhapKhoForms
                 {
                     ObserverControl.Regist(this.Name, "DefaultForm", Define.ActionTypeEnum.Close, RefreshData);
                     var title = _loaiKhachHang == Define.LoaiKhachHangEnum.NhaCungCap ? "Nhà Cung Cấp" : "Khách Hàng";
-
                     data = CRUD.DbContext.KhachHangs.Find(data.Id);
                     FormBehavior.GenerateForm(new UcKhachHang(_loaiKhachHang, data), title, this.ParentForm, this.Name);
                 }
@@ -163,7 +162,7 @@ namespace QLDT.FormControls.NhapKhoForms
                 if (data != null)
                 {
                     var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
-
+                    CRUD.DisposeDb();
                     data = CRUD.DbContext.DonHangs.Find(data.Id);
                     FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang, data), title, this.ParentForm, this.Name);
                 }
