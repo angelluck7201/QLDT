@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting.Native;
 using ComboBox = System.Windows.Forms.ComboBox;
+using System.Drawing;
 
 namespace QLDT.FormControls
 {
@@ -18,6 +19,8 @@ namespace QLDT.FormControls
 
         public void Init<T>(T data = null) where T : class
         {
+            this.AutoScaleDimensions = new SizeF(6f, 13f);
+            this.AutoScaleMode = AutoScaleMode.Font;
             FormControls = CRUD.GetAllChild(this);
             InitAction();
             if (data != null)

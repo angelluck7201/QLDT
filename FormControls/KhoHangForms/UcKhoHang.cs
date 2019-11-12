@@ -13,7 +13,10 @@ namespace QLDT.FormControls.KhoHangForms
         {
             InitializeComponent();
 
-            var selectedLoaiHang = data?.LoaiHangId ?? -1;
+            long selectedLoaiHang = -1;
+            if(data != null){
+                selectedLoaiHang = data.LoaiHangId;
+            }
 
             KhoHang_LoaiHangId.DisplayMember = "Ten";
             KhoHang_LoaiHangId.ValueMember = "Id";

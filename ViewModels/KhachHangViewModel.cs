@@ -28,6 +28,8 @@ namespace QLDT
             get { return TimeHelper.TimeStampToDateTime(CongNoes.Where(s => s.IsActived && s.LoaiTienTe == LoaiTienTe).Max(s => s.ModifiedDate.GetValueOrDefault())); }
         }
 
-        public long ConLai => No - ThanhToan;
+        public long ConLai {
+            get { return No - ThanhToan; }
+        }
     }
 }
