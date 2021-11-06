@@ -65,6 +65,7 @@
             this.tileItemThang = new DevExpress.XtraEditors.TileItem();
             this.tileItemQuy = new DevExpress.XtraEditors.TileItem();
             this.tileItemNam = new DevExpress.XtraEditors.TileItem();
+            this.colLoiNhuanBanHang = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlHangHoa)).BeginInit();
@@ -87,7 +88,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlHangHoa);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1140, 785);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1145, 785);
             this.splitContainerControl1.SplitterPosition = 90;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -114,7 +115,7 @@
             this.EndDate.Font = new System.Drawing.Font("Tahoma", 9F);
             this.EndDate.Location = new System.Drawing.Point(426, 23);
             this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(402, 36);
+            this.EndDate.Size = new System.Drawing.Size(402, 22);
             this.EndDate.TabIndex = 37;
             // 
             // StartDate
@@ -124,7 +125,7 @@
             this.StartDate.Font = new System.Drawing.Font("Tahoma", 9F);
             this.StartDate.Location = new System.Drawing.Point(15, 23);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(391, 36);
+            this.StartDate.Size = new System.Drawing.Size(391, 22);
             this.StartDate.TabIndex = 36;
             // 
             // gridControlHangHoa
@@ -133,7 +134,7 @@
             this.gridControlHangHoa.Location = new System.Drawing.Point(0, 0);
             this.gridControlHangHoa.MainView = this.gridViewHangHoa;
             this.gridControlHangHoa.Name = "gridControlHangHoa";
-            this.gridControlHangHoa.Size = new System.Drawing.Size(1140, 685);
+            this.gridControlHangHoa.Size = new System.Drawing.Size(1145, 690);
             this.gridControlHangHoa.TabIndex = 6;
             this.gridControlHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHangHoa,
@@ -176,6 +177,7 @@
             this.colDoanhThuBan,
             this.colDoanhThuNhap,
             this.colLoiNhuan,
+            this.colLoiNhuanBanHang,
             this.NgaySort});
             this.gridViewHangHoa.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridFormatRule1.ApplyToRow = true;
@@ -193,7 +195,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongXuat", this.colSoLuongXuat, "(Số Lượng Xuất: {0:n0})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Chi", this.colDoanhThuNhap, "(Tổng Chi: {0:n0})"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Thu", this.colDoanhThuBan, "(Tổng Thu: {0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuan", this.colLoiNhuan, "(Lợi Nhuận: {0:n0})")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuan", this.colLoiNhuan, "(Lợi Nhuận: {0:n0})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuanBanHang", this.colLoiNhuanBanHang, "(Lợi Nhuận: {0:n0})")});
             this.gridViewHangHoa.Name = "gridViewHangHoa";
             this.gridViewHangHoa.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridViewHangHoa.OptionsBehavior.Editable = false;
@@ -263,7 +266,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 254;
+            this.gridColumn2.Width = 234;
             // 
             // colSoLuongNhap
             // 
@@ -275,7 +278,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongNhap", "TỔNG NHẬP={0:n0}")});
             this.colSoLuongNhap.Visible = true;
             this.colSoLuongNhap.VisibleIndex = 1;
-            this.colSoLuongNhap.Width = 144;
+            this.colSoLuongNhap.Width = 132;
             // 
             // colSoLuongXuat
             // 
@@ -287,7 +290,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongXuat", "TỔNG XUẤT={0:n0}")});
             this.colSoLuongXuat.Visible = true;
             this.colSoLuongXuat.VisibleIndex = 2;
-            this.colSoLuongXuat.Width = 138;
+            this.colSoLuongXuat.Width = 127;
             // 
             // colDoanhThuBan
             // 
@@ -301,7 +304,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Thu", "TỔNG THU={0:n0}")});
             this.colDoanhThuBan.Visible = true;
             this.colDoanhThuBan.VisibleIndex = 3;
-            this.colDoanhThuBan.Width = 196;
+            this.colDoanhThuBan.Width = 149;
             // 
             // colDoanhThuNhap
             // 
@@ -315,12 +318,12 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Chi", "TỔNG CHI={0:n0}")});
             this.colDoanhThuNhap.Visible = true;
             this.colDoanhThuNhap.VisibleIndex = 4;
-            this.colDoanhThuNhap.Width = 208;
+            this.colDoanhThuNhap.Width = 173;
             // 
             // colLoiNhuan
             // 
             this.colLoiNhuan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.colLoiNhuan.Caption = "Lợi Nhuận";
+            this.colLoiNhuan.Caption = "Lợi Nhuận(Thu - Chi)";
             this.colLoiNhuan.DisplayFormat.FormatString = "n0";
             this.colLoiNhuan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colLoiNhuan.FieldName = "LoiNhuan";
@@ -329,7 +332,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuan", "LỢI NHUẬN={0:n0}")});
             this.colLoiNhuan.Visible = true;
             this.colLoiNhuan.VisibleIndex = 5;
-            this.colLoiNhuan.Width = 206;
+            this.colLoiNhuan.Width = 180;
             // 
             // NgaySort
             // 
@@ -511,6 +514,20 @@
             this.tileItemNam.Tag = "Automation";
             this.tileItemNam.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItemNam_ItemClick);
             // 
+            // colLoiNhuanBanHang
+            // 
+            this.colLoiNhuanBanHang.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.colLoiNhuanBanHang.Caption = "Lợi Nhuận Bán Hàng";
+            this.colLoiNhuanBanHang.DisplayFormat.FormatString = "n0";
+            this.colLoiNhuanBanHang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colLoiNhuanBanHang.FieldName = "LoiNhuanBanHang";
+            this.colLoiNhuanBanHang.Name = "colLoiNhuanBanHang";
+            this.colLoiNhuanBanHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuanBanHang", "LỢI NHUẬN={0:n0}")});
+            this.colLoiNhuanBanHang.Visible = true;
+            this.colLoiNhuanBanHang.VisibleIndex = 6;
+            this.colLoiNhuanBanHang.Width = 132;
+            // 
             // UcThongKe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -558,5 +575,6 @@
         private DevExpress.XtraEditors.TileItem tileItemThang;
         private DevExpress.XtraEditors.TileItem tileItemQuy;
         private DevExpress.XtraEditors.TileItem tileItemNam;
+        private DevExpress.XtraGrid.Columns.GridColumn colLoiNhuanBanHang;
     }
 }

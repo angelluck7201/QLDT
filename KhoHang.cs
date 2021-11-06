@@ -176,6 +176,19 @@ namespace QLDT
     		} 
     	}
     
+        private long _giaNhap;
+    	public long GiaNhap 
+    	{ 
+    		get { return _giaNhap; } 
+    		set
+    		{
+    			if (value != _giaNhap) {
+    				_giaNhap = value;
+    				 OnPropertyChanged("GiaNhap");
+    			}
+    		} 
+    	}
+    
     
         public virtual DanhMuc DanhMuc { get; set; }
         public virtual UserAccount UserAccount { get; set; }

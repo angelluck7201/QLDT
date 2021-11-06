@@ -45,6 +45,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,8 +80,8 @@
             this.colSoLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:n0}")});
             this.colSoLuong.Visible = true;
-            this.colSoLuong.VisibleIndex = 2;
-            this.colSoLuong.Width = 119;
+            this.colSoLuong.VisibleIndex = 3;
+            this.colSoLuong.Width = 101;
             // 
             // colTonLyTuong
             // 
@@ -98,7 +99,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlHangHoa);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1192, 596);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1192, 601);
             this.splitContainerControl1.SplitterPosition = 278;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -112,7 +113,7 @@
             this.gridControlLoaiHang.Location = new System.Drawing.Point(0, 0);
             this.gridControlLoaiHang.MainView = this.gridViewLoaiHang;
             this.gridControlLoaiHang.Name = "gridControlLoaiHang";
-            this.gridControlLoaiHang.Size = new System.Drawing.Size(278, 596);
+            this.gridControlLoaiHang.Size = new System.Drawing.Size(278, 601);
             this.gridControlLoaiHang.TabIndex = 0;
             this.gridControlLoaiHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLoaiHang});
@@ -171,7 +172,7 @@
             this.gridControlHangHoa.Location = new System.Drawing.Point(0, 0);
             this.gridControlHangHoa.MainView = this.gridViewHangHoa;
             this.gridControlHangHoa.Name = "gridControlHangHoa";
-            this.gridControlHangHoa.Size = new System.Drawing.Size(904, 596);
+            this.gridControlHangHoa.Size = new System.Drawing.Size(909, 601);
             this.gridControlHangHoa.TabIndex = 1;
             this.gridControlHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHangHoa});
@@ -195,6 +196,7 @@
             this.gridColumn3,
             this.colSoLuong,
             this.gridColumn5,
+            this.gridColumn10,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn9,
@@ -237,7 +239,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 240;
+            this.gridColumn2.Width = 226;
             // 
             // gridColumn3
             // 
@@ -257,7 +259,19 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 134;
+            this.gridColumn5.Width = 126;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.gridColumn10.Caption = "Giá Nhập";
+            this.gridColumn10.DisplayFormat.FormatString = "n0";
+            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn10.FieldName = "GiaNhap";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            this.gridColumn10.Width = 110;
             // 
             // gridColumn6
             // 
@@ -266,8 +280,8 @@
             this.gridColumn6.FieldName = "GhiChu";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 228;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 201;
             // 
             // gridColumn7
             // 
@@ -291,8 +305,8 @@
             this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GiaTri", "{0:n0}")});
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 149;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 127;
             // 
             // splitContainerControl2
             // 
@@ -408,5 +422,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn IsAlertTon;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

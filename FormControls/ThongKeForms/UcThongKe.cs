@@ -32,8 +32,11 @@ namespace QLDT.FormControls.ThongKeForms
             EndDate.Value = currentDate;
             StartDate.Value = currentDate.AddYears(-1);
 
-            FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
-            FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.Greater, Color.Honeydew, Color.Green);
+            //FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
+            //FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuan, 0, FormatCondition.Greater, Color.Honeydew, Color.Green);
+
+            FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuanBanHang, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
+            FormBehavior.GenerateFormatRuleByValue(gridViewHangHoa, colLoiNhuanBanHang, 0, FormatCondition.Greater, Color.Honeydew, Color.Green);
         }
 
         

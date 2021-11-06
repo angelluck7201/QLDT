@@ -40,8 +40,11 @@
             this.KhoHang_GiaBan = new DevExpress.XtraEditors.TextEdit();
             this.KhoHang_TonLyTuong = new DevExpress.XtraEditors.TextEdit();
             this.KhoHang_TenHang = new System.Windows.Forms.RichTextBox();
+            this.KhoHang_GiaNhap = new DevExpress.XtraEditors.TextEdit();
+            this.lblGiaNhap = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.KhoHang_GiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KhoHang_TonLyTuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KhoHang_GiaNhap.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTenHang
@@ -50,7 +53,7 @@
             this.lblTenHang.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenHang.Location = new System.Drawing.Point(50, 132);
             this.lblTenHang.Name = "lblTenHang";
-            this.lblTenHang.Size = new System.Drawing.Size(123, 29);
+            this.lblTenHang.Size = new System.Drawing.Size(60, 15);
             this.lblTenHang.TabIndex = 21;
             this.lblTenHang.Text = "Tên Hàng";
             // 
@@ -100,7 +103,7 @@
             this.lblLoaiHangId.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaiHangId.Location = new System.Drawing.Point(50, 70);
             this.lblLoaiHangId.Name = "lblLoaiHangId";
-            this.lblLoaiHangId.Size = new System.Drawing.Size(130, 29);
+            this.lblLoaiHangId.Size = new System.Drawing.Size(63, 15);
             this.lblLoaiHangId.TabIndex = 17;
             this.lblLoaiHangId.Text = "Loại Hàng";
             // 
@@ -110,7 +113,7 @@
             this.KhoHang_LoaiHangId.FormattingEnabled = true;
             this.KhoHang_LoaiHangId.Location = new System.Drawing.Point(236, 63);
             this.KhoHang_LoaiHangId.Name = "KhoHang_LoaiHangId";
-            this.KhoHang_LoaiHangId.Size = new System.Drawing.Size(554, 37);
+            this.KhoHang_LoaiHangId.Size = new System.Drawing.Size(554, 23);
             this.KhoHang_LoaiHangId.TabIndex = 0;
             // 
             // lblGiaBan
@@ -119,7 +122,7 @@
             this.lblGiaBan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiaBan.Location = new System.Drawing.Point(51, 295);
             this.lblGiaBan.Name = "lblGiaBan";
-            this.lblGiaBan.Size = new System.Drawing.Size(104, 29);
+            this.lblGiaBan.Size = new System.Drawing.Size(50, 15);
             this.lblGiaBan.TabIndex = 24;
             this.lblGiaBan.Text = "Giá Bán";
             // 
@@ -129,7 +132,7 @@
             this.lblGhiChu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhiChu.Location = new System.Drawing.Point(51, 424);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(108, 29);
+            this.lblGhiChu.Size = new System.Drawing.Size(50, 15);
             this.lblGhiChu.TabIndex = 25;
             this.lblGhiChu.Text = "Ghi Chú";
             // 
@@ -137,9 +140,9 @@
             // 
             this.lblTonLyTuong.AutoSize = true;
             this.lblTonLyTuong.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTonLyTuong.Location = new System.Drawing.Point(51, 347);
+            this.lblTonLyTuong.Location = new System.Drawing.Point(50, 378);
             this.lblTonLyTuong.Name = "lblTonLyTuong";
-            this.lblTonLyTuong.Size = new System.Drawing.Size(179, 29);
+            this.lblTonLyTuong.Size = new System.Drawing.Size(86, 15);
             this.lblTonLyTuong.TabIndex = 27;
             this.lblTonLyTuong.Text = "Tồn Lý Tưởng";
             // 
@@ -152,19 +155,19 @@
             this.KhoHang_GiaBan.Properties.Mask.EditMask = "n0";
             this.KhoHang_GiaBan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.KhoHang_GiaBan.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.KhoHang_GiaBan.Size = new System.Drawing.Size(554, 32);
+            this.KhoHang_GiaBan.Size = new System.Drawing.Size(554, 20);
             this.KhoHang_GiaBan.TabIndex = 2;
             // 
             // KhoHang_TonLyTuong
             // 
-            this.KhoHang_TonLyTuong.Location = new System.Drawing.Point(236, 344);
+            this.KhoHang_TonLyTuong.Location = new System.Drawing.Point(236, 376);
             this.KhoHang_TonLyTuong.Name = "KhoHang_TonLyTuong";
             this.KhoHang_TonLyTuong.Properties.Appearance.Options.UseFont = true;
             this.KhoHang_TonLyTuong.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.KhoHang_TonLyTuong.Properties.Mask.EditMask = "n0";
             this.KhoHang_TonLyTuong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.KhoHang_TonLyTuong.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.KhoHang_TonLyTuong.Size = new System.Drawing.Size(554, 32);
+            this.KhoHang_TonLyTuong.Size = new System.Drawing.Size(554, 20);
             this.KhoHang_TonLyTuong.TabIndex = 3;
             // 
             // KhoHang_TenHang
@@ -176,10 +179,34 @@
             this.KhoHang_TenHang.TabIndex = 28;
             this.KhoHang_TenHang.Text = "";
             // 
+            // KhoHang_GiaNhap
+            // 
+            this.KhoHang_GiaNhap.Location = new System.Drawing.Point(236, 336);
+            this.KhoHang_GiaNhap.Name = "KhoHang_GiaNhap";
+            this.KhoHang_GiaNhap.Properties.Appearance.Options.UseFont = true;
+            this.KhoHang_GiaNhap.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.KhoHang_GiaNhap.Properties.Mask.EditMask = "n0";
+            this.KhoHang_GiaNhap.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.KhoHang_GiaNhap.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.KhoHang_GiaNhap.Size = new System.Drawing.Size(554, 20);
+            this.KhoHang_GiaNhap.TabIndex = 29;
+            // 
+            // lblGiaNhap
+            // 
+            this.lblGiaNhap.AutoSize = true;
+            this.lblGiaNhap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiaNhap.Location = new System.Drawing.Point(51, 338);
+            this.lblGiaNhap.Name = "lblGiaNhap";
+            this.lblGiaNhap.Size = new System.Drawing.Size(57, 15);
+            this.lblGiaNhap.TabIndex = 30;
+            this.lblGiaNhap.Text = "Giá Nhập";
+            // 
             // UcKhoHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.lblGiaNhap);
+            this.Controls.Add(this.KhoHang_GiaNhap);
             this.Controls.Add(this.KhoHang_TenHang);
             this.Controls.Add(this.KhoHang_TonLyTuong);
             this.Controls.Add(this.KhoHang_GiaBan);
@@ -196,6 +223,7 @@
             this.Size = new System.Drawing.Size(822, 663);
             ((System.ComponentModel.ISupportInitialize)(this.KhoHang_GiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KhoHang_TonLyTuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KhoHang_GiaNhap.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +243,7 @@
         private DevExpress.XtraEditors.TextEdit KhoHang_GiaBan;
         private DevExpress.XtraEditors.TextEdit KhoHang_TonLyTuong;
         private System.Windows.Forms.RichTextBox KhoHang_TenHang;
+        private DevExpress.XtraEditors.TextEdit KhoHang_GiaNhap;
+        private System.Windows.Forms.Label lblGiaNhap;
     }
 }

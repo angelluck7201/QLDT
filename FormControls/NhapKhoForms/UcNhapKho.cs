@@ -94,7 +94,8 @@ namespace QLDT.FormControls.NhapKhoForms
                             && s.LoaiDonHang == _loaiDonHang.ToString()
                             && s.NgayLap >= startDate
                             && s.NgayLap <= endDate)
-                            .ToList();
+                            .ToList();                    
+
                     gridControlNhapKho.DataSource = _donHangs;
                 }
 

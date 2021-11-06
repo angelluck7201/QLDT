@@ -302,6 +302,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\Setup_061121.sql" />
     <Content Include="Scripts\Setup_1.sql" />
     <Content Include="Scripts\Setup.sql" />
     <Compile Include="ThanhToanCongNo.cs">

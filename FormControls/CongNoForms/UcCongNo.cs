@@ -79,7 +79,7 @@ namespace QLDT.FormControls.CongNoForms
                         congNo.ThanhToanNo = 0;
 
                         CRUD.DecorateSaveData(congNo);
-                        CRUD.DbContext.CongNoes.AddOrUpdate(congNo);
+                        CRUD.DbContext.CongNoes.AddOrUpdate(congNo);                        
                     }
                 }
                 CRUD.DbContext.SaveChanges();

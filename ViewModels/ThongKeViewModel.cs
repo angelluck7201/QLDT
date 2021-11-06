@@ -16,6 +16,7 @@ namespace QLDT
         public long Thu { get; set; }
         public long Chi { get; set; }
         public long LoiNhuan { get { return Thu - Chi; } }
+        public long LoiNhuanBanHang { get; set; }
         public string Ngay { get; set; }
         public string Thang { get; set; }
         public string Nam { get; set; }
@@ -35,6 +36,7 @@ namespace QLDT
             {
                 SoLuongXuat = (long)donHang.SoLuong;
                 Thu = donHang.ThanhTienVND;
+                LoiNhuanBanHang = donHang.LoiNhuan;
             }
             SetThoiGian(donHang.DonHang.NgayLap);
         }

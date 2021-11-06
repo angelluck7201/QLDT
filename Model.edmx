@@ -18,6 +18,7 @@
           <Property Name="HangHoaId" Type="bigint" Nullable="false" />
           <Property Name="DonGia" Type="bigint" Nullable="false" />
           <Property Name="SoLuong" Type="bigint" Nullable="false" />
+          <Property Name="GiaNhap" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="ChiTietHangHoa">
           <Key>
@@ -135,6 +136,7 @@
           <Property Name="GiaBan" Type="bigint" Nullable="false" />
           <Property Name="TonLyTuong" Type="bigint" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GiaNhap" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="PhanQuyenNguoiDung">
           <Key>
@@ -704,6 +706,7 @@
           <NavigationProperty Name="DanhMuc" Relationship="QLDT.FK__KhoHang__LoaiHan__398D8EEE" FromRole="KhoHang" ToRole="DanhMuc" />
           <NavigationProperty Name="UserAccount" Relationship="QLDT.FK__KhoHang__AuthorI__35BCFE0A" FromRole="KhoHang" ToRole="UserAccount" />
           <NavigationProperty Name="ChiTietDonHangs" Relationship="QLDT.FK__ChiTietDo__HangH__6477ECF3" FromRole="KhoHang" ToRole="ChiTietDonHang" />
+          <Property Name="GiaNhap" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="UserAccount">
           <Key>
@@ -1027,6 +1030,7 @@
           <NavigationProperty Name="DonHang" Relationship="QLDT.FK__ChiTietDo__DonHa__6383C8BA" FromRole="ChiTietDonHang" ToRole="DonHang" />
           <NavigationProperty Name="KhoHang" Relationship="QLDT.FK__ChiTietDo__HangH__6477ECF3" FromRole="ChiTietDonHang" ToRole="KhoHang" />
           <NavigationProperty Name="ChiTietHangHoas" Relationship="QLDT.FK__ChiTietHa__ChiTi__6E01572D" FromRole="ChiTietDonHang" ToRole="ChiTietHangHoa" />
+          <Property Name="GiaNhap" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="FK__ChiTietDo__Autho__5FB337D6">
           <End Type="QLDT.UserAccount" Role="UserAccount" Multiplicity="1" />
@@ -1165,6 +1169,7 @@
           <EntitySetMapping Name="KhoHangs">
             <EntityTypeMapping TypeName="QLDT.KhoHang">
               <MappingFragment StoreEntitySet="KhoHang">
+                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="TonLyTuong" ColumnName="TonLyTuong" />
                 <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
@@ -1315,6 +1320,7 @@
           <EntitySetMapping Name="ChiTietDonHangs">
             <EntityTypeMapping TypeName="QLDT.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">
+                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="HangHoaId" ColumnName="HangHoaId" />

@@ -37,6 +37,7 @@ namespace QLDT
             }
         }
 
+
         public string LoaiPhieu
         {
             get
@@ -73,6 +74,13 @@ namespace QLDT
         {
             get { return ChiTietDonHang.DonHangId; }
         }
+
+        private long _giaNhap;
+        public long GiaNhap
+        {
+            get { return _giaNhap; }
+            set { _giaNhap = value; }
+        }
     }
 
     public partial class ChiTietDonHang
@@ -98,9 +106,19 @@ namespace QLDT
 
         public long NgaySort { get; set; }
 
-        public long DoanhThuNhap { get; set; }
+        public long DoanhThuNhap {
+            get
+            {
+                return KhoHang.GiaNhap * SoLuong;
+            }
+        }
 
-        public long DoanhThuXuat { get; set; }
+        public long DoanhThuXuat {
+            get
+            {
+                return SoLuong * DonGia;
+            }
+        }
         public long LoiNhuan
         {
             get { return DoanhThuXuat - DoanhThuNhap; }
@@ -160,6 +178,31 @@ namespace QLDT
                     }
                 }
                 return string.Empty;
+            }
+        }
+
+        public long LoiNhuan
+        {
+            get
+            {
+                if(ChiTietDonHangs != null)
+                {
+                    return ThanhToanCongNo - ChiTietDonHangs.Sum(s => s.DoanhThuNhap);
+                }
+                return 0;
+            }
+        }
+
+        public long ThanhToanCongNo
+        {
+            get
+            {
+                var thanhToan = ThanhToan;
+                if(CongNoes != null)
+                {
+                    thanhToan += CongNoes.Where(l => l.IsActived).Sum(l => l.ThanhToan);
+                }
+                return thanhToan;
             }
         }
 
