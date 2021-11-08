@@ -55,6 +55,7 @@
             this.colDoanhThuBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDoanhThuNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoiNhuan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoiNhuanBanHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgaySort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,7 +66,6 @@
             this.tileItemThang = new DevExpress.XtraEditors.TileItem();
             this.tileItemQuy = new DevExpress.XtraEditors.TileItem();
             this.tileItemNam = new DevExpress.XtraEditors.TileItem();
-            this.colLoiNhuanBanHang = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlHangHoa)).BeginInit();
@@ -191,12 +191,12 @@
             this.gridViewHangHoa.FormatRules.Add(gridFormatRule1);
             this.gridViewHangHoa.GridControl = this.gridControlHangHoa;
             this.gridViewHangHoa.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongNhap", this.colSoLuongNhap, "(Số Lượng Nhập: {0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongXuat", this.colSoLuongXuat, "(Số Lượng Xuất: {0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Chi", this.colDoanhThuNhap, "(Tổng Chi: {0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Thu", this.colDoanhThuBan, "(Tổng Thu: {0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuan", this.colLoiNhuan, "(Lợi Nhuận: {0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuanBanHang", this.colLoiNhuanBanHang, "(Lợi Nhuận: {0:n0})")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongNhap", this.colSoLuongNhap, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuongXuat", this.colSoLuongXuat, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Chi", this.colDoanhThuNhap, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Thu", this.colDoanhThuBan, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuan", this.colLoiNhuan, "{0:n0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuanBanHang", this.colLoiNhuanBanHang, "{0:n0}")});
             this.gridViewHangHoa.Name = "gridViewHangHoa";
             this.gridViewHangHoa.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridViewHangHoa.OptionsBehavior.Editable = false;
@@ -333,6 +333,20 @@
             this.colLoiNhuan.Visible = true;
             this.colLoiNhuan.VisibleIndex = 5;
             this.colLoiNhuan.Width = 180;
+            // 
+            // colLoiNhuanBanHang
+            // 
+            this.colLoiNhuanBanHang.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.colLoiNhuanBanHang.Caption = "Lợi Nhuận Bán Hàng";
+            this.colLoiNhuanBanHang.DisplayFormat.FormatString = "n0";
+            this.colLoiNhuanBanHang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colLoiNhuanBanHang.FieldName = "LoiNhuanBanHang";
+            this.colLoiNhuanBanHang.Name = "colLoiNhuanBanHang";
+            this.colLoiNhuanBanHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuanBanHang", "LỢI NHUẬN={0:n0}")});
+            this.colLoiNhuanBanHang.Visible = true;
+            this.colLoiNhuanBanHang.VisibleIndex = 6;
+            this.colLoiNhuanBanHang.Width = 132;
             // 
             // NgaySort
             // 
@@ -513,20 +527,6 @@
             this.tileItemNam.Name = "tileItemNam";
             this.tileItemNam.Tag = "Automation";
             this.tileItemNam.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItemNam_ItemClick);
-            // 
-            // colLoiNhuanBanHang
-            // 
-            this.colLoiNhuanBanHang.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.colLoiNhuanBanHang.Caption = "Lợi Nhuận Bán Hàng";
-            this.colLoiNhuanBanHang.DisplayFormat.FormatString = "n0";
-            this.colLoiNhuanBanHang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colLoiNhuanBanHang.FieldName = "LoiNhuanBanHang";
-            this.colLoiNhuanBanHang.Name = "colLoiNhuanBanHang";
-            this.colLoiNhuanBanHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuanBanHang", "LỢI NHUẬN={0:n0}")});
-            this.colLoiNhuanBanHang.Visible = true;
-            this.colLoiNhuanBanHang.VisibleIndex = 6;
-            this.colLoiNhuanBanHang.Width = 132;
             // 
             // UcThongKe
             // 
