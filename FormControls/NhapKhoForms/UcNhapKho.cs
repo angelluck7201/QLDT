@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QLDT.FormControls.CongNoForms;
 using QLDT.FormControls.DonHangForms;
 using QLDT.FormControls.KhachHangForms;
+using DevExpress.XtraEditors;
 
 namespace QLDT.FormControls.NhapKhoForms
 {
@@ -27,12 +28,13 @@ namespace QLDT.FormControls.NhapKhoForms
             _loaiKhachHang = _loaiDonHang == Define.LoaiDonHangEnum.XuatKho
                                        ? Define.LoaiKhachHangEnum.KhachSi
                                        : Define.LoaiKhachHangEnum.NhaCungCap;
+
             InitializeComponent();
             InitAuthorize();
             ReloadData();
 
             var endDate = TimeHelper.CurentDateTime();
-            var startDate = endDate.AddYears(-1);
+            var startDate = endDate.AddMonths(-3);
 
             NhapKho_StartDate.Value = startDate;
             NhapKho_EndDate.Value = endDate;
@@ -46,6 +48,8 @@ namespace QLDT.FormControls.NhapKhoForms
                 tabNhapKho.Text = "Xuất Kho";
                 tabCongNo.Text = "Công Nợ Xuất Kho";
             }
+
+            FormBehavior.GenerateFormatRuleByValue(gridViewNhapKho, gridColumn14, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
         }
 
         private void InitAuthorize()
@@ -88,13 +92,15 @@ namespace QLDT.FormControls.NhapKhoForms
                 {
                     var startDate = NhapKho_StartDate.Value;
                     var endDate = NhapKho_EndDate.Value;
+                    var loaiDonhang = _loaiDonHang.ToString();
+
                     _donHangs =
                         CRUD.DbContext.DonHangs
-                        .Where(s => s.IsActived 
-                            && s.LoaiDonHang == _loaiDonHang.ToString()
+                        .Where(s => s.IsActived
+                            && s.LoaiDonHang == loaiDonhang
                             && s.NgayLap >= startDate
                             && s.NgayLap <= endDate)
-                            .ToList();                    
+                            .ToList();
 
                     gridControlNhapKho.DataSource = _donHangs;
                 }
