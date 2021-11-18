@@ -309,7 +309,7 @@ namespace QLDT.FormControls.DonHangForms
                 thue = PrimitiveConvert.StringToInt(DonHang_Thue.Text);
             }
 
-            _domainData.TongCong = (long)(thanhTien + thanhTien * thue / 100f - thanhTien * chietKhau / 100f);
+            _domainData.TongCong = (long)(thanhTien + thanhTien * thue / 100m - thanhTien * chietKhau / 100m);
             UpdateNo();
         }
 

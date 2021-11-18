@@ -80,7 +80,7 @@ namespace QLDT.FormControls.NhapKhoForms
         {
             ThreadHelper.LoadForm(() =>
             {
-                CRUD.DisposeDb();
+                //CRUD.DisposeDb();
 
                 if (tabControl.SelectedTabPage == tabNhaCungCap)
                 {
@@ -169,7 +169,7 @@ namespace QLDT.FormControls.NhapKhoForms
                 if (data != null)
                 {
                     var title = _loaiDonHang == Define.LoaiDonHangEnum.NhapKho ? "Nhập Kho" : "Xuất Kho";
-                    CRUD.DisposeDb();
+                    //CRUD.DisposeDb();
                     data = CRUD.DbContext.DonHangs.Find(data.Id);
                     FormBehavior.GenerateForm(new UcDonHang(_loaiDonHang, data), title, this.ParentForm, this.Name);
                 }

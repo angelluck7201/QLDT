@@ -31,8 +31,8 @@ namespace QLDT
         {
             get
             {
-                var thue = DonGia * ChiTietDonHang.DonHang.Thue / 100f;
-                var chietKhau = DonGia * ChiTietDonHang.DonHang.ChietKhau / 100f;
+                var thue = DonGia * ChiTietDonHang.DonHang.Thue / 100m;
+                var chietKhau = DonGia * ChiTietDonHang.DonHang.ChietKhau / 100m;
                 return (long)(DonGia + thue - chietKhau);
             }
         }
