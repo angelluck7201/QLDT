@@ -123,11 +123,17 @@ namespace QLDT
             grid.RefreshData();
         }
 
-        public static void GenerateFormatRuleByValue(GridView gridView, GridColumn column, object value, FormatCondition condition, Color backColor, Color fontColor)
+        public static void GenerateFormatRuleByValue(GridView gridView, 
+            GridColumn column, 
+            object value, 
+            FormatCondition condition, 
+            Color backColor, 
+            Color fontColor,
+            bool isCellOnly = false)
         {
             GridFormatRule gridFormatRule = new GridFormatRule();
             gridFormatRule.Column = column;
-            gridFormatRule.ApplyToRow = true;
+            gridFormatRule.ApplyToRow = !isCellOnly;
             FormatConditionRuleValue formatConditionRuleValue = new FormatConditionRuleValue();
             formatConditionRuleValue.PredefinedName = value.ToString();
             formatConditionRuleValue.Condition = condition;
@@ -138,6 +144,8 @@ namespace QLDT
             formatConditionRuleValue.Appearance.Options.UseForeColor = true;
             gridFormatRule.Rule = formatConditionRuleValue;
             gridView.FormatRules.Add(gridFormatRule);
+
+            
         }
     }
 }

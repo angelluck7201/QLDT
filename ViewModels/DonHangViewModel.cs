@@ -206,6 +206,14 @@ namespace QLDT
             }
         }
 
+        public long ConLai
+        {
+            get
+            {
+                return TongCong - ThanhToanCongNo;
+            }
+        }
+
         public string NgayLapReport
         {
             get { return string.Format("Ngày {0} Tháng {1} Năm {2}  {3}", NgayLap.Day, NgayLap.Month, NgayLap.Year, NgayLap.TimeOfDay); }

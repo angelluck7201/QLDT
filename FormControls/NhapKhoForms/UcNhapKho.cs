@@ -49,7 +49,8 @@ namespace QLDT.FormControls.NhapKhoForms
                 tabCongNo.Text = "Công Nợ Xuất Kho";
             }
 
-            FormBehavior.GenerateFormatRuleByValue(gridViewNhapKho, gridColumn14, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red);
+            FormBehavior.GenerateFormatRuleByValue(gridViewNhapKho, gridColumn14, 0, FormatCondition.LessOrEqual, Color.Wheat, Color.Red, true);
+            FormBehavior.GenerateFormatRuleByValue(gridViewNhapKho, gridColumn15, 0, FormatCondition.NotEqual, Color.Wheat, Color.Red, true);
         }
 
         private void InitAuthorize()

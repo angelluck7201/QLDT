@@ -67,6 +67,7 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabCongNo = new DevExpress.XtraTab.XtraTabPage();
             this.ucCongNoList1 = new QLDT.FormControls.CongNoForms.UcCongNoList();
@@ -116,7 +117,7 @@
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 7;
+            this.gridColumn24.VisibleIndex = 8;
             this.gridColumn24.Width = 164;
             // 
             // tabControl
@@ -462,10 +463,10 @@
             this.gridColumn10,
             this.gridColumn22,
             this.gridColumn13,
+            this.gridColumn15,
             this.gridColumn14,
             this.gridColumn24});
             this.gridViewNhapKho.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
-            gridFormatRule2.ApplyToRow = true;
             gridFormatRule2.Column = this.gridColumn24;
             gridFormatRule2.Name = "TrangThai";
             formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -539,7 +540,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.VisibleIndex = 7;
             this.gridColumn11.Width = 277;
             // 
             // gridColumn12
@@ -586,6 +587,18 @@
             this.gridColumn13.VisibleIndex = 4;
             this.gridColumn13.Width = 162;
             // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Còn Lại";
+            this.gridColumn15.DisplayFormat.FormatString = "n0";
+            this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn15.FieldName = "ConLai";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ConLai", "TỔNG={0:n0}")});
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 5;
+            // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "Lợi Nhuận";
@@ -596,7 +609,7 @@
             this.gridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoiNhuan", "TỔNG={0:n0}")});
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 5;
+            this.gridColumn14.VisibleIndex = 6;
             this.gridColumn14.Width = 139;
             // 
             // tabCongNo
@@ -912,5 +925,6 @@
         private CongNoForms.UcCongNoList ucCongNoList2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
     }
 }
